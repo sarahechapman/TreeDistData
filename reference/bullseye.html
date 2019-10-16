@@ -70,7 +70,7 @@ and Yamato (2015)." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">TreeDistData</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9006</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9007</span>
       </span>
     </div>
 
@@ -127,7 +127,9 @@ and Yamato (2015).</p>
 
 <span class='no'>bullseyeMorphInferred</span>
 
-<span class='no'>bullseyeMorphScores</span></pre>
+<span class='no'>bullseyeMorphScores</span>
+
+<span class='no'>bullseyeDistances</span></pre>
 
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
@@ -139,8 +141,8 @@ and Yamato (2015).</p>
 <code>20 tips</code> and <code>50 tips</code>.  Each element contains 1 000 trees with <em>n</em>
 tips, randomly sampled from the uniform distribution using <code><a href='https://rdrr.io/pkg/ape/man/rtree.html'>ape::rtree</a></code>.</p>
 <p><code>bullXXInferred</code> is a list with four elements, named as in <code>bullseyeTrees</code>.
-Each element contains 1000 subelements. Each subelement is a list of ten
-trees, which have been inferred from progressively more degraded datasets,
+Each element contains 1 000 subelements. Each subelement is a list of
+ten trees, which have been inferred from progressively more degraded datasets,
 originally simulated from the corresponding tree in <code>bullseyeTrees</code>.</p>
 <p><code>bullXXScores</code> is a list with four elements, named as in <code>bullseyeTrees</code>.
 Each element contains a three dimensional array, in which the first dimension
@@ -154,6 +156,9 @@ tree under the stated tree distance metric.</p>
 <p>The <code>bullseyeMorph</code> prefix refers to the 'subsampling' experiment
 described by Smith (forthcoming); the <code>bullMoDi</code> prefix refers to the
 'miscoding' experiment.</p>
+<p><code>bullseyeDistances</code> contains four elements, each tabulating the distance
+between each pair of <em>n</em>-tip trees in <code>bullseyeTrees</code>.  For details, see
+<code><a href='sevenTipDistances.html'>sevenTipDistances</a></code>.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     
