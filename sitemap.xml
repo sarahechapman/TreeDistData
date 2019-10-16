@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/index.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/AllDists.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/CompareAllTrees.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/TreeDistData-package.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/bullseye.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/distanceDistributions.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/randomTreeDistances.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/randomTreePairs25.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/sevenTipDistances.html</loc>
+  </url>
+</urlset>
