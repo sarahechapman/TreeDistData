@@ -138,17 +138,27 @@ and 100 000 random bifurcating trees.</p>
 <p>Rows are named with an abbreviation of the tree comparison metric.
 Variation of information measures are normalized against the maximum
 possible variation of information for trees of the corresponding topologies.
-The quartet distance and Nye <em>et al.</em> measures are normalized against their
-maximum possible values.  The remaining measures are unnormalized.</p><ul>
+The quartet distance, Nye <em>et al.</em> and Jaccard-Robinson-Foulds measures
+are normalized against their maximum possible values.
+The remaining measures are unnormalized.</p><ul>
 <li><p><code>vpi</code>: Variation of Phylogenetic Information (Smith, forthcoming)</p></li>
 <li><p><code>vmsi</code>: Variation of Matching Split Information (Smith, forthcoming)</p></li>
 <li><p><code>vci</code>: Variation of Clustering Information (Smith, forthcoming)</p></li>
 <li><p><code>qd</code>: Quartet divergence (Smith, 2019)</p></li>
 <li><p><code>nts</code>: Nye <em>et al.</em> tree similarity (Nye <em>et al.</em> 2006)</p></li>
+<li><p><code>ja2</code>, <code>ja4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4</p></li>
+<li><p><code>jna2</code>, <code>jna4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4,
+with non-arboreal matchings permitted</p></li>
 <li><p><code>msd</code>: Matching Split Distance (Bogdanowicz &amp; Giaro, 2012), unnormalized</p></li>
+<li><p><code>mast</code>: Size of Maximum Agreement Subtree (Valiente 2009)</p></li>
+<li><p><code>masti</code>: Information content of Maximum Agreement Subtree</p></li>
+<li><p><code>nni_l</code>, <code>nni_t</code>, <code>nni_u</code>: Lower bound, tight upper bound, and upper bound
+for  nearest-neighbour interchange distance (Li <em>et al.</em> 1996)</p></li>
+<li><p><code>spr</code>: Approximate SPR distance, unnormalized</p></li>
+<li><p><code>tbr_l</code>, <code>tbr_u</code>: Lower and upper bound for tree bisection and reconnection
+(TBR) distance</p></li>
 <li><p><code>rf</code>: Robinson-Foulds distance (Robinson &amp; Foulds 1985), unnormalized</p></li>
 <li><p><code>path</code>: Path distance (Steel &amp; Penny 1993), unnormalized</p></li>
-<li><p><code>spr</code>: SPR distance, unnormalized</p></li>
 </ul>
 
 <p>Each column lists the calculated distances between each pair of trees.</p>
@@ -159,35 +169,39 @@ maximum possible values.  The remaining measures are unnormalized.</p><ul>
 &#8220;Matching split distance for unrooted binary phylogenetic trees.&#8221;
 <em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em>, <b>9</b>(1), 150--160.
 doi: <a href='https://doi.org/10.1109/TCBB.2011.48'>10.1109/TCBB.2011.48</a>
-.
-
-Nye TMW, Liò P, Gilks WR (2006).
+.</p>
+<p>Li M, Tromp J, Zhang L (1996).
+&#8220;Some notes on the nearest neighbour interchange distance.&#8221;
+In Goos G, Hartmanis J, Leeuwen J, Cai J, Wong CK (eds.), <em>Computing and Combinatorics</em>, volume 1090, 343--351.
+Springer, Berlin, Heidelberg.
+ISBN 978-3-540-61332-9 978-3-540-68461-9, doi: <a href='https://doi.org/10.1007/3-540-61332-3_168'>10.1007/3-540-61332-3_168</a>
+.</p>
+<p>Nye TMW, Liò P, Gilks WR (2006).
 &#8220;A novel algorithm and web-based tool for comparing two alternative phylogenetic trees.&#8221;
 <em>Bioinformatics</em>, <b>22</b>(1), 117--119.
 doi: <a href='https://doi.org/10.1093/bioinformatics/bti720'>10.1093/bioinformatics/bti720</a>
-.
-
-Robinson DF, Foulds LR (1981).
+.</p>
+<p>Robinson DF, Foulds LR (1981).
 &#8220;Comparison of phylogenetic trees.&#8221;
 <em>Mathematical Biosciences</em>, <b>53</b>(1-2), 131--147.
 ISSN 00255564, doi: <a href='https://doi.org/10.1016/0025-5564(81)90043-2'>10.1016/0025-5564(81)90043-2</a>
-.
-
-Smith MR (2019).
+.</p>
+<p>Smith MR (2019).
 &#8220;Bayesian and parsimony approaches reconstruct informative trees from simulated morphological datasets.&#8221;
 <em>Biology Letters</em>, <b>15</b>, 20180632.
 doi: <a href='https://doi.org/10.1098/rsbl.2018.0632'>10.1098/rsbl.2018.0632</a>
-.
-
-Smith MR (2019).
+.</p>
+<p>Smith MR (2020).
 &#8220;Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees.&#8221;
-<em>Forthcoming</em>.
-
-Steel MA, Penny D (1993).
+<em>In review</em>.</p>
+<p>Steel MA, Penny D (1993).
 &#8220;Distributions of tree comparison metrics—some new results.&#8221;
 <em>Systematic Biology</em>, <b>42</b>(2), 126--141.
 ISSN 1076-836X, doi: <a href='https://doi.org/10.1093/sysbio/42.2.126'>10.1093/sysbio/42.2.126</a>
 .</p>
+<p>Valiente G (2009).
+<em>Combinatorial Pattern Matching Algorithms in Computational Biology using Perl and R</em>,  CRC Mathematical and Computing Biology Series.
+CRC Press, Boca Raton.</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

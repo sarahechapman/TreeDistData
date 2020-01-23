@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • TreeDistData</title>
+<title>Distances between each pair of trees — PairwiseDistances • TreeDistData</title>
 
 
 <!-- jquery -->
@@ -35,7 +35,9 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Distances between each pair of trees — PairwiseDistances" />
+<meta property="og:description" content="Distances between each pair of trees" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -54,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -104,90 +106,63 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Distances between each pair of trees</h1>
+    <small class="dont-index">Source: <a href='https://github.com/ms609/TreeDistData/blob/master/R/utilities.R'><code>R/utilities.R</code></a></small>
+    <div class="hidden name"><code>PairwiseDistances.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    <p>Distances between each pair of trees</p>
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='fu'>PairwiseDistances</span>(<span class='no'>trees</span>, <span class='no'>Func</span>, <span class='kw'>valueLength</span> <span class='kw'>=</span> <span class='fl'>1L</span>, <span class='no'>...</span>)</pre>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="AllDists.html">AllDists()</a></code> </p>
-        </td>
-        <td><p>All distances between a pair of trees</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="CompareAllTrees.html">CompareAllTrees()</a></code> </p>
-        </td>
-        <td><p>All distances between each pair of trees</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="PairwiseDistances.html">PairwiseDistances()</a></code> </p>
-        </td>
-        <td><p>Distances between each pair of trees</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="bullseye.html">bullseyeTrees</a></code> <code><a href="bullseye.html">bullMoDiInferred</a></code> <code><a href="bullseye.html">bullMoDiScores</a></code> <code><a href="bullseye.html">bullseyeMorphInferred</a></code> <code><a href="bullseye.html">bullseyeMorphScores</a></code> <code><a href="bullseye.html">bullseyeDistances</a></code> </p>
-        </td>
-        <td><p>Bullseye test results</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="distanceDistributions.html">distanceDistribution25</a></code> <code><a href="distanceDistributions.html">distanceDistribution11</a></code> <code><a href="distanceDistributions.html">pectinateDistances11</a></code> </p>
-        </td>
-        <td><p>Distances between random pairs of trees</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="linTests.html">linTestOneResults</a></code> <code><a href="linTests.html">linTestSPRResults</a></code> <code><a href="linTests.html">linTestTwoResults</a></code> </p>
-        </td>
-        <td><p>Evaluating tree distance metrics with method of <em>Lin et al.</em> 2012</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="randomTreeDistances.html">randomTreeDistances</a></code> </p>
-        </td>
-        <td><p>Mean distances between random pairs of trees</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="randomTreePairs25.html">randomTreePairs25</a></code> </p>
-        </td>
-        <td><p>Pairs of random 25-tip trees</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="sevenTipDistances.html">sevenTipDistances</a></code> </p>
-        </td>
-        <td><p>Distances between unrooted seven-tip trees</p></td>
-      </tr>
-    </tbody>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>trees</th>
+      <td><p>List of trees of class <code>phylo</code>.</p></td>
+    </tr>
+    <tr>
+      <th>Func</th>
+      <td><p>distance function returning distance between two trees,
+e.g. phangorn::treedist.</p></td>
+    </tr>
+    <tr>
+      <th>valueLength</th>
+      <td><p>Integer specifying expected length of the value returned
+by <code>Func</code>.</p></td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td><p>Additional arguments to <code>Func</code>.</p></td>
+    </tr>
     </table>
-  </div>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>Matrix detailing distance between each pair of trees.
+Identical trees are assumed to have zero distance.</p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>Other pairwise tree distances: 
+<code><a href='AllDists.html'>AllDists</a>()</code>,
+<code><a href='CompareAllTrees.html'>CompareAllTrees</a>()</code></p></div>
+
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+      <li><a href="#value">Value</a></li>
+      <li><a href="#see-also">See also</a></li>
     </ul>
+
+    <h2>Author</h2>
+    <p>Martin R. Smith (<a href='mailto:martin.smith@durham.ac.uk'>martin.smith@durham.ac.uk</a>)</p>
   </div>
 </div>
 
