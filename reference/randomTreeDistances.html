@@ -135,16 +135,25 @@ which is normalized against the upper bound (<code>spr</code>) and lower bound (
 of its diameter on a tree with <em>n</em> tips.  The path and matching split
 distances are not normalized.</p>
 <p>Rows are named with an abbreviation of the tree comparison metric:</p><ul>
-<li><p><code>vpi</code>: Variation of Phylogenetic Information (Smith, forthcoming)</p></li>
-<li><p><code>vmsi</code>: Variation of Matching Split Information (Smith, forthcoming)</p></li>
-<li><p><code>vci</code>: Variation of Clustering Information (Smith, forthcoming)</p></li>
+<li><p><code>dpi</code>: Variation of Phylogenetic Information (Smith, forthcoming)</p></li>
+<li><p><code>msid</code>: Variation of Matching Split Information (Smith, forthcoming)</p></li>
+<li><p><code>cid</code>: Variation of Clustering Information (Smith, forthcoming)</p></li>
 <li><p><code>qd</code>: Quartet divergence (Smith, 2019)</p></li>
 <li><p><code>nts</code>: Nye <em>et al.</em> tree similarity (Nye <em>et al.</em> 2006)</p></li>
+<li><p><code>ja2</code>, <code>ja4</code>: Jaccard-Robinson-Foulds distance (Böcker <em>et al</em>. 2013),
+with <em>k</em> = 2, 4, with arboreal matchings enforced</p></li>
+<li><p><code>jna2</code>, <code>jna4</code>: JRF distance, non-arboreal matchings permitted</p></li>
 <li><p><code>msd</code>: Matching Split Distance (Bogdanowicz &amp; Giaro, 2012)</p></li>
+<li><p><code>mast</code>, <code>masti</code>: Size and information content of maximum agreement subtree</p></li>
+<li><p><code>nni_l</code>, <code>nni_u</code>: Lower and upper bounds on the nearest neighbour
+interchange distance (Li <em>et al.</em> 1996)</p></li>
+<li><p><code>spr</code>: Approximate subtree prune and regraft distance, calculated using
+<code><a href='https://rdrr.io/pkg/phangorn/man/treedist.html'>phangorn::SPR.dist</a></code></p></li>
+<li><p><code>tbr_l</code>, <code>tbr_u</code>: Lower and upper bounds on the tree bisection and
+reconnection distance, calculated using
+<a href='https://ms609.github.io/TBRDist/'>TBRDist</a></p></li>
 <li><p><code>rf</code>: Robinson-Foulds distance (Robinson &amp; Foulds 1981)</p></li>
 <li><p><code>path</code>: Path distance (Steel &amp; Penny 1993)</p></li>
-<li><p><code>spr</code>: SPR distance, normalized against upper bound of diameter (Allen &amp; Steel, 2001)</p></li>
-<li><p><code>sprLB</code>: SPR distance, normalized against lower bound of diameter (Allen &amp; Steel, 2001)</p></li>
 </ul>
 
 <p>Columns list the summary statistics of calculated tree distances: the
@@ -161,10 +170,22 @@ maximum (<code>max</code>), mean (<code>mean</code>) and standard deviation (<co
 <em>Annals of Combinatorics</em>, <b>5</b>(1), 1--15.
 ISSN 0218-0006, doi: <a href='https://doi.org/10.1007/s00026-001-8006-8'>10.1007/s00026-001-8006-8</a>
 .</p></li>
+<li><p>Böcker S, Canzar S, Klau GW (2013).
+&#8220;The generalized Robinson-Foulds metric.&#8221;
+In Darling A, Stoye J (eds.), <em>Algorithms in Bioinformatics. WABI 2013. Lecture Notes in Computer Science, vol 8126</em>, 156--169.
+Springer, Berlin, Heidelberg.
+doi: <a href='https://doi.org/10.1007/978-3-642-40453-5_13'>10.1007/978-3-642-40453-5_13</a>
+.</p></li>
 <li><p>Bogdanowicz D, Giaro K (2012).
 &#8220;Matching split distance for unrooted binary phylogenetic trees.&#8221;
 <em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em>, <b>9</b>(1), 150--160.
 doi: <a href='https://doi.org/10.1109/TCBB.2011.48'>10.1109/TCBB.2011.48</a>
+.</p>
+<p>Li M, Tromp J, Zhang L (1996).
+&#8220;Some notes on the nearest neighbour interchange distance.&#8221;
+In Goos G, Hartmanis J, Leeuwen J, Cai J, Wong CK (eds.), <em>Computing and Combinatorics</em>, volume 1090, 343--351.
+Springer, Berlin, Heidelberg.
+ISBN 978-3-540-61332-9 978-3-540-68461-9, doi: <a href='https://doi.org/10.1007/3-540-61332-3_168'>10.1007/3-540-61332-3_168</a>
 .</p></li>
 <li><p>Nye TMW, Liò P, Gilks WR (2006).
 &#8220;A novel algorithm and web-based tool for comparing two alternative phylogenetic trees.&#8221;
