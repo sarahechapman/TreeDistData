@@ -13,7 +13,13 @@
     <loc>https://ms609.github.io/TreeDistData/reference/PairwiseDistances.html</loc>
   </url>
   <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/TreeDistCol.html</loc>
+  </url>
+  <url>
     <loc>https://ms609.github.io/TreeDistData/reference/TreeDistData-package.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/TreeDistMethods.html</loc>
   </url>
   <url>
     <loc>https://ms609.github.io/TreeDistData/reference/bullseye.html</loc>
@@ -28,9 +34,30 @@
     <loc>https://ms609.github.io/TreeDistData/reference/randomTreeDistances.html</loc>
   </url>
   <url>
-    <loc>https://ms609.github.io/TreeDistData/reference/randomTreePairs25.html</loc>
+    <loc>https://ms609.github.io/TreeDistData/reference/randomTreePairs.html</loc>
   </url>
   <url>
     <loc>https://ms609.github.io/TreeDistData/reference/sevenTipDistances.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/shapeEffect.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/reference/sprDistances.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/articles/Lin.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/articles/correlation.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/articles/number-moves-made.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/articles/spr-walking.html</loc>
+  </url>
+  <url>
+    <loc>https://ms609.github.io/TreeDistData/articles/tree-shape.html</loc>
   </url>
 </urlset>

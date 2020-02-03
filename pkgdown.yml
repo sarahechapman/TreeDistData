@@ -1,7 +1,12 @@
 pandoc: '2.2'
 pkgdown: 1.4.1
 pkgdown_sha: ~
-articles: []
+articles:
+  Lin: Lin.html
+  correlation: correlation.html
+  number-moves-made: number-moves-made.html
+  spr-walking: spr-walking.html
+  tree-shape: tree-shape.html
 urls:
   reference: https://ms609.github.io/TreeDistData/reference
   article: https://ms609.github.io/TreeDistData/articles

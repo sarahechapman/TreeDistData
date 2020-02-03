@@ -86,6 +86,30 @@ ape::rtree(nTip, br=NULL)." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Lin.html">Lin _et al_. tests</a>
+    </li>
+    <li>
+      <a href="../articles/correlation.html">Metric correlation</a>
+    </li>
+    <li>
+      <a href="../articles/number-moves-made.html">Number of moves made</a>
+    </li>
+    <li>
+      <a href="../articles/spr-walking.html">SPR walking</a>
+    </li>
+    <li>
+      <a href="../articles/tree-shape.html">Accounting for tree shape</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
@@ -139,10 +163,10 @@ distances are not normalized.</p>
 <li><p><code>msid</code>: Variation of Matching Split Information (Smith, forthcoming)</p></li>
 <li><p><code>cid</code>: Variation of Clustering Information (Smith, forthcoming)</p></li>
 <li><p><code>qd</code>: Quartet divergence (Smith, 2019)</p></li>
-<li><p><code>nts</code>: Nye <em>et al.</em> tree similarity (Nye <em>et al.</em> 2006)</p></li>
 <li><p><code>ja2</code>, <code>ja4</code>: Jaccard-Robinson-Foulds distance (Böcker <em>et al</em>. 2013),
 with <em>k</em> = 2, 4, with arboreal matchings enforced</p></li>
 <li><p><code>jna2</code>, <code>jna4</code>: JRF distance, non-arboreal matchings permitted</p></li>
+<li><p><code>nts</code>: Nye <em>et al.</em> tree similarity (Nye <em>et al.</em> 2006)</p></li>
 <li><p><code>msd</code>: Matching Split Distance (Bogdanowicz &amp; Giaro, 2012)</p></li>
 <li><p><code>mast</code>, <code>masti</code>: Size and information content of maximum agreement subtree</p></li>
 <li><p><code>nni_l</code>, <code>nni_u</code>: Lower and upper bounds on the nearest neighbour
@@ -153,6 +177,8 @@ interchange distance (Li <em>et al.</em> 1996)</p></li>
 reconnection distance, calculated using
 <a href='https://ms609.github.io/TBRDist/'>TBRDist</a></p></li>
 <li><p><code>rf</code>: Robinson-Foulds distance (Robinson &amp; Foulds 1981)</p></li>
+<li><p><code>rfi</code>: Robinson-Foulds distance, splits weighted by phylogenetic
+information content (Smith, forthcoming)</p></li>
 <li><p><code>path</code>: Path distance (Steel &amp; Penny 1993)</p></li>
 </ul>
 

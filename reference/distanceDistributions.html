@@ -37,8 +37,8 @@
 
 <meta property="og:title" content="Distances between random pairs of trees — distanceDistributions" />
 <meta property="og:description" content="Two-dimensional matrices listing the normalized distances between random
-pairs of bifurcating 11- and 25-tip trees drawn from the uniform distribution
-using ape::rtree(nTip, br=NULL)." />
+pairs of bifurcating trees with 11, 25 and 50 leaves drawn from the
+uniform distribution using ape::rtree(nTip, br=NULL)." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -86,6 +86,30 @@ using ape::rtree(nTip, br=NULL)." />
 <li>
   <a href="../reference/index.html">Reference</a>
 </li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Articles
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="../articles/Lin.html">Lin _et al_. tests</a>
+    </li>
+    <li>
+      <a href="../articles/correlation.html">Metric correlation</a>
+    </li>
+    <li>
+      <a href="../articles/number-moves-made.html">Number of moves made</a>
+    </li>
+    <li>
+      <a href="../articles/spr-walking.html">SPR walking</a>
+    </li>
+    <li>
+      <a href="../articles/tree-shape.html">Accounting for tree shape</a>
+    </li>
+  </ul>
+</li>
 <li>
   <a href="../news/index.html">Changelog</a>
 </li>
@@ -117,11 +141,13 @@ using ape::rtree(nTip, br=NULL)." />
 
     <div class="ref-description">
     <p>Two-dimensional matrices listing the normalized distances between random
-pairs of bifurcating 11- and 25-tip trees drawn from the uniform distribution
-using <code><a href='https://rdrr.io/pkg/ape/man/rtree.html'>ape::rtree(nTip, br=NULL)</a></code>.</p>
+pairs of bifurcating trees with 11, 25 and 50 leaves drawn from the
+uniform distribution using <code><a href='https://rdrr.io/pkg/ape/man/rtree.html'>ape::rtree(nTip, br=NULL)</a></code>.</p>
     </div>
 
-    <pre class="usage"><span class='no'>distanceDistribution25</span>
+    <pre class="usage"><span class='no'>distanceDistribution50</span>
+
+<span class='no'>distanceDistribution25</span>
 
 <span class='no'>distanceDistribution11</span>
 
@@ -130,15 +156,16 @@ using <code><a href='https://rdrr.io/pkg/ape/man/rtree.html'>ape::rtree(nTip, br
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>matrix</code> with 9 rows and 10000 columns.</p>
+    <p>An object of class <code>matrix</code> with 19 rows and 10000 columns.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><code>pectinateDistances11</code> reports distances between a pectinate 11-tip tree
 and 100 000 random bifurcating trees.</p>
 <p>Rows are named with an abbreviation of the tree comparison metric.
-Variation of information measures are normalized against the maximum
-possible variation of information for trees of the corresponding topologies.
-The quartet distance, Nye <em>et al.</em> and Jaccard-Robinson-Foulds measures
+Information-based measures are normalized against the splitwise information
+content/entropy for binary trees of the corresponding topologies.&lt;!--#TODO VERIFY--&gt;</p>
+
+<p>The quartet distance, Nye <em>et al.</em> and Jaccard-Robinson-Foulds measures
 are normalized against their maximum possible values.
 The remaining measures are unnormalized.</p><ul>
 <li><p><code>dpi</code>: Different Phylogenetic Information (Smith, forthcoming)</p></li>
@@ -164,7 +191,7 @@ information content (Smith, forthcoming)</p></li>
 </ul>
 
 <p>Each column lists the calculated distances between each pair of trees.</p>
-<p>The pairs of 25-tip trees are saved as data object <code><a href='randomTreePairs25.html'>randomTreePairs25</a></code>.</p>
+<p>The pairs of 25-tip trees are saved as data object <code><a href='randomTreePairs.html'>randomTreePairs25</a></code>.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Bogdanowicz D, Giaro K (2012).
