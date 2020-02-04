@@ -3,8 +3,10 @@ pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
   Lin: Lin.html
+  bullseye-morph: bullseye-morph.html
   correlation: correlation.html
   number-moves-made: number-moves-made.html
+  one-tip-distant: one-tip-distant.html
   spr-walking: spr-walking.html
   tree-shape: tree-shape.html
 urls:
