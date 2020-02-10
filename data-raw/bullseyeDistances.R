@@ -9,3 +9,5 @@ for (tips in names(bullseyeTrees)) {
 }
 
 usethis::use_data(bullseyeDistances, compress='xz', overwrite = TRUE)
+
+bullseyeDistances <- bullseyeDistances[3:4] # Keep file size <100 MB
