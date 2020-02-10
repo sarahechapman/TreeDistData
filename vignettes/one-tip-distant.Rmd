@@ -59,7 +59,7 @@ BoxPlot <- function (method) {
   
   nErrors <- sum(errors[c('tooSmall', 'tooBig'), ])
   
-  text(4.5, 0, paste0(nErrors, '/', sum(errors), ' misordered'), pos = 3)
+  text(4.5, 0, paste0(nErrors, '/', sum(errors), '\nmisordered'), pos = 3)
   nErrors
 }
 
