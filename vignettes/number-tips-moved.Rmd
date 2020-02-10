@@ -78,10 +78,10 @@ baddies <- vapply(seq_along(add3), function(i) {
   move2[c('mast', 'masti'), ] <- -move2[c('mast', 'masti'), ]
   rowSums(move2 <= move1)
 }, double(21))
-errors <- rowSums(baddies) - (2 * length(add3))
 ```
 
 ```{r, output='asis'}
+errors <- rowSums(baddies) - (2 * length(add3))
 names(errors) <- tdAbbrevs[names(errors)]
 knitr::kable(t(errors))
 ```
