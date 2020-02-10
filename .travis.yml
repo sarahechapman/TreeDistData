@@ -8,33 +8,6 @@ git:
 
 jobs:
   include:
-    - r: 3.5.0
-      r_packages:
-       - devtools
-       - Rdpack
-       - roxygen2
-       - testthat
-    - r: release
-      before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
-      r_packages:
-       - kdensity
-      r_binary_packages:
-       - binom
-       - bookdown
-       - colorspace
-       - devtools
-       - knitr
-       - MASS
-       - phangorn
-       - Rdpack
-       - rmarkdown
-       - roxygen2
-       - testthat
-      deploy:
-        provider: script
-        script: Rscript -e 'pkgdown::deploy_site_github()'
-        cleanup: false
-        skip_cleanup: true
     - r: devel
       r_binary_packages:
        - devtools
@@ -42,18 +15,6 @@ jobs:
        - roxygen2
       after_success:
         - Rscript -e "covr::codecov()"
-    - os: osx
-      r: release
-      r_packages:
-        - devtools
-        - Rdpack
-        - roxygen2
-        - testthat
-      before_install:
-      - brew install cairo
-      - sudo tlmgr install doi titling hyperref
-#  allow_failures:
-#    r: devel # Incompatible with devtools?
 
 r_packages:
  - TreeTools
