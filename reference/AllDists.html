@@ -104,10 +104,13 @@
       <a href="../articles/heterogeneity.html">Heterogeneity</a>
     </li>
     <li>
+      <a href="../articles/length-of-move.html">Length of move</a>
+    </li>
+    <li>
       <a href="../articles/number-moves-made.html">Number of moves made</a>
     </li>
     <li>
-      <a href="../articles/one-tip-distant.html">One tip distant</a>
+      <a href="../articles/number-tips-moved.html">Number of tips moved</a>
     </li>
     <li>
       <a href="../articles/spr-walking.html">SPR walking</a>
@@ -171,12 +174,40 @@
 <code><a href='CompareAllTrees.html'>CompareAllTrees</a>()</code>,
 <code><a href='PairwiseDistances.html'>PairwiseDistances</a>()</code></p></div>
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='st'>'TreeTools'</span>)</div><div class='output co'>#&gt; <span class='message'>Loading required package: ape</span></div><div class='input'><span class='fu'>AllDists</span>(<span class='fu'><a href='https://ms609.github.io/TreeTools/reference/BalancedTree.html'>BalancedTree</a></span>(<span class='fl'>8</span>), <span class='fu'><a href='https://ms609.github.io/TreeTools/reference/PectinateTree.html'>PectinateTree</a></span>(<span class='fl'>8</span>))</div><div class='output co'>#&gt;        dpi       msid        cid         qd        nts        ja2        ja4 
+#&gt;  0.3436186  0.1842247  0.3091981  0.2285714  0.2400000  0.3360000  0.3897600 
+#&gt;       jna2       jna4        msd       mast      masti      nni_l      nni_t 
+#&gt;  0.3360000  0.3897600  6.0000000  6.0000000  6.7142455  2.0000000  2.0000000 
+#&gt;      nni_u        spr      tbr_l      tbr_u         rf        rfi       path 
+#&gt; 14.0000000  2.0000000  1.0000000  3.0000000  4.0000000 17.0076515  5.6568542 </div><div class='input'><span class='fu'>AllDists</span>(<span class='fu'><a href='https://rdrr.io/r/base/list.html'>list</a></span>(<span class='fu'><a href='https://ms609.github.io/TreeTools/reference/BalancedTree.html'>BalancedTree</a></span>(<span class='fl'>6</span>), <span class='fu'><a href='https://ms609.github.io/TreeTools/reference/PectinateTree.html'>PectinateTree</a></span>(<span class='fl'>6</span>)), <span class='fu'><a href='https://ms609.github.io/TreeTools/reference/BalancedTree.html'>BalancedTree</a></span>(<span class='fl'>6</span>))</div><div class='output co'>#&gt;               [,1]      [,2]
+#&gt; dpi   0.000000e+00 0.3065122
+#&gt; msid  0.000000e+00 0.1864629
+#&gt; cid   0.000000e+00 0.3081816
+#&gt; qd    0.000000e+00 0.2000000
+#&gt; nts   1.480297e-16 0.2222222
+#&gt; ja2   1.480297e-16 0.3333333
+#&gt; ja4   1.480297e-16 0.3333333
+#&gt; jna2  1.480297e-16 0.2962963
+#&gt; jna4  1.480297e-16 0.3292181
+#&gt; msd   0.000000e+00 2.0000000
+#&gt; mast  6.000000e+00 5.0000000
+#&gt; masti 6.714246e+00 3.9068906
+#&gt; nni_l 0.000000e+00 1.0000000
+#&gt; nni_t 0.000000e+00 1.0000000
+#&gt; nni_u 0.000000e+00 7.0000000
+#&gt; tbr_l 0.000000e+00 1.0000000
+#&gt; tbr_u 0.000000e+00 3.0000000
+#&gt; rf    0.000000e+00 2.0000000
+#&gt; rfi   7.105427e-15 5.6147098</div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#see-also">See also</a></li>
+      <li><a href="#examples">Examples</a></li>
     </ul>
 
     <h2>Author</h2>

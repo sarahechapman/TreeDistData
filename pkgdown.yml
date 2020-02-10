@@ -6,8 +6,9 @@ articles:
   bullseye-morph: bullseye-morph.html
   correlation: correlation.html
   heterogeneity: heterogeneity.html
+  length-of-move: length-of-move.html
   number-moves-made: number-moves-made.html
-  one-tip-distant: one-tip-distant.html
+  number-tips-moved: number-tips-moved.html
   spr-walking: spr-walking.html
   tree-shape: tree-shape.html
 urls:
