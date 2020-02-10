@@ -12,6 +12,12 @@
 #' @importFrom phangorn SPR.dist path.dist
 #' @importFrom TBRDist TBRDist
 #' @family pairwise tree distances
+#'
+#' @examples
+#' library('TreeTools')
+#' AllDists(BalancedTree(8), PectinateTree(8))
+#' AllDists(list(BalancedTree(6), PectinateTree(6)), BalancedTree(6))
+#'
 #' @export
 AllDists <- function (tr1, tr2, verbose = FALSE) {
   if (verbose) cat('q')
@@ -26,8 +32,15 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
   nni <- NNIDist(tr1, tr2)
   tbr <- TBRDist(tr1, tr2)
 
+  NNIPart <- function (name) {
+    if (is.null(names(nni))) nni[name, ] else nni[[name]]
+  }
+  spr <- SPR.dist(tr1, tr2)
+  if (!is.null(names(spr))) spr <- spr[['spr']]
+
   if (verbose) cat('.')
-  c(
+  Bind <- if (is.null(names(nni))) rbind else c
+  Bind(
     dpi = DifferentPhylogeneticInfo(tr1, tr2, normalize = TRUE),
     msid = MatchingSplitInfoDistance(tr1, tr2, normalize = TRUE),
     cid = ClusteringInfoDistance(tr1, tr2, normalize = TRUE),
@@ -42,10 +55,10 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
     msd = MatchingSplitDistance(tr1, tr2),
     mast = mast,
     masti = masti,
-    nni_l = nni[['lower']],
-    nni_t = nni[['tight_upper']],
-    nni_u = nni[['loose_upper']],
-    spr = SPR.dist(tr1, tr2)[['spr']],
+    nni_l = NNIPart('lower'),
+    nni_t = NNIPart('tight_upper'),
+    nni_u = NNIPart('loose_upper'),
+    spr = spr,
     tbr_l = tbr$tbr_min,
     tbr_u = tbr$tbr_max,
     rf = RobinsonFoulds(tr1, tr2),

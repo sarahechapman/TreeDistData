@@ -1,12 +1,12 @@
 ---
-title: "One tip distant"
+title: "Length of move"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 bibliography: ../inst/REFERENCES.bib
 csl: ../inst/apa-old-doi-prefix.csl
 vignette: >
-  %\VignetteIndexEntry{One tip distant}
+  %\VignetteIndexEntry{Move length}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -18,7 +18,7 @@ library('TreeDist')
 library('TreeDistData')
 backbone <- ape::read.tree(text='(a, (b, (c, (d, (((e, f), g), (h, (i, j)))))));')
 par(mar = rep(0, 4))
-plot(unroot(backbone))
+plot(ape::unroot(backbone))
 nTip <- length(backbone$tip.label)
 newTrees <- structure(TreeTools::AddTipEverywhere(backbone, '11th leaf'),
                       class = 'multiPhylo')
