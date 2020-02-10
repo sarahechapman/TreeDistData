@@ -30,7 +30,7 @@ each of the `r length(newTrees)` edges of the unrooted backbone tree.
 
 ```{r, echo=FALSE, fig.asp=3/6}
 par(mfrow = c(3, 6), mar = rep(0.2, 4))
-urt <- lapply(newTrees, unroot)
+urt <- lapply(newTrees, ape::unroot)
 lapply(urt, plot) -> XX
 ```
 
