@@ -18,10 +18,9 @@ library('TreeDist')
 library('TreeDistData')
 backbone <- ape::read.tree(text='(a, (b, (c, (d, (((e, f), g), (h, (i, j)))))));')
 par(mar = rep(0, 4))
-plot(backbone)
+plot(unroot(backbone))
 nTip <- length(backbone$tip.label)
 newTrees <- structure(TreeTools::AddTipEverywhere(backbone), class = 'multiPhylo')
-
 ```
 
 
