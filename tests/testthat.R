@@ -1,4 +1,4 @@
-library(testthat)
-library(TreeDistData)
+library('testthat')
+library('TreeDistData')
 
 test_check("TreeDistData")
