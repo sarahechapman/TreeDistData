@@ -29,7 +29,7 @@ dists50[['masti']] <- dists50[['masti']][1, 1] - dists50[['masti']]
 
 PlotMDS <- function(method, points) {
   pts <- points[[method]]
-  plot(pts, pch = 19, cex = 0.4, xlab = '', ylab = '', axes = FALSE,
+  plot(pts, pch = 20, cex = 0.3, xlab = '', ylab = '', axes = FALSE,
        col = TreeDistCol(method))
 
   z <- MASS::kde2d(pts[, 1], pts[, 2])
@@ -50,7 +50,7 @@ nonMetricPts20 <- lapply(dists20[methods], NMP)
 nonMetricPts50 <- lapply(dists50[methods], NMP)
 ```
 
-```{R do-plot, echo=FALSE, fig.asp=34/41, fig.width = 7.2}
+```{R do-plot, echo=FALSE, fig.asp=34/41, fig.width = 10}
 nMethods <- length(methods)
 layoutMat <- matrix(0, nrow = 10, ncol = 1L + (nMethods / 2))
 layoutMat[1, ] <- 0:10
