@@ -40,6 +40,114 @@ PlotText <- function (text, rotate = FALSE) {
   plot(0, 0, type='n', axes = FALSE)
   text(0, 0, text, srt = if (rotate) 90 else 0)
 }
+
+BallVol <- function (r, n) {
+  r^n * pi^(n / 2) / gamma((n / 2) + 1)
+}
+
+```
+
+20-leaf trees, K
+
+```{r K-ring-20, echo=FALSE, fig.width=8, fig.asp=4/5}
+PlotK <- function (method) {
+  dists <- as.matrix(dists20[[method]])
+  nBin <- 40
+  r <- if (length(unique(as.numeric(dists))) < nBin) {
+    sort(unique(as.numeric(dists)))
+  } else {
+    seq(0, max(dists), length.out = nBin + 1L)[-1]
+  }
+  k12r <- apply(dists, 1, function (d) {
+    vapply(r, function (bin) {
+      sum(d < bin)
+    }, 1)
+  }) - 1L
+  
+  plot(as.double(k12r) ~ rep(r, ncol(k12r)), col = TreeDistCol(method), axes = FALSE,
+       ylim=c(min(0, k12r), max(0, k12r)), pch = '.')
+  #l12r <- (k12r * (3/4) / pi)^1/3 - r
+  lapply(c(2, 3, 4, 6, 8, 10, 12, 15, 20, 40), function (n) {
+    lines(r, BallVol(r, n) / max(BallVol(r, n)) * ncol(dists), 
+          col = '#aaaaaa77')
+  })
+  points(rowMeans(k12r) ~ r, col = TreeDistCol(method))
+
+  
+  abline(h = 0, col = TreeDistCol(method))
+  legend('topleft', tdAbbrevs[method], bty = 'n')
+}
+par(mfrow=c(4, 5), mar = rep(1, 4))
+lapply(methods, PlotK) -> XX
+```
+
+50-leaf trees, K
+```{r K-ring-50, echo=FALSE, fig.width=8, fig.asp=4/5}
+PlotK <- function (method) {
+  dists <- as.matrix(dists50[[method]])
+  nBin <- 40
+  r <- if (length(unique(as.numeric(dists))) < nBin) {
+    sort(unique(as.numeric(dists)))
+  } else {
+    seq(0, max(dists), length.out = nBin + 1L)[-1]
+  }
+  k12r <- apply(dists, 1, function (d) {
+    vapply(r, function (bin) {
+      sum(d < bin)
+    }, 1)
+  }) - 1L
+  
+  plot(as.double(k12r) ~ rep(r, ncol(k12r)), col = TreeDistCol(method), axes = FALSE,
+       ylim=c(min(0, k12r), max(0, k12r)), pch = '.')
+  #l12r <- (k12r * (3/4) / pi)^1/3 - r
+  lapply(c(2, 3, 4, 6, 8, 10, 12, 15, 20, 40), function (n) {
+    lines(r, BallVol(r, n) / max(BallVol(r, n)) * ncol(dists), 
+          col = '#aaaaaa77')
+  })
+  points(rowMeans(k12r) ~ r, col = TreeDistCol(method))
+
+  
+  abline(h = 0, col = TreeDistCol(method))
+  legend('topleft', tdAbbrevs[method], bty = 'n')
+}
+par(mfrow=c(4, 5), mar = rep(1, 4))
+lapply(methods, PlotK) -> XX
+```
+
+20-leaf trees, O
+
+```{r O-ring, echo=FALSE, fig.width=8, fig.asp=4/5}
+PlotO <- function (method) {
+  dists <- as.matrix(dists20[[method]])
+  nBin <- 40
+  r <- if (length(unique(as.numeric(dists))) < nBin) {
+    sort(unique(as.numeric(dists)))
+  } else {
+    seq(0, max(dists), length.out = nBin + 1L)[-1]
+  }
+  k12r <- apply(dists, 1, function (d) {
+    vapply(r, function (bin) {
+      sum(d < bin)
+    }, 1)
+  }) - 1L
+  
+  o12r <- k12r[-1, ] - k12r[-nrow(k12r), ]
+  
+  plot(as.double(o12r) ~ rep(r[-1], ncol(o12r)), col = TreeDistCol(method), axes = FALSE,
+       ylim=c(min(0, o12r), max(0, o12r)), pch = '.')
+  
+  lapply(c(2, 3, 4, 6, 8, 10, 12, 15, 20, 40), function (n) {
+    shellVol <- BallVol(r[-1], n) - BallVol(r[-length(r)], n)
+    lines(r[-1], shellVol / max(shellVol) * ncol(dists), 
+          col = '#aaaaaa77')
+  })
+  points(rowMeans(o12r) ~ r[-1], col = TreeDistCol(method))
+
+  abline(h = 0, col = TreeDistCol(method))
+  legend('topleft', tdAbbrevs[method], bty = 'n')
+}
+par(mfrow=c(4, 5), mar = rep(1, 4))
+lapply(methods, PlotO) -> XX
 ```
 
 ```{R scaling, echo=FALSE}
