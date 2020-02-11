@@ -29,6 +29,7 @@ jobs:
        - Rdpack
        - rmarkdown
        - roxygen2
+       - spatstat
        - testthat
       deploy:
         provider: script
