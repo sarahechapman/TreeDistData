@@ -92,7 +92,7 @@ PlotFunc <- function() {
          inset=c(-0.0, -0.005), pt.cex=1.5)
 
   par(mar=c(1.9, 0.2, 0.2, 0.2))
-  vapply(rownames(pd11), BoxPlot, 1)
+  lapply(rownames(pd11), BoxPlot)
 }
 
 PlotFunc()
