@@ -80,7 +80,7 @@ baddies <- vapply(seq_along(add3), function(i) {
 }, double(21))
 ```
 
-```{r, output='asis'}
+```{r, output='asis', echo=FALSE}
 errors <- rowSums(baddies) - (2 * length(add3))
 names(errors) <- tdAbbrevs[names(errors)]
 knitr::kable(t(errors))

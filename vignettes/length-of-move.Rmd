@@ -77,7 +77,7 @@ par(mfrow = c(4, 5), mar = c(3.5, 3.5, 0, 0.5))
 lapply(methods, BoxPlot) -> errors
 ```
 
-```{r, output='asis'}
+```{r, output='asis', echo=FALSE}
 names(errors) <- tdAbbrevs[methods]
 knitr::kable(t(errors))
 ```
