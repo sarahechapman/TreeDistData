@@ -75,6 +75,9 @@
       <a href="../articles/number-tips-moved.html">Number of tips moved</a>
     </li>
     <li>
+      <a href="../articles/saturation-and-sensitivity.html">Saturation and sensitivity</a>
+    </li>
+    <li>
       <a href="../articles/spr-walking.html">SPR walking</a>
     </li>
     <li>
@@ -109,7 +112,7 @@
       <h1>Number of tips moved</h1>
                         <h4 class="author">Martin R. Smith</h4>
             
-            <h4 class="date">2020-02-10</h4>
+            <h4 class="date">2020-02-11</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ms609/TreeDistData/blob/master/vignettes/number-tips-moved.Rmd"><code>vignettes/number-tips-moved.Rmd</code></a></small>
       <div class="hidden name"><code>number-tips-moved.Rmd</code></div>
@@ -127,9 +130,6 @@
 <p>or the cherry containing the twelfth and thirteenth, giving trees C1.1 to C1.19:</p>
 <p><img src="number-tips-moved_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
 <p>We then expect the distance from Ai to Bi.j (i.e. move one tip to a new location) to be less than the distance from Ai to Ci.j (i.e. move two tips to the same location)</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">errors &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/colSums.html">rowSums</a></span>(baddies) <span class="op">-</span><span class="st"> </span>(<span class="dv">2</span> <span class="op">*</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/length.html">length</a></span>(add3))</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/names.html">names</a></span>(errors) &lt;-<span class="st"> </span>tdAbbrevs[<span class="kw"><a href="https://rdrr.io/r/base/names.html">names</a></span>(errors)]</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">knitr<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/knitr/man/kable.html">kable</a></span>(<span class="kw"><a href="https://rdrr.io/r/base/t.html">t</a></span>(errors))</a></code></pre></div>
 <table class="table">
 <thead><tr class="header">
 <th align="right">Diff. Phylog. Info</th>
