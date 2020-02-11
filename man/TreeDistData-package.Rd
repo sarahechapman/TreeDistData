@@ -4,9 +4,10 @@
 \name{TreeDistData-package}
 \alias{TreeDistData}
 \alias{TreeDistData-package}
-\title{TreeDistData: Large data files to accompany `TreeDist`}
+\title{TreeDistData: Large Data Files to Accompany the 'TreeDist' Package}
 \description{
-Data used to build vignettes in TreeDist package, and figures in Smith (20XX).
+Data used to build vignettes in the "TreeDist" package, 
+  and figures in Smith (20XX).
 }
 \seealso{
 Useful links:

@@ -1,5 +1,5 @@
 Package: TreeDistData
-Title: Large Data Files to Accompany `TreeDist`
+Title: Large Data Files to Accompany the 'TreeDist' Package
 Version: 0.0.0.9008
 Authors@R: c(person("Martin R.", 'Smith',
                   email="martin.smith@durham.ac.uk", 

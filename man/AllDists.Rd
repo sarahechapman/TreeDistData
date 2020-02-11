@@ -14,6 +14,12 @@ AllDists(tr1, tr2, verbose = FALSE)
 \description{
 All distances between a pair of trees
 }
+\examples{
+library('TreeTools')
+AllDists(BalancedTree(8), PectinateTree(8))
+AllDists(list(BalancedTree(6), PectinateTree(6)), BalancedTree(6))
+
+}
 \seealso{
 Other pairwise tree distances: \code{\link{CompareAllTrees}},
   \code{\link{PairwiseDistances}}

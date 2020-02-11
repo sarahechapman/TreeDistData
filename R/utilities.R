@@ -3,13 +3,13 @@
 #' @param verbose Logical specifying whether to notify user of progress.
 #'
 #' @template MRS
-#' @importFrom TreeDist MASTSize NNIDist
+#' @importFrom TreeDist MASTSize NNIDist SPRDist
 #' JaccardRobinsonFoulds
 #' DifferentPhylogeneticInfo MatchingSplitInfoDistance
 #' NyeTreeSimilarity MatchingSplitDistance
 #' ClusteringInfoDistance RobinsonFoulds
 #' @importFrom Quartet QuartetDivergence QuartetStatus
-#' @importFrom phangorn SPR.dist path.dist
+#' @importFrom phangorn path.dist
 #' @importFrom TBRDist TBRDist
 #' @family pairwise tree distances
 #'
@@ -28,14 +28,16 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
   masti <-  LnUnrooted(mast) / log(2)
   attributes(masti) <- attributes(mast)
 
-  if (verbose) cat('r')
+  if (verbose) cat('n')
   nni <- NNIDist(tr1, tr2)
+  if (verbose) cat('t')
   tbr <- TBRDist(tr1, tr2)
 
   NNIPart <- function (name) {
     if (is.null(names(nni))) nni[name, ] else nni[[name]]
   }
-  spr <- SPR.dist(tr1, tr2)
+  if (verbose) cat('s')
+  spr <- SPRdist(tr1, tr2)
   if (!is.null(names(spr))) spr <- spr[['spr']]
 
   if (verbose) cat('.')
@@ -156,7 +158,7 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
   nni <- PairwiseDistances(trees, NNIDist, 3L)
 
   MSG('SPR')
-  sprDist <- as.matrix(SPR.dist(trees))
+  sprDist <- as.matrix(SPRdist(trees))
 
   MSG('TBR')
   tbr <- TBRDist(trees, exact = exact)
