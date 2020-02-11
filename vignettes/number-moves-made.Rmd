@@ -64,12 +64,13 @@ BoxPlot <- function (method) {
   points(TDPair[[method]](pectinateTree, topTail), histMax * 0.2,
          pch = 24L, cex=1.5, col='black', bg = opaqueCol)
   axis(1, col=opaqueCol)
+  
+  # Return:
+  sum(distances == max(distances))
 }
 ```
 
 ```{r, echo=FALSE, fig.width=7, fig.height=5}
-library('TreeDist')
-
 PlotFunc <- function() {
   par(mar=c(1, 0.2, 1, 1), xpd = NA)
   nMethod <- dim(pd11)[1]
@@ -94,10 +95,15 @@ PlotFunc <- function() {
          inset=c(-0.0, -0.005), pt.cex=1.5)
 
   par(mar=c(1.9, 0.2, 0.2, 0.2))
-  XX <- lapply(rownames(pd11), BoxPlot)
+  vapply(rownames(pd11), BoxPlot, 1)
 }
 
-PlotFunc()
+atMax <- PlotFunc()
+```
+
+```{r kable, echo=FALSE}
+names(atMax) <- tdAbbrevs[names(atMax)]
+knitr::kable(atMax)
 ```
 
 PlotMe(1, oneCol, 1.75, PlotFunc)
