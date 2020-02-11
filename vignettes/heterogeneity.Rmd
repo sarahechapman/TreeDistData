@@ -47,9 +47,9 @@ BallVol <- function (r, n) {
 
 ```
 
-20-leaf trees, K
+20-leaf trees, K function [@Wiegand2004]
 
-```{r K-ring-20, echo=FALSE, fig.width=8, fig.asp=4/5}
+```{r K-fn-20, echo=FALSE, fig.width=8, fig.asp=4/5}
 PlotK <- function (method) {
   dists <- as.matrix(dists20[[method]])
   nBin <- 40
@@ -81,8 +81,9 @@ par(mfrow=c(4, 5), mar = rep(1, 4))
 lapply(methods, PlotK) -> XX
 ```
 
-50-leaf trees, K
-```{r K-ring-50, echo=FALSE, fig.width=8, fig.asp=4/5}
+50-leaf trees, K function
+
+```{r K-fn-50, echo=FALSE, fig.width=8, fig.asp=4/5}
 PlotK <- function (method) {
   dists <- as.matrix(dists50[[method]])
   nBin <- 40
@@ -114,11 +115,47 @@ par(mfrow=c(4, 5), mar = rep(1, 4))
 lapply(methods, PlotK) -> XX
 ```
 
-20-leaf trees, O
+20-leaf trees, O ring
 
-```{r O-ring, echo=FALSE, fig.width=8, fig.asp=4/5}
+```{r O-ring-20, echo=FALSE, fig.width=8, fig.asp=4/5}
 PlotO <- function (method) {
   dists <- as.matrix(dists20[[method]])
+  nBin <- 40
+  r <- if (length(unique(as.numeric(dists))) < nBin) {
+    sort(unique(as.numeric(dists)))
+  } else {
+    seq(0, max(dists), length.out = nBin + 1L)[-1]
+  }
+  k12r <- apply(dists, 1, function (d) {
+    vapply(r, function (bin) {
+      sum(d < bin)
+    }, 1)
+  }) - 1L
+  
+  o12r <- k12r[-1, ] - k12r[-nrow(k12r), ]
+  
+  plot(as.double(o12r) ~ rep(r[-1], ncol(o12r)), col = TreeDistCol(method), axes = FALSE,
+       ylim=c(min(0, o12r), max(0, o12r)), pch = '.')
+  
+  lapply(c(2, 3, 4, 6, 8, 10, 12, 15, 20, 40), function (n) {
+    shellVol <- BallVol(r[-1], n) - BallVol(r[-length(r)], n)
+    lines(r[-1], shellVol / max(shellVol) * ncol(dists), 
+          col = '#aaaaaa77')
+  })
+  points(rowMeans(o12r) ~ r[-1], col = TreeDistCol(method))
+
+  abline(h = 0, col = TreeDistCol(method))
+  legend('topleft', tdAbbrevs[method], bty = 'n')
+}
+par(mfrow=c(4, 5), mar = rep(1, 4))
+lapply(methods, PlotO) -> XX
+```
+
+50-leaf trees, O ring
+
+```{r O-ring-50, echo=FALSE, fig.width=8, fig.asp=4/5}
+PlotO <- function (method) {
+  dists <- as.matrix(dists50[[method]])
   nBin <- 40
   r <- if (length(unique(as.numeric(dists))) < nBin) {
     sort(unique(as.numeric(dists)))
