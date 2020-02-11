@@ -64,9 +64,6 @@ BoxPlot <- function (method) {
   points(TDPair[[method]](pectinateTree, topTail), histMax * 0.2,
          pch = 24L, cex=1.5, col='black', bg = opaqueCol)
   axis(1, col=opaqueCol)
-  
-  # Return:
-  sum(distances == max(distances))
 }
 ```
 
@@ -98,12 +95,7 @@ PlotFunc <- function() {
   vapply(rownames(pd11), BoxPlot, 1)
 }
 
-atMax <- PlotFunc()
-```
-
-```{r kable, echo=FALSE}
-names(atMax) <- tdAbbrevs[names(atMax)]
-knitr::kable(atMax)
+PlotFunc()
 ```
 
 PlotMe(1, oneCol, 1.75, PlotFunc)

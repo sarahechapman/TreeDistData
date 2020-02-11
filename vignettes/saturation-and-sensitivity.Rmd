@@ -1,0 +1,40 @@
+---
+title: "Saturation and sensitivity"
+author: "Martin R. Smith"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+bibliography: ../inst/REFERENCES.bib
+csl: ../inst/apa-old-doi-prefix.csl
+vignette: >
+  %\VignetteIndexEntry{Saturation and sensitivity}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, echo=FALSE, message=FALSE}
+library('Quartet')
+library('TreeTools')
+library('TreeDist')
+library('TreeDistData')
+data('pectinateDistances11', package = 'TreeDistData')
+pd11 <- pectinateDistances11
+abbrevs <- TreeDistData::tdAbbrevs
+GetData <- function (distances) {
+  c(
+    atMax = sum(abs(distances - max(distances)) < .Machine$double.eps^0.5),
+    #nearMax = sum(abs(distances - max(distances)) < max(distances) * 0.001),
+    #floatUniqueScores = length(unique(distances)),
+    uniqueScores = length(unique(round(distances, -log10(.Machine$double.eps^0.5))))
+  )
+}
+```
+
+Number of 100&nbsp;000 trees at maximum distance from a pectinate 11-leaf
+reference tree:
+
+```{r kable, echo=FALSE}
+dat <- apply(pd11, 1, GetData)
+colnames(dat) <- tdAbbrevs[colnames(dat)]
+rownames(dat) <- c('Trees with maximum score', 'Unique distances')
+knitr::kable(t(dat))
+```
