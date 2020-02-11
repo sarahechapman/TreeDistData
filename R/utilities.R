@@ -3,13 +3,12 @@
 #' @param verbose Logical specifying whether to notify user of progress.
 #'
 #' @template MRS
-#' @importFrom TreeDist MASTSize NNIDist SPRDist
+#' @importFrom TreeDist MASTSize NNIDist SPRDist PathDist
 #' JaccardRobinsonFoulds
 #' DifferentPhylogeneticInfo MatchingSplitInfoDistance
 #' NyeTreeSimilarity MatchingSplitDistance
 #' ClusteringInfoDistance RobinsonFoulds
 #' @importFrom Quartet QuartetDivergence QuartetStatus
-#' @importFrom phangorn path.dist
 #' @importFrom TBRDist TBRDist
 #' @family pairwise tree distances
 #'
@@ -37,7 +36,7 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
     if (is.null(names(nni))) nni[name, ] else nni[[name]]
   }
   if (verbose) cat('s')
-  spr <- SPRdist(tr1, tr2)
+  spr <- SPRDist(tr1, tr2)
   if (!is.null(names(spr))) spr <- spr[['spr']]
 
   if (verbose) cat('.')
@@ -65,7 +64,7 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
     tbr_u = tbr$tbr_max,
     rf = RobinsonFoulds(tr1, tr2),
     rfi = RobinsonFouldsInfo(tr1, tr2),
-    path = path.dist(tr1, tr2)
+    path = PathDist(tr1, tr2)
   )
 }
 
@@ -117,9 +116,8 @@ PairwiseDistances <- function (trees, Func, valueLength = 1L, ...) {
 #' @importFrom TreeTools as.Splits Postorder LnUnrooted
 #' @importFrom TBRDist TBRDist USPRDist
 #' @importFrom TreeDist DifferentPhylogeneticInfo MatchingSplitInfoDistance
-#' NyeTreeSimilarity MatchingSplitDistance MASTSize
+#' NyeTreeSimilarity MatchingSplitDistance MASTSize SPRDist
 #' ClusteringInfoDistance RobinsonFoulds RobinsonFouldsInfo
-#' @importFrom phangorn path.dist SPR.dist
 #' @importFrom Quartet ManyToManyQuartetAgreement
 #'
 #' @examples
@@ -133,7 +131,7 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
                              verbose = FALSE) {
   MSG <- function (...) if (verbose) message(Sys.time(), ': ', ...)
 
-  # Safest to re-order, as postordering avoids crash in path.dist and SPR.dist
+  # Re-order once; will happen when calling path.dist and SPR.dist
   trees <- structure(lapply(trees, Postorder), class='multiPhylo')
 
   splits <- as.Splits(trees)
@@ -158,7 +156,7 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
   nni <- PairwiseDistances(trees, NNIDist, 3L)
 
   MSG('SPR')
-  sprDist <- as.matrix(SPRdist(trees))
+  sprDist <- as.matrix(SPRDist(trees))
 
   MSG('TBR')
   tbr <- TBRDist(trees, exact = exact)
@@ -169,7 +167,7 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
   }
 
   MSG('path')
-  pathDist <- as.matrix(path.dist(trees))
+  pathDist <- as.matrix(PathDist(trees))
 
   MSG('DPI')
   dpi <- DifferentPhylogeneticInfo(splits, normalize = TRUE)
