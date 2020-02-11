@@ -71,8 +71,7 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
 #' Distances between each pair of trees
 #'
 #' @param trees List of trees of class `phylo`.
-#' @param Func distance function returning distance between two trees,
-#' e.g. [phangorn::treedist][path.dist].
+#' @param Func Function returning distance between two trees.
 #' @param valueLength Integer specifying expected length of the value returned
 #' by `Func`.
 #' @param \dots Additional arguments to `Func`.
