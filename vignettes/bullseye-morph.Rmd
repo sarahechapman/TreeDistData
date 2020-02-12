@@ -81,19 +81,15 @@ MethodLegend <- function (methods) {
          lwd = lwd, lty = 1, bty='n')
 }
 
-PlotRanks <- function (scoreList, yLab = "Spearman's rho", plotTitle = '', 
-                       omit = character(0)) {
+PlotRanks <- function (scoreList, methods, yLab = "Spearman's rho") {
   rhos <- Spear(scoreList)
   tipCounts <- dimnames(rhos)[[3]]
   nTip <- as.integer(substr(tipCounts, 0, nchar(tipCounts) - 7L))
   plot(0, 0, type = 'n', xlim = range(nTip), ylim = c(0.3, 1),
        xlab = 'Number of leaves', ylab = yLab)
-  title(plotTitle, font.main = 1, line = 1)
+  #title(plotTitle, font.main = 1, line = 1)
 
-  toPlot <- rev(colnames(rhos))
-  toPlot <- toPlot[!toPlot %in% omit]
-  
-  lapply(toPlot, function (method) {
+  lapply(methods, function (method) {
     if (!is.na(TreeDistCol(method))) {
       rhoMeans <- rhos['mean', method, ]
       rhoSE <- rhos['Std. Err.', method, ]
@@ -114,23 +110,23 @@ YLabel <- function (lastLegend) {
   ifelse(lastLegend %% 4, '', 'Success rate')
 }
 
-RowTitle <- function (words) {
-  oPar <- par(mar=rep(0, 4), cex=1)
+RowTitle <- function (words, font = 2, cex = 1) {
+  oPar <- par(mar = rep(0, 4), cex = cex)
   plot(0, 0, type='n', axes=FALSE, xlab='', ylab=NA)
-  text(0, 0, words, font=2)
+  text(0, 0, words, font = font)
   par(oPar)
 }
 
 ```
 
 
-```{r bullseye-results, echo=FALSE, fig.width=7.2, fig.asp = 6.46/4}
+```{r bullseye-results, echo=FALSE, fig.width=7.2, fig.asp = 6.13/4}
 PlotFunc <- function() {
   layout(matrix(c(rep(1, 4), t(matrix(2:9, 2)),
                   rep(10, 4), t(matrix(11:18, 2)),
-                  rep(19, 4), rep(20:21, each = 2)),
-                byrow = T, nrow = 8),
-         heights = c(1, 6, 7, 1, 6, 7, 1, 9))
+                  rep(19, 4), rep(20:21, each = 2), 22:25),
+                byrow = T, nrow = 9),
+         heights = c(1, 6, 7, 1, 6, 7, 1, 1, 6))
   marTop <- c(1, 2.5, 1.5, 0)
   marBtm <- c(3, 2.5, 1.5, 0)
   par(mar = marTop,
@@ -202,11 +198,14 @@ PlotFunc <- function() {
   }
 
   RowTitle('Accuracy of ranking')
+  RowTitle('(i) Subsampling experiment', 0, 0.8)
+  RowTitle('(j) Miscoding experiment', 0, 0.8)
 
-  PlotRanks(bullseyeMorphScores, "Spearman's rho",
-            plotTitle="(i) Subsampling experiment", omit = notPlotted)
-  PlotRanks(bullMoDiScores, "",
-            plotTitle="(j) Miscoding experiment", omit = notPlotted)
+  par(mar =  c(3, 2.5, 0, 0))
+  PlotRanks(bullseyeMorphScores, firstMethods, "Spearman's rho")
+  PlotRanks(bullseyeMorphScores, secondMethods, "")
+  PlotRanks(bullMoDiScores, firstMethods, '')
+  PlotRanks(bullMoDiScores, secondMethods, '')
 }
 
 PlotFunc()
