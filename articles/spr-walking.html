@@ -57,7 +57,7 @@
       <a href="../articles/Lin.html">Lin _et al_. tests</a>
     </li>
     <li>
-      <a href="../articles/bullseye-morph.html">Bullseye tests - morphological</a>
+      <a href="../articles/bullseye-morph.html">Bullseye tests</a>
     </li>
     <li>
       <a href="../articles/correlation.html">Metric correlation</a>
@@ -122,100 +122,100 @@
 
     
     
-<p>SPR Walking: generating 100 trees with 50 tips. Start with a pectinate 50-leaf tree.<br>
-Each subsequent tree is one SPR rearrangement away from the previous one. Trees SPR rearrangements continue until a forest of 100 trees has been generated. Distances between each pair of trees are then calculated, and plotted against the number of SPR moves that separate the pair.</p>
+<p>Start with a pectinate 50-leaf tree.<br>
+Each subsequent tree is one SPR rearrangement away from the previous one. SPR rearrangements continue until a forest of 100 trees has been generated. Distances between each pair of trees are then calculated, and plotted against the number of SPR moves that separate the pair.</p>
 <p><img src="spr-walking_files/figure-html/plots-1.png" width="672"></p>
 <p>We then calculate the rank correlation between the measured tree distance and the number of SPR moves used to generate the trees – which may not correspond to the exact SPR distance, as one SPR move may ‘undo’ another.</p>
-<p>Higher coefficients of correlation are, to a first approximation, desirable.</p>
+<p>Higher coefficients of correlation (Kendall’s τ) are, to a first approximation, desirable.</p>
 <table class="table">
 <thead><tr class="header">
 <th></th>
-<th align="right">r²</th>
+<th align="right">x</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Robinson-Foulds</td>
-<td align="right">0.673</td>
+<td>TBR (lb approx.)</td>
+<td align="right">0.848</td>
 </tr>
 <tr class="even">
-<td>Robinson-Foulds Info</td>
-<td align="right">0.495</td>
-</tr>
-<tr class="odd">
-<td>JRF (k=2, arboreal)</td>
-<td align="right">0.774</td>
-</tr>
-<tr class="even">
-<td>JRF (k=4, arboreal)</td>
-<td align="right">0.732</td>
-</tr>
-<tr class="odd">
-<td>JRF (k=2, non-arb.)</td>
-<td align="right">0.781</td>
-</tr>
-<tr class="even">
-<td>JRF (k=4, non-arb.)</td>
-<td align="right">0.747</td>
-</tr>
-<tr class="odd">
-<td>paste(plain(“Nye”), italic(“et al.”))</td>
-<td align="right">0.795</td>
-</tr>
-<tr class="even">
-<td>Diff. Phylog. Info</td>
-<td align="right">0.800</td>
-</tr>
-<tr class="odd">
 <td>Clust. Info. Dist.</td>
 <td align="right">0.845</td>
-</tr>
-<tr class="even">
-<td>Match. Split Info Dist</td>
-<td align="right">0.783</td>
-</tr>
-<tr class="odd">
-<td>Match. Split Dist.</td>
-<td align="right">0.704</td>
-</tr>
-<tr class="even">
-<td>NNI (upr bnd)</td>
-<td align="right">0.673</td>
 </tr>
 <tr class="odd">
 <td>NNI (ub tight)</td>
 <td align="right">0.842</td>
 </tr>
 <tr class="even">
-<td>NNI (lwr bnd)</td>
-<td align="right">0.673</td>
+<td>TBR (ub approx.)</td>
+<td align="right">0.827</td>
+</tr>
+<tr class="odd">
+<td>Quartet</td>
+<td align="right">0.819</td>
+</tr>
+<tr class="even">
+<td>Diff. Phylog. Info</td>
+<td align="right">0.800</td>
+</tr>
+<tr class="odd">
+<td>MAST size</td>
+<td align="right">0.798</td>
+</tr>
+<tr class="even">
+<td>MAST info</td>
+<td align="right">0.798</td>
+</tr>
+<tr class="odd">
+<td>paste(plain(“Nye”), italic(“et al.”))</td>
+<td align="right">0.795</td>
+</tr>
+<tr class="even">
+<td>Match. Split Info Dist</td>
+<td align="right">0.783</td>
+</tr>
+<tr class="odd">
+<td>JRF (k=2, non-arb.)</td>
+<td align="right">0.781</td>
+</tr>
+<tr class="even">
+<td>JRF (k=2, arboreal)</td>
+<td align="right">0.774</td>
+</tr>
+<tr class="odd">
+<td>JRF (k=4, non-arb.)</td>
+<td align="right">0.747</td>
+</tr>
+<tr class="even">
+<td>JRF (k=4, arboreal)</td>
+<td align="right">0.732</td>
 </tr>
 <tr class="odd">
 <td>SPR (approx.)</td>
 <td align="right">0.731</td>
 </tr>
 <tr class="even">
-<td>TBR (lb approx.)</td>
-<td align="right">0.848</td>
+<td>Match. Split Dist.</td>
+<td align="right">0.704</td>
 </tr>
 <tr class="odd">
-<td>TBR (ub approx.)</td>
-<td align="right">0.827</td>
+<td>Robinson-Foulds</td>
+<td align="right">0.673</td>
 </tr>
 <tr class="even">
-<td>MAST size</td>
-<td align="right">0.798</td>
+<td>NNI (lwr bnd)</td>
+<td align="right">0.673</td>
 </tr>
 <tr class="odd">
-<td>MAST info</td>
-<td align="right">0.798</td>
+<td>NNI (upr bnd)</td>
+<td align="right">0.673</td>
 </tr>
 <tr class="even">
-<td>Quartet</td>
-<td align="right">0.819</td>
-</tr>
-<tr class="odd">
 <td>Path</td>
 <td align="right">0.567</td>
+</tr>
+<tr class="odd">
+<td>Robinson-Foulds Info</td>
+<td align="right">0.495</td>
 </tr>
 </tbody>
 </table>
