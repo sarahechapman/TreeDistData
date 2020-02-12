@@ -1,5 +1,5 @@
 ---
-title: "Lin _et al_. tests"
+title: "Lin _et al_. cluster recovery tests"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
@@ -10,7 +10,7 @@ output:
 bibliography: ../inst/REFERENCES.bib
 csl: ../inst/apa-old-doi-prefix.csl
 vignette: >
-  %\VignetteIndexEntry{Lin _et al_. tests}
+  %\VignetteIndexEntry{Lin _et al_. cluster recovery tests}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -109,7 +109,7 @@ x <- seq(30, 70, 10)
 tm <- 'average'
 ranks <- cbind(
   rowMeans(apply(-linTestOneResults, c(1, 3), rank, ties.method = tm)),
-  rowMeans(apply(linTestTwoResults, c(1, 3), rank, ties.method = tm)),
+  rowMeans(apply(-linTestTwoResults, c(1, 3), rank, ties.method = tm)),
   rowMeans(apply(-linTestSPRResults, c(1, 3), rank, ties.method = tm)))
 
 dimnames(ranks) <- list(tdAbbrevs[rownames(ranks)],
