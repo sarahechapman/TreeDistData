@@ -73,17 +73,11 @@ MethodLines <- function (method, allScores, gap = 1L,
   }
 }
 
-MethodLegend <- function () {
-  legend('topleft', rep('', length(tdMethods)), col=TreeDistCol(tdMethods, 88),
+MethodLegend <- function (methods) {
+  legend('topleft', rep('', length(methods)), col=TreeDistCol(methods, 88),
          lwd = 3, lty = 1, bty='n')
-  legend('topleft', tdAbbrevs[tdMethods], col=TreeDistCol(tdMethods),
+  legend('topleft', tdAbbrevs[methods], col=TreeDistCol(methods),
          lwd = lwd, lty = 1, bty='n')
-
-
-  #legend('left', c(abbrevs[tdMethods[7:8]], '', '', 'Mean', 'Std. Err.'),
-  #       col=c(methodCol[tdMethods[7:8]], 'white', 'white', 'black',
-  #             paste0('#000000', semitransparency)),
-  #       lwd = c(rep(lwd, 2), NA, NA, 1, 3), lty = 1, bty='n')
 }
 
 PlotRanks <- function (scoreList, yLab="Spearman's rho", plotTitle='') {
@@ -122,12 +116,16 @@ RowTitle <- function (words) {
   par(oPar)
 }
 
+```
+
+
+```{r bullseye-results, echo=FALSE, fig.width=7.2, fig.asp = 6.46/4}
 PlotFunc <- function() {
-  layout(matrix(c(rep(1, 4), 2:5,
-                  rep(6, 4), 7:10,
-                  rep(11, 4), rep(12:13, each = 2)),
-                byrow = T, nrow = 6),
-         heights = c(1, 7, 1, 7, 1, 9))
+  layout(matrix(c(rep(1, 4), t(matrix(2:9, 2)),
+                  rep(10, 4), t(matrix(11:18, 2)),
+                  rep(19, 4), rep(20:21, each = 2)),
+                byrow = T, nrow = 8),
+         heights = c(1, 7, 7, 1, 7, 7, 1, 9))
   par(mar = c(3, 2.5, 1.5, 0),
       oma = c(0, 0, 0, 0), xpd = NA,
       mgp = c(1.5, 0.5, 0))
@@ -135,20 +133,37 @@ PlotFunc <- function() {
 
   RowTitle('Subsampling experiment')
   gap <- 2L
+  firstMethods <- c('cid', 'dpi', 'msid', 
+                    'qd', 'rfi',
+                    'ja2', 'jna4', 'nts', 'rf')
+  # NB: All NNI estimates plot very close together.
+  #     MAST * MASTI are indistinguishable
+    secondMethods <- c('cid', 'msd', 'path', 'rf', 
+                       'tbr_u', 'tbr_l', 'spr', 'nni_l',
+                       'mast')
+  abandonedMethods <- colnames(allScores)[!colnames(allScores) %in% 
+                                            c(firstMethods, secondMethods)]
+  #cat(abandonedMethods)
   for (nTip in names(bullseyeMorphScores)) {
-    plot(0, 0, type='n', xlim=c((1L + gap) * 200, 2000), ylim=c(0, 1),
-         xlab='Size of larger dataset (bp)',
-         ylab=YLabel(lastLegend))
+    plot(0, 0, type='n', xlim = c((1L + gap) * 200, 2000), ylim = c(0, 1),
+         xlab = 'Size of larger dataset (bp)',
+         ylab = YLabel(lastLegend))
     title(paste0('(', letters[lastLegend <- lastLegend + 1L], ') ', nTip),
           font.main = 1, line = 1)
 
     allScores <- bullseyeMorphScores[[nTip]]
-    lapply(colnames(allScores), MethodLines, allScores = allScores,
-           gap = gap) -> XX
-    if (nTip == '5 leaves') MethodLegend()
+    lapply(firstMethods, MethodLines, allScores = allScores, gap = gap) -> XX
+    if (nTip == '5 leaves') MethodLegend(firstMethods)
     if (nTip == '10 leaves') legend('topleft', c('Mean', 'Std. Err.'),
                                  col=paste0('#000000', c('', semitransparency)),
                                  lwd = c(1, 3), lty = 1, bty='n', inset=c(0, 0))
+    
+    plot(0, 0, type='n', xlim = c((1L + gap) * 200, 2000), ylim = c(0, 1),
+         xlab = 'Size of larger dataset (bp)',
+         ylab = YLabel(lastLegend))
+    lapply(secondMethods, MethodLines, allScores = allScores, gap = gap) -> XX
+    if (nTip == '5 leaves') MethodLegend(secondMethods)
+    
   }
 
   RowTitle('Miscoding experiment')
@@ -162,8 +177,14 @@ PlotFunc <- function() {
           font.main = 1, line = 1)
 
     allScores <- bullMoDiScores[[nTip]]
-    lapply(colnames(allScores), MethodLines, allScores = allScores,
-           gap = gap) -> XX
+    lapply(firstMethods, MethodLines, allScores = allScores, gap = gap) -> XX
+    
+    plot(0, 0, type='n',
+         xlim=c(as.integer(rownames(bullMoDiScores[[1]])[10 - gap]), 0),
+         xlab='% errors in better dataset',
+         ylim=c(0, 1), ylab=YLabel(lastLegend))
+    lapply(secondMethods, MethodLines, allScores = allScores, gap = gap) -> XX
+    
   }
 
   RowTitle('Accuracy of ranking')
@@ -173,10 +194,7 @@ PlotFunc <- function() {
   PlotRanks(bullMoDiScores, "",
             plotTitle="(j) Miscoding experiment")
 }
-```
 
-
-```{r bullseye-results, echo=FALSE, fig.width=7.2, fig.asp = 4.2/4}
 PlotFunc()
 ```
 
