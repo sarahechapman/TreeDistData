@@ -55,7 +55,8 @@ We then calculate the rank correlation between the measured tree distance and
 the number of SPR moves used to generate the trees – which may not correspond 
 to the exact SPR distance, as one SPR move may 'undo' another.
 
-Higher coefficients of correlation are, to a first approximation, desirable.
+Higher coefficients of correlation (Kendall's τ) are, to a first approximation,
+desirable.
 
 ```{r table, output="asis", echo = FALSE}
 Tabler <- function (method) {
@@ -64,7 +65,7 @@ Tabler <- function (method) {
            use="pairwise")$estimate
 }
 r2 <- vapply(plotSequence, Tabler, double(1))
-r2 <- matrix(r2, dimnames = list(TreeDistData::tdAbbrevs[names(r2)], 'r²'))
+r2 <- matrix(r2, dimnames = list(TreeDistData::tdAbbrevs[names(r2)], 'τ'))
 
 knitr::kable(abs(signif(r2[order(abs(r2), decreasing = TRUE), ], 3)))
 ```
