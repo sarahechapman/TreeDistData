@@ -5,8 +5,10 @@ date: "`r Sys.Date()`"
 output: 
   bookdown::pdf_document2:
     toc: no
-  html_document:
+  rmarkdown::html_vignette
     default: yes
+bibliography: ../inst/REFERENCES.bib
+csl: ../inst/apa-old-doi-prefix.csl
 vignette: >
   %\VignetteIndexEntry{Lin _et al_. tests}
   %\VignetteEngine{knitr::rmarkdown}
