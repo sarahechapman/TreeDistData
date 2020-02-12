@@ -19,6 +19,7 @@ jobs:
       r_packages:
        - kdensity
       r_binary_packages:
+       - benchmarkme
        - binom
        - bookdown
        - colorspace

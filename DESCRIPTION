@@ -20,6 +20,7 @@ Imports:
     TreeTools
 Suggests:
     ape,
+    benchmarkme,
     binom,
     bookdown,
     colorspace,

@@ -1,0 +1,115 @@
+---
+title: "Timing benchmarks"
+author: "Martin R. Smith <martin.smith@durham.ac.uk>"
+date: "`r Sys.Date()`"
+output: 
+  bookdown::pdf_document2:
+    toc: no
+  html_document:
+    default: yes
+---
+
+```{r pc-specs, echo = FALSE}
+if (requireNamespace('benchmarkme', quietly = TRUE)) {
+  cpu <- benchmarkme::get_cpu()
+  ram <- benchmarkme::get_ram()
+} else {
+  cpu <- list(model_name = "UNKNOWN", no_of_cores = "UNKNOWN")
+  ram <- "UNKNOWN"
+}
+```
+
+
+```{r setup, echo = FALSE, message = FALSE}
+library('TreeDist')
+path.dist <- phangorn::path.dist
+SPR.dist <- phangorn::SPR.dist
+TBRDist <- TBRDist::TBRDist
+RF <- TreeDist::RobinsonFoulds
+
+nTrees <- 45L # For c. 1000 comparisons
+nRepeats <- 1L # Increase locally for slower but more accurate benchmarking
+nPairs <- nTrees * (nTrees - 1) / 2
+
+SPRWalk <- function (nTip) {
+  set.seed(0L)
+  sprWalk <- vector('list', nTrees)
+  sprWalk[[1]] <- lastTree <- TreeTools::PectinateTree(nTip)
+  
+  for (i in seq_len(nTrees)[-1]) {
+    sprWalk[[i]] <- lastTree <- TreeSearch::SPR(lastTree)
+  }
+  
+  trees <- lapply(sprWalk, TreeTools::Preorder)
+  trees <- lapply(trees, TreeTools::Cladewise)
+  class(trees) <- 'multiPhylo'
+  trees
+}
+
+Times <- function (trees) {
+  splits <- TreeTools::as.Splits(trees)
+  timings <- microbenchmark::microbenchmark(
+    dpi = SharedPhylogeneticInfo(splits, normalize = FALSE),
+    msid = MatchingSplitInfo(splits, normalize = FALSE),
+    cid = MutualClusteringInfo(splits, normalize = FALSE),
+    nea = NyeTreeSimilarity(splits, normalize = FALSE),
+    ja2 = JaccardRobinsonFoulds(splits, k=2L, similarity = TRUE, normalize = FALSE),
+    ja4 = JaccardRobinsonFoulds(splits, k=4L, similarity = TRUE, normalize = FALSE),
+    jna2 = JaccardRobinsonFoulds(splits, k=2L, similarity = TRUE, arboreal = FALSE, normalize = FALSE),
+    jna4 = JaccardRobinsonFoulds(splits, k=4L, similarity = TRUE, arboreal = FALSE, normalize = FALSE),
+    msd = MatchingSplitDistance(splits),
+    qd = Quartet::ManyToManyQuartetAgreement(trees),
+    mast = TreeDistData::PairwiseDistances(trees, MASTSize, rooted = FALSE),
+    nni = TreeDistData::PairwiseDistances(trees, NNIDist, 3L),
+    spr = SPR.dist(trees),
+    tbr = TBRDist(trees, exact = FALSE),
+    rf = RF(splits),
+    rfi = RobinsonFouldsInfo(splits),
+    path = path.dist(trees),
+    
+    times = nRepeats
+  )
+}
+
+Plot <- function (timings, nTip) {
+  par(cex = 0.8)
+  boxplot(timings, border = TreeDistData::TreeDistCol(
+    as.character(summary(timings)[, 'expr'])),
+        xlab = 'Method', ylab = 'Total time elapsed / ms',
+        main = paste(nTip, 'leaves'))
+}
+
+```
+
+
+Benchmarking conducted on an `r cpu$model_name` machine with
+<!--`r cpu$no_of_cores` cores and-->
+`r as.character(benchmarkme:::print.ram(ram * 1024))` of RAM,
+comparing `r nTrees` trees obtained by performing successive subtree pruning and
+regrafting rearrangements on a pectinate starting tree.
+
+The time taken to compare all `r nPairs` pairs of trees by each method, 
+was calculated, replicating timing `r nRepeats` times.
+
+```{r timings-20, echo = FALSE, output = 'asis', fig.width = 8, fig.height = 4}
+times20 <- Times(SPRWalk(20))
+Plot(times20, 20)
+```
+
+```{r timings-50, echo = FALSE, output = 'asis', fig.width = 8, fig.height = 4}
+times50 <- Times(SPRWalk(50))
+Plot(times50, 50)
+```
+
+```{r timings-table, echo = FALSE}
+results <- summary(times20, unit = 'us')
+#cols <- c('mean', 'median')
+cols <- c('mean')
+rownames(results) <- TreeDistData::tdAbbrevs[as.character(results[, 'expr'])]
+results <- cbind(results[, cols, drop = FALSE],
+                 summary(times50, unit = 'us')[, cols, drop = FALSE])
+
+colnames (results) <- paste(rep(c(20, 50), each = length(cols)), 'leaves,', cols)
+knitr::kable(signif(results[order(results[, 1]), ] / nPairs, 2),
+             caption = "Time per comparison / µs")
+```
