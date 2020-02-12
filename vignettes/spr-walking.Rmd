@@ -40,10 +40,9 @@ Plotter <- function (method) {
 }
 ```
 
-SPR Walking: generating `r nTrees` trees with `r nTip` tips.
 Start with a pectinate `r nTip`-leaf tree.  
 Each subsequent tree is one SPR rearrangement away from the previous one.
-Trees SPR rearrangements continue until a forest of `r nTrees` trees has been
+SPR rearrangements continue until a forest of `r nTrees` trees has been
 generated.  Distances between each pair of trees are then calculated, and 
 plotted against the number of SPR moves that separate the pair.
 
@@ -67,5 +66,5 @@ Tabler <- function (method) {
 r2 <- vapply(plotSequence, Tabler, double(1))
 r2 <- matrix(r2, dimnames = list(TreeDistData::tdAbbrevs[names(r2)], 'r²'))
 
-knitr::kable(abs(signif(r2, 3)))
+knitr::kable(abs(signif(r2[order(abs(r2), decreasing = TRUE), ], 3)))
 ```
