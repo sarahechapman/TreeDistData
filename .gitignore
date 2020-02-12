@@ -13,6 +13,7 @@ src/*.dll
 *.out
 *.Rhistory
 *.run
+*.tex
 *.tre
 *.utf8.md
 /* *.Rd */
