@@ -15,7 +15,7 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r, echo=FALSE, message=FALSE}
+```{r init, echo=FALSE, message=FALSE}
 library('phangorn')
 library('TreeDistData')
 
@@ -74,6 +74,8 @@ MethodLines <- function (method, allScores, gap = 1L,
 }
 
 MethodLegend <- function () {
+  legend('topleft', rep('', length(tdMethods)), col=TreeDistCol(tdMethods, 88),
+         lwd = 3, lty = 1, bty='n')
   legend('topleft', tdAbbrevs[tdMethods], col=TreeDistCol(tdMethods),
          lwd = lwd, lty = 1, bty='n')
 
@@ -174,7 +176,7 @@ PlotFunc <- function() {
 ```
 
 
-```{r, echo=FALSE fig.width=7.2, fig.asp = 4.2/4}
+```{r bullseye-results, echo=FALSE, fig.width=7.2, fig.asp = 4.2/4}
 PlotFunc()
 ```
 
