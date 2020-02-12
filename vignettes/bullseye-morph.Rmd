@@ -228,3 +228,24 @@ PlotFunc()
 <!--
 PlotMe(4, twoCol, 4.2/4, PlotFunc())
 -->
+
+```{r table, echo=FALSE}
+bA <- bullseyeMorphScores[['50 leaves']]['1400', , ]
+bB <- bullseyeMorphScores[['50 leaves']]['1000', , ]
+bC <- bullMoDiScores[['50 leaves']]['4', , ]
+bD <- bullMoDiScores[['50 leaves']]['8', , ]
+invert <- c('mast', 'masti')
+bA[invert, ] <- -bA[invert, ]
+bB[invert, ] <- -bB[invert, ]
+bC[invert, ] <- -bC[invert, ]
+bD[invert, ] <- -bD[invert, ]
+ret <- cbind(subsampling50 = rowSums(bA < bB),
+             miscoding50 = rowSums(bC < bD),
+             subsamplingAccuracy = round(Spear(bullseyeMorphScores)['mean', , '50 leaves'], 3),
+             miscodingAccuracy = round(Spear(bullMoDiScores)['mean', , '50 leaves'], 3)
+)
+
+# TODO names
+knitr::kable(ret)
+
+```
