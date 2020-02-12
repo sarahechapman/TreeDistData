@@ -64,6 +64,7 @@ BoxPlot <- function (method) {
   points(TDPair[[method]](pectinateTree, topTail), histMax * 0.2,
          pch = 24L, cex=1.5, col='black', bg = opaqueCol)
   axis(1, col=opaqueCol)
+  invisible()
 }
 ```
 
