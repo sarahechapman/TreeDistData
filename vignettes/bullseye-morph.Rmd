@@ -1,5 +1,5 @@
 ---
-title: "Bullseye tests - morphological"
+title: "Bullseye tests"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
@@ -10,7 +10,7 @@ output:
 bibliography: ../inst/REFERENCES.bib
 csl: ../inst/apa-old-doi-prefix.csl
 vignette: >
-  %\VignetteIndexEntry{Bullseye tests - morphological}
+  %\VignetteIndexEntry{Bullseye tests}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -86,8 +86,10 @@ PlotRanks <- function (scoreList, methods, yLab = "Spearman's rho") {
   tipCounts <- dimnames(rhos)[[3]]
   nTip <- as.integer(substr(tipCounts, 0, nchar(tipCounts) - 7L))
   plot(0, 0, type = 'n', xlim = range(nTip), ylim = c(0.3, 1),
-       xlab = 'Number of leaves', ylab = yLab)
+       xlab = 'Number of leaves', ylab = yLab, axes = FALSE)
   #title(plotTitle, font.main = 1, line = 1)
+  axis(1, c(5, 10, 20, 50))
+  axis(2)
 
   lapply(methods, function (method) {
     if (!is.na(TreeDistCol(method))) {
@@ -149,11 +151,14 @@ PlotFunc <- function() {
   for (nTip in names(bullseyeMorphScores)) {
     par(mar = marTop)
     plot(0, 0, type='n', xlim = c((1L + gap) * 200, 2000), ylim = c(0, 1),
+         axes = FALSE,
          xlab = '',
          #xlab = 'Size of larger dataset (bp)',
          ylab = YLabel(lastLegend))
     title(paste0('(', letters[lastLegend <- lastLegend + 1L], ') ', nTip),
           font.main = 1, line = 1)
+    axis(1)
+    axis(2)
 
     allScores <- bullseyeMorphScores[[nTip]]
     allScores[, c('mast', 'masti'), ] <- -allScores[, c('mast', 'masti'), ]
@@ -165,8 +170,11 @@ PlotFunc <- function() {
     
     par(mar = marBtm)
     plot(0, 0, type='n', xlim = c((1L + gap) * 200, 2000), ylim = c(0, 1),
+         axes = FALSE,
          xlab = 'Size of larger dataset (bp)',
          ylab = YLabel(lastLegend))
+    axis(1)
+    axis(2)
     lapply(secondMethods, MethodLines, allScores = allScores, gap = gap) -> XX
     if (nTip == '5 leaves') MethodLegend(secondMethods)
     
@@ -180,9 +188,12 @@ PlotFunc <- function() {
          xlim = c(as.integer(rownames(bullMoDiScores[[1]])[10 - gap]), 0),
          #xlab = '% errors in better dataset',
          xlab = '',
+         axes = FALSE,
          ylim = c(0, 1), ylab=YLabel(lastLegend))
     title(paste0('(', letters[lastLegend <- lastLegend + 1L], ') ', nTip),
           font.main = 1, line = 1)
+    axis(1)
+    axis(2)
 
     allScores <- bullMoDiScores[[nTip]]
     allScores[, c('mast', 'masti'), ] <- -allScores[, c('mast', 'masti'), ]
@@ -192,7 +203,10 @@ PlotFunc <- function() {
     plot(0, 0, type = 'n',
          xlim = c(as.integer(rownames(bullMoDiScores[[1]])[10 - gap]), 0),
          xlab = '% errors in better dataset',
+         axes = FALSE,
          ylim = c(0, 1), ylab=YLabel(lastLegend))
+    axis(1)
+    axis(2)
     lapply(secondMethods, MethodLines, allScores = allScores, gap = gap) -> XX
     
   }
