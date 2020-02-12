@@ -11,6 +11,5 @@
 *.DOT  diff=astextplain
 *.pdf  diff=astextplain
 *.PDF	 diff=astextplain
-*.rda filter=lfs diff=lfs merge=lfs -text
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
