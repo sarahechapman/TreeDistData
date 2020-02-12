@@ -12,6 +12,7 @@ vignette: >
 ---
 
 ```{r init, echo=FALSE, warning=FALSE}
+library('TreeDistData')
 standardMargin <- c(0.4, 0.4, 0.8, 0.4)
 cbPalette8 <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442",
                 "#0072B2", "#D55E00", "#CC79A7")
@@ -116,12 +117,12 @@ PlotMethods <- function (methods, yMin = 0.4,
   
   
   legend(lp[1], bty='n',
-         lty=1, legend=abbrevs[methods], col=TreeDistCol(methods, 44),
-         text.col='#FFFFFFFF', pch = 15, pt.cex=1.8
+         lty = 1, legend=abbrevs[methods], col = TreeDistCol(methods, 44),
+         text.col = '#FFFFFFFF', pch = 15, pt.cex = 1.8
   )
   
   legend(lp[1], bty='n', lty=1, 
-         legend=abbrevs[methods], col=TreeDistCol(methods))
+         legend=abbrevs[methods], col = TreeDistCol(methods))
   
   legend(lp[2], bty='n', inset=c(0.09, 0),
          lty=1, lwd = c(1, 4, 6), col=c(1, "#00000066", "#00000033"),
