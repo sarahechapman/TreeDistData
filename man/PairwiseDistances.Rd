@@ -9,8 +9,7 @@ PairwiseDistances(trees, Func, valueLength = 1L, ...)
 \arguments{
 \item{trees}{List of trees of class \code{phylo}.}
 
-\item{Func}{distance function returning distance between two trees,
-e.g. \link[=path.dist]{phangorn::treedist}.}
+\item{Func}{Function returning distance between two trees.}
 
 \item{valueLength}{Integer specifying expected length of the value returned
 by \code{Func}.}
