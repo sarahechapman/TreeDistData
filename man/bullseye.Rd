@@ -52,9 +52,9 @@ The \code{bullseyeMorph} prefix refers to the 'subsampling' experiment
 described by Smith (forthcoming); the \code{bullMoDi} prefix refers to the
 'miscoding' experiment.
 
-\code{bullseyeDistances} contains four elements, each tabulating the distance
-between each pair of \emph{n}-leaf trees in \code{bullseyeTrees}.  For details, see
-\code{\link{sevenTipDistances}}.
+\code{bullseyeDistances} contains two elements, tabulating the distance
+between each pair of 20- and 50-leaf trees in \code{bullseyeTrees}.
+For details, see \code{\link{sevenTipDistances}}.
 }
 \references{
 \itemize{
