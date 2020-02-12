@@ -10,7 +10,7 @@ output:
 bibliography: ../inst/REFERENCES.bib
 csl: ../inst/apa-old-doi-prefix.csl
 vignette: >
-  %\VignetteIndexEntry{Lin _et al_. cluster recovery tests}
+  %\VignetteIndexEntry{Lin et al. cluster recovery tests}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
