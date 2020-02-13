@@ -111,7 +111,7 @@ compAllMethods <- c('rf', 'rfi',
                    'msd', 'mast', 'masti',
                    'nni_l', 'nni_u', 'spr',
                    'tbr_l', 'tbr_u', 'path')
-linTestReturn <- matrix(FALSE, nrow=length(compAllMethods), ncol=5L,
+linTestReturn <- matrix(FALSE, nrow = length(compAllMethods), ncol = 5L,
                         dimnames = list(compAllMethods,
                                         c('spc', 'pam', 'h.cmp', 'h.sng', 'h.avg')))
 runLinTestReturn <- t(0 * linTestReturn)
