@@ -49,16 +49,17 @@ BoxPlot <- function (method) {
     binMiddle <- max(dists) / nBins / 2
     kRange <- seq(0, max(dists), length.out = nBins)
     histMax <- max(kde(kRange))
-    plot(kRange, kde(kRange), col = faintCol, type='n', # main = abbrevs[method],
-         axes = FALSE, ylab = NA, xlab = NA, xlim=c(0, max(dists)))
+    plot(kRange, kde(kRange), col = faintCol, type = 'n', # main = abbrevs[method],
+         axes = FALSE, ylab = NA, xlab = NA, 
+         xlim = c(0, max(distances, TDPair[[method]](pectinateTree, topTail))))
     rect(kRange - binMiddle, 0, kRange + binMiddle, kde(kRange), col = faintCol,
          border = NA)
   }
   yAt <- histMax / 2L
-  boxplot(distances, border=opaqueCol, horizontal = TRUE,
-          axes=FALSE, add=TRUE, at=yAt, outline = FALSE, boxwex=histMax * 0.6,
-          col= '#ffffff00', lwd=2)
-  legend('left', bty='n', legend=abbrevs[method])
+  boxplot(distances, border = opaqueCol, horizontal = TRUE,
+          axes = FALSE, add = TRUE, at = yAt, outline = FALSE, 
+          boxwex = histMax * 0.6, col = '#ffffff00', lwd = 2)
+  legend('left', bty = 'n', legend = abbrevs[method])
   points(TDPair[[method]](pectinateTree, pm1l), histMax * 0.8,
          pch = 25L, cex=1.5, col='black', bg = opaqueCol)
   points(TDPair[[method]](pectinateTree, topTail), histMax * 0.2,
