@@ -84,15 +84,23 @@ TDFunctions <- list(
 TDPair <- list(
   rf = function (tr, ref) TreeDist::RobinsonFoulds(tr, ref),
   rfi = function (tr, ref) TreeDist::RobinsonFouldsInfo(tr, ref),
-  ja2 = function (tr, ref) TreeDist::JaccardRobinsonFoulds(tr, ref, k=2, arboreal=TRUE),
-  jna2 = function (tr, ref) TreeDist::JaccardRobinsonFoulds(tr, ref, k=4, arboreal=TRUE),
-  ja4 = function (tr, ref) TreeDist::JaccardRobinsonFoulds(tr, ref, k=2, arboreal=FALSE),
-  jna4 = function (tr, ref) TreeDist::JaccardRobinsonFoulds(tr, ref, k=4, arboreal=FALSE),
+  ja2 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
+    tr, ref, k = 2, arboreal = TRUE, normalize = TRUE), 4),
+  jna2 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
+    tr, ref, k = 4, arboreal = TRUE, normalize = TRUE), 4),
+  ja4 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
+    tr, ref, k = 2, arboreal = FALSE, normalize = TRUE), 4),
+  jna4 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
+    tr, ref, k = 4, arboreal = FALSE, normalize = TRUE), 4),
 
-  dpi = function (tr, ref) round(TreeDist::DifferentPhylogeneticInfo(tr, ref, normalize = TRUE), 4L),
-  msid = function (tr, ref) round(TreeDist::MatchingSplitInfoDistance(tr, ref, normalize = TRUE), 4L),
-  cid = function (tr, ref) round(TreeDist::ClusteringInfoDistance(tr, ref, normalize = TRUE), 4L),
-  nts = function (tr, ref) round(NyeTreeSimilarity(tr, ref, similarity = TRUE, normalize = TRUE), 4L),
+  dpi = function (tr, ref) round(TreeDist::DifferentPhylogeneticInfo(
+    tr, ref, normalize = TRUE), 4L),
+  msid = function (tr, ref) round(TreeDist::MatchingSplitInfoDistance(
+    tr, ref, normalize = TRUE), 4L),
+  cid = function (tr, ref) round(TreeDist::ClusteringInfoDistance(
+    tr, ref, normalize = TRUE), 4L),
+  nts = function (tr, ref) round(NyeTreeSimilarity(
+    tr, ref, similarity = TRUE, normalize = TRUE), 4L),
   tbr_u = function(tr, ref) TBRDist::TBRDist(tr, ref)$tbr_max,
   tbr_l = function(tr, ref) TBRDist::TBRDist(tr, ref)$tbr_min,
   nni_t = function(tr, ref) TreeDist::NNIDist(tr, ref)['tight_upper'],
