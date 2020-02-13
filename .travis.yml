@@ -26,6 +26,7 @@ jobs:
        - devtools
        - knitr
        - MASS
+       - microbenchmark
        - phangorn
        - Rdpack
        - rmarkdown

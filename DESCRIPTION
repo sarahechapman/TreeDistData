@@ -27,6 +27,7 @@ Suggests:
     kdensity,
     knitr,
     MASS,
+    microbenchmark,
     phangorn,
     Rdpack,
     rmarkdown,
