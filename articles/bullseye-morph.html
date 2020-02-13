@@ -54,13 +54,16 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/Lin.html">Lin _et al_. tests</a>
+      <a href="../articles/Lin.html">Lin _et al_. cluster recovery tests</a>
     </li>
     <li>
       <a href="../articles/bullseye-morph.html">Bullseye tests</a>
     </li>
     <li>
       <a href="../articles/correlation.html">Metric correlation</a>
+    </li>
+    <li>
+      <a href="../articles/expected-similarity.html">Expected values for tree distance metrics</a>
     </li>
     <li>
       <a href="../articles/heterogeneity.html">Heterogeneity</a>
@@ -79,6 +82,9 @@
     </li>
     <li>
       <a href="../articles/spr-walking.html">SPR walking</a>
+    </li>
+    <li>
+      <a href="../articles/timing.html">Timing benchmarks</a>
     </li>
     <li>
       <a href="../articles/tree-shape.html">Accounting for tree shape</a>
@@ -113,7 +119,7 @@
                         <h4 class="author">Martin R. Smith <a href="mailto:martin.smith@durham.ac.uk">martin.smith@durham.ac.uk</a>
 </h4>
             
-            <h4 class="date">2020-02-12</h4>
+            <h4 class="date">2020-02-13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ms609/TreeDistData/blob/master/vignettes/bullseye-morph.Rmd"><code>vignettes/bullseye-morph.Rmd</code></a></small>
       <div class="hidden name"><code>bullseye-morph.Rmd</code></div>
@@ -126,7 +132,165 @@
 <!--
 PlotMe(4, twoCol, 4.2/4, PlotFunc())
 -->
-  </div>
+<table class="table">
+<thead><tr class="header">
+<th></th>
+<th align="right">subsampling50</th>
+<th align="right">miscoding50</th>
+<th align="right">subsamplingAccuracy</th>
+<th align="right">miscodingAccuracy</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>dpi</td>
+<td align="right">651</td>
+<td align="right">937</td>
+<td align="right">0.708</td>
+<td align="right">0.935</td>
+</tr>
+<tr class="even">
+<td>msid</td>
+<td align="right">639</td>
+<td align="right">902</td>
+<td align="right">0.686</td>
+<td align="right">0.913</td>
+</tr>
+<tr class="odd">
+<td>cid</td>
+<td align="right">650</td>
+<td align="right">941</td>
+<td align="right">0.714</td>
+<td align="right">0.935</td>
+</tr>
+<tr class="even">
+<td>nts</td>
+<td align="right">644</td>
+<td align="right">961</td>
+<td align="right">0.704</td>
+<td align="right">0.936</td>
+</tr>
+<tr class="odd">
+<td>ja2</td>
+<td align="right">642</td>
+<td align="right">965</td>
+<td align="right">0.711</td>
+<td align="right">0.943</td>
+</tr>
+<tr class="even">
+<td>ja4</td>
+<td align="right">629</td>
+<td align="right">929</td>
+<td align="right">0.671</td>
+<td align="right">0.925</td>
+</tr>
+<tr class="odd">
+<td>jna2</td>
+<td align="right">631</td>
+<td align="right">955</td>
+<td align="right">0.699</td>
+<td align="right">0.937</td>
+</tr>
+<tr class="even">
+<td>jna4</td>
+<td align="right">635</td>
+<td align="right">931</td>
+<td align="right">0.669</td>
+<td align="right">0.927</td>
+</tr>
+<tr class="odd">
+<td>msd</td>
+<td align="right">636</td>
+<td align="right">777</td>
+<td align="right">0.665</td>
+<td align="right">0.785</td>
+</tr>
+<tr class="even">
+<td>mast</td>
+<td align="right">498</td>
+<td align="right">622</td>
+<td align="right">0.515</td>
+<td align="right">0.793</td>
+</tr>
+<tr class="odd">
+<td>masti</td>
+<td align="right">498</td>
+<td align="right">622</td>
+<td align="right">0.515</td>
+<td align="right">0.793</td>
+</tr>
+<tr class="even">
+<td>nni_l</td>
+<td align="right">410</td>
+<td align="right">781</td>
+<td align="right">0.595</td>
+<td align="right">0.903</td>
+</tr>
+<tr class="odd">
+<td>nni_t</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">0.963</td>
+<td align="right">1.000</td>
+</tr>
+<tr class="even">
+<td>nni_u</td>
+<td align="right">444</td>
+<td align="right">802</td>
+<td align="right">0.583</td>
+<td align="right">0.902</td>
+</tr>
+<tr class="odd">
+<td>spr</td>
+<td align="right">406</td>
+<td align="right">613</td>
+<td align="right">0.329</td>
+<td align="right">0.721</td>
+</tr>
+<tr class="even">
+<td>tbr_l</td>
+<td align="right">312</td>
+<td align="right">604</td>
+<td align="right">0.439</td>
+<td align="right">0.837</td>
+</tr>
+<tr class="odd">
+<td>tbr_u</td>
+<td align="right">398</td>
+<td align="right">693</td>
+<td align="right">0.339</td>
+<td align="right">0.840</td>
+</tr>
+<tr class="even">
+<td>rf</td>
+<td align="right">410</td>
+<td align="right">781</td>
+<td align="right">0.595</td>
+<td align="right">0.903</td>
+</tr>
+<tr class="odd">
+<td>rfi</td>
+<td align="right">638</td>
+<td align="right">785</td>
+<td align="right">0.643</td>
+<td align="right">0.746</td>
+</tr>
+<tr class="even">
+<td>qd</td>
+<td align="right">626</td>
+<td align="right">809</td>
+<td align="right">0.619</td>
+<td align="right">0.861</td>
+</tr>
+<tr class="odd">
+<td>path</td>
+<td align="right">633</td>
+<td align="right">704</td>
+<td align="right">0.621</td>
+<td align="right">0.600</td>
+</tr>
+</tbody>
+</table>
+</div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
 

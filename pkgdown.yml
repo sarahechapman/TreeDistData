@@ -5,12 +5,14 @@ articles:
   Lin: Lin.html
   bullseye-morph: bullseye-morph.html
   correlation: correlation.html
+  expected-similarity: expected-similarity.html
   heterogeneity: heterogeneity.html
   length-of-move: length-of-move.html
   number-moves-made: number-moves-made.html
   number-tips-moved: number-tips-moved.html
   saturation-and-sensitivity: saturation-and-sensitivity.html
   spr-walking: spr-walking.html
+  timing: timing.html
   tree-shape: tree-shape.html
 urls:
   reference: https://ms609.github.io/TreeDistData/reference
