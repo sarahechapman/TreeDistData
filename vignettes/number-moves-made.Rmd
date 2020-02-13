@@ -32,7 +32,8 @@ BoxPlot <- function (method) {
   faintCol <- TreeDistCol(method, '33')
   opaqueCol <- TreeDistCol(method)
   if (method %in% c('rf', 'spr', 'mast', 'masti', 'mafi', 'tbr_u', 'nni_t', 'nni_u')) {
-    histy <- hist(distances - 1e-7, breaks=min(80L, length(unique(distances))), plot=FALSE)
+    histy <- hist(distances - 1e-7, plot = FALSE,
+                  breaks = min(80L, length(unique(distances))))
     histMax <- max(histy$counts)
     xMax <- switch(method,
                    'mafi' = LnUnrooted(11) / log(2),
@@ -43,23 +44,34 @@ BoxPlot <- function (method) {
     plot(histy, axes = FALSE, main = NA, xlab = NA, ylab = NA, cex = 0.8,
          col = faintCol, border=NA, xlim = xLim)
   } else {
-    dists <- sample(distances, min(1000, length(distances)))
-    kde <- kdensity::kdensity(dists, tolerance = 5, kernel = 'gamma')
-    nBins <- 1024
-    binMiddle <- max(distances) / nBins / 2
-    kRange <- seq(0, max(distances), length.out = nBins)
-    histMax <- max(kde(kRange))
-    plot(kRange, kde(kRange), col = faintCol, type = 'n', # main = abbrevs[method],
-         axes = FALSE, ylab = NA, xlab = NA, 
-         xlim = c(0, max(distances, TDPair[[method]](pectinateTree, topTail))))
-    rect(kRange - binMiddle, 0, kRange + binMiddle, kde(kRange), col = faintCol,
-         border = NA)
+    # KDE not appropriate when not gamma distributed.
+#    dists <- sample(distances, min(1000, length(distances)))
+#    kde <- kdensity::kdensity(dists, tolerance = 5, kernel = 'gamma')
+#    nBins <- 1024
+#    binMiddle <- max(distances) / nBins / 2
+#    kRange <- seq(0, max(distances), length.out = nBins)
+#    histMax <- max(kde(kRange))
+#    plot(kRange, kde(kRange), col = faintCol, type = 'n',
+#         axes = FALSE, ylab = NA, xlab = NA,
+#         xlim = c(0, max(distances, TDPair[[method]](pectinateTree, topTail))))
+#    rect(kRange - binMiddle, 0, kRange + binMiddle, kde(kRange), col = faintCol,
+#         border = NA)
+        histy <- hist(distances - 1e-7, breaks=min(80L, length(unique(distances))), plot=FALSE)
+    histMax <- max(histy$counts)
+    xMax <- switch(method,
+                   'mafi' = LnUnrooted(11) / log(2),
+                   'mast' = 11,
+                   'masti' = LnUnrooted(11) / log(2),
+                   max(histy$breaks))
+    xLim <- if(method %in% c('mast', 'masti')) c(xMax, 0) else c(0, xMax)
+    plot(histy, axes = FALSE, main = NA, xlab = NA, ylab = NA, cex = 0.8,
+         col = faintCol, border=NA, xlim = xLim)
   }
   yAt <- histMax / 2L
   boxplot(distances, border = opaqueCol, horizontal = TRUE,
           axes = FALSE, add = TRUE, at = yAt, outline = FALSE, 
           boxwex = histMax * 0.6, col = '#ffffff00', lwd = 2)
-  legend('left', bty = 'n', legend = abbrevs[method])
+  legend('left', bty = 'n', legend = tdAbbrevs[method])
   points(TDPair[[method]](pectinateTree, pm1l), histMax * 0.8,
          pch = 25L, cex=1.5, col='black', bg = opaqueCol)
   points(TDPair[[method]](pectinateTree, topTail), histMax * 0.2,
