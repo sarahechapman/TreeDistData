@@ -70,11 +70,11 @@ LinTest <- function(k, TestSet = LinTestOneSet, nTip = 100L, nTrees = 100L,
   cat (".")
   if (i %% 50L == 0L) cat(' ', i, "\n")
   trees <- c(TestSet(nTip, k, nTrees), TestSet(nTip, k, nTrees))
-  comparison <- CompareAllTrees(trees, slow = FALSE, verbose = FALSE)
+  comparison <- CompareAllTrees(trees, slow = TRUE, verbose = FALSE)
   # Too slow to compute
-  comparison$mast <- NULL
-  comparison$masti <- NULL
-  comparison$qd <- NULL
+  # comparison$mast <- NULL
+  # comparison$masti <- NULL
+  # comparison$qd <- NULL
 
   # NAs not supported
   comparison$nni_t <- NULL
@@ -104,11 +104,15 @@ LinTest <- function(k, TestSet = LinTestOneSet, nTip = 100L, nTrees = 100L,
         h.avg = ClusterOK(HClusters, method='average')
         )
 }
-linTestReturn <- matrix(FALSE, nrow=16L, ncol=5L,
-                        dimnames = list(c('vpi', 'vmsi', 'vci', 'nts',
-                                          'ja2', 'ja4', 'jna2', 'jna4',
-                                          'msd', 'nni_l', 'nni_u', 'spr',
-                                          'tbr_l', 'tbr_u', 'rf', 'path'),
+
+compAllMethods <- c('rf', 'rfi',
+                   'ja2', 'ja4', 'jna2', 'jna4',
+                   'dpi', 'msid', 'cid', 'qd', 'nts',
+                   'msd', 'mast', 'masti',
+                   'nni_l', 'nni_u', 'spr',
+                   'tbr_l', 'tbr_u', 'path')
+linTestReturn <- matrix(FALSE, nrow=length(compAllMethods), ncol=5L,
+                        dimnames = list(compAllMethods,
                                         c('spc', 'pam', 'h.cmp', 'h.sng', 'h.avg')))
 runLinTestReturn <- t(0 * linTestReturn)
 
