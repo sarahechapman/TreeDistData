@@ -56,14 +56,10 @@ BoxPlot <- function (method) {
 #         xlim = c(0, max(distances, TDPair[[method]](pectinateTree, topTail))))
 #    rect(kRange - binMiddle, 0, kRange + binMiddle, kde(kRange), col = faintCol,
 #         border = NA)
-        histy <- hist(distances - 1e-7, breaks=min(80L, length(unique(distances))), plot=FALSE)
+    histy <- hist(distances - 1e-7, plot = FALSE,
+                      breaks = min(512L, length(unique(distances))))
     histMax <- max(histy$counts)
-    xMax <- switch(method,
-                   'mafi' = LnUnrooted(11) / log(2),
-                   'mast' = 11,
-                   'masti' = LnUnrooted(11) / log(2),
-                   max(histy$breaks))
-    xLim <- if(method %in% c('mast', 'masti')) c(xMax, 0) else c(0, xMax)
+    xLim <- c(0, max(histy$breaks, TDPair[[method]](pectinateTree, topTail)))
     plot(histy, axes = FALSE, main = NA, xlab = NA, ylab = NA, cex = 0.8,
          col = faintCol, border=NA, xlim = xLim)
   }
@@ -93,16 +89,16 @@ PlotFunc <- function() {
   par(mar=c(0.2, 0, 1, 1))
   TreeDistPlot(pectinateTree, '', leaveRoom = FALSE, 
                cex=1, xpd=NA)
-  legend('bottomleft', legend="Pectinate reference\ntree", bty='n',
+  legend('bottomleft', legend = "Pectinate reference\ntree", bty='n',
          inset=c(-0.1, -0.04))
 
   TreeDistPlot(pm1l, '', bold=1L, leaveRoom = FALSE, cex=1, graft=20)
-  legend('bottomleft', legend="Move one tip (A)", pch=25, bty='n',
+  legend('bottomleft', legend = "Move one tip (A)", pch=25, bty='n',
          inset=c(-0, -0.02), pt.cex=1.5)
 
   TreeDistPlot(topTail, '', leaveRoom = FALSE, cex=1,
                bold=c(1, 11), graft=c(6, 20))
-  legend('bottomleft', legend="Exchange two \ntips (A, K)", pch=24, bty='n',
+  legend('bottomleft', legend = "Exchange two \ntips (A, K)", pch=24, bty='n',
          inset=c(-0.0, -0.005), pt.cex=1.5)
 
   par(mar=c(1.9, 0.2, 0.2, 0.2))
