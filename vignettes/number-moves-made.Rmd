@@ -29,7 +29,7 @@ pd11['qd', ] <- pd11['qd', ] * 330L
 
 BoxPlot <- function (method) {
   distances <- pd11[method, ]
-  faintCol <- TreeDistCol(method, '33')
+  faintCol <- TreeDistCol(method, '44')
   opaqueCol <- TreeDistCol(method)
   if (method %in% c('rf', 'spr', 'mast', 'masti', 'mafi', 'tbr_u', 'nni_t', 'nni_u')) {
     histy <- hist(distances - 1e-7, plot = FALSE,
