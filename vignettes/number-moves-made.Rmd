@@ -46,8 +46,8 @@ BoxPlot <- function (method) {
     dists <- sample(distances, min(1000, length(distances)))
     kde <- kdensity::kdensity(dists, tolerance = 5, kernel = 'gamma')
     nBins <- 1024
-    binMiddle <- max(dists) / nBins / 2
-    kRange <- seq(0, max(dists), length.out = nBins)
+    binMiddle <- max(distances) / nBins / 2
+    kRange <- seq(0, max(distances), length.out = nBins)
     histMax <- max(kde(kRange))
     plot(kRange, kde(kRange), col = faintCol, type = 'n', # main = abbrevs[method],
          axes = FALSE, ylab = NA, xlab = NA, 
