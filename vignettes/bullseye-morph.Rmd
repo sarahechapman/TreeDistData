@@ -15,6 +15,12 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
+I implemented 'bullseye' tests [@Kuhner2015] by drawing 1&nbsp;000 _n_-leaf
+trees at random from the uniform distribution (using the R function 
+`ape::rtree`, repeated for n = 5, 10, 20, 50), and using these trees to 
+simulate binary phylogenetic characters under the Jukes-Cantor model
+(using R function phangorn::simSeq).
+
 ```{r init, echo=FALSE, message=FALSE}
 library('phangorn')
 library('TreeDistData')
@@ -249,3 +255,5 @@ ret <- cbind(subsampling50 = rowSums(bA < bB),
 knitr::kable(ret)
 
 ```
+
+## References
