@@ -31,7 +31,15 @@ exclude <- c('nni_t', 'masti')
 distanceDistribution25 <- distanceDistribution25[!rownames(distanceDistribution25) %in% exclude, ]
 data("distanceDistribution50", package="TreeDistData")
 distanceDistribution50 <- distanceDistribution50[!rownames(distanceDistribution50) %in% exclude, ]
-toCorrelate <- rownames(distanceDistribution25)
+toCorrelate <- c("msd", "msid", 
+                 "dpi", "cid", "nts",
+                 "ja2", "ja4", "jna2", "jna4",
+                 "rf", "rfi", 
+                 "qd", "mast", "nni_l", "nni_u", "spr", "tbr_l", "tbr_u",
+                 "path")
+if (!all(rownames(distanceDistribution50) %in% toCorrelate)) {
+  warning("Missing ", rownames(distanceDistribution50)[!rownames(distanceDistribution50) %in% toCorrelate])
+}
 colScale <- colorspace::sequential_hcl(1000, palette='viridis')
 ```
 
