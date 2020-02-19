@@ -38,7 +38,7 @@ toCorrelate <- c(
                  "dpi", "cid", "nts",
                  "ja2", "ja4", "jna2", "jna4",
                  "rfi", "rf",
-                 "mast", "nni_l", "spr", "tbr_l", "tbr_u" # Integers
+                 "nni_l", "spr", "tbr_l", "tbr_u", "mast" # Integers
                  )
 if (!all(rownames(distanceDistribution50) %in% c('nni_u', toCorrelate))) {
   warning("Missing ", rownames(distanceDistribution50)[!rownames(distanceDistribution50) %in% toCorrelate])
