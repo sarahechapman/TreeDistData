@@ -1,5 +1,5 @@
 ---
-title: "Saturation and sensitivity"
+title: "§4. Saturation and sensitivity"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette

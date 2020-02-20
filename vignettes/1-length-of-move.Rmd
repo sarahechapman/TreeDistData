@@ -1,5 +1,5 @@
 ---
-title: "Length of move"
+title: "§1. Length of move"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette

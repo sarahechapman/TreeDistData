@@ -1,5 +1,5 @@
 ---
-title: "Expected values for tree distance metrics"
+title: "§9. Expected values for tree distance metrics"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette

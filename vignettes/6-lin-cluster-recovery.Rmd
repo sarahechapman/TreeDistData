@@ -1,5 +1,5 @@
 ---
-title: "Lin _et al_. cluster recovery tests"
+title: "§6. Cluster recovery tests"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
