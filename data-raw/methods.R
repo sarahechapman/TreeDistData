@@ -55,7 +55,7 @@ tdBoxAbbrevs <- c(
   jna4 = 'JRF\n(k=4,\nnon-arb.)',
 
   nea = 'Nye\net al.',
-  nts = expression(paste(plain('Nye\n'), italic('et al.'))),
+  nts = 'Nye\net al.',#expression(paste(plain('Nye\n'), italic('et al.'))),
 
   dpi = 'Diff.\nPhylog.\nInfo',
   cid = 'Clust.\nInfo.\nDist.',
