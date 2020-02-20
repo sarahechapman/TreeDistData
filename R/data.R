@@ -301,7 +301,7 @@ NULL
 'tdAbbrevs'
 
 #' @rdname TreeDistMethods
-'tdnAbbrevs'
+'tdBoxAbbrevs'
 
 #' @rdname TreeDistMethods
 'tdMethods'
