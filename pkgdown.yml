@@ -2,18 +2,18 @@ pandoc: '2.2'
 pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
-  Lin: Lin.html
-  bullseye-morph: bullseye-morph.html
-  correlation: correlation.html
-  expected-similarity: expected-similarity.html
-  heterogeneity: heterogeneity.html
-  length-of-move: length-of-move.html
-  number-moves-made: number-moves-made.html
-  number-tips-moved: number-tips-moved.html
-  saturation-and-sensitivity: saturation-and-sensitivity.html
-  spr-walking: spr-walking.html
-  timing: timing.html
-  tree-shape: tree-shape.html
+  1-length-of-move: 1-length-of-move.html
+  10-timing: 10-timing.html
+  11-correlation: 11-correlation.html
+  2-leaves-moved: 2-leaves-moved.html
+  3-moves-made: 3-moves-made.html
+  4-saturation-and-sensitivity: 4-saturation-and-sensitivity.html
+  5-tree-shape: 5-tree-shape.html
+  6-lin-cluster-recovery: 6-lin-cluster-recovery.html
+  7-bullseye: 7-bullseye.html
+  8-spr-walking: 8-spr-walking.html
+  9-expected-similarity: 9-expected-similarity.html
+  X-heterogeneity: X-heterogeneity.html
 urls:
   reference: https://ms609.github.io/TreeDistData/reference
   article: https://ms609.github.io/TreeDistData/articles
