@@ -23,6 +23,9 @@ Matching Splits and Path metrics are poorly correlated with all metrics except
 each other.  The Robinson-Foulds metric shows minimal correlation with any other 
 metric, notwithstanding a weak correlation with the Nye _et al._ measure.
 
+Not plotted: MASTI, which correlates perfectly with MAST, and NNI upper bound,
+which correlates perfectly with NNI lower bound.
+
 ```{r data-load, echo=FALSE}
 library('TreeDistData')
 data("distanceDistribution25", package="TreeDistData")
@@ -76,7 +79,8 @@ PlotCorr <- function(distribution) {
       if (i == j) {
         plot.new()
         method <- toCorrelate[i]
-        text(0.5, 0.5, tdAbbrevs[method], col = TreeDistCol(method), cex = 0.9)
+        text(0.5, 0.5, col = TreeDistCol(method), cex = 0.9,
+             gsub(' ', '\n', tdAbbrevs[method], fixed = TRUE))
         box(which='plot', col = TreeDistCol(method), lwd=3)
       } else if (i < j) {
         PlotR2(distribution, toCorrelate[i], toCorrelate[j])
@@ -88,9 +92,13 @@ PlotCorr <- function(distribution) {
 ```
 
 
+Correlation between distances for 10&nbsp;000 pairs of 25-leaf trees:
+
 ```{R metric-correlation, echo=FALSE, fig.width=7, fig.asp=9/8, out.width='98%', fig.align='center', warning=FALSE}
 PlotCorr(distanceDistribution25)
 ```
+
+Correlation between distances for 10&nbsp;000 pairs of 50-leaf trees:
 
 ```{R metric-correlation-50, echo=FALSE, fig.width=7, fig.asp=9/8, out.width='98%', fig.align='center', warning=FALSE}
 PlotCorr(distanceDistribution50)
