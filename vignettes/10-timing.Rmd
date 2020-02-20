@@ -28,7 +28,7 @@ TBRDist <- TBRDist::TBRDist
 RF <- TreeDist::RobinsonFoulds
 
 nTrees <- 45L # For c. 1000 comparisons
-nRepeats <- 1L # Increase locally for slower but more accurate benchmarking
+nRepeats <- 10L # Increase locally for slower but more accurate benchmarking
 nPairs <- nTrees * (nTrees - 1) / 2
 
 SPRWalk <- function (nTip) {
