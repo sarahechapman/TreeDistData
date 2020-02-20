@@ -34,8 +34,8 @@ tdAbbrevs <- c(
   nni_l = 'NNI (lwr bnd)',
   spr = 'SPR (approx.)',
   tbr = 'TBR (approx.)',
-  tbr_l = 'TBR (lb approx.)',
-  tbr_u = 'TBR (ub approx.)',
+  tbr_l = 'TBR (lwr bnd)',
+  tbr_u = 'TBR (upr bnd)',
 
   mast = 'MAST size',
   masti = 'MAST info',
@@ -45,9 +45,9 @@ tdAbbrevs <- c(
   path = 'Path'
 )
 
-tdnAbbrevs <- c(
+tdBoxAbbrevs <- c(
   rf  = 'Robinson\n-Foulds',
-  rfi = 'Robinson\n-Foulds\nInfo',
+  rfi = 'Info.\nCorr.\nRF',
 
   ja2 = 'JRF\n(k=2,\narboreal)',
   ja4 = 'JRF\n(k=4,\narboreal)',
@@ -59,7 +59,7 @@ tdnAbbrevs <- c(
 
   dpi = 'Diff.\nPhylog.\nInfo',
   cid = 'Clust.\nInfo.\nDist.',
-  msid = 'Match.\nSplit\nInfo\nDist',
+  msid = 'MS\nInfo\nDist',
   msd = 'Match.\nSplit\nDist.',
 
   nni = 'NNI\n(approx.)',
@@ -68,8 +68,8 @@ tdnAbbrevs <- c(
   nni_l = 'NNI\n(lwr bnd)',
   spr = 'SPR\n(approx.)',
   tbr = 'TBR\n(approx.)',
-  tbr_l = 'TBR\n(lb approx.)',
-  tbr_u = 'TBR\n(ub approx.)',
+  tbr_l = 'TBR\n(lwr bnd)',
+  tbr_u = 'TBR\n(upr bnd)',
 
   mast = 'MAST\nsize',
   masti = 'MAST\ninfo',
@@ -175,7 +175,7 @@ tdCol[c('nni', 'nea', 'tbr')] <- tdCol[c('nni_u', 'nts', 'tbr_u')]
 
 
 usethis::use_data(tdAbbrevs, compress='xz', overwrite = TRUE)
-usethis::use_data(tdnAbbrevs, compress='xz', overwrite = TRUE)
+usethis::use_data(tdBoxAbbrevs, compress='xz', overwrite = TRUE)
 usethis::use_data(tdMethods, compress='xz', overwrite = TRUE)
 usethis::use_data(tdCol, compress='xz', overwrite = TRUE)
 usethis::use_data(TDFunctions, compress='xz', overwrite = TRUE)
