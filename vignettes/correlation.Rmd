@@ -23,14 +23,18 @@ Matching Splits and Path metrics are poorly correlated with all metrics except
 each other.  The Robinson-Foulds metric shows minimal correlation with any other 
 metric, notwithstanding a weak correlation with the Nye _et al._ measure.
 
-Not plotted: MASTI, which correlates perfectly with MAST, and NNI upper bound,
-which correlates perfectly with NNI lower bound.
+Not plotted:
+
+- MASTI, which correlates perfectly with MAST;
+
+- NNI: both upper and lower bounds correlate almost perfectly with RF, due to
+  the method of calculating the approximation.
 
 ```{r data-load, echo=FALSE}
 library('TreeDistData')
 data("distanceDistribution25", package="TreeDistData")
 # No point in plotting both MAST and MASTI, as they're perfect rank correlates
-exclude <- c('nni_t', 'masti')
+exclude <- c('nni_t', 'nni_u', 'nni_l', 'masti')
 distanceDistribution25 <- distanceDistribution25[!rownames(distanceDistribution25) %in% exclude, ]
 data("distanceDistribution50", package="TreeDistData")
 distanceDistribution50 <- distanceDistribution50[!rownames(distanceDistribution50) %in% exclude, ]
@@ -41,9 +45,9 @@ toCorrelate <- c(
                  "dpi", "cid", "nts",
                  "ja2", "ja4", "jna2", "jna4",
                  "rfi", "rf",
-                 "nni_l", "spr", "tbr_l", "tbr_u", "mast" # Integers
+                 "spr", "tbr_l", "tbr_u", "mast" # Integers
                  )
-if (!all(rownames(distanceDistribution50) %in% c('nni_u', toCorrelate))) {
+if (!all(rownames(distanceDistribution50) %in% toCorrelate)) {
   warning("Missing ", rownames(distanceDistribution50)[!rownames(distanceDistribution50) %in% toCorrelate])
 }
 colScale <- colorspace::sequential_hcl(1000, palette='viridis')
@@ -53,8 +57,8 @@ colScale <- colorspace::sequential_hcl(1000, palette='viridis')
 CorrPlot <- function (distribution, methodA, methodB) {
   a <- distribution[methodA, ]
   b <- distribution[methodB, ]
-  plot(a~b, pch='.', col='#00000088', axes=FALSE, ylab='', xlab='')
-  reg <- lm(a~b)
+  plot(a ~ b, pch='.', col='#00000088', axes=FALSE, ylab='', xlab='')
+  reg <- lm(a ~ b)
   #r2 <- summary(reg)$adj.r.squared
   #regCol <- colScale[max(ceiling((r2 - 0.5) * 2000), 1L)]
   abline(reg)
@@ -66,7 +70,7 @@ PlotR2 <- function (distribution, methodA, methodB) {
   a <- distribution[methodA, ]
   b <- distribution[methodB, ]
   plot.new()
-  reg <- lm(a~b)
+  reg <- lm(a ~ b)
   r2 <- summary(reg)$adj.r.squared
   regCol <- colScale[max(ceiling((r2 - 0.5) * 2000), 1L)]
   text(0.5, 0.5, format(r2, digits = 2, nsmall = 2), col = regCol, cex = 1.4)
@@ -92,7 +96,7 @@ PlotCorr <- function(distribution) {
 ```
 
 
-Correlation between distances for 10&nbsp;000 pairs of 25-leaf trees:
+Correlation (adjusted r²) between distances for 10&nbsp;000 pairs of 25-leaf trees:
 
 ```{R metric-correlation, echo=FALSE, fig.width=7, fig.asp=9/8, out.width='98%', fig.align='center', warning=FALSE}
 PlotCorr(distanceDistribution25)
