@@ -23,6 +23,11 @@ pectinateTree <- Quartet::sq_trees$caterpillar
 
 pm1l <- ape::read.tree(text='(((((2, 3), 4), 5), 6), (7, (8, (9, (10, (11, 1))))));')
 pm1l$edge.lengths <- c(rep(1, 4L), 2, rep(1, 12), .5, .5, 1.5)
+threeMoves <- ape::read.tree(text='(((((11, 2), 3), 4), 5), (7, (6, (8, (9, (10, 1))))));')
+threeMoves$edge.lengths <- rep(1, 20)
+threeMoves$edge.lengths[1] <- 2
+threeMoves$edge.lengths[c(12, 14)] <- 0.5
+
 topTail <- Quartet::sq_trees$top_and_tail
 
 pd11['qd', ] <- pd11['qd', ] * 330L
@@ -70,6 +75,8 @@ BoxPlot <- function (method) {
   legend('left', bty = 'n', legend = tdAbbrevs[method])
   points(TDPair[[method]](pectinateTree, pm1l), histMax * 0.8,
          pch = 25L, cex=1.5, col='black', bg = opaqueCol)
+  points(TDPair[[method]](pectinateTree, threeMoves), histMax * 0.5,
+         pch = 3L, cex=1.5, col='black', bg = opaqueCol)
   points(TDPair[[method]](pectinateTree, topTail), histMax * 0.2,
          pch = 24L, cex=1.5, col='black', bg = opaqueCol)
   axis(1, col=opaqueCol)
@@ -82,8 +89,8 @@ PlotFunc <- function() {
   par(mar=c(1, 0.2, 1, 1), xpd = NA)
   nMethod <- dim(pd11)[1]
   nRow <- nMethod / 2
-  layout(matrix(c(rep(1:3, each = nRow),
-                  3 + rep(seq_len(nMethod), each=3)), ncol=3),
+  layout(matrix(c(rep(1:4, each = nRow),
+                  4 + rep(seq_len(nMethod), each=4)), ncol=3),
          widths=c(1, 2, 2))
 
   par(mar=c(0.2, 0, 1, 1))
@@ -93,13 +100,18 @@ PlotFunc <- function() {
          inset=c(-0.1, -0.04))
 
   TreeDistPlot(pm1l, '', bold=1L, leaveRoom = FALSE, cex=1, graft=20)
-  legend('bottomleft', legend = "Move one tip (A)", pch=25, bty='n',
-         inset=c(-0, -0.02), pt.cex=1.5)
+  legend('bottomleft', legend = "Move one leaf (A)", pch = 25, bty = 'n',
+         inset=c(-0, -0.02), pt.cex = 1.5)
 
-  TreeDistPlot(topTail, '', leaveRoom = FALSE, cex=1,
-               bold=c(1, 11), graft=c(6, 20))
-  legend('bottomleft', legend = "Exchange two \ntips (A, K)", pch=24, bty='n',
-         inset=c(-0.0, -0.005), pt.cex=1.5)
+  TreeDistPlot(topTail, '', leaveRoom = FALSE, cex = 1,
+               bold = c(1, 11), graft = c(6, 20))
+  legend('bottomleft', legend = "Exchange two\nleaves (A, K)", pch = 24,
+         bty = 'n', inset = c(-0.0, -0.005), pt.cex = 1.5)
+
+  TreeDistPlot(threeMoves, '', leaveRoom = FALSE, cex = 1,
+               bold=c(1, 6, 11), graft = c(5, 13, 20))
+  legend('bottomleft', legend = "Three leaves\nmoved (A, K, F)", pch = 3, 
+         bty = 'n', inset = c(-0.0, -0.005), pt.cex = 1.5)
 
   par(mar=c(1.9, 0.2, 0.2, 0.2))
   lapply(rownames(pd11), BoxPlot) -> XX
