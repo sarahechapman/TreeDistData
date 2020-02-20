@@ -83,8 +83,8 @@ PlotCorr <- function(distribution) {
       if (i == j) {
         plot.new()
         method <- toCorrelate[i]
-        text(0.5, 0.5, col = TreeDistCol(method), cex = 0.9,
-             gsub(' ', '\n', tdAbbrevs[method], fixed = TRUE))
+        text(0.5, 0.5, tdnAbbrevs[method],
+             col = TreeDistCol(method), cex = 0.9)
         box(which='plot', col = TreeDistCol(method), lwd=3)
       } else if (i < j) {
         PlotR2(distribution, toCorrelate[i], toCorrelate[j])

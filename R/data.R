@@ -301,6 +301,9 @@ NULL
 'tdAbbrevs'
 
 #' @rdname TreeDistMethods
+'tdnAbbrevs'
+
+#' @rdname TreeDistMethods
 'tdMethods'
 
 #' @rdname TreeDistMethods

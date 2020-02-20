@@ -45,6 +45,40 @@ tdAbbrevs <- c(
   path = 'Path'
 )
 
+tdnAbbrevs <- c(
+  rf  = 'Robinson\n-Foulds',
+  rfi = 'Robinson\n-Foulds\nInfo',
+
+  ja2 = 'JRF\n(k=2,\narboreal)',
+  ja4 = 'JRF\n(k=4,\narboreal)',
+  jna2 = 'JRF\n(k=2,\nnon-arb.)',
+  jna4 = 'JRF\n(k=4,\nnon-arb.)',
+
+  nea = 'Nye\net al.',
+  nts = expression(paste(plain('Nye\n'), italic('et al.'))),
+
+  dpi = 'Diff.\nPhylog.\nInfo',
+  cid = 'Clust.\nInfo.\nDist.',
+  msid = 'Match.\nSplit\nInfo\nDist',
+  msd = 'Match.\nSplit\nDist.',
+
+  nni = 'NNI\n(approx.)',
+  nni_u = 'NNI\n(upr bnd)',
+  nni_t = 'NNI\n(ub tight)',
+  nni_l = 'NNI\n(lwr bnd)',
+  spr = 'SPR\n(approx.)',
+  tbr = 'TBR\n(approx.)',
+  tbr_l = 'TBR\n(lb approx.)',
+  tbr_u = 'TBR\n(ub approx.)',
+
+  mast = 'MAST\nsize',
+  masti = 'MAST\ninfo',
+  mafi = 'MAF\ninfo',
+
+  qd  = 'Quartet',
+  path = 'Path'
+)
+
 tdMethods <- names(tdAbbrevs)
 tdMethods <- tdMethods[!tdMethods %in% c('nni', 'nea', 'tbr')]
 
@@ -141,6 +175,7 @@ tdCol[c('nni', 'nea', 'tbr')] <- tdCol[c('nni_u', 'nts', 'tbr_u')]
 
 
 usethis::use_data(tdAbbrevs, compress='xz', overwrite = TRUE)
+usethis::use_data(tdnAbbrevs, compress='xz', overwrite = TRUE)
 usethis::use_data(tdMethods, compress='xz', overwrite = TRUE)
 usethis::use_data(tdCol, compress='xz', overwrite = TRUE)
 usethis::use_data(TDFunctions, compress='xz', overwrite = TRUE)
