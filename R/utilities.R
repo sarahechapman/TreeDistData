@@ -140,11 +140,12 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
     elementStatus <- ManyToManyQuartetAgreement(trees)
     qd <- elementStatus[, , 'd'] / elementStatus[1, 1, 's']
 
-    MSG('MAST')
-    mast <- as.matrix(PairwiseDistances(trees, MASTSize, rooted = FALSE))
-    diag(mast) <- length(trees[[1]]$tip.label)
-    masti <-  LnUnrooted(mast) / log(2)
-    attributes(masti) <- attributes(mast)
+    #MSG('MAST')
+    #mast <- as.matrix(PairwiseDistances(trees, MASTSize, rooted = FALSE))
+    #diag(mast) <- length(trees[[1]]$tip.label)
+    #masti <-  LnUnrooted(mast) / log(2)
+    #attributes(masti) <- attributes(mast)
+    mast <- masti <- NULL
   } else {
     qd <- NULL
 
