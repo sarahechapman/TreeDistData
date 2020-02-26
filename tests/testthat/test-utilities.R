@@ -2,7 +2,7 @@ context('utilities.R')
 
 test_that("AllDists doesn't crash", {
   library("TreeTools")
-  AllDists(as.phylo(0:5, 6), BalancedTree(6), verbose = TRUE)
+  AllDists(as.phylo(0:5, 6), BalancedTree(6), verbose = FALSE)
 })
 
 test_that('Pairwise distances calculated correctly', {
