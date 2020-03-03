@@ -1,5 +1,5 @@
 ---
-title: "10. Timing benchmarks"
+title: "4. Timing benchmarks"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
@@ -7,6 +7,8 @@ output:
     toc: no
   rmarkdown::html_vignette:
     default: yes
+bibliography: ../inst/REFERENCES.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
 ---
 
 ```{r pc-specs, echo = FALSE}
@@ -81,15 +83,20 @@ Plot <- function (timings, nTip) {
 
 ```
 
+The time taken to compare all `r nPairs` pairs of trees by each method, 
+was calculated, replicating timing `r nRepeats` times.
 
-Benchmarking conducted on an `r cpu$model_name` machine with
+The below are the results of a benchmarking exercise conducted on an
+`r cpu$model_name` machine with
 <!--`r cpu$no_of_cores` cores and-->
 `r as.character(benchmarkme:::print.ram(ram * 1024))` of RAM,
 comparing `r nTrees` trees obtained by performing successive subtree pruning and
-regrafting rearrangements on a pectinate starting tree.
+regrafting rearrangements on a pectinate starting tree.  
+The values reported in [@Smith2020] were calculated on a modest desktop computer,
+and will differ from those reported here, which will have been generated on
+the hardware system used to render the documentation.
 
-The time taken to compare all `r nPairs` pairs of trees by each method, 
-was calculated, replicating timing `r nRepeats` times.
+## Figure
 
 ```{r timings-20, echo = FALSE, output = 'asis', fig.width = 8, fig.height = 4}
 times20 <- Times(SPRWalk(20))
@@ -100,6 +107,8 @@ Plot(times20, 20)
 times50 <- Times(SPRWalk(50))
 Plot(times50, 50)
 ```
+
+## Tabulation
 
 ```{r timings-table, echo = FALSE}
 results <- summary(times20, unit = 'us')
