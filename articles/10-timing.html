@@ -130,7 +130,7 @@
     
 <p>The time taken to compare all 990 pairs of trees by each method, was calculated, replicating timing 1 times.</p>
 <p>The below are the results of a benchmarking exercise conducted on an Intel(R) Xeon(R) CPU machine with <!--2 cores and--> 8.57 TB of RAM, comparing 45 trees obtained by performing successive subtree pruning and regrafting rearrangements on a pectinate starting tree.<br>
-The values reported in <span class="citation">(Smith, 2020)</span> were calculated on a modest desktop computer, and will differ from those reported here, which will have been generated on the hardware system used to render the documentation.</p>
+The values reported in Smith <span class="citation">(2020)</span> were calculated on a modest desktop computer, and will differ from those reported here, which will have been generated on the hardware system used to render the documentation.</p>
 <div id="figure" class="section level2">
 <h2 class="hasAnchor">
 <a href="#figure" class="anchor"></a>Figure</h2>
@@ -149,92 +149,96 @@ The values reported in <span class="citation">(Smith, 2020)</span> were calculat
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Path</td>
-<td align="right">11</td>
-<td align="right">17</td>
+<td>Robinson-Foulds</td>
+<td align="right">10</td>
+<td align="right">13</td>
 </tr>
 <tr class="even">
-<td>Robinson-Foulds</td>
-<td align="right">12</td>
-<td align="right">13</td>
+<td>Path</td>
+<td align="right">10</td>
+<td align="right">15</td>
 </tr>
 <tr class="odd">
 <td>Match. Split Dist.</td>
-<td align="right">18</td>
-<td align="right">48</td>
+<td align="right">17</td>
+<td align="right">45</td>
 </tr>
 <tr class="even">
 <td>Diff. Phylog. Info</td>
-<td align="right">24</td>
-<td align="right">92</td>
+<td align="right">22</td>
+<td align="right">86</td>
+</tr>
+<tr class="odd">
+<td>JRF (k=2, arboreal)</td>
+<td align="right">25</td>
+<td align="right">120</td>
+</tr>
+<tr class="even">
+<td>Match. Split Info Dist</td>
+<td align="right">25</td>
+<td align="right">150</td>
 </tr>
 <tr class="odd">
 <td>Nye et al.</td>
 <td align="right">26</td>
-<td align="right">150</td>
-</tr>
-<tr class="even">
-<td>JRF (k=2, arboreal)</td>
-<td align="right">26</td>
-<td align="right">130</td>
-</tr>
-<tr class="odd">
-<td>Match. Split Info Dist</td>
-<td align="right">27</td>
-<td align="right">170</td>
-</tr>
-<tr class="even">
-<td>JRF (k=2, non-arb.)</td>
-<td align="right">34</td>
-<td align="right">190</td>
-</tr>
-<tr class="odd">
-<td>Clust. Info. Dist.</td>
-<td align="right">47</td>
-<td align="right">280</td>
-</tr>
-<tr class="even">
-<td>JRF (k=4, arboreal)</td>
-<td align="right">49</td>
-<td align="right">600</td>
-</tr>
-<tr class="odd">
-<td>Robinson-Foulds Info</td>
-<td align="right">54</td>
 <td align="right">140</td>
 </tr>
 <tr class="even">
+<td>JRF (k=2, non-arb.)</td>
+<td align="right">28</td>
+<td align="right">180</td>
+</tr>
+<tr class="odd">
+<td>JRF (k=4, arboreal)</td>
+<td align="right">44</td>
+<td align="right">550</td>
+</tr>
+<tr class="even">
+<td>Robinson-Foulds Info</td>
+<td align="right">45</td>
+<td align="right">130</td>
+</tr>
+<tr class="odd">
+<td>Clust. Info. Dist.</td>
+<td align="right">45</td>
+<td align="right">260</td>
+</tr>
+<tr class="even">
 <td>NNI (approx.)</td>
-<td align="right">73</td>
-<td align="right">99</td>
+<td align="right">59</td>
+<td align="right">87</td>
 </tr>
 <tr class="odd">
 <td>JRF (k=4, non-arb.)</td>
-<td align="right">74</td>
-<td align="right">940</td>
+<td align="right">64</td>
+<td align="right">900</td>
 </tr>
 <tr class="even">
 <td>SPR (approx.)</td>
-<td align="right">100</td>
-<td align="right">850</td>
+<td align="right">95</td>
+<td align="right">810</td>
 </tr>
 <tr class="odd">
 <td>TBR (approx.)</td>
-<td align="right">250</td>
-<td align="right">410</td>
+<td align="right">220</td>
+<td align="right">370</td>
 </tr>
 <tr class="even">
 <td>Quartet</td>
-<td align="right">310</td>
-<td align="right">530</td>
+<td align="right">260</td>
+<td align="right">450</td>
 </tr>
 <tr class="odd">
 <td>MAST size</td>
-<td align="right">7700</td>
-<td align="right">31000</td>
+<td align="right">6700</td>
+<td align="right">27000</td>
 </tr>
 </tbody>
 </table>
+</div>
+<div id="reference" class="section level2 unnumbered">
+<h2 class="hasAnchor">
+<a href="#reference" class="anchor"></a>Reference</h2>
 <div id="refs" class="references">
 <div id="ref-Smith2020">
 <p>Smith, M. R. (2020). Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees. <em>In Review</em>.</p>
@@ -251,6 +255,7 @@ The values reported in <span class="citation">(Smith, 2020)</span> were calculat
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#figure">Figure</a></li>
       <li><a href="#tabulation">Tabulation</a></li>
+      <li><a href="#reference">Reference</a></li>
       </ul>
 </div>
       </div>
