@@ -1,14 +1,12 @@
 ---
-title: "09. Expected values for tree distance metrics"
+title: "2.2: Context tree distance values"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-bibliography: ../inst/REFERENCES.bib
-csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
-vignette: >
-  %\VignetteIndexEntry{Expected values}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output: 
+  bookdown::pdf_document2:
+    toc: no
+  rmarkdown::html_vignette:
+    default: yes
 ---
 
 ```{r init, echo=FALSE, warning=FALSE}

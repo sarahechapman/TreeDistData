@@ -2,13 +2,11 @@
 title: "1.4, 1.5: Saturation and sensitivity"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-bibliography: ../inst/REFERENCES.bib
-csl: ../inst/apa-old-doi-prefix.csl
-vignette: >
-  %\VignetteIndexEntry{Saturation and sensitivity}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+output: 
+  bookdown::pdf_document2:
+    toc: no
+  rmarkdown::html_vignette:
+    default: yes
 ---
 
 ```{r, echo=FALSE, message=FALSE}

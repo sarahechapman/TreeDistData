@@ -7,12 +7,6 @@ output:
     toc: no
   rmarkdown::html_vignette:
     default: yes
-bibliography: ../inst/REFERENCES.bib
-csl: ../inst/apa-old-doi-prefix.csl
-vignette: >
-  %\VignetteIndexEntry{Metric correlation}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
 # Correlation between metrics

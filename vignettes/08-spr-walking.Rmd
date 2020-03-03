@@ -7,8 +7,6 @@ output:
     toc: no
   rmarkdown::html_vignette:
     default: yes
-bibliography: ../inst/REFERENCES.bib
-csl: ../inst/apa-old-doi-prefix.csl
 ---
 
 ```{r load, echo = FALSE, message=FALSE}
@@ -38,14 +36,11 @@ Plotter <- function (method) {
 ## Figure
 
 ```{r plots, echo = FALSE, fig.width=7, fig.height=6}
-par(mfrow = c(3, 7), mar = c(1, 0.1, 1, 0.1), oma=c(0, 0, 0, 0))
+par(mfrow = c(3, 7), mar = c(1, 0.1, 1, 0.1), oma=c(1, 1, 0, 0))
 XX <- lapply(plotSequence, Plotter)
-
+mtext("Tree distance", 2, outer = TRUE, cex = 0.8)
+mtext("Number of SPR moves separating pair", 1, outer = TRUE, cex = 0.8)
 ```
-
-X axis: Number of SPR moves separating pair in chain
-
-Y axis: Tree distance
 
 ## Tabulation
 

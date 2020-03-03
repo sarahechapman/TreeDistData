@@ -2,9 +2,11 @@
 title: "1.2: Number of leaves moved"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
-bibliography: ../inst/REFERENCES.bib
-csl: ../inst/apa-old-doi-prefix.csl
+output: 
+  bookdown::pdf_document2:
+    toc: no
+  rmarkdown::html_vignette:
+    default: yes
 ---
 
 ## Method

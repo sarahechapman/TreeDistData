@@ -5,7 +5,7 @@ date: "`r Sys.Date()`"
 output: 
   bookdown::pdf_document2:
     toc: no
-  html_document:
+  rmarkdown::html_vignette:
     default: yes
 ---
 

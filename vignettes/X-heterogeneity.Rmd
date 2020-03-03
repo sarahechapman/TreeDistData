@@ -2,13 +2,13 @@
 title: "Heterogeneity"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
-output: rmarkdown::html_vignette
+output: 
+  bookdown::pdf_document2:
+    toc: no
+  rmarkdown::html_vignette:
+    default: yes
 bibliography: ../inst/REFERENCES.bib
-csl: ../inst/apa-old-doi-prefix.csl
-vignette: >
-  %\VignetteIndexEntry{Heterogeneity}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
 ---
 
 ```{R initialize, echo=FALSE}
