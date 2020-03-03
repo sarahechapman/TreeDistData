@@ -2,17 +2,17 @@ pandoc: '2.2'
 pkgdown: 1.4.1
 pkgdown_sha: ~
 articles:
-  1-length-of-move: 1-length-of-move.html
+  01-length-of-move: 01-length-of-move.html
+  02-leaves-moved: 02-leaves-moved.html
+  03-moves-made: 03-moves-made.html
+  04-saturation-and-sensitivity: 04-saturation-and-sensitivity.html
+  05-tree-shape: 05-tree-shape.html
+  06-lin-cluster-recovery: 06-lin-cluster-recovery.html
+  07-bullseye: 07-bullseye.html
+  08-spr-walking: 08-spr-walking.html
+  09-expected-similarity: 09-expected-similarity.html
   10-timing: 10-timing.html
   11-correlation: 11-correlation.html
-  2-leaves-moved: 2-leaves-moved.html
-  3-moves-made: 3-moves-made.html
-  4-saturation-and-sensitivity: 4-saturation-and-sensitivity.html
-  5-tree-shape: 5-tree-shape.html
-  6-lin-cluster-recovery: 6-lin-cluster-recovery.html
-  7-bullseye: 7-bullseye.html
-  8-spr-walking: 8-spr-walking.html
-  9-expected-similarity: 9-expected-similarity.html
   X-heterogeneity: X-heterogeneity.html
 urls:
   reference: https://ms609.github.io/TreeDistData/reference
