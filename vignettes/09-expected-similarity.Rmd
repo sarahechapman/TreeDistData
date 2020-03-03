@@ -27,7 +27,7 @@ number of leaves in the trees being compared.
 $4 \leq n \leq 200$`r ''#4 &le; _n_ &le; 200`,
 and the distances between them calculated.
 Shaded envelopes denote the interdecile and interquartile ranges.
-The raw data are available in the data object `randomTreeDistances`.
+The raw data are available in the data object [`randomTreeDistances`](../reference/randomTreeDistances.html).
 
 ```{R Tree-distance-averages, echo=FALSE, message=FALSE, cache=TRUE, fig.asp=2, fig.width=6, fig.align='center'}
 data('tdMethods', package = 'TreeDistData')
@@ -164,7 +164,7 @@ IQRNorm <- function (methodDistances) {
   iqr / methodDistances['50%', ]
 }
 iq <- colMeans(apply(randomTreeDistances, 1, IQRNorm)[as.character(20:200), ])
-names(iq) <- tdAbbrevs[names(iq)]
+names(iq) <- tdMdAbbrevs[names(iq)]
 knitr::kable(round(iq[order(iq, decreasing = TRUE)] * 100, 1))
 ```
 
