@@ -1,5 +1,5 @@
 ---
-title: "08. Artificial tree rearrangement"
+title: "1.9: Artificial tree rearrangement"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
@@ -9,15 +9,10 @@ output:
     default: yes
 bibliography: ../inst/REFERENCES.bib
 csl: ../inst/apa-old-doi-prefix.csl
-vignette: >
-  %\VignetteIndexEntry{SPR walking}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
-
 ```{r load, echo = FALSE, message=FALSE}
-# Update from data-raw/sprDistances.R
+# Values obtained from data-raw/sprDistances.R
 nTrees <- 100L
 nTip <- 50L
 
@@ -36,27 +31,23 @@ Plotter <- function (method) {
           xlab = 'SPR moves', axes= F)
   tau <- cor.test(dat.A, moves.A, method="kendall", use="pairwise")$estimate
   text(max(moves.A), min(dat.A), paste('tau-b =', signif(tau, 3)), pos = 2, col = col)
-  legend('topleft', TreeDistData::tdAbbrevs[method], bty='n', col = col)
+  legend('right', TreeDistData::tdAbbrevs[method], bty='n', col = col)
 }
 ```
 
-Start with a pectinate `r nTip`-leaf tree.  
-Each subsequent tree is one SPR rearrangement away from the previous one.
-SPR rearrangements continue until a forest of `r nTrees` trees has been
-generated.  Distances between each pair of trees are then calculated, and 
-plotted against the number of SPR moves that separate the pair.
+## Figure
 
 ```{r plots, echo = FALSE, fig.width=7, fig.height=6}
 par(mfrow = c(3, 7), mar = c(1, 0.1, 1, 0.1), oma=c(0, 0, 0, 0))
 XX <- lapply(plotSequence, Plotter)
+
 ```
 
-We then calculate the rank correlation between the measured tree distance and 
-the number of SPR moves used to generate the trees – which may not correspond 
-to the exact SPR distance, as one SPR move may 'undo' another.
+X axis: Number of SPR moves separating pair in chain
 
-Higher coefficients of correlation (Kendall's τ) are, to a first approximation,
-desirable.
+Y axis: Tree distance
+
+## Tabulation
 
 ```{r table, output="asis", echo = FALSE}
 Tabler <- function (method) {
@@ -65,7 +56,7 @@ Tabler <- function (method) {
            use="pairwise")$estimate
 }
 r2 <- vapply(plotSequence, Tabler, double(1))
-r2 <- matrix(r2, dimnames = list(TreeDistData::tdAbbrevs[names(r2)], 'τ'))
+r2 <- matrix(r2, dimnames = list(TreeDistData::tdMdAbbrevs[names(r2)], 'τ'))
 
 knitr::kable(abs(signif(r2[order(abs(r2), decreasing = TRUE), ], 3)))
 ```
