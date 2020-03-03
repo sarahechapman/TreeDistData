@@ -4,6 +4,7 @@
 \name{TreeDistMethods}
 \alias{TreeDistMethods}
 \alias{tdAbbrevs}
+\alias{tdPlotSequence}
 \alias{tdMdAbbrevs}
 \alias{tdBoxAbbrevs}
 \alias{tdMethods}
@@ -14,6 +15,8 @@
 \format{An object of class \code{expression} of length 25.}
 \usage{
 tdAbbrevs
+
+tdPlotSequence
 
 tdMdAbbrevs
 
@@ -33,6 +36,9 @@ Metadata for methods examined in this package.
 \details{
 \code{tdAbbrevs} lists abbreviations for each method, using expressions to allow
 formatting of text when plotted.
+
+\code{tdPlotSequence} lists the 20 methods discussed in the main article,
+in the sequence in which they are plotted in figures.
 
 \code{tdMdAbbrevs} uses markdown formatting.
 
