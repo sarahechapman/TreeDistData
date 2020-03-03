@@ -28,7 +28,6 @@ BoxPlot <- function (method) {
   d <- as.matrix(TDFunctions[[method]](newTrees))
   boxplot(d ~ dists, border = TreeDistCol(method), xlab = '', ylab = '')
   mtext(tdAbbrevs[method], 2, line = 2, cex=0.75)
-  mtext('Move length', 1, line = 2, cex=0.75)
   
   ranges <- vapply(sort(unique(as.integer(dists))),
                    function (i) range(d[dists == i]),
@@ -48,8 +47,9 @@ BoxPlot <- function (method) {
   nErrors
 }
 
-par(mfrow = c(4, 5), mar = c(3.5, 3.5, 0, 0.5))
+par(mfrow = c(4, 5), mar = c(2.5, 3.5, 0, 0.5), oma = c(1.5, 0, 0.1, 0), xpd = NA)
 lapply(tdPlotSequence, BoxPlot) -> errors
+mtext('Move length', 1, line = 0, cex = 0.75, outer = TRUE)
 ```
 
 **Supplementary Figure 1.** Distances between eleven-leaf trees differing in the
