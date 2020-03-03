@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>10. Timing benchmarks • TreeDistData</title>
+<title>4. Timing benchmarks • TreeDistData</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="10. Timing benchmarks">
+<script src="../pkgdown.js"></script><meta property="og:title" content="4. Timing benchmarks">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -81,7 +81,7 @@
       <a href="../articles/09-expected-similarity.html">2.2: Context tree distance values</a>
     </li>
     <li>
-      <a href="../articles/10-timing.html">10. Timing benchmarks</a>
+      <a href="../articles/10-timing.html">4. Timing benchmarks</a>
     </li>
     <li>
       <a href="../articles/11-correlation.html">11. Metric correlation</a>
@@ -115,7 +115,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>10. Timing benchmarks</h1>
+      <h1>4. Timing benchmarks</h1>
                         <h4 class="author">Martin R. Smith <a href="mailto:martin.smith@durham.ac.uk">martin.smith@durham.ac.uk</a>
 </h4>
             
@@ -128,10 +128,18 @@
 
     
     
-<p>Benchmarking conducted on an Intel(R) Xeon(R) CPU machine with <!--2 cores and--> 8.57 TB of RAM, comparing 45 trees obtained by performing successive subtree pruning and regrafting rearrangements on a pectinate starting tree.</p>
 <p>The time taken to compare all 990 pairs of trees by each method, was calculated, replicating timing 1 times.</p>
+<p>The below are the results of a benchmarking exercise conducted on an Intel(R) Xeon(R) CPU machine with <!--2 cores and--> 8.57 TB of RAM, comparing 45 trees obtained by performing successive subtree pruning and regrafting rearrangements on a pectinate starting tree.<br>
+The values reported in <span class="citation">(Smith, 2020)</span> were calculated on a modest desktop computer, and will differ from those reported here, which will have been generated on the hardware system used to render the documentation.</p>
+<div id="figure" class="section level2">
+<h2 class="hasAnchor">
+<a href="#figure" class="anchor"></a>Figure</h2>
 <p><img src="10-timing_files/figure-html/timings-20-1.png" width="768"></p>
 <p><img src="10-timing_files/figure-html/timings-50-1.png" width="768"></p>
+</div>
+<div id="tabulation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#tabulation" class="anchor"></a>Tabulation</h2>
 <table class="table">
 <caption>Time per comparison / µs</caption>
 <thead><tr class="header">
@@ -142,95 +150,109 @@
 <tbody>
 <tr class="odd">
 <td>Path</td>
-<td align="right">9.5</td>
+<td align="right">10</td>
 <td align="right">15</td>
 </tr>
 <tr class="even">
 <td>Robinson-Foulds</td>
-<td align="right">9.9</td>
+<td align="right">11</td>
 <td align="right">13</td>
 </tr>
 <tr class="odd">
 <td>Match. Split Dist.</td>
-<td align="right">16.0</td>
-<td align="right">46</td>
+<td align="right">17</td>
+<td align="right">48</td>
 </tr>
 <tr class="even">
 <td>Diff. Phylog. Info</td>
-<td align="right">21.0</td>
-<td align="right">84</td>
+<td align="right">23</td>
+<td align="right">88</td>
 </tr>
 <tr class="odd">
 <td>Nye et al.</td>
-<td align="right">24.0</td>
+<td align="right">25</td>
 <td align="right">140</td>
 </tr>
 <tr class="even">
 <td>Match. Split Info Dist</td>
-<td align="right">24.0</td>
-<td align="right">150</td>
+<td align="right">25</td>
+<td align="right">160</td>
 </tr>
 <tr class="odd">
 <td>JRF (k=2, arboreal)</td>
-<td align="right">24.0</td>
+<td align="right">26</td>
 <td align="right">120</td>
 </tr>
 <tr class="even">
 <td>JRF (k=2, non-arb.)</td>
-<td align="right">28.0</td>
+<td align="right">29</td>
 <td align="right">180</td>
 </tr>
 <tr class="odd">
-<td>Robinson-Foulds Info</td>
-<td align="right">44.0</td>
-<td align="right">130</td>
-</tr>
-<tr class="even">
-<td>JRF (k=4, arboreal)</td>
-<td align="right">44.0</td>
-<td align="right">550</td>
-</tr>
-<tr class="odd">
 <td>Clust. Info. Dist.</td>
-<td align="right">45.0</td>
+<td align="right">45</td>
 <td align="right">270</td>
 </tr>
 <tr class="even">
+<td>JRF (k=4, arboreal)</td>
+<td align="right">47</td>
+<td align="right">570</td>
+</tr>
+<tr class="odd">
+<td>Robinson-Foulds Info</td>
+<td align="right">48</td>
+<td align="right">130</td>
+</tr>
+<tr class="even">
 <td>NNI (approx.)</td>
-<td align="right">57.0</td>
-<td align="right">85</td>
+<td align="right">62</td>
+<td align="right">84</td>
 </tr>
 <tr class="odd">
 <td>JRF (k=4, non-arb.)</td>
-<td align="right">63.0</td>
+<td align="right">67</td>
 <td align="right">900</td>
 </tr>
 <tr class="even">
 <td>SPR (approx.)</td>
-<td align="right">95.0</td>
-<td align="right">790</td>
+<td align="right">99</td>
+<td align="right">800</td>
 </tr>
 <tr class="odd">
 <td>TBR (approx.)</td>
-<td align="right">220.0</td>
-<td align="right">370</td>
+<td align="right">220</td>
+<td align="right">380</td>
 </tr>
 <tr class="even">
 <td>Quartet</td>
-<td align="right">250.0</td>
-<td align="right">440</td>
+<td align="right">250</td>
+<td align="right">450</td>
 </tr>
 <tr class="odd">
 <td>MAST size</td>
-<td align="right">6700.0</td>
-<td align="right">26000</td>
+<td align="right">6700</td>
+<td align="right">27000</td>
 </tr>
 </tbody>
 </table>
+<div id="refs" class="references">
+<div id="ref-Smith2020">
+<p>Smith, M. R. (2020). Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees. <em>In Review</em>.</p>
 </div>
+</div>
+</div>
+  </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
 
+        <div id="tocnav">
+      <h2 class="hasAnchor">
+<a href="#tocnav" class="anchor"></a>Contents</h2>
+      <ul class="nav nav-pills nav-stacked">
+<li><a href="#figure">Figure</a></li>
+      <li><a href="#tabulation">Tabulation</a></li>
+      </ul>
+</div>
       </div>
 
 </div>
