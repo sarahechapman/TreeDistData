@@ -24,7 +24,6 @@ dists <- TreeTools::EdgeDistances(backbone)[ordr, ordr]
 
 ```{r, echo=FALSE, fig.width=7.2, fig.asp=4/5, message=FALSE}
 library('TreeTools') # LnUnrooted called somewhere...
-methods <- tdMethods[!tdMethods %in% c('nni_t', 'masti')]
 BoxPlot <- function (method) {
   d <- as.matrix(TDFunctions[[method]](newTrees))
   boxplot(d ~ dists, border = TreeDistCol(method), xlab = '', ylab = '')
@@ -50,7 +49,7 @@ BoxPlot <- function (method) {
 }
 
 par(mfrow = c(4, 5), mar = c(3.5, 3.5, 0, 0.5))
-lapply(methods, BoxPlot) -> errors
+lapply(tdPlotSequence, BoxPlot) -> errors
 ```
 
 **Supplementary Figure 1.** Distances between eleven-leaf trees differing in the

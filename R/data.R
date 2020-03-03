@@ -298,6 +298,9 @@ NULL
 #' `tdAbbrevs` lists abbreviations for each method, using expressions to allow
 #' formatting of text when plotted.
 #'
+#' `tdPlotSequence` lists the 20 methods discussed in the main article,
+#' in the sequence in which they are plotted in figures.
+#'
 #' `tdMdAbbrevs` uses markdown formatting.
 #'
 #' `tdBoxAbbrevs` uses line breaks to fit abbreviations in an approximately
@@ -315,6 +318,9 @@ NULL
 
 #' @rdname TreeDistMethods
 'tdAbbrevs'
+
+#' @rdname TreeDistMethods
+'tdPlotSequence'
 
 #' @rdname TreeDistMethods
 'tdMdAbbrevs'
