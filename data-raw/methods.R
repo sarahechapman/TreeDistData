@@ -172,7 +172,17 @@ tableau20 <- c('#4e78a8', '#A0CBE8',
 # https://jrnold.github.io/ggthemes/reference/tableau_color_pal.html
 tab30 <- as.character(matrix(c(tableau20, tableau10), 3, byrow=TRUE))
 
-tdCol <- tab30[c((1:10 * 2 - 1L), (seq_len(length(tdMethods) - 10L) * 2))]
+# https://personal.sron.nl/~pault/data/colourschemes.pdf
+# plot(inlmisc::GetColors(n = 22, scheme = 'discrete rainbow'))
+dr22 <- rev(c("#D9CCE3", "#CAACCB", "#BA8DB4", "#AA6F9E", "#994F88", "#882E72",
+          "#1965B0", "#437DBF", "#6195CF", "#7BAFDE", "#4EB265", "#90C987",
+          "#CAE0AB", "#F7F056", "#F7CB45", "#F4A736", "#EE8026", "#E65518",
+          "#DC050C", "#A5170E", "#72190E", "#42150A"))
+
+#tdCol <- tab30[c((1:10 * 2 - 1L), (seq_len(length(tdMethods) - 10L) * 2))]
+colOrder <- c(22, 21, 1, 3, 2, 4, nts = 10, 7, 11, 6:5,
+              15:17, 14, 18:19, 8:9, 13, 20, 12)
+tdCol <- dr22[colOrder]
 names(tdCol) <- tdMethods
 tdCol[c('nni', 'nea', 'tbr')] <- tdCol[c('nni_u', 'nts', 'tbr_u')]
 
