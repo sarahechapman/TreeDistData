@@ -124,9 +124,9 @@ TDPair <- list(
   ja2 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
     tr, ref, k = 2, arboreal = TRUE, normalize = TRUE), 4),
   jna2 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
-    tr, ref, k = 4, arboreal = TRUE, normalize = TRUE), 4),
-  ja4 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
     tr, ref, k = 2, arboreal = FALSE, normalize = TRUE), 4),
+  ja4 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
+    tr, ref, k = 4, arboreal = TRUE, normalize = TRUE), 4),
   jna4 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
     tr, ref, k = 4, arboreal = FALSE, normalize = TRUE), 4),
 
