@@ -86,7 +86,7 @@ with _n_ &minus; 1 edges between the added leaves.
 
 ```{r, output='asis', echo=FALSE}
 toPrint <- t(t(errors))
-dimnames(toPrint) <- list(tdMdAbbrevs[methods], 'Mis-orderings')
+dimnames(toPrint) <- list(tdMdAbbrevs[tdPlotSequence], 'Mis-orderings')
 
 knitr::kable(toPrint)
 ```
