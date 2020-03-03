@@ -83,9 +83,18 @@ BoxPlot <- function (method) {
 ```
 
 ```{r, echo=FALSE, fig.width=7, fig.height=5, fig.align='center'}
+methodsToPlot <- c("cid", "dpi",
+                   "nts", "jna2", "jna4", "ja2", "ja4",
+                   "rf", "rfi", 
+                   "path",
+                    "msid", "msd",
+                   "qd", 
+                   "mast", "masti",
+                   "nni_u", "nni_l", "spr", "tbr_l", "tbr_u")
+  
 PlotFunc <- function() {
   par(mar=c(1, 0.2, 1, 1), xpd = NA)
-  nMethod <- dim(pd11)[1]
+  nMethod <- length(methodsToPlot)
   nRow <- nMethod / 2
   layout(matrix(c(rep(1:4, each = nRow),
                   4 + rep(seq_len(nMethod), each=4)), ncol=3),
@@ -112,7 +121,7 @@ PlotFunc <- function() {
          bty = 'n', inset = c(-0.0, -0.005), pt.cex = 1.5)
 
   par(mar=c(1.9, 0.2, 0.2, 0.2))
-  lapply(rownames(pd11), BoxPlot) -> XX
+  lapply(methodsToPlot, BoxPlot) -> XX
 }
 
 PlotFunc()
