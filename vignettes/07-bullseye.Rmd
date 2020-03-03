@@ -1,5 +1,5 @@
 ---
-title: "07. Bullseye tests"
+title: "1.8: Bullseye tests"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
@@ -9,17 +9,7 @@ output:
     default: yes
 bibliography: ../inst/REFERENCES.bib
 csl: ../inst/apa-old-doi-prefix.csl
-vignette: >
-  %\VignetteIndexEntry{Bullseye tests}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
-
-I implemented 'bullseye' tests [@Kuhner2015] by drawing 1&nbsp;000 _n_-leaf
-trees at random from the uniform distribution (using the R function 
-`ape::rtree`, repeated for n = 5, 10, 20, 50), and using these trees to 
-simulate binary phylogenetic characters under the Jukes-Cantor model
-(using R function phangorn::simSeq).
 
 ```{r init, echo=FALSE, message=FALSE}
 library('phangorn')
@@ -127,6 +117,7 @@ RowTitle <- function (words, font = 2, cex = 1) {
 
 ```
 
+## Figure
 
 ```{r bullseye-results, echo=FALSE, fig.width=7.2, fig.asp = 6.13/4}
 PlotFunc <- function() {
@@ -231,9 +222,13 @@ PlotFunc <- function() {
 PlotFunc()
 ```
 
+**Figure 3. Results of ‘bullseye’ test.** (a–d), success rate for each tree distance metric when comparing pairs of datasets differing in size by 400 base pairs; (e–h), success rates when comparing pairs of datasets differing by 2% in proportion of erroneous tokens; (i–j), accuracy of each method in ranking trees inferred from progressively degraded datasets according to the degree of dataset degradation.
+
 <!--
 PlotMe(4, twoCol, 4.2/4, PlotFunc())
 -->
+
+## Tabulation
 
 ```{r table, echo=FALSE}
 bA <- bullseyeMorphScores[['50 leaves']]['1400', , ]
@@ -251,9 +246,11 @@ ret <- cbind(subsampling50 = rowSums(bA < bB),
              miscodingAccuracy = round(Spear(bullMoDiScores)['mean', , '50 leaves'], 3)
 )
 
-# TODO names
+dimnames(ret) <- list(tdMdAbbrevs[rownames(ret)], 
+                      c("Subsampling: Success rate (50&nbsp;leaves)",
+                        "Miscoding: Success rate (50&nbsp;leaves)",
+                        "Subsampling: Accuracy (ρ)",
+                        "Miscoding: Accuracy (ρ)"))
 knitr::kable(ret)
 
 ```
-
-## References
