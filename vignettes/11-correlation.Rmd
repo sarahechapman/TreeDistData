@@ -1,5 +1,5 @@
 ---
-title: "Supp. Fig. 1. Metric correlation"
+title: "Supp. Fig. 1: Metric correlation"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
@@ -38,13 +38,13 @@ colScale <- colorspace::sequential_hcl(1000, palette='viridis')
 CorrPlot <- function (distribution, methodA, methodB) {
   a <- distribution[methodA, ]
   b <- distribution[methodB, ]
-  plot(a ~ b, pch='.', col='#00000088', axes=FALSE, ylab='', xlab='')
+  plot(a ~ b, pch='.', col='#00000055', axes=FALSE, ylab='', xlab='')
   reg <- lm(a ~ b)
   #r2 <- summary(reg)$adj.r.squared
   #regCol <- colScale[max(ceiling((r2 - 0.5) * 2000), 1L)]
-  abline(reg)
   #legend('bottomright', legend=paste0("R² = ", signif(r2, 3)),
   #       text.col = regCol, bty='n')
+  abline(reg, col='#ff3333')
 }
 
 PlotR2 <- function (distribution, methodA, methodB) {
