@@ -1,5 +1,5 @@
 ---
-title: "§10. Timing benchmarks"
+title: "10. Timing benchmarks"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 

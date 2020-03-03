@@ -7,7 +7,7 @@
 \alias{linTestSPRResults}
 \alias{linTestTwoResults}
 \title{Evaluating tree distance metrics with method of \emph{Lin et al.} 2012}
-\format{An object of class \code{array} of dimension 5 x 16 x 5.}
+\format{An object of class \code{array} of dimension 5 x 18 x 5.}
 \usage{
 linTestOneResults
 

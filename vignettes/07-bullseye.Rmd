@@ -1,5 +1,5 @@
 ---
-title: "§7. Bullseye tests"
+title: "07. Bullseye tests"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 

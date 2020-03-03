@@ -1,5 +1,5 @@
 ---
-title: "§2. Number of tips moved"
+title: "02. Number of tips moved"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette

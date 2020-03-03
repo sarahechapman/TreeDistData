@@ -1,5 +1,5 @@
 ---
-title: "§8. Artificial tree rearrangement"
+title: "08. Artificial tree rearrangement"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
