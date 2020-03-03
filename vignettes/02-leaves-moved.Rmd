@@ -1,18 +1,16 @@
 ---
-title: "02. Number of tips moved"
+title: "1.2. Number of leaves moved"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 bibliography: ../inst/REFERENCES.bib
 csl: ../inst/apa-old-doi-prefix.csl
-vignette: >
-  %\VignetteIndexEntry{One tip distant}
-  %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
+## Method
+
 Take an unrooted ten-leaf tree:
-```{R backbone, echo=FALSE, fig.width=7.2, fig.asp=0.5, message=FALSE}
+```{R backbone, echo=FALSE, fig.width=2.4, fig.asp=0.5, message=FALSE, fig.align='center'}
 library('Quartet')
 library('TreeDist')
 library('TreeTools')
@@ -39,7 +37,7 @@ leaves at each of the `r length(add3)` edges of the unrooted backbone tree.
 
 These are trees A1-A17.
 
-```{r, echo=FALSE, fig.asp=3/6}
+```{r, echo=FALSE, fig.width=7.2, fig.asp=3/6}
 par(mfrow = c(3, 6), mar = rep(0.2, 4))
 urt <- lapply(add3, unroot)
 lapply(urt, plot) -> XX
@@ -80,8 +78,10 @@ baddies <- vapply(seq_along(add3), function(i) {
 }, double(21))
 ```
 
+## Results
+
 ```{r, output='asis', echo=FALSE}
-errors <- rowSums(baddies) - (2 * length(add3))
-names(errors) <- tdAbbrevs[names(errors)]
-knitr::kable(t(errors))
+errors <- t(t(rowSums(baddies) - (2 * length(add3))))
+dimnames(errors) <- list(tdMdAbbrevs[rownames(errors)], 'Inconsistencies')
+knitr::kable(errors)
 ```

@@ -1,5 +1,5 @@
 ---
-title: "03. Number of moves made"
+title: "1.3. Number of moves made"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
@@ -84,7 +84,7 @@ BoxPlot <- function (method) {
 }
 ```
 
-```{r, echo=FALSE, fig.width=7, fig.height=5}
+```{r, echo=FALSE, fig.width=7, fig.height=5, fig.align='center'}
 PlotFunc <- function() {
   par(mar=c(1, 0.2, 1, 1), xpd = NA)
   nMethod <- dim(pd11)[1]
@@ -121,3 +121,4 @@ PlotFunc()
 ```
 
 <!--PlotMe(1, oneCol, 1.75, PlotFunc)-->
+**Figure 1.** Tree differences produced by moving one leaf (▽), exchanging two leaves (△), and moving a third leaf (+) in a pectinate tree, compared to the distances between the pectinate tree and 100 000 trees drawn at random from the uniform distribution of binary trees on the same leaves.
