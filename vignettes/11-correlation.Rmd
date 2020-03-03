@@ -1,5 +1,5 @@
 ---
-title: "11. Metric correlation"
+title: "Supp. Fig. 1. Metric correlation"
 author: "Martin R. Smith <martin.smith@durham.ac.uk>"
 date: "`r Sys.Date()`"
 output: 
@@ -10,19 +10,6 @@ output:
 ---
 
 # Correlation between metrics
-
-The information-based metrics are highly correlated with one another, and exhibit 
-strong correlation with the Nye _et al._ and Quartet metrics.  The 
-Matching Splits and Path metrics are poorly correlated with all metrics except 
-each other.  The Robinson-Foulds metric shows minimal correlation with any other 
-metric, notwithstanding a weak correlation with the Nye _et al._ measure.
-
-Not plotted:
-
-- MASTI, which correlates perfectly with MAST;
-
-- NNI: both upper and lower bounds correlate almost perfectly with RF, due to
-  the method of calculating the approximation.
 
 ```{r data-load, echo=FALSE}
 library('TreeDistData')
@@ -89,15 +76,23 @@ PlotCorr <- function(distribution) {
 }
 ```
 
-
-Correlation (adjusted r²) between distances for 10&nbsp;000 pairs of 25-leaf trees:
-
 ```{R metric-correlation, echo=FALSE, fig.width=7, fig.asp=9/8, out.width='98%', fig.align='center', warning=FALSE}
 PlotCorr(distanceDistribution25)
 ```
 
-Correlation between distances for 10&nbsp;000 pairs of 50-leaf trees:
+**Supplementary Figure 1. Correlation (adjusted r²) between distances for 10&nbsp;000 pairs of 25-leaf trees**
 
 ```{R metric-correlation-50, echo=FALSE, fig.width=7, fig.asp=9/8, out.width='98%', fig.align='center', warning=FALSE}
 PlotCorr(distanceDistribution50)
 ```
+
+**Supplementary Figure 1. Correlation (adjusted r²) between distances for 10&nbsp;000 pairs of 50-leaf trees**
+
+
+Not plotted:
+
+- MASTI, which correlates perfectly with MAST;
+
+- NNI: both upper and lower bounds correlate almost perfectly with RF, due to
+  the method of calculating the approximation.
+
