@@ -45,6 +45,9 @@ tdAbbrevs <- c(
   path = 'Path'
 )
 
+tdMdAbbrevs <- tdAbbrevs
+tdMdAbbrevs['nts'] <- 'Nye _et al._'
+
 tdBoxAbbrevs <- c(
   rf  = 'Robinson\n-Foulds',
   rfi = 'Info.\nCorr.\nRF',
@@ -175,6 +178,7 @@ tdCol[c('nni', 'nea', 'tbr')] <- tdCol[c('nni_u', 'nts', 'tbr_u')]
 
 
 usethis::use_data(tdAbbrevs, compress='xz', overwrite = TRUE)
+usethis::use_data(tdMdAbbrevs, compress='xz', overwrite = TRUE)
 usethis::use_data(tdBoxAbbrevs, compress='xz', overwrite = TRUE)
 usethis::use_data(tdMethods, compress='xz', overwrite = TRUE)
 usethis::use_data(tdCol, compress='xz', overwrite = TRUE)

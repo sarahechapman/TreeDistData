@@ -19,7 +19,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Martin R. Smith \email{martin.smith@durham.ac.uk} (0000-0001-5660-1727) [copyright holder]
+\strong{Maintainer}: Martin R. Smith \email{martin.smith@durham.ac.uk} (\href{https://orcid.org/0000-0001-5660-1727}{ORCID}) [copyright holder]
 
 }
 \keyword{internal}

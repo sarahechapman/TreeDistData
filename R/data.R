@@ -293,7 +293,23 @@ NULL
 
 #' Method parameters
 #'
-#' <<#TODO Describe in detail.>>
+#' Metadata for methods examined in this package.
+#'
+#' `tdAbbrevs` lists abbreviations for each method, using expressions to allow
+#' formatting of text when plotted.
+#'
+#' `tdMdAbbrevs` uses markdown formatting.
+#'
+#' `tdBoxAbbrevs` uses line breaks to fit abbreviations in an approximately
+#' square bounding box.
+#'
+#' `tdCol` provides each method with a suitable plotting colour.
+#'
+#' `TDFunctions` lists for each method a function that will calculate the
+#' distance between two trees or lists of trees.
+#'
+#' `TDPair` lists for each method a function to calculate the distance
+#' between one tree (`tr`) and another tree (`ref`).
 #'
 #' @name TreeDistMethods
 
