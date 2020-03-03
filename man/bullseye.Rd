@@ -34,7 +34,7 @@ Kuhner and Yamato (2015).
 leaves, randomly sampled from the uniform distribution using \code{ape::rtree}.
 
 \code{bullXXInferred} is a list with four elements, named as in \code{bullseyeTrees}.
-Each element contains 1 000 subelements. Each subelement is a list of
+Each element contains 1 000 sub-elements. Each sub-element is a list of
 ten trees, which have been inferred from progressively more degraded datasets,
 originally simulated from the corresponding tree in \code{bullseyeTrees}.
 

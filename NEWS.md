@@ -15,15 +15,15 @@
 
 # TreeDistData 0.0.0.9005 (development)
 
-- Percentiles for randomTreeDistances
+- Percentiles for `randomTreeDistances`
 
 # TreeDistData 0.0.0.9004 (development)
 
-- Add pectinateDistance11
+- Add `pectinateDistance11`
 
 # TreeDistData 0.0.0.9003 (development)
 
-- Add distanceDistribution11
+- Add `distanceDistribution11`
 
 # TreeDistData 0.0.0.9002 (development)
 
@@ -31,9 +31,9 @@
 
 # TreeDistData 0.0.0.9001 (development)
 
-- Update to use new function names MutualPhylogeneticInfo, 
-  MutualMatchingSplitInfo
+- Update to use new function names `MutualPhylogeneticInfo()`,
+  `MutualMatchingSplitInfo()`
 
 # TreeDistData 0.0.0.9000 (development)
 
- - Extracted package from `TreeSearch` 0.3.2.9005.
+ - Extracted package from 'TreeSearch' 0.3.2.9005.

@@ -229,7 +229,7 @@ NULL
 #' leaves, randomly sampled from the uniform distribution using `ape::rtree`.
 #'
 #' `bullXXInferred` is a list with four elements, named as in `bullseyeTrees`.
-#' Each element contains 1&nbsp;000 subelements. Each subelement is a list of
+#' Each element contains 1&nbsp;000 sub-elements. Each sub-element is a list of
 #' ten trees, which have been inferred from progressively more degraded datasets,
 #' originally simulated from the corresponding tree in `bullseyeTrees`.
 #'
