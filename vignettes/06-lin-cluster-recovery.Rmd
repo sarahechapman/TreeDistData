@@ -78,8 +78,8 @@ PlotFunc <- function () {
 
   par(mar = c(0, 0, 0, 0))
   plot.new()
-  legend('center', tdAbbrevs[methods], lty = 1, col = TreeDistCol(methods),
-         bty='n', lwd = 2, cex = 0.9)
+  legend('center', tdAbbrevs[tdPlotSequence], lty = 1, bty='n', lwd = 2, 
+         cex = 0.9, col = TreeDistCol(tdPlotSequence))
 }
 
 PlotFunc()
