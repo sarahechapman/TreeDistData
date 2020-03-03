@@ -7,14 +7,9 @@ output:
     toc: no
   rmarkdown::html_vignette:
     default: yes
+bibliography: ../inst/REFERENCES.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
 ---
-
-```{r init, echo=FALSE, warning=FALSE}
-library('TreeDistData')
-standardMargin <- c(0.4, 0.4, 0.8, 0.4)
-cbPalette8 <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442",
-                "#0072B2", "#D55E00", "#CC79A7")
-```
 
 ## Expected values for random trees
 
@@ -30,6 +25,7 @@ Shaded envelopes denote the interdecile and interquartile ranges.
 The raw data are available in the data object [`randomTreeDistances`](../reference/randomTreeDistances.html).
 
 ```{R Tree-distance-averages, echo=FALSE, message=FALSE, cache=TRUE, fig.asp=2, fig.width=6, fig.align='center'}
+library('TreeDistData')
 data('tdMethods', package = 'TreeDistData')
 data('tdAbbrevs', package = 'TreeDistData')
 methods <- tdMethods
