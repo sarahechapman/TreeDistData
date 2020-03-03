@@ -31,7 +31,7 @@ RandomDistances <- function (nLeaves, repls) {
                         tr2 <- RandomTree(nLeaves)
                         TreeDistData:::AllDists(tr1, tr2)
                       },
-                      double(length(tdMethods)))
+                      double(length(tdMethods) - 1L)) # no MAFI in AllDists
   distances <- distances[tdMethods %in% ourMethods, ]
   t(rbind(apply(distances, 1L, summary),
           apply(distances, 1L, quantile,
