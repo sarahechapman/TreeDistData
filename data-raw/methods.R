@@ -181,7 +181,7 @@ dr22 <- c("#D9CCE3", "#CAACCB", "#BA8DB4", "#AA6F9E", "#994F88", "#882E72",
 
 #tdCol <- tab30[c((1:10 * 2 - 1L), (seq_len(length(tdMethods) - 10L) * 2))]
 colOrder <- c(22, 21, 1, 3, 2, 4, nts = 10, 7, 11, 6:5,
-              15:17, 14, 18:19, 8:9, 13, 20, 12)
+              15:17, 14, 18:19, 8:9, 12, 20, 13)
 tdCol <- dr22[colOrder]
 names(tdCol) <- tdMethods
 tdCol[c('nni', 'nea', 'tbr')] <- tdCol[c('nni_u', 'nts', 'tbr_u')]
