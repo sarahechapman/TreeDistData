@@ -24,8 +24,9 @@ Identical trees are assumed to have zero distance.
 Distances between each pair of trees
 }
 \seealso{
-Other pairwise tree distances: \code{\link{AllDists}},
-  \code{\link{CompareAllTrees}}
+Other pairwise tree distances: 
+\code{\link{AllDists}()},
+\code{\link{CompareAllTrees}()}
 }
 \author{
 \href{https://orcid.org/0000-0001-5660-1727}{Martin R. Smith}

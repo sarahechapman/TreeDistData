@@ -29,8 +29,8 @@ Implementation and results of a 'Bullseye' test, after that proposed by
 Kuhner and Yamato (2015).
 }
 \details{
-\code{bullseyeTrees} is a list with four elements, named \code{5 leaves}, \code{10 leaves},
-\code{20 leaves} and \code{50 leaves}.  Each element contains 1 000 trees with \emph{n}
+\code{bullseyeTrees} is a list with four elements, named \verb{5 leaves}, \verb{10 leaves},
+\verb{20 leaves} and \verb{50 leaves}.  Each element contains 1 000 trees with \emph{n}
 leaves, randomly sampled from the uniform distribution using \code{ape::rtree}.
 
 \code{bullXXInferred} is a list with four elements, named as in \code{bullseyeTrees}.

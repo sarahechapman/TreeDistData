@@ -47,7 +47,7 @@ information content (Smith, forthcoming)
 
 Columns list the summary statistics of calculated tree distances: the
 minimum (\code{min}),
-1%, 5%, 10%, 25%, 50% (i.e. median), 75%, 90%, 95%, 99% percentiles,
+1\%, 5\%, 10\%, 25\%, 50\% (i.e. median), 75\%, 90\%, 95\%, 99\% percentiles,
 maximum (\code{max}), mean (\code{mean}) and standard deviation (\code{sd}).
 
 The third dimension lists the number of leaves in the trees compared.
