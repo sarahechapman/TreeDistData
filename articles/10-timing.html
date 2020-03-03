@@ -54,28 +54,28 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/01-length-of-move.html">01. Length of move</a>
+      <a href="../articles/01-length-of-move.html">1.1: Length of move</a>
     </li>
     <li>
-      <a href="../articles/02-leaves-moved.html">02. Number of tips moved</a>
+      <a href="../articles/02-leaves-moved.html">1.2: Number of leaves moved</a>
     </li>
     <li>
-      <a href="../articles/03-moves-made.html">03. Number of moves made</a>
+      <a href="../articles/03-moves-made.html">1.3: Number of moves made</a>
     </li>
     <li>
-      <a href="../articles/04-saturation-and-sensitivity.html">04. Saturation and sensitivity</a>
+      <a href="../articles/04-saturation-and-sensitivity.html">1.4, 1.5: Saturation and sensitivity</a>
     </li>
     <li>
-      <a href="../articles/05-tree-shape.html">05. Accounting for tree shape</a>
+      <a href="../articles/05-tree-shape.html">1.6: Independent of tree shape</a>
     </li>
     <li>
-      <a href="../articles/06-lin-cluster-recovery.html">06. Cluster recovery tests</a>
+      <a href="../articles/06-lin-cluster-recovery.html">1.7: Consistent cluster recovery</a>
     </li>
     <li>
-      <a href="../articles/07-bullseye.html">07. Bullseye tests</a>
+      <a href="../articles/07-bullseye.html">1.8: Bullseye tests</a>
     </li>
     <li>
-      <a href="../articles/08-spr-walking.html">08. Artificial tree rearrangement</a>
+      <a href="../articles/08-spr-walking.html">1.9: Artificial tree rearrangement</a>
     </li>
     <li>
       <a href="../articles/09-expected-similarity.html">09. Expected values for tree distance metrics</a>
@@ -129,7 +129,7 @@
     
     
 <p>Benchmarking conducted on an Intel(R) Xeon(R) CPU machine with <!--2 cores and--> 8.57 TB of RAM, comparing 45 trees obtained by performing successive subtree pruning and regrafting rearrangements on a pectinate starting tree.</p>
-<p>The time taken to compare all 990 pairs of trees by each method, was calculated, replicating timing 10 times.</p>
+<p>The time taken to compare all 990 pairs of trees by each method, was calculated, replicating timing 1 times.</p>
 <p><img src="10-timing_files/figure-html/timings-20-1.png" width="768"></p>
 <p><img src="10-timing_files/figure-html/timings-50-1.png" width="768"></p>
 <table class="table">
@@ -141,89 +141,89 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Robinson-Foulds</td>
-<td align="right">10</td>
+<td>Path</td>
+<td align="right">9.5</td>
 <td align="right">15</td>
 </tr>
 <tr class="even">
-<td>Path</td>
-<td align="right">11</td>
-<td align="right">16</td>
+<td>Robinson-Foulds</td>
+<td align="right">9.8</td>
+<td align="right">13</td>
 </tr>
 <tr class="odd">
 <td>Match. Split Dist.</td>
-<td align="right">17</td>
-<td align="right">48</td>
+<td align="right">15.0</td>
+<td align="right">45</td>
 </tr>
 <tr class="even">
 <td>Diff. Phylog. Info</td>
-<td align="right">21</td>
-<td align="right">87</td>
+<td align="right">21.0</td>
+<td align="right">83</td>
 </tr>
 <tr class="odd">
-<td>Match. Split Info Dist</td>
-<td align="right">24</td>
-<td align="right">160</td>
+<td>Nye et al.</td>
+<td align="right">23.0</td>
+<td align="right">130</td>
 </tr>
 <tr class="even">
-<td>Nye et al.</td>
-<td align="right">26</td>
-<td align="right">140</td>
+<td>Match. Split Info Dist</td>
+<td align="right">24.0</td>
+<td align="right">150</td>
 </tr>
 <tr class="odd">
 <td>JRF (k=2, arboreal)</td>
-<td align="right">26</td>
+<td align="right">24.0</td>
 <td align="right">120</td>
 </tr>
 <tr class="even">
 <td>JRF (k=2, non-arb.)</td>
-<td align="right">31</td>
-<td align="right">180</td>
+<td align="right">28.0</td>
+<td align="right">170</td>
 </tr>
 <tr class="odd">
 <td>Clust. Info. Dist.</td>
-<td align="right">44</td>
-<td align="right">270</td>
+<td align="right">43.0</td>
+<td align="right">260</td>
 </tr>
 <tr class="even">
-<td>JRF (k=4, arboreal)</td>
-<td align="right">46</td>
-<td align="right">560</td>
-</tr>
-<tr class="odd">
 <td>Robinson-Foulds Info</td>
-<td align="right">51</td>
+<td align="right">43.0</td>
 <td align="right">130</td>
 </tr>
+<tr class="odd">
+<td>JRF (k=4, arboreal)</td>
+<td align="right">43.0</td>
+<td align="right">550</td>
+</tr>
 <tr class="even">
-<td>JRF (k=4, non-arb.)</td>
-<td align="right">60</td>
-<td align="right">910</td>
+<td>NNI (approx.)</td>
+<td align="right">57.0</td>
+<td align="right">82</td>
 </tr>
 <tr class="odd">
-<td>NNI (approx.)</td>
-<td align="right">63</td>
-<td align="right">82</td>
+<td>JRF (k=4, non-arb.)</td>
+<td align="right">61.0</td>
+<td align="right">880</td>
 </tr>
 <tr class="even">
 <td>SPR (approx.)</td>
-<td align="right">93</td>
-<td align="right">800</td>
+<td align="right">94.0</td>
+<td align="right">790</td>
 </tr>
 <tr class="odd">
 <td>TBR (approx.)</td>
-<td align="right">220</td>
-<td align="right">380</td>
+<td align="right">200.0</td>
+<td align="right">360</td>
 </tr>
 <tr class="even">
 <td>Quartet</td>
-<td align="right">250</td>
-<td align="right">460</td>
+<td align="right">240.0</td>
+<td align="right">440</td>
 </tr>
 <tr class="odd">
 <td>MAST size</td>
-<td align="right">6800</td>
-<td align="right">27000</td>
+<td align="right">6300.0</td>
+<td align="right">26000</td>
 </tr>
 </tbody>
 </table>

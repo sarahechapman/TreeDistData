@@ -36,7 +36,7 @@
 
 
 <meta property="og:title" content="Method parameters — TreeDistMethods" />
-<meta property="og:description" content="&amp;lt;&amp;lt;#TODO Describe in detail.&amp;gt;&amp;gt;" />
+<meta property="og:description" content="Metadata for methods examined in this package." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -92,28 +92,28 @@
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="../articles/01-length-of-move.html">01. Length of move</a>
+      <a href="../articles/01-length-of-move.html">1.1: Length of move</a>
     </li>
     <li>
-      <a href="../articles/02-leaves-moved.html">02. Number of tips moved</a>
+      <a href="../articles/02-leaves-moved.html">1.2: Number of leaves moved</a>
     </li>
     <li>
-      <a href="../articles/03-moves-made.html">03. Number of moves made</a>
+      <a href="../articles/03-moves-made.html">1.3: Number of moves made</a>
     </li>
     <li>
-      <a href="../articles/04-saturation-and-sensitivity.html">04. Saturation and sensitivity</a>
+      <a href="../articles/04-saturation-and-sensitivity.html">1.4, 1.5: Saturation and sensitivity</a>
     </li>
     <li>
-      <a href="../articles/05-tree-shape.html">05. Accounting for tree shape</a>
+      <a href="../articles/05-tree-shape.html">1.6: Independent of tree shape</a>
     </li>
     <li>
-      <a href="../articles/06-lin-cluster-recovery.html">06. Cluster recovery tests</a>
+      <a href="../articles/06-lin-cluster-recovery.html">1.7: Consistent cluster recovery</a>
     </li>
     <li>
-      <a href="../articles/07-bullseye.html">07. Bullseye tests</a>
+      <a href="../articles/07-bullseye.html">1.8: Bullseye tests</a>
     </li>
     <li>
-      <a href="../articles/08-spr-walking.html">08. Artificial tree rearrangement</a>
+      <a href="../articles/08-spr-walking.html">1.9: Artificial tree rearrangement</a>
     </li>
     <li>
       <a href="../articles/09-expected-similarity.html">09. Expected values for tree distance metrics</a>
@@ -159,10 +159,12 @@
     </div>
 
     <div class="ref-description">
-    <p>&lt;&lt;#TODO Describe in detail.&gt;&gt;</p>
+    <p>Metadata for methods examined in this package.</p>
     </div>
 
     <pre class="usage"><span class='no'>tdAbbrevs</span>
+
+<span class='no'>tdMdAbbrevs</span>
 
 <span class='no'>tdBoxAbbrevs</span>
 
@@ -178,12 +180,25 @@
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>An object of class <code>expression</code> of length 25.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p><code>tdAbbrevs</code> lists abbreviations for each method, using expressions to allow
+formatting of text when plotted.</p>
+<p><code>tdMdAbbrevs</code> uses markdown formatting.</p>
+<p><code>tdBoxAbbrevs</code> uses line breaks to fit abbreviations in an approximately
+square bounding box.</p>
+<p><code>tdCol</code> provides each method with a suitable plotting colour.</p>
+<p><code>TDFunctions</code> lists for each method a function that will calculate the
+distance between two trees or lists of trees.</p>
+<p><code>TDPair</code> lists for each method a function to calculate the distance
+between one tree (<code>tr</code>) and another tree (<code>ref</code>).</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#format">Format</a></li>
+      <li><a href="#details">Details</a></li>
     </ul>
 
   </div>

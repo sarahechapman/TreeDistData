@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>07. Bullseye tests • TreeDistData</title>
+<title>1.8: Bullseye tests • TreeDistData</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="07. Bullseye tests">
+<script src="../pkgdown.js"></script><meta property="og:title" content="1.8: Bullseye tests">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -54,28 +54,28 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/01-length-of-move.html">01. Length of move</a>
+      <a href="../articles/01-length-of-move.html">1.1: Length of move</a>
     </li>
     <li>
-      <a href="../articles/02-leaves-moved.html">02. Number of tips moved</a>
+      <a href="../articles/02-leaves-moved.html">1.2: Number of leaves moved</a>
     </li>
     <li>
-      <a href="../articles/03-moves-made.html">03. Number of moves made</a>
+      <a href="../articles/03-moves-made.html">1.3: Number of moves made</a>
     </li>
     <li>
-      <a href="../articles/04-saturation-and-sensitivity.html">04. Saturation and sensitivity</a>
+      <a href="../articles/04-saturation-and-sensitivity.html">1.4, 1.5: Saturation and sensitivity</a>
     </li>
     <li>
-      <a href="../articles/05-tree-shape.html">05. Accounting for tree shape</a>
+      <a href="../articles/05-tree-shape.html">1.6: Independent of tree shape</a>
     </li>
     <li>
-      <a href="../articles/06-lin-cluster-recovery.html">06. Cluster recovery tests</a>
+      <a href="../articles/06-lin-cluster-recovery.html">1.7: Consistent cluster recovery</a>
     </li>
     <li>
-      <a href="../articles/07-bullseye.html">07. Bullseye tests</a>
+      <a href="../articles/07-bullseye.html">1.8: Bullseye tests</a>
     </li>
     <li>
-      <a href="../articles/08-spr-walking.html">08. Artificial tree rearrangement</a>
+      <a href="../articles/08-spr-walking.html">1.9: Artificial tree rearrangement</a>
     </li>
     <li>
       <a href="../articles/09-expected-similarity.html">09. Expected values for tree distance metrics</a>
@@ -115,7 +115,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>07. Bullseye tests</h1>
+      <h1>1.8: Bullseye tests</h1>
                         <h4 class="author">Martin R. Smith <a href="mailto:martin.smith@durham.ac.uk">martin.smith@durham.ac.uk</a>
 </h4>
             
@@ -128,162 +128,170 @@
 
     
     
-<p>I implemented ‘bullseye’ tests <span class="citation">(Kuhner &amp; Yamato, 2015)</span> by drawing 1 000 <em>n</em>-leaf trees at random from the uniform distribution (using the R function <code><a href="https://rdrr.io/pkg/ape/man/rtree.html">ape::rtree</a></code>, repeated for n = 5, 10, 20, 50), and using these trees to simulate binary phylogenetic characters under the Jukes-Cantor model (using R function phangorn::simSeq).</p>
+<div id="figure" class="section level2">
+<h2 class="hasAnchor">
+<a href="#figure" class="anchor"></a>Figure</h2>
 <p><img src="07-bullseye_files/figure-html/bullseye-results-1.png" width="691.2"></p>
+<p><strong>Figure 3. Results of ‘bullseye’ test.</strong> (a–d), success rate for each tree distance metric when comparing pairs of datasets differing in size by 400 base pairs; (e–h), success rates when comparing pairs of datasets differing by 2% in proportion of erroneous tokens; (i–j), accuracy of each method in ranking trees inferred from progressively degraded datasets according to the degree of dataset degradation.</p>
 <!--
 PlotMe(4, twoCol, 4.2/4, PlotFunc())
 -->
+</div>
+<div id="tabulation" class="section level2">
+<h2 class="hasAnchor">
+<a href="#tabulation" class="anchor"></a>Tabulation</h2>
 <table class="table">
 <thead><tr class="header">
 <th></th>
-<th align="right">subsampling50</th>
-<th align="right">miscoding50</th>
-<th align="right">subsamplingAccuracy</th>
-<th align="right">miscodingAccuracy</th>
+<th align="right">Subsampling: Success rate (50 leaves)</th>
+<th align="right">Miscoding: Success rate (50 leaves)</th>
+<th align="right">Subsampling: Accuracy (ρ)</th>
+<th align="right">Miscoding: Accuracy (ρ)</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>dpi</td>
+<td>Diff. Phylog. Info</td>
 <td align="right">651</td>
 <td align="right">937</td>
 <td align="right">0.708</td>
 <td align="right">0.935</td>
 </tr>
 <tr class="even">
-<td>msid</td>
+<td>Match. Split Info Dist</td>
 <td align="right">639</td>
 <td align="right">902</td>
 <td align="right">0.686</td>
 <td align="right">0.913</td>
 </tr>
 <tr class="odd">
-<td>cid</td>
+<td>Clust. Info. Dist.</td>
 <td align="right">650</td>
 <td align="right">941</td>
 <td align="right">0.714</td>
 <td align="right">0.935</td>
 </tr>
 <tr class="even">
-<td>nts</td>
+<td>Nye <em>et al.</em>
+</td>
 <td align="right">644</td>
 <td align="right">961</td>
 <td align="right">0.704</td>
 <td align="right">0.936</td>
 </tr>
 <tr class="odd">
-<td>ja2</td>
+<td>JRF (k=2, arboreal)</td>
 <td align="right">642</td>
 <td align="right">965</td>
 <td align="right">0.711</td>
 <td align="right">0.943</td>
 </tr>
 <tr class="even">
-<td>ja4</td>
+<td>JRF (k=4, arboreal)</td>
 <td align="right">629</td>
 <td align="right">929</td>
 <td align="right">0.671</td>
 <td align="right">0.925</td>
 </tr>
 <tr class="odd">
-<td>jna2</td>
+<td>JRF (k=2, non-arb.)</td>
 <td align="right">631</td>
 <td align="right">955</td>
 <td align="right">0.699</td>
 <td align="right">0.937</td>
 </tr>
 <tr class="even">
-<td>jna4</td>
+<td>JRF (k=4, non-arb.)</td>
 <td align="right">635</td>
 <td align="right">931</td>
 <td align="right">0.669</td>
 <td align="right">0.927</td>
 </tr>
 <tr class="odd">
-<td>msd</td>
+<td>Match. Split Dist.</td>
 <td align="right">636</td>
 <td align="right">777</td>
 <td align="right">0.665</td>
 <td align="right">0.785</td>
 </tr>
 <tr class="even">
-<td>mast</td>
+<td>MAST size</td>
 <td align="right">498</td>
 <td align="right">622</td>
 <td align="right">0.515</td>
 <td align="right">0.793</td>
 </tr>
 <tr class="odd">
-<td>masti</td>
+<td>MAST info</td>
 <td align="right">498</td>
 <td align="right">622</td>
 <td align="right">0.515</td>
 <td align="right">0.793</td>
 </tr>
 <tr class="even">
-<td>nni_l</td>
+<td>NNI (lwr bnd)</td>
 <td align="right">410</td>
 <td align="right">781</td>
 <td align="right">0.595</td>
 <td align="right">0.903</td>
 </tr>
 <tr class="odd">
-<td>nni_t</td>
+<td>NNI (ub tight)</td>
 <td align="right">NA</td>
 <td align="right">NA</td>
 <td align="right">0.963</td>
 <td align="right">1.000</td>
 </tr>
 <tr class="even">
-<td>nni_u</td>
+<td>NNI (upr bnd)</td>
 <td align="right">444</td>
 <td align="right">802</td>
 <td align="right">0.583</td>
 <td align="right">0.902</td>
 </tr>
 <tr class="odd">
-<td>spr</td>
+<td>SPR (approx.)</td>
 <td align="right">406</td>
 <td align="right">613</td>
 <td align="right">0.329</td>
 <td align="right">0.721</td>
 </tr>
 <tr class="even">
-<td>tbr_l</td>
+<td>TBR (lwr bnd)</td>
 <td align="right">312</td>
 <td align="right">604</td>
 <td align="right">0.439</td>
 <td align="right">0.837</td>
 </tr>
 <tr class="odd">
-<td>tbr_u</td>
+<td>TBR (upr bnd)</td>
 <td align="right">398</td>
 <td align="right">693</td>
 <td align="right">0.339</td>
 <td align="right">0.840</td>
 </tr>
 <tr class="even">
-<td>rf</td>
+<td>Robinson-Foulds</td>
 <td align="right">410</td>
 <td align="right">781</td>
 <td align="right">0.595</td>
 <td align="right">0.903</td>
 </tr>
 <tr class="odd">
-<td>rfi</td>
+<td>Robinson-Foulds Info</td>
 <td align="right">638</td>
 <td align="right">785</td>
 <td align="right">0.643</td>
 <td align="right">0.746</td>
 </tr>
 <tr class="even">
-<td>qd</td>
+<td>Quartet</td>
 <td align="right">626</td>
 <td align="right">809</td>
 <td align="right">0.619</td>
 <td align="right">0.861</td>
 </tr>
 <tr class="odd">
-<td>path</td>
+<td>Path</td>
 <td align="right">633</td>
 <td align="right">704</td>
 <td align="right">0.621</td>
@@ -291,14 +299,6 @@ PlotMe(4, twoCol, 4.2/4, PlotFunc())
 </tr>
 </tbody>
 </table>
-<div id="references" class="section level2 unnumbered">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
-<div id="refs" class="references">
-<div id="ref-Kuhner2015">
-<p>Kuhner, M. K., &amp; Yamato, J. (2015). Practical performance of tree comparison metrics. <em>Systematic Biology</em>, <em>64</em>(2), 205–214. doi:<a href="https://doi.org/10.1093/sysbio/syu085">10.1093/sysbio/syu085</a></p>
-</div>
-</div>
 </div>
   </div>
 
@@ -308,7 +308,8 @@ PlotMe(4, twoCol, 4.2/4, PlotFunc())
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#references">References</a></li>
+<li><a href="#figure">Figure</a></li>
+      <li><a href="#tabulation">Tabulation</a></li>
       </ul>
 </div>
       </div>

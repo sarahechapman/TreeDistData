@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>01. Length of move • TreeDistData</title>
+<title>1.1: Length of move • TreeDistData</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="01. Length of move">
+<script src="../pkgdown.js"></script><meta property="og:title" content="1.1: Length of move">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -54,28 +54,28 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/01-length-of-move.html">01. Length of move</a>
+      <a href="../articles/01-length-of-move.html">1.1: Length of move</a>
     </li>
     <li>
-      <a href="../articles/02-leaves-moved.html">02. Number of tips moved</a>
+      <a href="../articles/02-leaves-moved.html">1.2: Number of leaves moved</a>
     </li>
     <li>
-      <a href="../articles/03-moves-made.html">03. Number of moves made</a>
+      <a href="../articles/03-moves-made.html">1.3: Number of moves made</a>
     </li>
     <li>
-      <a href="../articles/04-saturation-and-sensitivity.html">04. Saturation and sensitivity</a>
+      <a href="../articles/04-saturation-and-sensitivity.html">1.4, 1.5: Saturation and sensitivity</a>
     </li>
     <li>
-      <a href="../articles/05-tree-shape.html">05. Accounting for tree shape</a>
+      <a href="../articles/05-tree-shape.html">1.6: Independent of tree shape</a>
     </li>
     <li>
-      <a href="../articles/06-lin-cluster-recovery.html">06. Cluster recovery tests</a>
+      <a href="../articles/06-lin-cluster-recovery.html">1.7: Consistent cluster recovery</a>
     </li>
     <li>
-      <a href="../articles/07-bullseye.html">07. Bullseye tests</a>
+      <a href="../articles/07-bullseye.html">1.8: Bullseye tests</a>
     </li>
     <li>
-      <a href="../articles/08-spr-walking.html">08. Artificial tree rearrangement</a>
+      <a href="../articles/08-spr-walking.html">1.9: Artificial tree rearrangement</a>
     </li>
     <li>
       <a href="../articles/09-expected-similarity.html">09. Expected values for tree distance metrics</a>
@@ -115,7 +115,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>01. Length of move</h1>
+      <h1>1.1: Length of move</h1>
                         <h4 class="author">Martin R. Smith</h4>
             
             <h4 class="date">2020-03-03</h4>
@@ -127,18 +127,14 @@
 
     
     
-<div id="supplementary-figure-1" class="section level2">
-<h2 class="hasAnchor">
-<a href="#supplementary-figure-1" class="anchor"></a>Supplementary Figure 1</h2>
 <p><img src="01-length-of-move_files/figure-html/unnamed-chunk-1-1.png" width="691.2"></p>
-<p>Distances between eleven-leaf trees differing in the position of a single leaf. The <em>move length</em> is the number of nodes that must be traversed to travel from the position of the moved leaf in the first tree to its position in the second. If a pair does not have a higher distance than all pairs with a shorter move length, or does not have a lower distance than all pairs with a longer move length, a mis-ordering is recorded.</p>
-</div>
+<p><strong>Supplementary Figure 1.</strong> Distances between eleven-leaf trees differing in the position of a single leaf. <em>Move length</em> is the number of nodes that must be traversed to travel from the position of the moved leaf in the first tree to its position in the second. If a pair does not have a higher distance than all pairs with a shorter move length, or does not have a lower distance than all pairs with a longer move length, a mis-ordering is recorded.</p>
 <div id="method" class="section level2">
 <h2 class="hasAnchor">
 <a href="#method" class="anchor"></a>Method</h2>
 <p>I generated seventeen eleven-tip trees that differ only in the position of their eleventh leaf.</p>
-<p>These trees were generated by adding an eleventh leaf to each edge in an unrooted unrooted ten-leaf tree: <img src="01-length-of-move_files/figure-html/backbone-1.png" width="345.6"></p>
-<p><img src="01-length-of-move_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
+<p>These trees were generated by adding an eleventh leaf to each edge in an unrooted unrooted ten-leaf tree: <img src="01-length-of-move_files/figure-html/backbone-1.png" width="230.4" style="display: block; margin: auto;"></p>
+<p><img src="01-length-of-move_files/figure-html/unnamed-chunk-2-1.png" width="691.2"></p>
 <p>The <em>move length</em> between any pair of these trees is defined as the number of nodes that must be traversed to travel from the position of the eleventh leaf in one tree to its position in the second. I define a <em>mis-ordering</em> as a case where the distance between a pair of trees is not strictly larger than the distance between every tree pair with a shorter move length, or a case where the distance is not strictly smaller than that between every tree pair with a greater move length.</p>
 <p>We would like a metric to display a monotonic increase, such that all tree pairs with <em>n</em> edges between the added leaves are further apart than any tree pair with <em>n</em> − 1 edges between the added leaves.</p>
 <table class="table">
@@ -172,7 +168,8 @@
 <td align="left">0</td>
 </tr>
 <tr class="odd">
-<td>paste(plain(“Nye”), italic(“et al.”))</td>
+<td>Nye <em>et al.</em>
+</td>
 <td align="left">24</td>
 </tr>
 <tr class="even">
@@ -238,8 +235,7 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#supplementary-figure-1">Supplementary Figure 1</a></li>
-      <li><a href="#method">Method</a></li>
+<li><a href="#method">Method</a></li>
       </ul>
 </div>
       </div>

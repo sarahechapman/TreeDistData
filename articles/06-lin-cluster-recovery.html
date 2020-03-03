@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>06. Cluster recovery tests • TreeDistData</title>
+<title>1.7: Consistent cluster recovery • TreeDistData</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="06. Cluster recovery tests">
+<script src="../pkgdown.js"></script><meta property="og:title" content="1.7: Consistent cluster recovery">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -54,28 +54,28 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/01-length-of-move.html">01. Length of move</a>
+      <a href="../articles/01-length-of-move.html">1.1: Length of move</a>
     </li>
     <li>
-      <a href="../articles/02-leaves-moved.html">02. Number of tips moved</a>
+      <a href="../articles/02-leaves-moved.html">1.2: Number of leaves moved</a>
     </li>
     <li>
-      <a href="../articles/03-moves-made.html">03. Number of moves made</a>
+      <a href="../articles/03-moves-made.html">1.3: Number of moves made</a>
     </li>
     <li>
-      <a href="../articles/04-saturation-and-sensitivity.html">04. Saturation and sensitivity</a>
+      <a href="../articles/04-saturation-and-sensitivity.html">1.4, 1.5: Saturation and sensitivity</a>
     </li>
     <li>
-      <a href="../articles/05-tree-shape.html">05. Accounting for tree shape</a>
+      <a href="../articles/05-tree-shape.html">1.6: Independent of tree shape</a>
     </li>
     <li>
-      <a href="../articles/06-lin-cluster-recovery.html">06. Cluster recovery tests</a>
+      <a href="../articles/06-lin-cluster-recovery.html">1.7: Consistent cluster recovery</a>
     </li>
     <li>
-      <a href="../articles/07-bullseye.html">07. Bullseye tests</a>
+      <a href="../articles/07-bullseye.html">1.8: Bullseye tests</a>
     </li>
     <li>
-      <a href="../articles/08-spr-walking.html">08. Artificial tree rearrangement</a>
+      <a href="../articles/08-spr-walking.html">1.9: Artificial tree rearrangement</a>
     </li>
     <li>
       <a href="../articles/09-expected-similarity.html">09. Expected values for tree distance metrics</a>
@@ -115,7 +115,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>06. Cluster recovery tests</h1>
+      <h1>1.7: Consistent cluster recovery</h1>
                         <h4 class="author">Martin R. Smith <a href="mailto:martin.smith@durham.ac.uk">martin.smith@durham.ac.uk</a>
 </h4>
             
@@ -128,10 +128,12 @@
 
     
     
-<p>Distance measurements can be used to identify clusters of similar trees. I used three approaches to generate clusters of similar trees, and tested each metric in its ability to recover these clusters <span class="citation">(Yu Lin, Rajan, &amp; Moret, 2012)</span>.</p>
-<p>For the first test, I generated 500 datasets of 50 binary trees with <em>n</em> = 40 leaves. Each set of trees was created by uniformly sampling two k-leaf ‘skeleton’ trees, where k ranges from 0.3 n to 0.9 <em>n</em>. From each skeleton, 50 trees were generated by adding each of the remaining <em>n – k</em> leaves at a uniformly selected point on the tree.</p>
 <p><img src="06-lin-cluster-recovery_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
-<p>Ranking: rank for each value of <em>k</em> and each clustering method, using lowest value in ties. Then average across all values of <em>k</em> and all clustering methods for each test.</p>
+<p><strong>Figure 2.</strong> Cluster recovery results. Successful cluster recovery rate for each tree distance metric under (a), test one: add 40 – <em>k</em> leaves to two <em>k</em>-leaf skeletons; (b), test two: conduct <em>k</em> LLI operations on two 40-leaf skeletons; (c), test three: conduct <em>k</em> SPR operations on two 40-leaf skeletons.</p>
+<div id="rankings" class="section level2">
+<h2 class="hasAnchor">
+<a href="#rankings" class="anchor"></a>Rankings</h2>
+<p>Rankings were calculated for each value of <em>k</em> and each clustering method, using lowest value in ties. The table reports the average ranking for all values of <em>k</em> and all clustering methods for each test.</p>
 <table class="table">
 <thead><tr class="header">
 <th></th>
@@ -142,7 +144,8 @@
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>paste(plain(“Nye”), italic(“et al.”))</td>
+<td>Nye <em>et al.</em>
+</td>
 <td align="right">4.66</td>
 <td align="right">4.150</td>
 <td align="right">3.76</td>
@@ -269,14 +272,7 @@
 </tr>
 </tbody>
 </table>
-<!--PlotMe(4, oneCol, 1.23, PlotFunc)--><div id="references" class="section level2 unnumbered">
-<h2 class="hasAnchor">
-<a href="#references" class="anchor"></a>References</h2>
-<div id="refs" class="references">
-<div id="ref-Lin2012">
-<p>Yu Lin, Rajan, V., &amp; Moret, B. M. E. (2012). A metric for phylogenetic trees based on matching. <em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em>, <em>9</em>(4), 1014–1022. doi:<a href="https://doi.org/10.1109/TCBB.2011.157">10.1109/TCBB.2011.157</a></p>
-</div>
-</div>
+<!--PlotMe(4, oneCol, 1.23, PlotFunc)-->
 </div>
   </div>
 
@@ -286,7 +282,7 @@
       <h2 class="hasAnchor">
 <a href="#tocnav" class="anchor"></a>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-<li><a href="#references">References</a></li>
+<li><a href="#rankings">Rankings</a></li>
       </ul>
 </div>
       </div>
