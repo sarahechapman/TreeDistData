@@ -4,6 +4,7 @@
 \name{TreeDistMethods}
 \alias{TreeDistMethods}
 \alias{tdAbbrevs}
+\alias{tdMdAbbrevs}
 \alias{tdBoxAbbrevs}
 \alias{tdMethods}
 \alias{tdCol}
@@ -13,6 +14,8 @@
 \format{An object of class \code{expression} of length 25.}
 \usage{
 tdAbbrevs
+
+tdMdAbbrevs
 
 tdBoxAbbrevs
 
