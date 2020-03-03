@@ -38,12 +38,8 @@ colScale <- colorspace::sequential_hcl(1000, palette='viridis')
 CorrPlot <- function (distribution, methodA, methodB) {
   a <- distribution[methodA, ]
   b <- distribution[methodB, ]
-  plot(a ~ b, pch='.', col='#00000055', axes=FALSE, ylab='', xlab='')
+  plot(a ~ b, pch='.', col='#00000033', axes=FALSE, ylab='', xlab='')
   reg <- lm(a ~ b)
-  #r2 <- summary(reg)$adj.r.squared
-  #regCol <- colScale[max(ceiling((r2 - 0.5) * 2000), 1L)]
-  #legend('bottomright', legend=paste0("R² = ", signif(r2, 3)),
-  #       text.col = regCol, bty='n')
   abline(reg, col='#ff3333')
 }
 
@@ -86,7 +82,7 @@ PlotCorr(distanceDistribution25)
 PlotCorr(distanceDistribution50)
 ```
 
-**Supplementary Figure 1. Correlation (adjusted r²) between distances for 10&nbsp;000 pairs of 50-leaf trees**
+**Supplementary Figure 2. Correlation (adjusted r²) between distances for 10&nbsp;000 pairs of 50-leaf trees**
 
 
 Not plotted:
