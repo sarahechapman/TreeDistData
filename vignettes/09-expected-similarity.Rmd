@@ -73,7 +73,8 @@ AddLine <- function (method, normalize = FALSE) {
   dat <- randomTreeDistances[method, , ]
   dat <- dat[, !is.na(dat[1, ])]
   nLeaves <- colnames(dat)
-  if (normalize) dat <- dat / rep(normalizeAgainst[method, ], each=dim(dat)[1L])
+  if (normalize) dat <- dat / rep(normalizeAgainst[method, ], 
+                                  each = dim(dat)[1L])
   Invert <- function (dat) {
     dat['mean', ] <- 1 - dat['mean', ]
     dat[c("min", "1%", "5%", "10%", "25%", "50%", "75%", "90%", "95%", 
@@ -104,7 +105,7 @@ PlotMethods <- function (methods, yMin = 0.4,
                          lp = c('bottomright', 'bottomleft')) {
   plot(as.integer(dimnames(randomTreeDistances)[[3]]),
        randomTreeDistances['dpi', 'mean', ],
-       ylim=c(yMin, 1), type='n',
+       ylim = c(yMin, 1), type = 'n',
        xlab = "Number of leaves", ylab = "Normalized tree distance")
   for (method in methods) AddLine(method, 
                                   method %in% c('msd', rownames(normalizeAgainst)))
@@ -123,7 +124,7 @@ PlotMethods <- function (methods, yMin = 0.4,
          legend=c('Median', 'Interquartile range', 'Interdecile range'))
 }
 PlotMethods(c('rf', 'dpi', 'cid', 'msd', 'nts', 'msid'))
-PlotMethods(c('rf', 'ja4', 'jna4', 'ja2', 'jna2', 'nts'), yMin=0.7)
+PlotMethods(c('rf', 'ja4', 'jna4', 'ja2', 'jna2', 'nts'), yMin = 0.7)
 PlotMethods(c('nni_u', 'tbr_u', 'spr', 'masti', 'mast',
               'path', 'qd', 'tbr_l', 'nni_l'), yMin = 0.14, 
             lp = c('bottomright', 'right'))
