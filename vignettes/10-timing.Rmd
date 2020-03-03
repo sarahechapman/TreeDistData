@@ -92,7 +92,7 @@ The below are the results of a benchmarking exercise conducted on an
 `r as.character(benchmarkme:::print.ram(ram * 1024))` of RAM,
 comparing `r nTrees` trees obtained by performing successive subtree pruning and
 regrafting rearrangements on a pectinate starting tree.  
-The values reported in [@Smith2020] were calculated on a modest desktop computer,
+The values reported in Smith [-@Smith2020] were calculated on a modest desktop computer,
 and will differ from those reported here, which will have been generated on
 the hardware system used to render the documentation.
 
@@ -122,3 +122,5 @@ colnames (results) <- paste(rep(c(20, 50), each = length(cols)), 'leaves,', cols
 knitr::kable(signif(results[order(results[, 1]), ] / nPairs, 2),
              caption = "Time per comparison / µs")
 ```
+
+## Reference
