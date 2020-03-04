@@ -138,7 +138,7 @@ TDPair <- list(
   cid = function (tr, ref) round(TreeDist::ClusteringInfoDistance(
     tr, ref, normalize = TRUE), 4L),
   nts = function (tr, ref) round(NyeTreeSimilarity(
-    tr, ref, similarity = TRUE, normalize = TRUE), 4L),
+    tr, ref, similarity = FALSE, normalize = TRUE), 4L),
   tbr_u = function(tr, ref) TBRDist::TBRDist(tr, ref)$tbr_max,
   tbr_l = function(tr, ref) TBRDist::TBRDist(tr, ref)$tbr_min,
   nni_t = function(tr, ref) TreeDist::NNIDist(tr, ref)['tight_upper'],
