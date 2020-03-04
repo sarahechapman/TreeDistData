@@ -12,7 +12,7 @@ output:
 ## Method
 
 Take an unrooted ten-leaf tree:
-```{R backbone, echo=FALSE, fig.width=2.4, fig.asp=0.5, message=FALSE, fig.align='center'}
+```{R backbone, echo=FALSE, fig.width=2, fig.asp=1.2, message=FALSE, fig.align='center'}
 library('Quartet')
 library('TreeDist')
 library('TreeTools')
@@ -64,9 +64,9 @@ urt <- lapply(add2then1[[1]], unroot)
 lapply(urt, plot) -> XX
 ```
 
-We then expect the distance from Ai to Bi.j
+We then expect the distance from A<sub>i</sub> to B<sub>i.j</sub>
 (i.e. move one tip to a new location)
-to be less than the distance from Ai to Ci.j
+to be less than the distance from A<sub>i</sub> to C<sub>i.j</sub>
 (i.e. move two tips to the same location)
 
 ```{r, echo=FALSE, fig.width=7.2, fig.asp=4/5, message=FALSE}
