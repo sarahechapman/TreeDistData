@@ -115,31 +115,19 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-
 <div id="treedistdata" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
 <a href="#treedistdata" class="anchor"></a>TreeDistData</h1></div>
 
-<p>This package provides data files used to build the vignettes in the <code>TreeDist</code> <a href="https://ms609.github.io/TreeDist">package</a>. Because the data files are large, they are not installed with <code>TreeDist</code>.</p>
+<p>‘TreeDistData’ is an R package that contains the functions and scripts used to compare the performance of tree distance metrics in Smith (in review).</p>
+<p>The “<a href="https://ms609.github.io/TreeDistData/articles/">Articles</a>” link in the navigation bar lists vignettes detailing the output of analyses corresponding to the stated sections of Smith (in review). Each of these pages includes a link to the R source code, which can be used to reproduce the analytical results.</p>
+<p>The “<a href="https://ms609.github.io/TreeDistData/reference/">Reference</a>” link lists convenience functions, which facilitate calls to “TreeDist”, and data objects that store the results of lengthy analyses. The code used to generate these data objects is available in the <a href="https://github.com/ms609/TreeDistData/tree/master/data-raw"><code>data-raw</code></a> directory.</p>
+<div id="references" class="section level2">
+<h2 class="hasAnchor">
+<a href="#references" class="anchor"></a>References</h2>
+<p>Smith, M.R. (20XX). Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees. In review.</p>
 </div>
-<div id="installation" class="section level1">
-<h1 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h1>
-<!--(#TODO submit to CRAN!)
-
-Install and load the library from CRAN as follows:
-```
-install.packages('TreeDistData')
-library('TreeDistData')
-```
-
-If you're feeling brave, you can i-->
-<p>Install the development version with:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="cf">if</span>(<span class="op">!</span><span class="kw"><a href="https://rdrr.io/r/base/library.html">require</a></span>(devtools)) <span class="kw"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span>(<span class="st">"devtools"</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">devtools<span class="op">::</span><span class="kw"><a href="https://devtools.r-lib.org//reference/remote-reexports.html">install_github</a></span>(<span class="st">'ms609/TreeDistData'</span>)</a></code></pre></div>
-<p>Please note that the ‘TreeDistData’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
-
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
