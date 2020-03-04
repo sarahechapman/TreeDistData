@@ -18,7 +18,7 @@ Imports:
     Quartet,
     TBRDist,
     TreeDist,
-    TreeTools
+    TreeTools (> 0.1.3)
 Suggests:
     ape,
     benchmarkme,
