@@ -14,7 +14,7 @@ legendSequence <- c('dpi', 'cid', 'nts', 'msd', 'qd', 'path', 'rf', 'rfi',
 
 tdAbbrevs <- c(
   rf  = 'Robinson-Foulds',
-  rfi = 'Robinson-Foulds Info',
+  rfi = 'Info. Corr. RF',
 
   ja4 = 'JRF (k=4, arboreal)',
   ja2 = 'JRF (k=2, arboreal)',
