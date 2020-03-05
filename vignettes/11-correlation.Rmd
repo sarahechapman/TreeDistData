@@ -54,7 +54,7 @@ PlotR2 <- function (distribution, methodA, methodB) {
 }
 
 PlotCorr <- function(distribution) {
-  par(mfrow = length(toCorrelate) + c(1L, 0L), mar=rep(0.2, 4))
+  par(mfrow = length(toCorrelate) + c(0L, 0L), mar=rep(0.2, 4))
   lapply(seq_along(toCorrelate), function(i)
     lapply(seq_along(toCorrelate), function(j) {
       if (i == j) {
