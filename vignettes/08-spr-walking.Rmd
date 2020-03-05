@@ -28,8 +28,9 @@ Plotter <- function (method) {
           ylab = TreeDistData::tdAbbrevs[method],
           xlab = 'SPR moves', axes= F)
   tau <- cor.test(dat.A, moves.A, method="kendall", use="pairwise")$estimate
-  text(max(moves.A), min(dat.A), paste('tau-b =', signif(tau, 3)), pos = 2, col = col)
-  legend('right', TreeDistData::tdAbbrevs[method], bty='n', col = col)
+  text(max(moves.A), min(dat.A), pos = 2, col = col,
+       bquote(paste(tau['B']*' = ', .(signif(tau, 3)))))
+legend('right', TreeDistData::tdAbbrevs[method], bty='n', col = col)
 }
 ```
 
