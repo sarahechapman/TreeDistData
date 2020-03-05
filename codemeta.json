@@ -5,19 +5,19 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "TreeDistData",
-  "description": "Data used to build vignettes in TreeDist package, and figures in Smith (20XX).",
-  "name": "TreeDistData: Large data files to accompany `TreeDist`",
-  "codeRepository": "https://github.com/ms609/TreeDistData",
-  "issueTracker": "https://github.com/ms609/TreeDistData/issues",
+  "description": "Data used to perform analyses of unrooted tree distance measures,\n  underlying tables and figures in Smith (20XX).",
+  "name": "TreeDistData: Analysis of Unrooted Tree Distance Measures",
+  "codeRepository": "https://github.com/ms609/TreeDistData/",
+  "issueTracker": "https://github.com/ms609/TreeDistData/issues/",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.0.0.9007",
+  "version": "0.1.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.1",
+    "version": "3.6.3",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.1 (2019-07-05)",
+  "runtimePlatform": "R version 3.6.3 (2020-02-29)",
   "author": [
     {
       "@type": "Person",
@@ -59,6 +59,18 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=ape"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "benchmarkme",
+      "name": "benchmarkme",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=benchmarkme"
     },
     {
       "@type": "SoftwareApplication",
@@ -122,6 +134,30 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "MASS",
+      "name": "MASS",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=MASS"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "microbenchmark",
+      "name": "microbenchmark",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=microbenchmark"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "phangorn",
       "name": "phangorn",
       "provider": {
@@ -172,14 +208,14 @@
       "@type": "SoftwareApplication",
       "identifier": "TreeSearch",
       "name": "TreeSearch",
-      "version": ">= 0.3.2.9007",
+      "version": ">= 0.4.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://github.com/ms609/TreeSearch"
+      "sameAs": "https://CRAN.R-project.org/package=TreeSearch"
     }
   ],
   "softwareRequirements": [
@@ -188,18 +224,6 @@
       "identifier": "R",
       "name": "R",
       "version": ">= 3.5.0"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "phangorn",
-      "name": "phangorn",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=phangorn"
     },
     {
       "@type": "SoftwareApplication",
@@ -229,6 +253,7 @@
       "@type": "SoftwareApplication",
       "identifier": "TreeTools",
       "name": "TreeTools",
+      "version": ">= 0.1.4",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -264,6 +289,6 @@
       }
     }
   ],
-  "relatedLink": "https://ms609.github.io/TreeDistData",
-  "fileSize": "118564.128KB"
+  "relatedLink": ["https://ms609.github.io/TreeDistData", "https://ms609.github.io/TreeDistData/"],
+  "fileSize": "106067.237KB"
 }
