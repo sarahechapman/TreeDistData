@@ -70,7 +70,7 @@ MethodLines <- function (method, allScores, gap = 1L,
 
 MethodLegend <- function (methods) {
   legend('topleft', rep('', length(methods)), col=TreeDistCol(methods, 88),
-         lwd = 3, lty = 1, bty='n')
+         lwd = 4, lty = 1, bty='n')
   legend('topleft', tdAbbrevs[methods], col=TreeDistCol(methods),
          lwd = lwd, lty = 1, bty='n')
 }
@@ -161,7 +161,7 @@ PlotFunc <- function() {
     if (nTip == '5 leaves') MethodLegend(firstMethods)
     if (nTip == '10 leaves') legend('topleft', c('Mean', 'Std. Err.'),
                                  col=paste0('#000000', c('', semitransparency)),
-                                 lwd = c(1, 3), lty = 1, bty='n', inset=c(0, 0))
+                                 lwd = c(1, 4), lty = 1, bty='n', inset=c(0, 0))
     
     par(mar = marBtm)
     plot(0, 0, type='n', xlim = c((1L + gap) * 200, 2000), ylim = c(0, 1),
