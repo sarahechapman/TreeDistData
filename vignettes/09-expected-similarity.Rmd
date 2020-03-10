@@ -1,5 +1,5 @@
 ---
-title: "2.2: Context tree distance values"
+title: "2.2: Context: tree distance values"
 author: "Martin R. Smith"
 date: "`r Sys.Date()`"
 output: 
