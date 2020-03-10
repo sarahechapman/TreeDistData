@@ -127,7 +127,7 @@ PlotMethods <- function (methods, yMin = 0.4,
 }
 PlotMethods(c('rf', 'dpi', 'cid', 'msd', 'nts', 'msid'))
 PlotMethods(c('rf', 'ja4', 'jna4', 'ja2', 'jna2', 'nts'), yMin = 0.7)
-PlotMethods(c('nni_u', 'tbr_u', 'spr',
+PlotMethods(c('nni_u', 'tbr_u', 'spr', 'masti', 'mast',
               'path', 'qd', 'tbr_l', 'nni_l'), yMin = 0.14, 
             lp = c('bottomright', 'right'))
 ```
