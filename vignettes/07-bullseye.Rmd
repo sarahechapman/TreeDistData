@@ -167,7 +167,7 @@ PlotFunc <- function() {
     plot(0, 0, type='n', xlim = c((1L + gap) * 200, 2000), ylim = c(0, 1),
          axes = FALSE,
          xlab = 'Size of larger dataset (bp)',
-         ylab = YLabel(lastLegend))
+         ylab = YLabel(lastLegend - 1L))
     axis(1)
     axis(2)
     lapply(secondMethods, MethodLines, allScores = allScores, gap = gap) -> XX
@@ -199,7 +199,7 @@ PlotFunc <- function() {
          xlim = c(as.integer(rownames(bullMoDiScores[[1]])[10 - gap]), 0),
          xlab = '% errors in better dataset',
          axes = FALSE,
-         ylim = c(0, 1), ylab=YLabel(lastLegend))
+         ylim = c(0, 1), ylab=YLabel(lastLegend - 1L))
     axis(1)
     axis(2)
     lapply(secondMethods, MethodLines, allScores = allScores, gap = gap) -> XX
