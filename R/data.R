@@ -310,12 +310,36 @@ NULL
 #'
 #' For each dataset, I calculated the distance between each pair of trees.
 #' Trees where then partitioned into clusters using five methods,
-#' using the \pkg{stats} and \pkg{cluster}: spectral clustering,
-#' partitioning around medioids, and hierarchical clustering using complete,
-#' single and average linkage.
+#' using the \pkg{stats} and \pkg{cluster}.
 #' I define the success rate of each distance measure as the proportion of
 #' datasets in which every tree generated from the same skeleton was placed
 #' in the same cluster.
+#'
+#' @format A three-dimensional array.
+#'
+#' Rows correspond to the clustering methods:
+#'
+#' - `spc`: spectral clustering
+#'
+#' - `pam`: partitioning around medioids
+#'
+#' - `h...`: hierarchical clustering using:
+#'  `h.cmp`, complete;
+#'  `h.sng`, single; and
+#'  `h.avg`, average linkage.
+#'
+#' Columns correspond to distance metrics; see 'Method abbreviations' below.
+#'
+#' Slices correspond to values of _k_:
+#'
+#' - `linTestOneResults`: _k_ = 30, 40, 50, 60, 70
+#'
+#' - `linTestTwoResults`: _k_ = 10, 20, 30, 40
+#'
+#' - `linTestSPRResults`: _k_ = 30, 40, 50, 60, 70
+#'
+#'
+#' @template methodAbbrevs
 #'
 #' @template dataRaw
 #' @references \insertRef{Lin2012}{TreeDistData}

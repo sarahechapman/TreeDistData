@@ -7,7 +7,26 @@
 \alias{linTestTwoResults}
 \alias{linTestSPRResults}
 \title{Evaluating tree distance metrics by cluster recovery}
-\format{An object of class \code{array} of dimension 5 x 18 x 5.}
+\format{A three-dimensional array.
+
+Rows correspond to the clustering methods:
+\itemize{
+\item \code{spc}: spectral clustering
+\item \code{pam}: partitioning around medioids
+\item \code{h...}: hierarchical clustering using:
+\code{h.cmp}, complete;
+\code{h.sng}, single; and
+\code{h.avg}, average linkage.
+}
+
+Columns correspond to distance metrics; see 'Method abbreviations' below.
+
+Slices correspond to values of \emph{k}:
+\itemize{
+\item \code{linTestOneResults}: \emph{k} = 30, 40, 50, 60, 70
+\item \code{linTestTwoResults}: \emph{k} = 10, 20, 30, 40
+\item \code{linTestSPRResults}: \emph{k} = 30, 40, 50, 60, 70
+}}
 \source{
 Scripts used to generate data objects are housed in the
 \href{https://github.com/ms609/TreeDistData/tree/master/data-raw}{\code{data-raw}}
@@ -27,7 +46,7 @@ in Lin \emph{et al.} (2012).
 }
 \details{
 I used three approaches to generate clusters of similar trees, and tested
-each metric in its ability to recover these clusters (Lin et al., 2012).
+each metric in its ability to recover these clusters (Lin \emph{et al.}, 2012).
 
 For the first test, I generated 500 datasets of 100 binary trees with
 \emph{n} = 40 leaves.
@@ -47,14 +66,53 @@ location within the tree.
 
 For each dataset, I calculated the distance between each pair of trees.
 Trees where then partitioned into clusters using five methods,
-using the \pkg{stats} and \pkg{cluster}: spectral clustering,
-partitioning around medioids, and hierarchical clustering using complete,
-single and average linkage.
+using the \pkg{stats} and \pkg{cluster}.
 I define the success rate of each distance measure as the proportion of
 datasets in which every tree generated from the same skeleton was placed
 in the same cluster.
 }
 \references{
+\insertRef{Bogdanowicz2012}{TreeDist}
+
+\insertRef{Li1996}{TreeDist}
+
+\insertRef{Kendall2016}{TreeDistData}
+
+\insertRef{Nye2006}{TreeDist}
+
+\insertRef{Robinson1981}{TreeDist}
+
+\insertRef{SmithTern}{TreeSearch}
+
+\insertRef{SmithDist}{TreeDist}
+
+\insertRef{Steel1993}{TreeDist}
+
+\insertRef{Valiente2009}{TreeDist}
+
 \insertRef{Lin2012}{TreeDistData}
 }
 \keyword{datasets}
+\section{Methods tested}{
+\itemize{
+\item \code{dpi}: Different Phylogenetic Information (Smith, forthcoming)
+\item \code{msid}: Matching Split Information Distance (Smith, forthcoming)
+\item \code{cid}: Clustering Information Distance (Smith, forthcoming)
+\item \code{qd}: Quartet divergence (Smith, 2019)
+\item \code{nts}: Nye \emph{et al.} tree similarity (Nye \emph{et al.} 2006)
+\item \code{ja2}, \code{ja4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4
+\item \code{jna2}, \code{jna4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4,
+with non-arboreal matchings permitted
+\item \code{msd}: Matching Split Distance (Bogdanowicz & Giaro, 2012)
+\item \code{mast}: Size of Maximum Agreement Subtree (Valiente 2009)
+\item \code{masti}: Information content of Maximum Agreement Subtree
+\item \code{nni_l}, \code{nni_t}, \code{nni_u}: Lower bound, tight upper bound, and upper bound
+for  nearest-neighbour interchange distance (Li \emph{et al.} 1996)
+\item \code{spr}: Approximate SPR distance
+\item \code{tbr_l}, \code{tbr_u}: Lower and upper bound for tree bisection and reconnection
+(TBR) distance
+\item \code{rf}: Robinson-Foulds distance (Robinson & Foulds 1985)
+\item \code{rfi}: Information-corrected Robinson-Foulds distance (Smith, forthcoming)
+\item \code{path}: Path distance (Steel & Penny 1993), unnormalized
+}
+}
