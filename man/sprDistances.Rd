@@ -3,8 +3,13 @@
 \docType{data}
 \name{sprDistances}
 \alias{sprDistances}
-\title{SPR walk distances}
-\format{An object of class \code{list} of length 21.}
+\title{Tree distance and SPR moves}
+\format{A list of length 21.
+Each entry is named according to the corresponding tree distance method; see
+'Methods tested' below.
+
+Each member of the list is a 100 x 100 matrix listing the distance
+between each pair of trees in the SPR chain, numbered from 1 to 100.}
 \source{
 Scripts used to generate data objects are housed in the
 \href{https://github.com/ms609/TreeDistData/tree/master/data-raw}{\code{data-raw}}
@@ -14,6 +19,58 @@ directory.
 sprDistances
 }
 \description{
-...#TODO Describe in detail...
+Datasets testing whether separating trees by increasingly many moves
+results in a corresponding increase to their distance.
+}
+\details{
+I generated a chain of 100 50-leaf trees, starting from a pectinate tree
+and deriving each tree in turn by performing an SPR operation on the previous
+tree.
+A consistent measure of tree similarity should correlate with the number of
+SPR operations separating a pair of trees in this chain.
+This said, because one SPR operation may counteract some of the difference
+introduced by a previous one, perfect correlation is unlikely.
+}
+\references{
+\insertRef{Bogdanowicz2012}{TreeDist}
+
+\insertRef{Li1996}{TreeDist}
+
+\insertRef{Kendall2016}{TreeDistData}
+
+\insertRef{Nye2006}{TreeDist}
+
+\insertRef{Robinson1981}{TreeDist}
+
+\insertRef{SmithTern}{TreeSearch}
+
+\insertRef{SmithDist}{TreeDist}
+
+\insertRef{Steel1993}{TreeDist}
+
+\insertRef{Valiente2009}{TreeDist}
 }
 \keyword{datasets}
+\section{Methods tested}{
+\itemize{
+\item \code{dpi}: Different Phylogenetic Information (Smith, forthcoming)
+\item \code{msid}: Matching Split Information Distance (Smith, forthcoming)
+\item \code{cid}: Clustering Information Distance (Smith, forthcoming)
+\item \code{qd}: Quartet divergence (Smith, 2019)
+\item \code{nts}: Nye \emph{et al.} tree similarity (Nye \emph{et al.} 2006)
+\item \code{ja2}, \code{ja4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4
+\item \code{jna2}, \code{jna4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4,
+with non-arboreal matchings permitted
+\item \code{msd}: Matching Split Distance (Bogdanowicz & Giaro, 2012)
+\item \code{mast}: Size of Maximum Agreement Subtree (Valiente 2009)
+\item \code{masti}: Information content of Maximum Agreement Subtree
+\item \code{nni_l}, \code{nni_t}, \code{nni_u}: Lower bound, tight upper bound, and upper bound
+for  nearest-neighbour interchange distance (Li \emph{et al.} 1996)
+\item \code{spr}: Approximate SPR distance
+\item \code{tbr_l}, \code{tbr_u}: Lower and upper bound for tree bisection and reconnection
+(TBR) distance
+\item \code{rf}: Robinson-Foulds distance (Robinson & Foulds 1985)
+\item \code{rfi}: Information-corrected Robinson-Foulds distance (Smith, forthcoming)
+\item \code{path}: Path distance (Steel & Penny 1993), unnormalized
+}
+}

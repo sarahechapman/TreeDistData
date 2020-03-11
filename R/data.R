@@ -403,10 +403,28 @@ NULL
 #' @rdname TreeDistMethods
 'TDPair'
 
-#' SPR walk distances
+#' Tree distance and SPR moves
 #'
-#' <<#TODO Describe in detail.>>
+#' Datasets testing whether separating trees by increasingly many moves
+#' results in a corresponding increase to their distance.
 #'
+#' I generated a chain of 100 50-leaf trees, starting from a pectinate tree
+#' and deriving each tree in turn by performing an SPR operation on the previous
+#' tree.
+#' A consistent measure of tree similarity should correlate with the number of
+#' SPR operations separating a pair of trees in this chain.
+#' This said, because one SPR operation may counteract some of the difference
+#' introduced by a previous one, perfect correlation is unlikely.
+#'
+#' @format A list of length 21.
+#' Each entry is named according to the corresponding tree distance method; see
+#' 'Methods tested' below.
+#'
+#' Each member of the list is a 100 x 100 matrix listing the distance
+#' between each pair of trees in the SPR chain, numbered from 1 to 100.
+#'
+#'
+#' @template methodAbbrevs
 #' @template dataRaw
 'sprDistances'
 
