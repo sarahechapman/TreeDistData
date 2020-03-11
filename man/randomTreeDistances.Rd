@@ -56,6 +56,9 @@ minimum (\code{min}),
 maximum (\code{max}), mean (\code{mean}) and standard deviation (\code{sd}).
 
 The third dimension lists the number of leaves in the trees compared.
+
+For analysis of this data, see the
+\href{https://ms609.github.io/TreeDistData/articles/09-expected-similarity.html}{accompanying vignette}.
 }
 \references{
 \itemize{
