@@ -19,7 +19,7 @@ Rows correspond to the clustering methods:
 \code{h.avg}, average linkage.
 }
 
-Columns correspond to distance metrics; see 'Method abbreviations' below.
+Columns correspond to distance metrics; see 'Methods tested' below.
 
 Slices correspond to values of \emph{k}:
 \itemize{

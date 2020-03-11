@@ -328,7 +328,7 @@ NULL
 #'  `h.sng`, single; and
 #'  `h.avg`, average linkage.
 #'
-#' Columns correspond to distance metrics; see 'Method abbreviations' below.
+#' Columns correspond to distance metrics; see 'Methods tested' below.
 #'
 #' Slices correspond to values of _k_:
 #'
