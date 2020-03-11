@@ -36,7 +36,8 @@
 
 
 <meta property="og:title" content="Shape effect — shapeEffect" />
-<meta property="og:description" content="&amp;lt;&amp;lt;#TODO Describe in detail.&amp;gt;&amp;gt;" />
+<meta property="og:description" content="Results of tests exploring the influence of tree shape on reconstructed
+tree distances." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -159,7 +160,8 @@
     </div>
 
     <div class="ref-description">
-    <p>&lt;&lt;#TODO Describe in detail.&gt;&gt;</p>
+    <p>Results of tests exploring the influence of tree shape on reconstructed
+tree distances.</p>
     </div>
 
     <pre class="usage"><span class='no'>shapeEffect</span></pre>
@@ -167,12 +169,99 @@
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>list</code> of length 21.</p>
+    <p>A list of length 21.
+Each entry of the list is named according to the abbreviation of the
+corresponding method (see 'Methods tested' below).</p>
+<p>Each entry is itself a list of ten elements.  Each element contains a numeric
+vector listing the distances between each pair of trees with shape <em>x</em> and
+shape <em>y</em>, where:</p>
+<p><code>x = 1, 1, 1, 1, 2, 2, 2, 3, 3, 4</code>
+and
+<code>y = 1, 2, 3, 4, 2, 3, 4, 3, 4, 4</code>.</p>
+<p>As trees are not compared with themselves (to avoid zero distances), elements
+where <em>x</em> = <em>y</em> contain 4950 distances, whereas other elements contain 5050
+distances.</p>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Scripts used to generate data objects are housed in the
 <a href='https://github.com/ms609/TreeDistData/tree/master/data-raw'><code>data-raw</code></a>
 directory.</p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>For each of the four binary unrooted tree shapes on eight leaves, I labelled
+leaves at random until I had generated 100 distinct trees.</p>
+<p>I measured the distance from each tree to each of the other 399 trees.</p>
+<p>For analysis of this data, see the
+<a href='https://ms609.github.io/TreeDistData/articles/05-tree-shape.html'>accompanying vignette</a>.</p>
+    <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
+
+    <p>Bogdanowicz D, Giaro K (2012).
+&#8220;Matching split distance for unrooted binary phylogenetic trees.&#8221;
+<em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em>, <b>9</b>(1), 150--160.
+doi: <a href='https://doi.org/10.1109/TCBB.2011.48'>10.1109/TCBB.2011.48</a>
+.</p>
+<p>Li M, Tromp J, Zhang L (1996).
+&#8220;Some notes on the nearest neighbour interchange distance.&#8221;
+In Goos G, Hartmanis J, Leeuwen J, Cai J, Wong CK (eds.), <em>Computing and Combinatorics</em>, volume 1090, 343--351.
+Springer, Berlin, Heidelberg.
+ISBN 978-3-540-61332-9 978-3-540-68461-9, doi: <a href='https://doi.org/10.1007/3-540-61332-3_168'>10.1007/3-540-61332-3_168</a>
+.</p>
+<p>Kendall M, Colijn C (2016).
+&#8220;Mapping phylogenetic trees to reveal distinct patterns of evolution.&#8221;
+<em>Molecular Biology and Evolution</em>, <b>33</b>(10), 2735--2743.
+doi: <a href='https://doi.org/10.1093/molbev/msw124'>10.1093/molbev/msw124</a>
+, <a href='2019-07-10'>2019-07-10</a>.</p>
+<p>Nye TMW, Liò P, Gilks WR (2006).
+&#8220;A novel algorithm and web-based tool for comparing two alternative phylogenetic trees.&#8221;
+<em>Bioinformatics</em>, <b>22</b>(1), 117--119.
+doi: <a href='https://doi.org/10.1093/bioinformatics/bti720'>10.1093/bioinformatics/bti720</a>
+.</p>
+<p>Robinson DF, Foulds LR (1981).
+&#8220;Comparison of phylogenetic trees.&#8221;
+<em>Mathematical Biosciences</em>, <b>53</b>(1-2), 131--147.
+ISSN 00255564, doi: <a href='https://doi.org/10.1016/0025-5564(81)90043-2'>10.1016/0025-5564(81)90043-2</a>
+.</p>
+<p>Smith MR (2019).
+&#8220;Bayesian and parsimony approaches reconstruct informative trees from simulated morphological datasets.&#8221;
+<em>Biology Letters</em>, <b>15</b>, 20180632.
+doi: <a href='https://doi.org/10.1098/rsbl.2018.0632'>10.1098/rsbl.2018.0632</a>
+.</p>
+<p>Smith MR (2020).
+&#8220;Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees.&#8221;
+<em>In review</em>.</p>
+<p>Steel MA, Penny D (1993).
+&#8220;Distributions of tree comparison metrics—some new results.&#8221;
+<em>Systematic Biology</em>, <b>42</b>(2), 126--141.
+ISSN 1076-836X, doi: <a href='https://doi.org/10.1093/sysbio/42.2.126'>10.1093/sysbio/42.2.126</a>
+.</p>
+<p>Valiente G (2009).
+<em>Combinatorial Pattern Matching Algorithms in Computational Biology using Perl and R</em>,  CRC Mathematical and Computing Biology Series.
+CRC Press, Boca Raton.</p>
+    <h2 class="hasAnchor" id="methods-tested"><a class="anchor" href="#methods-tested"></a>Methods tested</h2>
+
+    
+<ul>
+<li><p><code>dpi</code>: Different Phylogenetic Information (Smith, forthcoming)</p></li>
+<li><p><code>msid</code>: Matching Split Information Distance (Smith, forthcoming)</p></li>
+<li><p><code>cid</code>: Clustering Information Distance (Smith, forthcoming)</p></li>
+<li><p><code>qd</code>: Quartet divergence (Smith, 2019)</p></li>
+<li><p><code>nts</code>: Nye <em>et al.</em> tree similarity (Nye <em>et al.</em> 2006)</p></li>
+<li><p><code>ja2</code>, <code>ja4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4</p></li>
+<li><p><code>jna2</code>, <code>jna4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4,
+with non-arboreal matchings permitted</p></li>
+<li><p><code>msd</code>: Matching Split Distance (Bogdanowicz &amp; Giaro, 2012)</p></li>
+<li><p><code>mast</code>: Size of Maximum Agreement Subtree (Valiente 2009)</p></li>
+<li><p><code>masti</code>: Information content of Maximum Agreement Subtree</p></li>
+<li><p><code>nni_l</code>, <code>nni_t</code>, <code>nni_u</code>: Lower bound, tight upper bound, and upper bound
+for  nearest-neighbour interchange distance (Li <em>et al.</em> 1996)</p></li>
+<li><p><code>spr</code>: Approximate SPR distance</p></li>
+<li><p><code>tbr_l</code>, <code>tbr_u</code>: Lower and upper bound for tree bisection and reconnection
+(TBR) distance</p></li>
+<li><p><code>rf</code>: Robinson-Foulds distance (Robinson &amp; Foulds 1985)</p></li>
+<li><p><code>rfi</code>: Information-corrected Robinson-Foulds distance (Smith, forthcoming)</p></li>
+<li><p><code>path</code>: Path distance (Steel &amp; Penny 1993), unnormalized</p></li>
+</ul>
+
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -180,6 +269,9 @@ directory.</p>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#format">Format</a></li>
       <li><a href="#source">Source</a></li>
+      <li><a href="#details">Details</a></li>
+      <li><a href="#references">References</a></li>
+      <li><a href="#methods-tested">Methods tested</a></li>
     </ul>
 
   </div>
