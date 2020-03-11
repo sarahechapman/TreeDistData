@@ -9,7 +9,8 @@ Each entry is named according to the corresponding tree distance method; see
 'Methods tested' below.
 
 Each member of the list is a 100 x 100 matrix listing the distance
-between each pair of trees in the SPR chain, numbered from 1 to 100.}
+between each pair of trees in the SPR chain (see 'Details'),
+numbered from 1 to 100.}
 \source{
 Scripts used to generate data objects are housed in the
 \href{https://github.com/ms609/TreeDistData/tree/master/data-raw}{\code{data-raw}}
@@ -30,6 +31,9 @@ A consistent measure of tree similarity should correlate with the number of
 SPR operations separating a pair of trees in this chain.
 This said, because one SPR operation may counteract some of the difference
 introduced by a previous one, perfect correlation is unlikely.
+
+For analysis of this data, see the
+\href{https://ms609.github.io/TreeDistData/articles/08-spr-walking.html}{accompanying vignette}.
 }
 \references{
 \insertRef{Bogdanowicz2012}{TreeDist}

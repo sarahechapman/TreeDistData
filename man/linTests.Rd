@@ -70,6 +70,9 @@ using the \pkg{stats} and \pkg{cluster}.
 I define the success rate of each distance measure as the proportion of
 datasets in which every tree generated from the same skeleton was placed
 in the same cluster.
+
+For analysis of this data, see the
+\href{https://ms609.github.io/TreeDistData/articles/06-lin-cluster-recovery.html}{accompanying vignette}.
 }
 \references{
 \insertRef{Bogdanowicz2012}{TreeDist}

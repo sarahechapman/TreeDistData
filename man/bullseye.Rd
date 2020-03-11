@@ -60,6 +60,9 @@ described by Smith (forthcoming); the \code{bullMoDi} prefix refers to the
 \code{bullseyeDistances} contains two elements, tabulating the distance
 between each pair of 20- and 50-leaf trees in \code{bullseyeTrees}.
 For details, see \code{\link{sevenTipDistances}}.
+
+For analysis of this data, see the
+\href{https://ms609.github.io/TreeDistData/articles/07-bullseye.html}{accompanying vignette}.
 }
 \references{
 \itemize{

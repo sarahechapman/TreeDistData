@@ -4,7 +4,21 @@
 \name{shapeEffect}
 \alias{shapeEffect}
 \title{Shape effect}
-\format{An object of class \code{list} of length 21.}
+\format{A list of length 21.
+Each entry of the list is named according to the abbreviation of the
+corresponding method (see 'Methods tested' below).
+
+Each entry is itself a list of ten elements.  Each element contains a numeric
+vector listing the distances between each pair of trees with shape \emph{x} and
+shape \emph{y}, where:
+
+\verb{x = 1, 1, 1, 1, 2, 2, 2, 3, 3, 4}
+and
+\verb{y = 1, 2, 3, 4, 2, 3, 4, 3, 4, 4}.
+
+As trees are not compared with themselves (to avoid zero distances), elements
+where \emph{x} = \emph{y} contain 4950 distances, whereas other elements contain 5050
+distances.}
 \source{
 Scripts used to generate data objects are housed in the
 \href{https://github.com/ms609/TreeDistData/tree/master/data-raw}{\code{data-raw}}
@@ -14,6 +28,58 @@ directory.
 shapeEffect
 }
 \description{
-...#TODO Describe in detail...
+Results of tests exploring the influence of tree shape on reconstructed
+tree distances.
+}
+\details{
+For each of the four binary unrooted tree shapes on eight leaves, I labelled
+leaves at random until I had generated 100 distinct trees.
+
+I measured the distance from each tree to each of the other 399 trees.
+
+For analysis of this data, see the
+\href{https://ms609.github.io/TreeDistData/articles/05-tree-shape.html}{accompanying vignette}.
+}
+\references{
+\insertRef{Bogdanowicz2012}{TreeDist}
+
+\insertRef{Li1996}{TreeDist}
+
+\insertRef{Kendall2016}{TreeDistData}
+
+\insertRef{Nye2006}{TreeDist}
+
+\insertRef{Robinson1981}{TreeDist}
+
+\insertRef{SmithTern}{TreeSearch}
+
+\insertRef{SmithDist}{TreeDist}
+
+\insertRef{Steel1993}{TreeDist}
+
+\insertRef{Valiente2009}{TreeDist}
 }
 \keyword{datasets}
+\section{Methods tested}{
+\itemize{
+\item \code{dpi}: Different Phylogenetic Information (Smith, forthcoming)
+\item \code{msid}: Matching Split Information Distance (Smith, forthcoming)
+\item \code{cid}: Clustering Information Distance (Smith, forthcoming)
+\item \code{qd}: Quartet divergence (Smith, 2019)
+\item \code{nts}: Nye \emph{et al.} tree similarity (Nye \emph{et al.} 2006)
+\item \code{ja2}, \code{ja4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4
+\item \code{jna2}, \code{jna4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4,
+with non-arboreal matchings permitted
+\item \code{msd}: Matching Split Distance (Bogdanowicz & Giaro, 2012)
+\item \code{mast}: Size of Maximum Agreement Subtree (Valiente 2009)
+\item \code{masti}: Information content of Maximum Agreement Subtree
+\item \code{nni_l}, \code{nni_t}, \code{nni_u}: Lower bound, tight upper bound, and upper bound
+for  nearest-neighbour interchange distance (Li \emph{et al.} 1996)
+\item \code{spr}: Approximate SPR distance
+\item \code{tbr_l}, \code{tbr_u}: Lower and upper bound for tree bisection and reconnection
+(TBR) distance
+\item \code{rf}: Robinson-Foulds distance (Robinson & Foulds 1985)
+\item \code{rfi}: Information-corrected Robinson-Foulds distance (Smith, forthcoming)
+\item \code{path}: Path distance (Steel & Penny 1993), unnormalized
+}
+}

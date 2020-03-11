@@ -41,6 +41,8 @@
 #'
 #' The third dimension lists the number of leaves in the trees compared.
 #'
+#' @templateVar vignette 09-expected-similarity
+#' @template seeVignette
 #' @template dataRaw
 #'
 #' @references
@@ -260,6 +262,8 @@ NULL
 #' For details, see \code{\link{sevenTipDistances}}.
 #'
 #'
+#' @templateVar vignette 07-bullseye
+#' @template seeVignette
 #' @template dataRaw
 #' @references
 #' - \insertRef{Kuhner2015}{TreeDistData}
@@ -338,6 +342,9 @@ NULL
 #'
 #' - `linTestSPRResults`: _k_ = 30, 40, 50, 60, 70
 #'
+#'
+#' @templateVar vignette 06-lin-cluster-recovery
+#' @template seeVignette
 #'
 #' @template methodAbbrevs
 #'
@@ -421,16 +428,46 @@ NULL
 #' 'Methods tested' below.
 #'
 #' Each member of the list is a 100 x 100 matrix listing the distance
-#' between each pair of trees in the SPR chain, numbered from 1 to 100.
+#' between each pair of trees in the SPR chain (see 'Details'),
+#' numbered from 1 to 100.
 #'
 #'
+#' @templateVar vignette 08-spr-walking
+#' @template seeVignette
 #' @template methodAbbrevs
 #' @template dataRaw
 'sprDistances'
 
 #' Shape effect
 #'
-#' <<#TODO Describe in detail.>>
+#' Results of tests exploring the influence of tree shape on reconstructed
+#' tree distances.
 #'
+#' For each of the four binary unrooted tree shapes on eight leaves, I labelled
+#' leaves at random until I had generated 100 distinct trees.
+#'
+#' I measured the distance from each tree to each of the other 399 trees.
+#'
+#' @templateVar vignette 05-tree-shape
+#' @template seeVignette
+#'
+#' @format A list of length 21.
+#' Each entry of the list is named according to the abbreviation of the
+#' corresponding method (see 'Methods tested' below).
+#'
+#' Each entry is itself a list of ten elements.  Each element contains a numeric
+#' vector listing the distances between each pair of trees with shape _x_ and
+#' shape _y_, where:
+#'
+#' `x = 1, 1, 1, 1, 2, 2, 2, 3, 3, 4`
+#' and
+#' `y = 1, 2, 3, 4, 2, 3, 4, 3, 4, 4`.
+#'
+#' As trees are not compared with themselves (to avoid zero distances), elements
+#' where _x_ = _y_ contain 4950 distances, whereas other elements contain 5050
+#' distances.
+#'
+#'
+#' @template methodAbbrevs
 #' @template dataRaw
 'shapeEffect'

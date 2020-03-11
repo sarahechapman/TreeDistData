@@ -24,5 +24,8 @@ distribution using \code{ape::rtree(nTip, br = NULL)}.
 \details{
 The distances between these pairs of trees are recorded in
 the data objects  \code{\link{distanceDistribution25}} and  \code{\link{distanceDistribution50}}.
+
+For analysis of this data, see the
+\href{https://ms609.github.io/TreeDistData/articles/09-expected-similarity.html}{accompanying vignette}.
 }
 \keyword{datasets}
