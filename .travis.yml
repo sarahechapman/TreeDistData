@@ -11,13 +11,9 @@ jobs:
     - r: 3.5.0
       r_packages:
        - devtools
-       - Rdpack
-       - roxygen2
        - testthat
     - r: release
       before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
-      r_packages:
-       - kdensity
       r_binary_packages:
        - benchmarkme
        - binom
@@ -40,8 +36,8 @@ jobs:
         skip_cleanup: true
     - r: devel
       r_binary_packages:
+       - covr
        - devtools
-       - Rdpack
        - roxygen2
       after_success:
         - Rscript -e "covr::codecov()"
@@ -58,12 +54,8 @@ jobs:
   allow_failures:
     r: devel # Freezing in tests; cannot diagnose
 
-r_packages:
- - TreeTools
-
 r_github_packages:
  - ms609/TreeDist # Remove once available via CRAN
- - ms609/TreeSearch # Remove once available via CRAN
  - ms609/TBRDist # Remove once available via CRAN
 
 before_script:
