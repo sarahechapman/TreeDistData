@@ -1,5 +1,5 @@
 pandoc: '2.2'
-pkgdown: 1.4.1
+pkgdown: 1.5.1
 pkgdown_sha: ~
 articles:
   01-length-of-move: 01-length-of-move.html
@@ -14,6 +14,7 @@ articles:
   10-timing: 10-timing.html
   11-correlation: 11-correlation.html
   X-heterogeneity: X-heterogeneity.html
+last_built: 2020-04-16T12:56Z
 urls:
   reference: https://ms609.github.io/TreeDistData/reference
   article: https://ms609.github.io/TreeDistData/articles
