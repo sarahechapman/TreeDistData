@@ -35,10 +35,10 @@ jobs:
         cleanup: false
         skip_cleanup: true
     - r: devel
-      r_binary_packages:
-       - covr
+      r_packages:
        - devtools
-       - roxygen2
+       - testthat
+       - covr
       after_success:
         - Rscript -e "covr::codecov()"
     - os: osx
@@ -49,7 +49,6 @@ jobs:
         - roxygen2
         - testthat
       before_install:
-      - brew install cairo
       - sudo tlmgr install doi titling hyperref
   allow_failures:
     r: devel # Freezing in tests; cannot diagnose
