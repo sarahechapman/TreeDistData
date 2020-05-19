@@ -4,13 +4,15 @@
 \name{sprDistances}
 \alias{sprDistances}
 \title{Tree distance and SPR moves}
-\format{A list of length 21.
+\format{
+A list of length 21.
 Each entry is named according to the corresponding tree distance method; see
 'Methods tested' below.
 
 Each member of the list is a 100 x 100 matrix listing the distance
 between each pair of trees in the SPR chain (see 'Details'),
-numbered from 1 to 100.}
+numbered from 1 to 100.
+}
 \source{
 Scripts used to generate data objects are housed in the
 \href{https://github.com/ms609/TreeDistData/tree/master/data-raw}{\code{data-raw}}
@@ -35,26 +37,6 @@ introduced by a previous one, perfect correlation is unlikely.
 For analysis of this data, see the
 \href{https://ms609.github.io/TreeDistData/articles/08-spr-walking.html}{accompanying vignette}.
 }
-\references{
-\insertRef{Bogdanowicz2012}{TreeDist}
-
-\insertRef{Li1996}{TreeDist}
-
-\insertRef{Kendall2016}{TreeDistData}
-
-\insertRef{Nye2006}{TreeDist}
-
-\insertRef{Robinson1981}{TreeDist}
-
-\insertRef{SmithTern}{TreeSearch}
-
-\insertRef{SmithDist}{TreeDist}
-
-\insertRef{Steel1993}{TreeDist}
-
-\insertRef{Valiente2009}{TreeDist}
-}
-\keyword{datasets}
 \section{Methods tested}{
 \itemize{
 \item \code{dpi}: Different Phylogenetic Information (Smith, forthcoming)
@@ -78,3 +60,24 @@ for  nearest-neighbour interchange distance (Li \emph{et al.} 1996)
 \item \code{path}: Path distance (Steel & Penny 1993), unnormalized
 }
 }
+
+\references{
+\insertRef{Bogdanowicz2012}{TreeDist}
+
+\insertRef{Li1996}{TreeDist}
+
+\insertRef{Kendall2016}{TreeDistData}
+
+\insertRef{Nye2006}{TreeDist}
+
+\insertRef{Robinson1981}{TreeDist}
+
+\insertRef{SmithTern}{TreeSearch}
+
+\insertRef{SmithDist}{TreeDist}
+
+\insertRef{Steel1993}{TreeDist}
+
+\insertRef{Valiente2009}{TreeDist}
+}
+\keyword{datasets}

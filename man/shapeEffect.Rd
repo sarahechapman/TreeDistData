@@ -4,7 +4,8 @@
 \name{shapeEffect}
 \alias{shapeEffect}
 \title{Shape effect}
-\format{A list of length 21.
+\format{
+A list of length 21.
 Each entry of the list is named according to the abbreviation of the
 corresponding method (see 'Methods tested' below).
 
@@ -18,7 +19,8 @@ and
 
 As trees are not compared with themselves (to avoid zero distances), elements
 where \emph{x} = \emph{y} contain 4950 distances, whereas other elements contain 5050
-distances.}
+distances.
+}
 \source{
 Scripts used to generate data objects are housed in the
 \href{https://github.com/ms609/TreeDistData/tree/master/data-raw}{\code{data-raw}}
@@ -40,26 +42,6 @@ I measured the distance from each tree to each of the other 399 trees.
 For analysis of this data, see the
 \href{https://ms609.github.io/TreeDistData/articles/05-tree-shape.html}{accompanying vignette}.
 }
-\references{
-\insertRef{Bogdanowicz2012}{TreeDist}
-
-\insertRef{Li1996}{TreeDist}
-
-\insertRef{Kendall2016}{TreeDistData}
-
-\insertRef{Nye2006}{TreeDist}
-
-\insertRef{Robinson1981}{TreeDist}
-
-\insertRef{SmithTern}{TreeSearch}
-
-\insertRef{SmithDist}{TreeDist}
-
-\insertRef{Steel1993}{TreeDist}
-
-\insertRef{Valiente2009}{TreeDist}
-}
-\keyword{datasets}
 \section{Methods tested}{
 \itemize{
 \item \code{dpi}: Different Phylogenetic Information (Smith, forthcoming)
@@ -83,3 +65,24 @@ for  nearest-neighbour interchange distance (Li \emph{et al.} 1996)
 \item \code{path}: Path distance (Steel & Penny 1993), unnormalized
 }
 }
+
+\references{
+\insertRef{Bogdanowicz2012}{TreeDist}
+
+\insertRef{Li1996}{TreeDist}
+
+\insertRef{Kendall2016}{TreeDistData}
+
+\insertRef{Nye2006}{TreeDist}
+
+\insertRef{Robinson1981}{TreeDist}
+
+\insertRef{SmithTern}{TreeSearch}
+
+\insertRef{SmithDist}{TreeDist}
+
+\insertRef{Steel1993}{TreeDist}
+
+\insertRef{Valiente2009}{TreeDist}
+}
+\keyword{datasets}

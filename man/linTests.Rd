@@ -7,7 +7,8 @@
 \alias{linTestTwoResults}
 \alias{linTestSPRResults}
 \title{Evaluating tree distance metrics by cluster recovery}
-\format{A three-dimensional array.
+\format{
+A three-dimensional array.
 
 Rows correspond to the clustering methods:
 \itemize{
@@ -26,7 +27,12 @@ Slices correspond to values of \emph{k}:
 \item \code{linTestOneResults}: \emph{k} = 30, 40, 50, 60, 70
 \item \code{linTestTwoResults}: \emph{k} = 10, 20, 30, 40
 \item \code{linTestSPRResults}: \emph{k} = 30, 40, 50, 60, 70
-}}
+}
+
+An object of class \code{array} of dimension 5 x 18 x 4.
+
+An object of class \code{array} of dimension 5 x 18 x 5.
+}
 \source{
 Scripts used to generate data objects are housed in the
 \href{https://github.com/ms609/TreeDistData/tree/master/data-raw}{\code{data-raw}}
@@ -74,28 +80,6 @@ in the same cluster.
 For analysis of this data, see the
 \href{https://ms609.github.io/TreeDistData/articles/06-lin-cluster-recovery.html}{accompanying vignette}.
 }
-\references{
-\insertRef{Bogdanowicz2012}{TreeDist}
-
-\insertRef{Li1996}{TreeDist}
-
-\insertRef{Kendall2016}{TreeDistData}
-
-\insertRef{Nye2006}{TreeDist}
-
-\insertRef{Robinson1981}{TreeDist}
-
-\insertRef{SmithTern}{TreeSearch}
-
-\insertRef{SmithDist}{TreeDist}
-
-\insertRef{Steel1993}{TreeDist}
-
-\insertRef{Valiente2009}{TreeDist}
-
-\insertRef{Lin2012}{TreeDistData}
-}
-\keyword{datasets}
 \section{Methods tested}{
 \itemize{
 \item \code{dpi}: Different Phylogenetic Information (Smith, forthcoming)
@@ -119,3 +103,26 @@ for  nearest-neighbour interchange distance (Li \emph{et al.} 1996)
 \item \code{path}: Path distance (Steel & Penny 1993), unnormalized
 }
 }
+
+\references{
+\insertRef{Bogdanowicz2012}{TreeDist}
+
+\insertRef{Li1996}{TreeDist}
+
+\insertRef{Kendall2016}{TreeDistData}
+
+\insertRef{Nye2006}{TreeDist}
+
+\insertRef{Robinson1981}{TreeDist}
+
+\insertRef{SmithTern}{TreeSearch}
+
+\insertRef{SmithDist}{TreeDist}
+
+\insertRef{Steel1993}{TreeDist}
+
+\insertRef{Valiente2009}{TreeDist}
+
+\insertRef{Lin2012}{TreeDistData}
+}
+\keyword{datasets}

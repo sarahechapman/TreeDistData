@@ -12,7 +12,23 @@
 \alias{TDFunctions}
 \alias{TDPair}
 \title{Method parameters}
-\format{An object of class \code{expression} of length 25.}
+\format{
+An object of class \code{expression} of length 25.
+
+An object of class \code{character} of length 20.
+
+An object of class \code{expression} of length 25.
+
+An object of class \code{expression} of length 24.
+
+An object of class \code{character} of length 22.
+
+An object of class \code{character} of length 25.
+
+An object of class \code{list} of length 23.
+
+An object of class \code{list} of length 22.
+}
 \source{
 Scripts used to generate data objects are housed in the
 \href{https://github.com/ms609/TreeDistData/tree/master/data-raw}{\code{data-raw}}

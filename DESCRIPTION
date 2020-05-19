@@ -42,5 +42,5 @@ LazyData: true
 ByteCompile: true
 Encoding: UTF-8
 Language: en-GB
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0
 Roxygen: list(markdown = TRUE)
