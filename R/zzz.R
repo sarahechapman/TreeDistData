@@ -9,18 +9,26 @@ release_questions <- function() {
   )
 }
 
+# Additional steps:
+#
+# Propogate changes in README.md to R/TreeTools-package.R
+
+
 # Additional tests:
 #
-# check_win_devel(); check_rhub()
-# #rhub::check_on_windows()
-# rhub::check_with_rdevel() # redundifies check_on_debian()
-# rhub::check_on_ubuntu()
-# rhub::check_on_fedora()
-# rhub::check_on_centos()
+# spell_check()
+# pkgdown::build_reference_index()
+#
+# run_examples()
+# build_vignettes()
+#
+# devtools::check_win_devel(); rhub::check_for_cran()
 # rhub::check_with_valgrind() # runs the build and check on Linux, in valgrind to find memory leaks and pointer errors.
 # rhub::check_with_sanitizers() # runs all package package tests, examples and vignettes with Address Sanitizer and Undefined Behavior Sanitizer.
-# list_my_checks() # list_package_checks
+#
 # revdepcheck::revdep_check()
-# build_vignettes()
-# tools::resaveRdaFiles('data', compress='auto') - is default of bzip2 the optimal?
-# tools::checkRdaFiles('data') - set optimal compression in `data-raw`
+#
+# codemetar::write_codemeta()
+#
+# tools::resaveRdaFiles('R', compress='auto') - is default bzip2 the optimal?
+# tools::checkRdaFiles('R') - set optimal compression in `data-raw`
