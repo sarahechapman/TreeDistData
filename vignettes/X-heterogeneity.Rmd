@@ -11,7 +11,7 @@ bibliography: ../inst/REFERENCES.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
 ---
 
-```{R initialize, echo=FALSE}
+```{R initialize, echo=FALSE, message=FALSE}
 library('TreeDistData')
 library('spatstat')
 data('bullseyeDistances', package = 'TreeDistData')
