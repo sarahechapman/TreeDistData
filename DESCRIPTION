@@ -32,6 +32,7 @@ Suggests:
     phangorn,
     Rdpack,
     rmarkdown,
+    spatstat,
     testthat,
     TreeSearch (>= 0.4.0)
 Remotes:
