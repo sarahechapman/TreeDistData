@@ -3,6 +3,7 @@ context('utilities.R')
 test_that("AllDists doesn't crash", {
   library("TreeTools")
   AllDists(as.phylo(0:5, 6), BalancedTree(6), verbose = FALSE)
+  expect_null(NULL)
 })
 
 test_that('Pairwise distances calculated correctly', {
@@ -10,7 +11,7 @@ test_that('Pairwise distances calculated correctly', {
   nTip <- 16L
 
   set.seed(0)
-  trees <- lapply(rep(nTip, nTrees), ape::rtree, br=NULL)
+  trees <- lapply(rep(nTip, nTrees), ape::rtree, br = NULL)
   trees[[1]] <- TreeTools::BalancedTree(nTip)
   trees[[nTrees - 1L]] <- TreeTools::PectinateTree(nTip)
   class(trees) <- 'multiPhylo'
@@ -26,7 +27,7 @@ test_that('Pairwise distances calculated correctly', {
   sprWalk <- vector('list', nTrees)
   sprWalk[[1]] <- lastTree <- TreeTools::PectinateTree(nTip)
 
-  for (i in seq.int(2, nTrees)) {
+  for (i in seq.int(2L, nTrees)) {
     sprWalk[[i]] <- lastTree <- TreeSearch::SPR(lastTree)
   }
 
