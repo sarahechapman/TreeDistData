@@ -23,6 +23,8 @@ if (requireNamespace('benchmarkme', quietly = TRUE)) {
 
 
 ```{r setup, echo = FALSE, message = FALSE}
+# Note: For maximum speed, check compiler options in ~/.R/Makevars when building 
+# the package.  Suggest setting PKG_CXXFLAGS = -Ofast -march=native -mtune=native 
 library('TreeDist')
 path.dist <- phangorn::path.dist
 SPR.dist <- phangorn::SPR.dist
@@ -55,10 +57,10 @@ Times <- function (trees) {
     msid = MatchingSplitInfo(splits, normalize = FALSE),
     cid = MutualClusteringInfo(splits, normalize = FALSE),
     nea = NyeTreeSimilarity(splits, normalize = FALSE),
-    ja2 = JaccardRobinsonFoulds(splits, k=2L, similarity = TRUE, normalize = FALSE),
-    ja4 = JaccardRobinsonFoulds(splits, k=4L, similarity = TRUE, normalize = FALSE),
-    jna2 = JaccardRobinsonFoulds(splits, k=2L, similarity = TRUE, arboreal = FALSE, normalize = FALSE),
-    jna4 = JaccardRobinsonFoulds(splits, k=4L, similarity = TRUE, arboreal = FALSE, normalize = FALSE),
+    ja2 = JaccardRobinsonFoulds(splits, k = 2L, similarity = TRUE, normalize = FALSE),
+    ja4 = JaccardRobinsonFoulds(splits, k = 4L, similarity = TRUE, normalize = FALSE),
+    jna2 = JaccardRobinsonFoulds(splits, k = 2L, similarity = TRUE, arboreal = FALSE, normalize = FALSE),
+    jna4 = JaccardRobinsonFoulds(splits, k = 4L, similarity = TRUE, arboreal = FALSE, normalize = FALSE),
     msd = MatchingSplitDistance(splits),
     qd = Quartet::ManyToManyQuartetAgreement(trees),
     mast = TreeDistData::PairwiseDistances(trees, MASTSize, rooted = FALSE),
@@ -89,7 +91,7 @@ was calculated, replicating timing `r nRepeats` times.
 The below are the results of a benchmarking exercise conducted on an
 `r cpu$model_name` machine with
 <!--`r cpu$no_of_cores` cores and-->
-`r as.character(benchmarkme:::print.ram(ram * 1024))` of RAM,
+`r as.character(benchmarkme:::print.ram(ram))` of RAM,
 comparing `r nTrees` trees obtained by performing successive subtree pruning and
 regrafting rearrangements on a pectinate starting tree.  
 The values reported in Smith [-@Smith2020] were calculated on a modest desktop computer,
