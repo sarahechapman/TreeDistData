@@ -259,7 +259,7 @@ NULL
 #
 #' `bullseyeDistances` contains two elements, tabulating the distance
 #' between each pair of 20- and 50-leaf trees in `bullseyeTrees`.
-#' For details, see \code{\link{sevenTipDistances}}.
+#' For details, see [`sevenTipDistances`].
 #'
 #'
 #' @templateVar vignette 07-bullseye
