@@ -29,13 +29,14 @@ Suggests:
     knitr,
     MASS,
     microbenchmark,
-    phangorn,
+    phangorn (> 2.5.5),
     Rdpack,
     rmarkdown,
     spatstat,
     testthat,
     TreeSearch (>= 0.4.0)
 Remotes:
+    KlausVigo/phangorn,
     ms609/TBRDist,
     ms609/TreeDist
 RdMacros: Rdpack
