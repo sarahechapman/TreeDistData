@@ -49,9 +49,10 @@ For analysis of this data, see the
 \item \code{cid}: Clustering Information Distance (Smith, forthcoming)
 \item \code{qd}: Quartet divergence (Smith, 2019)
 \item \code{nts}: Nye \emph{et al.} tree similarity (Nye \emph{et al.} 2006)
-\item \code{ja2}, \code{ja4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4
+\item \code{ja2}, \code{ja4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4,
+conflicting pairings prohobited
 \item \code{jna2}, \code{jna4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4,
-with non-arboreal matchings permitted
+conflicting pairings permitted
 \item \code{msd}: Matching Split Distance (Bogdanowicz & Giaro, 2012)
 \item \code{mast}: Size of Maximum Agreement Subtree (Valiente 2009)
 \item \code{masti}: Information content of Maximum Agreement Subtree

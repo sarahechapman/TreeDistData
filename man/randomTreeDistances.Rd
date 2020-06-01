@@ -34,8 +34,8 @@ Rows are named with an abbreviation of the tree comparison metric:
 \item \code{cid}: Variation of Clustering Information (Smith, forthcoming)
 \item \code{qd}: Quartet divergence (Smith, 2019)
 \item \code{ja2}, \code{ja4}: Jaccard-Robinson-Foulds distance (Böcker \emph{et al}. 2013),
-with \emph{k} = 2, 4, with arboreal matchings enforced
-\item \code{jna2}, \code{jna4}: JRF distance, non-arboreal matchings permitted
+with \emph{k} = 2, 4, with conflicting pairings prohibited
+\item \code{jna2}, \code{jna4}: JRF distance, conflicting pairings permitted
 \item \code{nts}: Nye \emph{et al.} tree similarity (Nye \emph{et al.} 2006)
 \item \code{msd}: Matching Split Distance (Bogdanowicz & Giaro, 2012)
 \item \code{mast}, \code{masti}: Size and information content of maximum agreement subtree
