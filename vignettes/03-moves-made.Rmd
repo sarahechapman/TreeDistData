@@ -82,8 +82,8 @@ BoxPlot <- function (method) {
 }
 ```
 
-```{r, echo=FALSE, fig.width=7, fig.height=5, fig.align='center'}
-PlotFunc <- function() {
+```{r, echo=FALSE, fig.width=5, fig.height=4, fig.align='center'}
+TreePlotsPlotFunc <- function() {
   par(mar=c(1, 0.2, 1, 1), xpd = NA)
   nMethod <- length(tdPlotSequence)
   nRow <- nMethod / 2
@@ -112,6 +112,19 @@ PlotFunc <- function() {
          bty = 'n', inset = c(-0.0, -0.005), pt.cex = 1.5)
 
   par(mar=c(1.9, 0.2, 0.2, 0.2))
+  lapply(tdPlotSequence, BoxPlot) -> XX
+}
+
+PlotFunc <- function() {
+  nMethod <- length(tdPlotSequence)
+  nRow <- nMethod / 2
+  par(mfrow = c(nRow, 2),
+      mar = c(1, 0.2, 1, 1),
+      xpd = NA,
+      cex = 0.7,
+      mar = c(1.9, 0.2, 0.2, 0.2)
+  )
+  
   lapply(tdPlotSequence, BoxPlot) -> XX
 }
 
