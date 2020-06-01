@@ -85,18 +85,18 @@ tdBoxAbbrevs <- expression(
 tdMethods <- names(tdAbbrevs)
 tdMethods <- tdMethods[!tdMethods %in% c('nni', 'nea', 'tbr')]
 
-JA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, coherent = TRUE)
-JA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, coherent = TRUE)
-JNA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, coherent = FALSE)
-JNA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, coherent = FALSE)
+JA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, allowConflict = FALSE)
+JA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, allowConflict = FALSE)
+JNA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, allowConflict = TRUE)
+JNA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, allowConflict = TRUE)
 
 TDFunctions <- list(
   rf = TreeDist::RobinsonFoulds,
   rfi = TreeDist::InfoRobinsonFoulds,
-  ja2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, coherent = TRUE),
-  ja4 =  function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, coherent = TRUE),
-  jna2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, coherent = FALSE),
-  jna4 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, coherent = FALSE),
+  ja2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, allowConflict = FALSE),
+  ja4 =  function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, allowConflict = FALSE),
+  jna2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, allowConflict = TRUE),
+  jna4 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, allowConflict = TRUE),
 
   nts = function(...) TreeDist::NyeTreeSimilarity(..., similarity = FALSE),
   dpi = DifferentPhylogeneticInfo,
@@ -122,13 +122,13 @@ TDPair <- list(
   rf = function (tr, ref) TreeDist::RobinsonFoulds(tr, ref),
   rfi = function (tr, ref) TreeDist::InfoRobinsonFoulds(tr, ref),
   ja2 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
-    tr, ref, k = 2,coherent = TRUE, normalize = TRUE), 4),
+    tr, ref, k = 2, allowConflict = FALSE, normalize = TRUE), 4),
   jna2 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
-    tr, ref, k = 2,coherent = FALSE, normalize = TRUE), 4),
+    tr, ref, k = 2, allowConflict = TRUE, normalize = TRUE), 4),
   ja4 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
-    tr, ref, k = 4,coherent = TRUE, normalize = TRUE), 4),
+    tr, ref, k = 4, allowConflict = FALSE, normalize = TRUE), 4),
   jna4 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
-    tr, ref, k = 4,coherent = FALSE, normalize = TRUE), 4),
+    tr, ref, k = 4, allowConflict = TRUE, normalize = TRUE), 4),
 
   dpi = function (tr, ref) round(TreeDist::DifferentPhylogeneticInfo(
     tr, ref, normalize = TRUE), 4L),

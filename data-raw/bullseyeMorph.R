@@ -133,10 +133,10 @@ for (tipName in tipsNames) {
       cid = ClusteringInfoDistance(tr, trs, normalize = TRUE),
       nts = NyeTreeSimilarity(tr, trs, similarity = FALSE, normalize = TRUE),
 
-      ja2 = JaccardRobinsonFoulds(tr, trs, k = 2, coherent = TRUE, normalize = TRUE),
-      ja4 = JaccardRobinsonFoulds(tr, trs, k = 4, coherent = TRUE, normalize = TRUE),
-      jna2 =JaccardRobinsonFoulds(tr, trs, k = 2, coherent = FALSE, normalize = TRUE),
-      jna4 =JaccardRobinsonFoulds(tr, trs, k = 4, coherent = FALSE, normalize = TRUE),
+      ja2 = JaccardRobinsonFoulds(tr, trs, k = 2, allowConflict = FALSE, normalize = TRUE),
+      ja4 = JaccardRobinsonFoulds(tr, trs, k = 4, allowConflict = FALSE, normalize = TRUE),
+      jna2 =JaccardRobinsonFoulds(tr, trs, k = 2, allowConflict = TRUE, normalize = TRUE),
+      jna4 =JaccardRobinsonFoulds(tr, trs, k = 4, allowConflict = TRUE, normalize = TRUE),
 
       msd = MatchingSplitDistance(tr, trs),
       mast = mast,
