@@ -16,10 +16,10 @@ tdAbbrevs <- c(
   rf  = 'Robinson-Foulds',
   rfi = 'Info. Corr. RF',
 
-  ja4 = 'JRF (k=4, arboreal)',
-  ja2 = 'JRF (k=2, arboreal)',
-  jna4 = 'JRF (k=4, non-arb.)',
-  jna2 = 'JRF (k=2, non-arb.)',
+  ja4 = 'JRF (k=4, no conflict)',
+  ja2 = 'JRF (k=2, no conflict)',
+  jna4 = 'JRF (k=4, conflict ok)',
+  jna2 = 'JRF (k=2, conflict ok)',
 
   nea = 'Nye et al.',
   nts = expression(paste(plain('Nye '), italic('et al.'))),
@@ -49,35 +49,34 @@ tdAbbrevs <- c(
 tdMdAbbrevs <- tdAbbrevs
 tdMdAbbrevs['nts'] <- 'Nye _et al._'
 
-tdBoxAbbrevs <- c(
-  rf  = 'Robinson\n-Foulds',
-  rfi = 'Info.\nCorr.\nRF',
+tdBoxAbbrevs <- expression(
+  rf  = atop(NA, atop(textstyle('Robinson'), textstyle('-Foulds'))),
+  rfi  = atop(NA, atop(textstyle('Info.'), textstyle('Corr.'), textstyle('RF'))),
 
-  ja4 = 'JRF\n(k=4,\narboreal)',
-  ja2 = 'JRF\n(k=2,\narboreal)',
-  jna4 = 'JRF\n(k=4,\nnon-arb.)',
-  jna2 = 'JRF\n(k=2,\nnon-arb.)',
+  ja4 = 'JRF\n(k = 4,\nno conflict)',
+  ja2 = 'JRF\n(k = 2,\nno conflict)',
+  jna4 = 'JRF\n(k = 4,\nconflict ok)',
+  jna2 = 'JRF\n(k = 2,\nconflict ok)',
 
-  nea = 'Nye\net al.',
-  nts = 'Nye\net al.',#expression(paste(plain('Nye\n'), italic('et al.'))),
+  nts = atop(NA, atop(textstyle('Nye'), textstyle(italic('et al.')))),
 
-  dpi = 'Phylog.\nInfo.\nDist.',
-  cid = 'Clust.\nInfo.\nDist.',
+  dpi = c('Phylog.', 'Info.', 'Dist.'),
+  cid = atop(NA, atop(textstyle('Clust.'), textstyle('Info.'), textstyle('Dist.'))),
   msid = 'MS\nInfo\nDist',
   msd = 'Match.\nSplit\nDist.',
 
-  nni = 'NNI\n(approx.)',
-  nni_u = 'NNI\n(upr bnd)',
-  nni_t = 'NNI\n(ub tight)',
-  nni_l = 'NNI\n(lwr bnd)',
-  spr = 'SPR\n(approx.)',
-  tbr = 'TBR\n(approx.)',
-  tbr_l = 'TBR\n(lwr bnd)',
-  tbr_u = 'TBR\n(upr bnd)',
+  nni = atop(NA, atop(textstyle('NNI'), textstyle('(approx.)'))),
+  nni_u = atop(NA, atop(textstyle('NNI'), textstyle('(upr bnd)'))),
+  nni_t = atop(NA, atop(textstyle('NNI'), textstyle('(ub tight)'))),
+  nni_l = atop(NA, atop(textstyle('NNI'), textstyle('(lwr bnd)'))),
+  spr = atop(NA, atop(textstyle('SPR'), textstyle('(approx.)'))),
+  tbr = atop(NA, atop(textstyle('TBR'), textstyle('(approx.)'))),
+  tbr_l = atop(NA, atop(textstyle('NNI'), textstyle('(lwr bnd)'))),
+  tbr_u = atop(NA, atop(textstyle('NNI'), textstyle('(upr bnd)'))),
 
-  mast = 'MAST\nsize',
-  masti = 'MAST\ninfo',
-  mafi = 'MAF\ninfo',
+  mast = atop(NA, atop(textstyle('MAST'), textstyle('size'))),
+  masti = atop(NA, atop(textstyle('MAST'), textstyle('info'))),
+  mafi = atop(NA, atop(textstyle('MAF'), textstyle('info'))),
 
   qd  = 'Quartet',
   path = 'Path'
@@ -86,18 +85,18 @@ tdBoxAbbrevs <- c(
 tdMethods <- names(tdAbbrevs)
 tdMethods <- tdMethods[!tdMethods %in% c('nni', 'nea', 'tbr')]
 
-JA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, arboreal=TRUE)
-JA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, arboreal=TRUE)
-JNA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, arboreal=FALSE)
-JNA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, arboreal=FALSE)
+JA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, coherent = TRUE)
+JA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, coherent = TRUE)
+JNA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, coherent = FALSE)
+JNA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, coherent = FALSE)
 
 TDFunctions <- list(
   rf = TreeDist::RobinsonFoulds,
   rfi = TreeDist::InfoRobinsonFoulds,
-  ja2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, arboreal =TRUE),
-  ja4 =  function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, arboreal=TRUE),
-  jna2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, arboreal=FALSE),
-  jna4 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, arboreal=FALSE),
+  ja2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, coherent = TRUE),
+  ja4 =  function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, coherent = TRUE),
+  jna2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, coherent = FALSE),
+  jna4 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, coherent = FALSE),
 
   nts = function(...) TreeDist::NyeTreeSimilarity(..., similarity = FALSE),
   dpi = DifferentPhylogeneticInfo,
@@ -123,13 +122,13 @@ TDPair <- list(
   rf = function (tr, ref) TreeDist::RobinsonFoulds(tr, ref),
   rfi = function (tr, ref) TreeDist::InfoRobinsonFoulds(tr, ref),
   ja2 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
-    tr, ref, k = 2, arboreal = TRUE, normalize = TRUE), 4),
+    tr, ref, k = 2,coherent = TRUE, normalize = TRUE), 4),
   jna2 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
-    tr, ref, k = 2, arboreal = FALSE, normalize = TRUE), 4),
+    tr, ref, k = 2,coherent = FALSE, normalize = TRUE), 4),
   ja4 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
-    tr, ref, k = 4, arboreal = TRUE, normalize = TRUE), 4),
+    tr, ref, k = 4,coherent = TRUE, normalize = TRUE), 4),
   jna4 = function (tr, ref) round(TreeDist::JaccardRobinsonFoulds(
-    tr, ref, k = 4, arboreal = FALSE, normalize = TRUE), 4),
+    tr, ref, k = 4,coherent = FALSE, normalize = TRUE), 4),
 
   dpi = function (tr, ref) round(TreeDist::DifferentPhylogeneticInfo(
     tr, ref, normalize = TRUE), 4L),

@@ -6,9 +6,10 @@
 #' - `cid`: Clustering Information Distance (Smith, forthcoming)
 #' - `qd`: Quartet divergence (Smith, 2019)
 #' - `nts`: Nye _et al._ tree similarity (Nye _et al._ 2006)
-#' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4
+#' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
+#'            conflicting pairings prohobited
 #' - `jna2`, `jna4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
-#'            with non-arboreal matchings permitted
+#'            conflicting pairings permitted
 #' - `msd`: Matching Split Distance (Bogdanowicz & Giaro, 2012)
 #' - `mast`: Size of Maximum Agreement Subtree (Valiente 2009)
 #' - `masti`: Information content of Maximum Agreement Subtree

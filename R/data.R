@@ -17,8 +17,8 @@
 #' - `cid`: Variation of Clustering Information (Smith, forthcoming)
 #' - `qd`: Quartet divergence (Smith, 2019)
 #' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distance (B&ouml;cker _et al_. 2013),
-#'      with _k_ = 2, 4, with arboreal matchings enforced
-#' - `jna2`, `jna4`: JRF distance, non-arboreal matchings permitted
+#'      with _k_ = 2, 4, with conflicting pairings prohibited
+#' - `jna2`, `jna4`: JRF distance, conflicting pairings permitted
 #' - `nts`: Nye _et al._ tree similarity (Nye _et al._ 2006)
 #' - `msd`: Matching Split Distance (Bogdanowicz & Giaro, 2012)
 #' - `mast`, `masti`: Size and information content of maximum agreement subtree
@@ -89,9 +89,10 @@
 #' - `cid`: Clustering Information Distance (Smith, forthcoming)
 #' - `qd`: Quartet divergence (Smith, 2019)
 #' - `nts`: Nye _et al._ tree similarity (Nye _et al._ 2006)
-#' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4
+#' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
+#' conflicting pairings prohibited
 #' - `jna2`, `jna4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
-#'            with non-arboreal matchings permitted
+#'            conflicting pairings permitted
 #' - `msd`: Matching Split Distance (Bogdanowicz & Giaro, 2012), unnormalized
 #' - `mast`: Size of Maximum Agreement Subtree (Valiente 2009)
 #' - `masti`: Information content of Maximum Agreement Subtree
@@ -177,9 +178,10 @@ NULL
 #' - `cid`: Clustering Information Distance (Smith, forthcoming)
 #' - `qd`: Quartet divergence (Smith, 2019)
 #' - `nts`: Nye _et al._ tree similarity (Nye _et al._ 2006)
-#' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4
+#' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
+#' conflicting pairings prohibited
 #' - `jna2`, `jna4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
-#'            with non-arboreal matchings permitted
+#'  conflicting pairings permitted
 #' - `msd`: Matching Split Distance (Bogdanowicz & Giaro, 2012), unnormalized
 #' - `mast`: Size of Maximum Agreement Subtree (Valiente 2009)
 #' - `masti`: Information content of Maximum Agreement Subtree
@@ -253,6 +255,7 @@ NULL
 #' described by Smith (forthcoming); the `bullMoDi` prefix refers to the
 #' 'miscoding' experiment.
 #'
+# <!--#TODO delete irrelevant statement -->
 # `bullseyeDistances` contains four elements, each tabulating the distance
 # between each pair of _n_-leaf trees in `bullseyeTrees`.  For details, see
 # \code{\link{sevenTipDistances}}.

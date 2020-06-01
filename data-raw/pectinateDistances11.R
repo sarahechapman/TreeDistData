@@ -27,13 +27,13 @@ message('NTS... ')
 nts <- 1 - NyeTreeSimilarity(pectinateTree, randomTrees, normalize=TRUE)
 message('JRF... ')
 ja2 <- JaccardRobinsonFoulds(pectinateTree, randomTrees, normalize = TRUE,
-                            k = 2, arboreal = TRUE)
+                            k = 2, coherent = TRUE)
 jna2 <- JaccardRobinsonFoulds(pectinateTree, randomTrees, normalize = TRUE,
-                            k = 2, arboreal = FALSE)
+                            k = 2, coherent = FALSE)
 ja4 <- JaccardRobinsonFoulds(pectinateTree, randomTrees, normalize = TRUE,
-                            k = 4, arboreal = TRUE)
+                            k = 4, coherent = TRUE)
 jna4 <- JaccardRobinsonFoulds(pectinateTree, randomTrees, normalize = TRUE,
-                            k = 4, arboreal = FALSE)
+                            k = 4, coherent = FALSE)
 
 message('MSD... ')
 msd <- MatchingSplitDistance(pectinateTree, randomTrees)
