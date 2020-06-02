@@ -19,7 +19,7 @@ An object of class \code{character} of length 20.
 
 An object of class \code{expression} of length 25.
 
-An object of class \code{expression} of length 24.
+An object of class \code{character} of length 25.
 
 An object of class \code{character} of length 22.
 
