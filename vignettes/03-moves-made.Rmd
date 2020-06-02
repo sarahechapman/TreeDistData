@@ -117,8 +117,9 @@ TreePlotsPlotFunc <- function() {
 
 PlotFunc <- function() {
   nMethod <- length(tdPlotSequence)
-  nRow <- nMethod / 2
-  par(mfrow = c(nRow, 2),
+  nCol <- 3L
+  nRow <- ceiling(nMethod / nCol)
+  par(mfrow = c(nRow, nCol),
       mar = c(1, 0.2, 1, 1),
       xpd = NA,
       cex = 0.7,
