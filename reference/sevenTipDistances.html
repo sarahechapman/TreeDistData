@@ -192,9 +192,10 @@ The remaining measures are unnormalized.</p><ul>
 <li><p><code>cid</code>: Clustering Information Distance (Smith, forthcoming)</p></li>
 <li><p><code>qd</code>: Quartet divergence (Smith, 2019)</p></li>
 <li><p><code>nts</code>: Nye <em>et al.</em> tree similarity (Nye <em>et al.</em> 2006)</p></li>
-<li><p><code>ja2</code>, <code>ja4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4</p></li>
+<li><p><code>ja2</code>, <code>ja4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4,
+conflicting pairings prohibited</p></li>
 <li><p><code>jna2</code>, <code>jna4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4,
-with non-arboreal matchings permitted</p></li>
+conflicting pairings permitted</p></li>
 <li><p><code>msd</code>: Matching Split Distance (Bogdanowicz &amp; Giaro, 2012), unnormalized</p></li>
 <li><p><code>mast</code>: Size of Maximum Agreement Subtree (Valiente 2009)</p></li>
 <li><p><code>masti</code>: Information content of Maximum Agreement Subtree</p></li>
@@ -258,7 +259,7 @@ ISSN 1076-836X, doi: <a href='https://doi.org/10.1093/sysbio/42.2.126'>10.1093/s
 CRC Press, Boca Raton.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='kw pkg'>TreeTools</span><span class='kw ns'>::</span><span class='fu'><a href='https://ms609.github.io/TreeTools/reference/TreeShape.html'>UnrootedTreeWithShape</a></span>(<span class='fl'>0</span>, <span class='fl'>7</span>))</div><div class='img'><img src='sevenTipDistances-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.html'>plot</a></span>(<span class='kw pkg'>TreeTools</span><span class='kw ns'>::</span><span class='fu'><a href='https://ms609.github.io/TreeTools/reference/TreeShape.html'>UnrootedTreeWithShape</a></span>(<span class='fl'>1</span>, <span class='fl'>7</span>))</div><div class='img'><img src='sevenTipDistances-2.png' alt='' width='700' height='433' /></div><div class='input'>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='kw pkg'>TreeTools</span><span class='kw ns'>::</span><span class='fu'><a href='https://ms609.github.io/TreeTools/reference/TreeShape.html'>UnrootedTreeWithShape</a></span>(<span class='fl'>0</span>, <span class='fl'>7</span>))</div><div class='img'><img src='sevenTipDistances-1.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='kw pkg'>TreeTools</span><span class='kw ns'>::</span><span class='fu'><a href='https://ms609.github.io/TreeTools/reference/TreeShape.html'>UnrootedTreeWithShape</a></span>(<span class='fl'>1</span>, <span class='fl'>7</span>))</div><div class='img'><img src='sevenTipDistances-2.png' alt='' width='700' height='433' /></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

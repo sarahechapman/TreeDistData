@@ -119,7 +119,7 @@
                         <h4 class="author">Martin R. Smith <a href="mailto:martin.smith@durham.ac.uk">martin.smith@durham.ac.uk</a>
 </h4>
             
-            <h4 class="date">2020-04-16</h4>
+            <h4 class="date">2020-06-02</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/ms609/TreeDistData/blob/master/vignettes/10-timing.Rmd"><code>vignettes/10-timing.Rmd</code></a></small>
       <div class="hidden name"><code>10-timing.Rmd</code></div>
@@ -129,7 +129,7 @@
     
     
 <p>The time taken to compare all 990 pairs of trees by each method, was calculated, replicating timing 10 times.</p>
-<p>The below are the results of a benchmarking exercise conducted on an Intel(R) Xeon(R) CPU machine with <!--2 cores and--> 8.57 TB of RAM, comparing 45 trees obtained by performing successive subtree pruning and regrafting rearrangements on a pectinate starting tree.<br>
+<p>The below are the results of a benchmarking exercise conducted on an Intel(R) Xeon(R) CPU machine with <!--2 cores and--> 8.36 GB of RAM, comparing 45 trees obtained by performing successive subtree pruning and regrafting rearrangements on a pectinate starting tree.<br>
 The values reported in Smith <span class="citation">(2020)</span> were calculated on a modest desktop computer, and will differ from those reported here, which will have been generated on the hardware system used to render the documentation.</p>
 <div id="figure" class="section level2">
 <h2 class="hasAnchor">
@@ -149,89 +149,89 @@ The values reported in Smith <span class="citation">(2020)</span> were calculate
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td>Robinson-Foulds</td>
-<td align="right">10</td>
-<td align="right">14</td>
+<td>Path</td>
+<td align="right">9.6</td>
+<td align="right">17</td>
 </tr>
 <tr class="even">
-<td>Path</td>
-<td align="right">11</td>
-<td align="right">17</td>
+<td>Robinson-Foulds</td>
+<td align="right">13.0</td>
+<td align="right">13</td>
 </tr>
 <tr class="odd">
 <td>Match. Split Dist.</td>
-<td align="right">17</td>
+<td align="right">17.0</td>
 <td align="right">46</td>
 </tr>
 <tr class="even">
 <td>Phylog. Info. Dist</td>
-<td align="right">20</td>
-<td align="right">79</td>
-</tr>
-<tr class="odd">
-<td>Nye et al.</td>
-<td align="right">23</td>
-<td align="right">130</td>
-</tr>
-<tr class="even">
-<td>Match. Split Info Dist</td>
-<td align="right">25</td>
-<td align="right">140</td>
-</tr>
-<tr class="odd">
-<td>JRF (k=2, arboreal)</td>
-<td align="right">26</td>
-<td align="right">120</td>
-</tr>
-<tr class="even">
-<td>JRF (k=2, non-arb.)</td>
-<td align="right">29</td>
-<td align="right">170</td>
-</tr>
-<tr class="odd">
-<td>Clust. Info. Dist.</td>
-<td align="right">44</td>
-<td align="right">260</td>
-</tr>
-<tr class="even">
-<td>JRF (k=4, arboreal)</td>
-<td align="right">46</td>
-<td align="right">520</td>
+<td align="right">20.0</td>
+<td align="right">80</td>
 </tr>
 <tr class="odd">
 <td>Info. Corr. RF</td>
-<td align="right">48</td>
-<td align="right">130</td>
+<td align="right">21.0</td>
+<td align="right">38</td>
 </tr>
 <tr class="even">
-<td>JRF (k=4, non-arb.)</td>
-<td align="right">55</td>
-<td align="right">820</td>
+<td>JRF (k=2, no conflict)</td>
+<td align="right">26.0</td>
+<td align="right">110</td>
+</tr>
+<tr class="odd">
+<td>Match. Split Info Dist</td>
+<td align="right">26.0</td>
+<td align="right">140</td>
+</tr>
+<tr class="even">
+<td>Nye et al.</td>
+<td align="right">26.0</td>
+<td align="right">130</td>
+</tr>
+<tr class="odd">
+<td>JRF (k=2, conflict ok)</td>
+<td align="right">30.0</td>
+<td align="right">170</td>
+</tr>
+<tr class="even">
+<td>Clust. Info. Dist.</td>
+<td align="right">45.0</td>
+<td align="right">260</td>
+</tr>
+<tr class="odd">
+<td>JRF (k=4, no conflict)</td>
+<td align="right">46.0</td>
+<td align="right">530</td>
+</tr>
+<tr class="even">
+<td>JRF (k=4, conflict ok)</td>
+<td align="right">57.0</td>
+<td align="right">830</td>
 </tr>
 <tr class="odd">
 <td>NNI (approx.)</td>
-<td align="right">61</td>
-<td align="right">81</td>
+<td align="right">67.0</td>
+<td align="right">78</td>
 </tr>
 <tr class="even">
 <td>SPR (approx.)</td>
-<td align="right">92</td>
-<td align="right">770</td>
+<td align="right">110.0</td>
+<td align="right">1000</td>
 </tr>
 <tr class="odd">
 <td>TBR (approx.)</td>
-<td align="right">220</td>
+<td align="right">210.0</td>
 <td align="right">370</td>
 </tr>
 <tr class="even">
 <td>Quartet</td>
-<td align="right">250</td>
-<td align="right">450</td>
+<td align="right">270.0</td>
+<td align="right">460</td>
 </tr>
 <tr class="odd">
 <td>MAST size</td>
-<td align="right">6600</td>
-<td align="right">27000</td>
+<td align="right">3600.0</td>
+<td align="right">19000</td>
 </tr>
 </tbody>
 </table>
