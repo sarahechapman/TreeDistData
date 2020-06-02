@@ -53,6 +53,9 @@ jobs:
   allow_failures:
     r: devel # Freezing in tests; cannot diagnose
 
+r_packages:
+ - Rdpack # To compile TreeDist
+
 r_github_packages:
  - ms609/TreeDist # Remove once available via CRAN
  - ms609/TBRDist # Remove once available via CRAN
