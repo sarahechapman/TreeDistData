@@ -49,34 +49,35 @@ tdAbbrevs <- c(
 tdMdAbbrevs <- tdAbbrevs
 tdMdAbbrevs['nts'] <- 'Nye _et al._'
 
-tdBoxAbbrevs <- expression(
-  rf  = atop(NA, atop(textstyle('Robinson'), textstyle('-Foulds'))),
-  rfi  = atop(NA, atop(textstyle('Info.'), textstyle('Corr.'), textstyle('RF'))),
+tdBoxAbbrevs <- c(
+  rf  = 'Robinson\n-Foulds',
+  rfi = 'Info.\nCorr.\nRF',
 
-  ja4 = 'JRF\n(k = 4,\nno conflict)',
-  ja2 = 'JRF\n(k = 2,\nno conflict)',
-  jna4 = 'JRF\n(k = 4,\nconflict ok)',
-  jna2 = 'JRF\n(k = 2,\nconflict ok)',
+  ja4 = 'JRF\n(k=4,\nno conflict)',
+  ja2 = 'JRF\n(k=2,\nno conflict)',
+  jna4 = 'JRF\n(k=4,\nconflict ok)',
+  jna2 = 'JRF\n(k=2,\nconflict ok)',
 
-  nts = atop(NA, atop(textstyle('Nye'), textstyle(italic('et al.')))),
+  nea = 'Nye\net al.',
+  nts = 'Nye\net al.',#expression(paste(plain('Nye\n'), italic('et al.'))),
 
-  dpi = c('Phylog.', 'Info.', 'Dist.'),
-  cid = atop(NA, atop(textstyle('Clust.'), textstyle('Info.'), textstyle('Dist.'))),
+  dpi = 'Phylog.\nInfo.\nDist.',
+  cid = 'Clust.\nInfo.\nDist.',
   msid = 'MS\nInfo\nDist',
   msd = 'Match.\nSplit\nDist.',
 
-  nni = atop(NA, atop(textstyle('NNI'), textstyle('(approx.)'))),
-  nni_u = atop(NA, atop(textstyle('NNI'), textstyle('(upr bnd)'))),
-  nni_t = atop(NA, atop(textstyle('NNI'), textstyle('(ub tight)'))),
-  nni_l = atop(NA, atop(textstyle('NNI'), textstyle('(lwr bnd)'))),
-  spr = atop(NA, atop(textstyle('SPR'), textstyle('(approx.)'))),
-  tbr = atop(NA, atop(textstyle('TBR'), textstyle('(approx.)'))),
-  tbr_l = atop(NA, atop(textstyle('NNI'), textstyle('(lwr bnd)'))),
-  tbr_u = atop(NA, atop(textstyle('NNI'), textstyle('(upr bnd)'))),
+  nni = 'NNI\n(approx.)',
+  nni_u = 'NNI\n(upr bnd)',
+  nni_t = 'NNI\n(ub tight)',
+  nni_l = 'NNI\n(lwr bnd)',
+  spr = 'SPR\n(approx.)',
+  tbr = 'TBR\n(approx.)',
+  tbr_l = 'TBR\n(lwr bnd)',
+  tbr_u = 'TBR\n(upr bnd)',
 
-  mast = atop(NA, atop(textstyle('MAST'), textstyle('size'))),
-  masti = atop(NA, atop(textstyle('MAST'), textstyle('info'))),
-  mafi = atop(NA, atop(textstyle('MAF'), textstyle('info'))),
+  mast = 'MAST\nsize',
+  masti = 'MAST\ninfo',
+  mafi = 'MAF\ninfo',
 
   qd  = 'Quartet',
   path = 'Path'
