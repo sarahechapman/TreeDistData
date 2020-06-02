@@ -8,27 +8,27 @@ git:
 
 jobs:
   include:
-    - r: 3.5.0
+    - r: 3.6.0 # phangorn requires 3.6.0
       r_packages:
        - devtools
        - testthat
     - r: release
       before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
-      r_binary_packages:
-       - benchmarkme
-       - binom
-       - bookdown
-       - colorspace
-       - devtools
-       - knitr
-       - MASS
-       - microbenchmark
-       - phangorn
-       - Rdpack
-       - rmarkdown
-       - roxygen2
-       - spatstat
-       - testthat
+      #r_binary_packages:
+      # - benchmarkme
+      # - binom
+      # - bookdown
+      # - colorspace
+      # - devtools
+      # - knitr
+      # - MASS
+      # - microbenchmark
+      # - phangorn
+      # - Rdpack
+      # - rmarkdown
+      # - roxygen2
+      # - spatstat
+      # - testthat
       deploy:
         provider: script
         script: Rscript -e 'pkgdown::deploy_site_github()'
