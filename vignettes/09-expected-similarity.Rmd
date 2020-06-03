@@ -1,7 +1,5 @@
 ---
 title: "2.2: Context: tree distance values"
-author: "Martin R. Smith"
-date: "`r Sys.Date()`"
 output: 
   bookdown::pdf_document2:
     toc: no

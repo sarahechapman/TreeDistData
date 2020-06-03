@@ -1,7 +1,5 @@
 ---
 title: "Supp. Figs: Metric correlation"
-author: "Martin R. Smith <martin.smith@durham.ac.uk>"
-date: "`r Sys.Date()`"
 output: 
   rmarkdown::html_vignette:
     default: yes
@@ -78,7 +76,7 @@ PlotCorr(distanceDistribution25)
 
 **Supplementary Figure 1. Correlation (adjusted r²) between distances for 10&nbsp;000 pairs of 25-leaf trees**
 
-```{R metric-correlation-50, echo=FALSE, fig.width=7, fig.asp=9/8, out.width='98%', fig.align='center', warning=FALSE}
+```{R metric-correlation-50, echo=FALSE, fig.align='center', fig.asp=9/8, fig.width=7, warning=FALSE, out.width='98%'}
 PlotCorr(distanceDistribution50)
 ```
 

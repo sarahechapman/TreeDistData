@@ -8,7 +8,9 @@ git:
 
 jobs:
   include:
-    - r: 3.6.0 # phangorn requires 3.6.0
+    - r: devel
+      after_success:
+        - Rscript -e "covr::codecov()"
     - r: release
       before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
       #r_binary_packages:
@@ -35,9 +37,7 @@ jobs:
         script: Rscript -e 'pkgdown::deploy_site_github()'
         cleanup: false
         skip_cleanup: true
-    - r: devel
-      after_success:
-        - Rscript -e "covr::codecov()"
+    - r: 3.6.0 # phangorn requires 3.6.0
     - os: osx
       r: release
       before_install:
