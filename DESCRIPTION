@@ -8,7 +8,7 @@ Authors@R: c(person("Martin R.", 'Smith',
             )
 License: GPL (>= 3)
 Description: Data used to perform analyses of unrooted tree distance measures,
-  underlying tables and figures in Smith (20XX).
+  underlying tables and figures in Smith (202X).
 URL: https://ms609.github.io/TreeDistData/, 
   https://github.com/ms609/TreeDistData/
 BugReports: https://github.com/ms609/TreeDistData/issues/
@@ -39,7 +39,7 @@ Remotes:
     KlausVigo/phangorn,
     ms609/TBRDist,
     ms609/TreeDist,
-    ms609/TreeTools@v1.0.0
+    ms609/TreeTools
 RdMacros: Rdpack
 LazyData: true
 ByteCompile: true
