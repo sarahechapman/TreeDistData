@@ -102,7 +102,7 @@ PlotRanks <- function (scoreList, methods, plotTitle = '', yLab = "Spearman's rh
 }
 
 YLabel <- function (lastLegend) {
-  ifelse(lastLegend %% 4, '', 'Success rate')
+  ifelse(lastLegend %% 5, '', 'Success rate')
 }
 
 RowTitle <- function (words, font = 2, cex = 1) {
