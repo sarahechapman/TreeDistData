@@ -50,13 +50,13 @@ tdMdAbbrevs <- tdAbbrevs
 tdMdAbbrevs['nts'] <- 'Nye _et al._'
 
 tdBoxAbbrevs <- c(
-  rf  = 'Robinson\n-Foulds',
+  rf  = 'Robins.\n-Foulds',
   rfi = 'Info.\nCorr.\nRF',
 
-  ja4 = 'JRF\n(k=4,\nno conflict)',
-  ja2 = 'JRF\n(k=2,\nno conflict)',
-  jna4 = 'JRF\n(k=4,\nconflict ok)',
-  jna2 = 'JRF\n(k=2,\nconflict ok)',
+  ja4 = 'JRF\n(k=4,\nno conf.)',
+  ja2 = 'JRF\n(k=2,\nno conf.)',
+  jna4 = 'JRF\n(k=4,\nconf. ok)',
+  jna2 = 'JRF\n(k=2,\nconf. ok)',
 
   nea = 'Nye\net al.',
   nts = 'Nye\net al.',#expression(paste(plain('Nye\n'), italic('et al.'))),
