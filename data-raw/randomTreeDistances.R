@@ -50,7 +50,7 @@ while (any(empty <- is.na(randomTreeDistances[1, 1, ]))) {
   load(proj_path(paths))
   cat('\n', ifelse(empty, '-', 'X'), "\n")
   randomTreeDistances[, , doNext] <- dists
-  # Compress=xz was better, but encoding errors kept wiping the file |-:
+  # Compress = 'xz' was better, but encoding errors kept wiping the file |-:
   usethis::use_data(randomTreeDistances, compress = 'gzip', overwrite = TRUE)
 }
 
