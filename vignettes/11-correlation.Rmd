@@ -9,11 +9,11 @@ output:
 
 ```{r data-load, echo=FALSE}
 library('TreeDistData')
-data("distanceDistribution25", package="TreeDistData")
+data("distanceDistribution25", package = "TreeDistData")
 # No point in plotting both MAST and MASTI, as they're perfect rank correlates
 exclude <- c('nni_t', 'nni_u', 'nni_l', 'masti')
 distanceDistribution25 <- distanceDistribution25[!rownames(distanceDistribution25) %in% exclude, ]
-data("distanceDistribution50", package="TreeDistData")
+data("distanceDistribution50", package = "TreeDistData")
 distanceDistribution50 <- distanceDistribution50[!rownames(distanceDistribution50) %in% exclude, ]
 toCorrelate <- c(
                  "path",
@@ -34,9 +34,9 @@ colScale <- colorspace::sequential_hcl(1000, palette = 'viridis')
 CorrPlot <- function (distribution, methodA, methodB) {
   a <- distribution[methodA, ]
   b <- distribution[methodB, ]
-  plot(a ~ b, pch='.', col='#00000033', axes=FALSE, ylab='', xlab='')
+  plot(a ~ b, pch = '.', col = '#00000033', axes = FALSE, ylab = '', xlab = '')
   reg <- lm(a ~ b)
-  abline(reg, col='#ff3333')
+  abline(reg, col = '#ff3333')
 }
 
 PlotR2 <- function (distribution, methodA, methodB) {
@@ -50,7 +50,7 @@ PlotR2 <- function (distribution, methodA, methodB) {
 }
 
 PlotCorr <- function(distribution) {
-  par(mfrow = length(toCorrelate) + c(0L, 0L), mar=rep(0.2, 4))
+  par(mfrow = length(toCorrelate) + c(0L, 0L), mar = rep(0.2, 4))
   lapply(seq_along(toCorrelate), function(i)
     lapply(seq_along(toCorrelate), function(j) {
       if (i == j) {

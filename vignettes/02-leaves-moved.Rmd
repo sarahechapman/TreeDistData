@@ -11,13 +11,13 @@ output:
 
 Take an unrooted ten-leaf tree:
 ```{R backbone, echo=FALSE, fig.width=2, fig.asp=1.2, message=FALSE, fig.align='center'}
-library('Quartet')
+library('Quartet', exclude = 'RobinsonFoulds')
+library('TreeTools', quietly = TRUE, warn.conflicts = FALSE)
 library('TreeDist')
-library('TreeTools')
 library('TreeDistData')
 backbone <- ape::read.tree(text='(a, (b, (c, (d, (((e, f), g), (h, (i, j)))))));')
 par(mar = rep(0, 4))
-plot(ape::unroot(backbone))
+plot(UnrootTree(backbone))
 nTip <- length(backbone$tip.label)
 add3 <- structure(lapply(lapply(AddTipEverywhere(backbone, '11th leaf'),
                                 AddTip, 11L, '12th leaf'),

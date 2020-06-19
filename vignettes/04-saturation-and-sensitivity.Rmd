@@ -8,8 +8,8 @@ output:
 ---
 
 ```{r, echo=FALSE, message=FALSE}
-library('Quartet')
-library('TreeTools')
+library('Quartet', exclude = 'RobinsonFoulds')
+library('TreeTools', quietly = TRUE, warn.conflicts = FALSE)
 library('TreeDist')
 library('TreeDistData')
 data('pectinateDistances11', package = 'TreeDistData')

@@ -16,25 +16,25 @@ nTrees <- 50
 nLeaves <- 40
 replicates <- 500L
 
-data(linTestOneResults, package='TreeDistData')
-data(linTestTwoResults, package='TreeDistData')
-data(linTestSPRResults, package='TreeDistData')
+data(linTestOneResults, package = 'TreeDistData')
+data(linTestTwoResults, package = 'TreeDistData')
+data(linTestSPRResults, package = 'TreeDistData')
 
 withText <- 2.4
 yRange <- c(0, 1)
 Panel <- function (letter, x, ...) {
-  text(x, 1.05, paste0('(', letters[letter], ')'), pos=2, offset=0, ...)
+  text(x, 1.05, paste0('(', letters[letter], ')'), pos = 2, offset = 0, ...)
 }
 ```
 
 ```{R, echo=FALSE, fig.asp=1.23}
 PlotFunc <- function () {
-  par(mfrow=c(2, 2), mar = c(withText, withText, 1, 0), xpd = NA,
-      mgp = c(withText - 1L, 0.5, 0), cex=0.8)
+  par(mfrow = c(2, 2), mar = c(withText, withText, 1, 0), xpd = NA,
+      mgp = c(withText - 1L, 0.5, 0), cex = 0.8)
 
   x <- seq(30, 70, 10)
-  plot(type='n', range(x) - c(5, 0), yRange, axes=FALSE,
-       ylab='Success rate', xlab='% leaves in skeleton')
+  plot(type = 'n', range(x) - c(5, 0), yRange, axes = FALSE,
+       ylab = 'Success rate', xlab = '% leaves in skeleton')
   axis(1, x)
   yLab <- seq(0, 1, length.out = 5)
   axis(2, yLab)
@@ -48,8 +48,8 @@ PlotFunc <- function () {
   par(mar = c(withText, 1, 1, 0))
 
   x <- seq(10, 40, 10) / 100 * nLeaves
-  plot(type='n', range(x), yRange, axes=FALSE,
-       ylab='', xlab='Leaf label interchanges')
+  plot(type = 'n', range(x), yRange, axes = FALSE,
+       ylab = '', xlab = 'Leaf label interchanges')
   axis(1, x)
   axis(2, at = yLab, labels = rep('', 5))
   scores <- colMeans(linTestTwoResults) / replicates
@@ -63,8 +63,8 @@ PlotFunc <- function () {
 
   par(mar = c(withText, withText, 1, 0), xpd = NA)
   x <- seq(20, 100, 20) / 100 * nLeaves
-  plot(type='n', range(x), yRange, axes=FALSE,
-       ylab='Success rate', xlab='Subtree prune & regraft operations')
+  plot(type = 'n', range(x), yRange, axes = FALSE,
+       ylab = 'Success rate', xlab = 'Subtree prune & regraft operations')
   axis(1, x)
   yLab <- seq(0, 1, length.out = 5)
   axis(2, yLab)
@@ -76,7 +76,7 @@ PlotFunc <- function () {
 
   par(mar = c(0, 0, 0, 0))
   plot.new()
-  legend('right', tdAbbrevs[tdPlotSequence], bty='n', lwd = 2, lty = 1,
+  legend('right', tdAbbrevs[tdPlotSequence], bty = 'n', lwd = 2, lty = 1,
          cex = 0.9, col = TreeDistCol(tdPlotSequence))
 }
 

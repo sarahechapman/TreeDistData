@@ -7,8 +7,8 @@ output:
     default: yes
 ---
 
-```{r setup, echo=FALSE, message=FALSE}
-library('Quartet')
+```{r setup, echo=FALSE}
+library('Quartet', exclude = 'RobinsonFoulds')
 library('TreeDist')
 library('TreeDistData')
 backbone <- ape::read.tree(text='(a, (b, (c, (d, (((e, f), g), (h, (i, j)))))));')
@@ -20,8 +20,7 @@ ordr <- order(backbone$edge[, 2])[-(nTip + 1L)]
 dists <- TreeTools::EdgeDistances(backbone)[ordr, ordr]
 ```
 
-```{r, echo=FALSE, fig.width=7.2, fig.asp=4/5, message=FALSE}
-library('TreeTools') # LnUnrooted called somewhere...
+```{r, echo=FALSE, fig.width=7.2, fig.asp=4/5}
 BoxPlot <- function (method) {
   d <- as.matrix(TDFunctions[[method]](newTrees))
   boxplot(d ~ dists, border = TreeDistCol(method), xlab = '', ylab = '')
