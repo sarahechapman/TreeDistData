@@ -1,13 +1,11 @@
 ---
-title: "Supp. Figs: Metric correlation"
+title: "Supplementary Figures: Metric correlation"
 output: 
   rmarkdown::html_vignette:
     default: yes
   bookdown::pdf_document2:
     toc: no
 ---
-
-# Correlation between metrics
 
 ```{r data-load, echo=FALSE}
 library('TreeDistData')
