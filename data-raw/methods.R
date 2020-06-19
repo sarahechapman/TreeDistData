@@ -171,7 +171,7 @@ tableau20 <- c('#4e78a8', '#A0CBE8',
 )
 
 # https://jrnold.github.io/ggthemes/reference/tableau_color_pal.html
-tab30 <- as.character(matrix(c(tableau20, tableau10), 3, byrow=TRUE))
+tab30 <- as.character(matrix(c(tableau20, tableau10), 3, byrow = TRUE))
 
 # https://personal.sron.nl/~pault/data/colourschemes.pdf
 # plot(inlmisc::GetColors(n = 22, scheme = 'discrete rainbow'))
@@ -190,11 +190,11 @@ names(tdCol) <- tdMethods
 tdCol[c('nni', 'nea', 'tbr')] <- tdCol[c('nni_u', 'nts', 'tbr_u')]
 
 
-usethis::use_data(tdAbbrevs, compress='xz', overwrite = TRUE)
-usethis::use_data(tdMdAbbrevs, compress='xz', overwrite = TRUE)
-usethis::use_data(tdBoxAbbrevs, compress='xz', overwrite = TRUE)
-usethis::use_data(tdMethods, compress='xz', overwrite = TRUE)
-usethis::use_data(tdPlotSequence, compress='xz', overwrite = TRUE)
-usethis::use_data(tdCol, compress='xz', overwrite = TRUE)
-usethis::use_data(TDFunctions, compress='xz', overwrite = TRUE)
-usethis::use_data(TDPair, compress='xz', overwrite = TRUE)
+usethis::use_data(tdAbbrevs, compress = 'gzip', overwrite = TRUE)
+usethis::use_data(tdMdAbbrevs, compress = 'gzip', overwrite = TRUE)
+usethis::use_data(tdBoxAbbrevs, compress = 'gzip', overwrite = TRUE)
+usethis::use_data(tdMethods, compress = 'gzip', overwrite = TRUE)
+usethis::use_data(tdPlotSequence, compress = 'gzip', overwrite = TRUE)
+usethis::use_data(tdCol, compress = 'gzip', overwrite = TRUE)
+usethis::use_data(TDFunctions, compress = 'xz', overwrite = TRUE)
+usethis::use_data(TDPair, compress = 'xz', overwrite = TRUE)
