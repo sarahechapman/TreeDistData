@@ -200,9 +200,13 @@ NULL
 #' (tree shape 0), the final 315 are balanced (tree shape 1).
 #'
 #' @examples
-#' plot(TreeTools::UnrootedTreeWithShape(0, 7))
-#' plot(TreeTools::UnrootedTreeWithShape(1, 7))
+#' library('TreeTools', quietly = TRUE, warn.conflicts = FALSE)
 #'
+#' # Pectinate unrooted tree shape:
+#' plot(UnrootedTreeWithShape(0, 7))
+#'
+#' # Balanced unrooted tree shape:
+#' plot(UnrootedTreeWithShape(1, 7))
 #' @template dataRaw
 #'
 #' @references
