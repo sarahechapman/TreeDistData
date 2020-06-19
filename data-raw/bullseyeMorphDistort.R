@@ -129,7 +129,7 @@ for (tipName in tipsNames) {
       dpi = DifferentPhylogeneticInfo(tr, trs, normalize = TRUE),
       msid = MatchingSplitInfoDistance(tr, trs, normalize = TRUE),
       cid = ClusteringInfoDistance(tr, trs, normalize = TRUE),
-      nts = NyeTreeSimilarity(tr, trs, similarity = FALSE, normalize = TRUE),
+      nts = NyeSimilarity(tr, trs, similarity = FALSE, normalize = TRUE),
 
       ja2 = JaccardRobinsonFoulds(tr, trs, k = 2, allowConflict = FALSE, normalize = TRUE),
       ja4 = JaccardRobinsonFoulds(tr, trs, k = 4, allowConflict = FALSE, normalize = TRUE),

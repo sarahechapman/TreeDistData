@@ -54,7 +54,7 @@ Times <- function (trees) {
     dpi = SharedPhylogeneticInfo(splits, normalize = FALSE),
     msid = MatchingSplitInfo(splits, normalize = FALSE),
     cid = MutualClusteringInfo(splits, normalize = FALSE),
-    nea = NyeTreeSimilarity(splits, normalize = FALSE),
+    nea = NyeSimilarity(splits, normalize = FALSE),
     ja2 = JaccardRobinsonFoulds(splits, k = 2L, similarity = TRUE, allowConflict = FALSE, normalize = FALSE),
     ja4 = JaccardRobinsonFoulds(splits, k = 4L, similarity = TRUE, allowConflict = FALSE, normalize = FALSE),
     jna2 = JaccardRobinsonFoulds(splits, k = 2L, similarity = TRUE, allowConflict = TRUE, normalize = FALSE),

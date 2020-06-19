@@ -66,7 +66,7 @@ for (trees in tipsNames) {
       vmsi = VariationOfMatchingSplitInfo(tr, trs, normalize=normInfo),
       vci = VariationOfClusteringInfo(tr, trs, normalize=normInfo),
       qd = Quartet::QuartetDivergence(Quartet::QuartetStatus(trs, cf=tr), similarity = FALSE),
-      nts = 1 - NyeTreeSimilarity(tr, trs, normalize=TRUE),
+      nts = 1 - NyeSimilarity(tr, trs, normalize=TRUE),
       msd = MatchingSplitDistance(tr, trs),
       t(vapply(trs, phangorn::treedist, tree2=tr, double(2))),
       spr = vapply(trs, phangorn::SPR.dist, tree2=tr, double(1))

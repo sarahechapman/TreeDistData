@@ -11,10 +11,10 @@ output:
 library('phangorn')
 library('TreeDistData')
 
-data("bullseyeMorphScores", package='TreeDistData')
-data("bullMoDiScores", package='TreeDistData')
-data("tdMethods", package='TreeDistData')
-data("tdAbbrevs", package='TreeDistData')
+data("bullseyeMorphScores", package = 'TreeDistData')
+data("bullMoDiScores", package = 'TreeDistData')
+data("tdMethods", package = 'TreeDistData')
+data("tdAbbrevs", package = 'TreeDistData')
 
 lwd <- 1L
 semitransparency <- '44'
@@ -37,13 +37,16 @@ Spear <- function (scoreList) {
       rhos <- apply(allScores, 3L, function (scores) {
         apply(scores, 2, SpearmanRho)
       })
-      rbind(mean = rowMeans(rhos), 'Std. Err.' = apply(rhos, 1, sd) / sqrt(dim(rhos)[2]))
+      rbind(mean = rowMeans(rhos),
+            'Std. Err.' = apply(rhos, 1, sd) / sqrt(dim(rhos)[2]))
     },
     matrix(0, nrow=2, ncol=dim(scoreList[[1]])[2]))
 }
 # Note the surprising performance of rf
 
-Successes <- function (scores, gap) rowSums(scores[(10 - gap):1, ] < scores[10:(gap + 1), ])
+Successes <- function (scores, gap) {
+  rowSums(scores[(10 - gap):1, ] < scores[10:(gap + 1), ])
+}
 
 BinomCI <- function (scores, nScores, gap) {
   vapply(Successes(scores, gap),

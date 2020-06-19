@@ -6,7 +6,7 @@
 #' @importFrom TreeDist MASTSize NNIDist SPRDist PathDist
 #' JaccardRobinsonFoulds
 #' DifferentPhylogeneticInfo MatchingSplitInfoDistance
-#' NyeTreeSimilarity MatchingSplitDistance
+#' NyeSimilarity MatchingSplitDistance
 #' ClusteringInfoDistance RobinsonFoulds InfoRobinsonFoulds
 #' @importFrom Quartet QuartetDivergence QuartetStatus
 #' @importFrom TBRDist TBRDist
@@ -46,7 +46,7 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
     msid = MatchingSplitInfoDistance(tr1, tr2, normalize = TRUE),
     cid = ClusteringInfoDistance(tr1, tr2, normalize = TRUE),
     qd = unname(qd),
-    nts = NyeTreeSimilarity(tr1, tr2, similarity = FALSE, normalize = TRUE),
+    nts = NyeSimilarity(tr1, tr2, similarity = FALSE, normalize = TRUE),
 
     ja2 = JaccardRobinsonFoulds(tr1, tr2, k = 2, allowConflict = FALSE, normalize = TRUE),
     ja4 = JaccardRobinsonFoulds(tr1, tr2, k = 4, allowConflict = FALSE, normalize = TRUE),
@@ -115,7 +115,7 @@ PairwiseDistances <- function (trees, Func, valueLength = 1L, ...) {
 #' @importFrom TreeTools as.Splits Postorder LnUnrooted
 #' @importFrom TBRDist TBRDist USPRDist
 #' @importFrom TreeDist DifferentPhylogeneticInfo MatchingSplitInfoDistance
-#' NyeTreeSimilarity MatchingSplitDistance MASTSize SPRDist
+#' NyeSimilarity MatchingSplitDistance MASTSize SPRDist
 #' ClusteringInfoDistance RobinsonFoulds InfoRobinsonFoulds
 #' @importFrom Quartet ManyToManyQuartetAgreement
 #'
@@ -178,7 +178,7 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
   cid <- ClusteringInfoDistance(splits, normalize = TRUE)
 
   MSG('Nye')
-  nts <- 1 - NyeTreeSimilarity(splits, normalize = TRUE)
+  nts <- 1 - NyeSimilarity(splits, normalize = TRUE)
 
   MSG('MSD')
   msd <- MatchingSplitDistance(splits)

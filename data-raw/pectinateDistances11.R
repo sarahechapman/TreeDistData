@@ -10,7 +10,8 @@ RNGversion("3.6.0")
 set.seed(0)
 repls <-  100000L
 message("Generating ", repls, " random trees")
-randomTreeIds <- unique(floor(runif(repls * 2) * NUnrooted(nTip)))[seq_len(repls)]
+randomTreeIds <- unique(floor(runif(repls * 2) *
+                                NUnrooted(nTip)))[seq_len(repls)]
 randomTrees <- as.phylo(randomTreeIds, nTip, tipLabel)
 randomTrees <- structure(lapply(randomTrees, Postorder), class = 'multiPhylo')
 message("Generated ", repls, " comparison trees.")
@@ -24,7 +25,7 @@ qd <- Quartet::QuartetDivergence(
   Quartet::QuartetStatus(randomTrees, cf=pectinateTree),
   similarity = FALSE)
 message('NTS... ')
-nts <- 1 - NyeTreeSimilarity(pectinateTree, randomTrees, normalize=TRUE)
+nts <- 1 - NyeSimilarity(pectinateTree, randomTrees, normalize=TRUE)
 message('JRF... ')
 ja2 <- JaccardRobinsonFoulds(pectinateTree, randomTrees, normalize = TRUE,
                             k = 2, allowConflict = FALSE)

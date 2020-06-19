@@ -16,10 +16,10 @@ tdAbbrevs <- c(
   rf  = 'Robinson-Foulds',
   rfi = 'Info. Corr. RF',
 
-  ja4 = 'JRF (k=4, no conflict)',
-  ja2 = 'JRF (k=2, no conflict)',
-  jna4 = 'JRF (k=4, conflict ok)',
-  jna2 = 'JRF (k=2, conflict ok)',
+  ja4 = 'JRF (k = 4, no conflict)',
+  ja2 = 'JRF (k = 2, no conflict)',
+  jna4 = 'JRF (k = 4, conflict ok)',
+  jna2 = 'JRF (k = 2, conflict ok)',
 
   nea = 'Nye et al.',
   nts = expression(paste(plain('Nye '), italic('et al.'))),
@@ -53,10 +53,10 @@ tdBoxAbbrevs <- c(
   rf  = 'Robins.\n-Foulds',
   rfi = 'Info.\nCorr.\nRF',
 
-  ja4 = 'JRF\n(k=4,\nno conf.)',
-  ja2 = 'JRF\n(k=2,\nno conf.)',
-  jna4 = 'JRF\n(k=4,\nconf. ok)',
-  jna2 = 'JRF\n(k=2,\nconf. ok)',
+  ja4 = 'JRF\n(k = 4,\nno conf.)',
+  ja2 = 'JRF\n(k = 2,\nno conf.)',
+  jna4 = 'JRF\n(k = 4,\nconf. ok)',
+  jna2 = 'JRF\n(k = 2,\nconf. ok)',
 
   nea = 'Nye\net al.',
   nts = 'Nye\net al.',#expression(paste(plain('Nye\n'), italic('et al.'))),
@@ -86,20 +86,20 @@ tdBoxAbbrevs <- c(
 tdMethods <- names(tdAbbrevs)
 tdMethods <- tdMethods[!tdMethods %in% c('nni', 'nea', 'tbr')]
 
-JA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, allowConflict = FALSE)
-JA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, allowConflict = FALSE)
-JNA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=2, allowConflict = TRUE)
-JNA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k=4, allowConflict = TRUE)
+JA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k = 2, allowConflict = FALSE)
+JA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k = 4, allowConflict = FALSE)
+JNA2 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k = 2, allowConflict = TRUE)
+JNA4 <- function (...) TreeDist::JaccardRobinsonFoulds(..., k = 4, allowConflict = TRUE)
 
 TDFunctions <- list(
   rf = TreeDist::RobinsonFoulds,
   rfi = TreeDist::InfoRobinsonFoulds,
-  ja2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, allowConflict = FALSE),
-  ja4 =  function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, allowConflict = FALSE),
-  jna2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=2, allowConflict = TRUE),
-  jna4 = function(...) TreeDist::JaccardRobinsonFoulds(..., k=4, allowConflict = TRUE),
+  ja2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k = 2, allowConflict = FALSE),
+  ja4 =  function(...) TreeDist::JaccardRobinsonFoulds(..., k = 4, allowConflict = FALSE),
+  jna2 = function(...) TreeDist::JaccardRobinsonFoulds(..., k = 2, allowConflict = TRUE),
+  jna4 = function(...) TreeDist::JaccardRobinsonFoulds(..., k = 4, allowConflict = TRUE),
 
-  nts = function(...) TreeDist::NyeTreeSimilarity(..., similarity = FALSE),
+  nts = function(...) TreeDist::NyeSimilarity(..., similarity = FALSE),
   dpi = DifferentPhylogeneticInfo,
   nni_u =  function(...) as.matrix(TreeDist::NNIDist(...)$loose_upper),
   nni_t =  function(...) as.matrix(TreeDist::NNIDist(...)$tight_upper),
@@ -137,7 +137,7 @@ TDPair <- list(
     tr, ref, normalize = TRUE), 4L),
   cid = function (tr, ref) round(TreeDist::ClusteringInfoDistance(
     tr, ref, normalize = TRUE), 4L),
-  nts = function (tr, ref) round(NyeTreeSimilarity(
+  nts = function (tr, ref) round(NyeSimilarity(
     tr, ref, similarity = FALSE, normalize = TRUE), 4L),
   tbr_u = function(tr, ref) TBRDist::TBRDist(tr, ref)$tbr_max,
   tbr_l = function(tr, ref) TBRDist::TBRDist(tr, ref)$tbr_min,
