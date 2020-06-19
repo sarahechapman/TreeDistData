@@ -5,6 +5,10 @@ output:
     toc: no
   rmarkdown::html_vignette:
     default: yes
+vignette: >
+  %\VignetteIndexEntry{1.6: Independent of tree shape}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r define-parameters, echo=FALSE, message=FALSE}

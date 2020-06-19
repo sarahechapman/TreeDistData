@@ -5,6 +5,10 @@ output:
     toc: no
   rmarkdown::html_vignette:
     default: yes
+vignette: >
+  %\VignetteIndexEntry{1.4, 1.5: Saturation and sensitivity}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, echo=FALSE, message=FALSE}

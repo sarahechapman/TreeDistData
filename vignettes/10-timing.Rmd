@@ -7,6 +7,10 @@ output:
     default: yes
 bibliography: ../inst/REFERENCES.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
+vignette: >
+  %\VignetteIndexEntry{4: Timing benchmarks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r pc-specs, echo = FALSE}

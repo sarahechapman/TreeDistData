@@ -5,6 +5,10 @@ output:
     default: yes
   bookdown::pdf_document2:
     toc: no
+vignette: >
+  %\VignetteIndexEntry{1.2: Number of leaves moved}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ## Method

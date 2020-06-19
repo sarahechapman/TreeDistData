@@ -5,6 +5,10 @@ output:
     toc: no
   rmarkdown::html_vignette:
     default: yes
+vignette: >
+  %\VignetteIndexEntry{1.1: Length of move}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r setup, echo=FALSE}

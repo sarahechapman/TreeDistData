@@ -5,9 +5,13 @@ output:
     toc: no
   rmarkdown::html_vignette:
     default: yes
+vignette: >
+  %\VignetteIndexEntry{1.9: Artificial tree rearrangement}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
-```{r load, echo = FALSE, message=FALSE}
+```{r load, echo=FALSE}
 # Values obtained from data-raw/sprDistances.R
 nTrees <- 100L
 nTip <- 50L

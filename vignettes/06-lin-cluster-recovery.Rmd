@@ -5,6 +5,10 @@ output:
     toc: no
   rmarkdown::html_vignette:
     default: yes
+vignette: >
+  %\VignetteIndexEntry{1.7: Consistent cluster recovery}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 

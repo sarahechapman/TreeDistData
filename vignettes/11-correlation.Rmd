@@ -5,6 +5,10 @@ output:
     default: yes
   bookdown::pdf_document2:
     toc: no
+vignette: >
+  %\VignetteIndexEntry{Supplementary Figures: Metric correlation}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r data-load, echo=FALSE}
