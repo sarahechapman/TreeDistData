@@ -26,7 +26,7 @@ test_that("Data dimensions are correct", {
 
   data("randomTreeDistances", package = 'TreeDistData')
   nLeafMeasurements <- 197L
-  AllDistsThere(dimnames(randomTreeDistances)[[1]])
+  AllDistsThere(dimnames(randomTreeDistances)[[1]], nni_t = FALSE)
   expect_equal(c(LengthWithout('mafi', 'nni_t'), 13L, nLeafMeasurements),
                dim(randomTreeDistances))
 
