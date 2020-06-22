@@ -6,24 +6,46 @@ test_that("Data dimensions are correct", {
 
   LengthWithout <- function(...) nMetrics - length(list(...))
 
-  data("sevenTipDistances", package='TreeDistData')
+  data("sevenTipDistances", package = 'TreeDistData')
   expect_equal(LengthWithout('mafi'), length(sevenTipDistances))
   expect_equal(c(945L, 945L), dim(sevenTipDistances[[1]]))
 
-  data("distanceDistribution25", package='TreeDistData')
+  data("distanceDistribution25", package = 'TreeDistData')
   expect_equal(c(LengthWithout('mafi'), 10000L),
                dim(distanceDistribution25))
   expect_equal(dim(distanceDistribution50), dim(distanceDistribution25))
 
-  noMafiNnit <- tdMethods[!tdMethods %in% c('mafi', 'nni_t')]
+  AllDistsThere <- function (x, mast = TRUE) {
+    exclude <- c('mafi', 'nni_t')
+    if (!mast) exclude <- c(exclude, 'mast', 'masti')
+    methods <- tdMethods[!tdMethods %in% exclude]
+    expect_true(all(methods %in% x))
+    expect_equal(methods, x[!x %in% exclude])
+  }
 
-  data("randomTreeDistances", package='TreeDistData')
+  data("randomTreeDistances", package = 'TreeDistData')
   nLeafMeasurements <- 197L
-  expect_true(all(noMafiNnit %in% dimnames(randomTreeDistances)[[1]]))
+  AllDistsThere(dimnames(randomTreeDistances)[[1]])
   expect_equal(c(LengthWithout('mafi', 'nni_t'), 13L, nLeafMeasurements),
                dim(randomTreeDistances))
 
-  expect_true(all(noMafiNnit %in% names(bullseyeDistances[[1]])))
-  expect_true(all(noMafiNnit %in% dimnames(bullseyeMorphScores[[1]])[[2]]))
-  #TODO update other datasets for all 20 metrics?
+  lapply(bullseyeDistances, function (x) {
+    AllDistsThere(names(x))
+  })
+  lapply(bullseyeMorphScores, function (x) {
+    AllDistsThere(dimnames(x)[[2]])
+  })
+  lapply(bullMoDiScores, function (x) {
+    AllDistsThere(dimnames(x)[[2]])
+  })
+  AllDistsThere(names(sevenTipDistances))
+  AllDistsThere(dimnames(pectinateDistances11)[[1]])
+  AllDistsThere(dimnames(distanceDistribution25)[[1]])
+  AllDistsThere(dimnames(distanceDistribution50)[[1]])
+  AllDistsThere(dimnames(linTestOneResults)[[2]], mast = FALSE)
+  AllDistsThere(dimnames(linTestTwoResults)[[2]], mast = FALSE)
+  AllDistsThere(dimnames(linTestSPRResults)[[2]], mast = FALSE)
+  AllDistsThere(names(shapeEffect))
+  AllDistsThere(names(sprDistances))
+
 })

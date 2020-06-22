@@ -1,282 +1,51 @@
-#' Mean distances between random pairs of trees
-#'
-#' A three-dimensional array listing the normalized distances between 1&nbsp;000
-#' random pairs of trees drawn from the uniform distribution using
-#' `ape::rtree(nTip, br=NULL)`.
-#'
-#' Normalization is against the maximum possible value obtainable on a pair
-#' of trees of the shapes given, with the exception of the SPR distance,
-#' which is normalized against the upper bound (`spr`) and lower bound (`sprLB`)
-#' of its diameter on a tree with _n_ leaves.  The path and matching split
-#' distances are not normalized.
-#'
-#' Rows are named with an abbreviation of the tree comparison metric:
-#'
-#' - `dpi`: Variation of Phylogenetic Information (Smith, forthcoming)
-#' - `msid`: Variation of Matching Split Information (Smith, forthcoming)
-#' - `cid`: Variation of Clustering Information (Smith, forthcoming)
-#' - `qd`: Quartet divergence (Smith, 2019)
-#' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distance (B&ouml;cker _et al_. 2013),
-#'      with _k_ = 2, 4, with conflicting pairings prohibited
-#' - `jna2`, `jna4`: JRF distance, conflicting pairings permitted
-#' - `nts`: Nye _et al._ tree similarity (Nye _et al._ 2006)
-#' - `msd`: Matching Split Distance (Bogdanowicz & Giaro, 2012)
-#' - `mast`, `masti`: Size and information content of maximum agreement subtree
-#' - `nni_l`, `nni_u`: Lower and upper bounds on the nearest neighbour
-#'      interchange distance (Li _et al._ 1996)
-#' - `spr`: Approximate subtree prune and regraft distance, calculated using
-#'     `phangorn::SPR.dist`
-#' - `tbr_l`, `tbr_u`: Lower and upper bounds on the tree bisection and
-#'      reconnection distance, calculated using
-#'      [TBRDist](https://ms609.github.io/TBRDist/)
-#' - `rf`: Robinson-Foulds distance (Robinson & Foulds 1981)
-#' - `rfi`: Robinson-Foulds distance, splits weighted by phylogenetic
-#'          information content (Smith, forthcoming)
-#' - `path`: Path distance (Steel & Penny 1993)
-#'
-#' Columns list the summary statistics of calculated tree distances: the
-#' minimum (`min`),
-#' 1%, 5%, 10%, 25%, 50% (i.e. median), 75%, 90%, 95%, 99% percentiles,
-#' maximum (`max`), mean (`mean`) and standard deviation (`sd`).
-#'
-#' The third dimension lists the number of leaves in the trees compared.
-#'
-#' @templateVar vignette 09-expected-similarity
-#' @template seeVignette
-#' @template dataRaw
-#'
-#' @references
-#' - \insertRef{Allen2001}{TreeDist}
-#'
-#' - \insertRef{Bocker2013}{TreeDist}
-#'
-#' - \insertRef{Bogdanowicz2012}{TreeDist}
-#'
-#'   \insertRef{Li1996}{TreeDist}
-#'
-#' - \insertRef{Nye2006}{TreeDist}
-#'
-#' - \insertRef{Robinson1981}{TreeDist}
-#'
-#' - \insertRef{SmithTern}{TreeSearch}
-#'
-#' - \insertRef{SmithDist}{TreeDist}
-#'
-#' - \insertRef{Steel1993}{TreeDist}
-#'
-#' @keywords datasets
-"randomTreeDistances"
-
-#' Distances between random pairs of trees
-#'
-#' Two-dimensional matrices listing the normalized distances between random
-#' pairs of bifurcating trees with 11, 25 and 50 leaves drawn from the
-#' uniform distribution using `ape::rtree(nTip, br=NULL)`.
-#'
-#' `pectinateDistances11` reports distances between a pectinate 11-leaf tree
-#' and 100&nbsp;000 random bifurcating trees.
-#'
-#' Rows are named with an abbreviation of the tree comparison metric.
-#' Information-based measures are normalized against the splitwise information
-#' content/entropy for binary trees of the corresponding topologies.
-#' <!--#TODO VERIFY-->
-#' The quartet distance, Nye _et al._ and Jaccard-Robinson-Foulds measures
-#' are normalized against their maximum possible values.
-#' The remaining measures are unnormalized.
-#'
-#' - `dpi`: Different Phylogenetic Information (Smith, forthcoming)
-#' - `msid`: Matching Split Information Distance (Smith, forthcoming)
-#' - `cid`: Clustering Information Distance (Smith, forthcoming)
-#' - `qd`: Quartet divergence (Smith, 2019)
-#' - `nts`: Nye _et al._ tree similarity (Nye _et al._ 2006)
-#' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
-#' conflicting pairings prohibited
-#' - `jna2`, `jna4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
-#'            conflicting pairings permitted
-#' - `msd`: Matching Split Distance (Bogdanowicz & Giaro, 2012), unnormalized
-#' - `mast`: Size of Maximum Agreement Subtree (Valiente 2009)
-#' - `masti`: Information content of Maximum Agreement Subtree
-#' - `nni_l`, `nni_t`, `nni_u`: Lower bound, tight upper bound, and upper bound
-#'         for  nearest-neighbour interchange distance (Li _et al._ 1996)
-#' - `spr`: Approximate SPR distance, unnormalized
-#' - `tbr_l`, `tbr_u`: Lower and upper bound for tree bisection and reconnection
-#'          (TBR) distance
-#' - `rf`: Robinson-Foulds distance (Robinson & Foulds 1985), unnormalized
-#' - `rfi`: Robinson-Foulds distance, splits weighted by phylogenetic
-#' information content (Smith, forthcoming)
-#' - `path`: Path distance (Steel & Penny 1993), unnormalized
-#'
-#' Each column lists the calculated distances between each pair of trees.
-#'
-#' The pairs of 25-leaf trees are saved as data object [`randomTreePairs25`].
-#'
-#' @template dataRaw
-#' @references
-#' \insertRef{Bogdanowicz2012}{TreeDist}
-#'
-#' \insertRef{Li1996}{TreeDist}
-#'
-#' \insertRef{Nye2006}{TreeDist}
-#'
-#' \insertRef{Robinson1981}{TreeDist}
-#'
-#' \insertRef{SmithTern}{TreeSearch}
-#'
-#' \insertRef{SmithDist}{TreeDist}
-#'
-#' \insertRef{Steel1993}{TreeDist}
-#'
-#' \insertRef{Valiente2009}{TreeDist}
-#'
-#' @name distanceDistributions
-#' @keywords datasets
-NULL
-
-#' @rdname distanceDistributions
-"distanceDistribution50"
-#' @rdname distanceDistributions
-"distanceDistribution25"
-#' @rdname distanceDistributions
-"pectinateDistances11"
-
-#' Pairs of random trees
-#'
-#' Lists of 10&nbsp;000 pairs of binary trees drawn from the uniform
-#' distribution using `ape::rtree(nTip, br = NULL)`.
-#'
-#' The distances between these pairs of trees are recorded in
-#' the data objects  [`distanceDistribution25`] and  [`distanceDistribution50`].
-#'
-#' @template dataRaw
-#' @name randomTreePairs
-#' @keywords datasets
-NULL
-
-#' @rdname randomTreePairs
-"randomTreePairs25"
-#' @rdname randomTreePairs
-"randomTreePairs50"
-
-
-#' Distances between unrooted seven-leaf trees
-#'
-#' Distances between each possible pairing of the 945 unrooted seven-leaf trees
-#' (equivalent to rooted 6-leaf trees).  Following Kendall and Colijn (2016).
-#'
-## <!--Text copied from distanceDistribution25 above -->
-#'
-#' The list entries are named with an abbreviation of the tree comparison metric.
-#' Information-based measures are normalized against the splitwise information
-#' content/entropy for binary trees of the corresponding topologies.
-#' <!--#TODO VERIFY-->
-#' The quartet distance, Nye _et al._ and Jaccard-Robinson-Foulds measures
-#' are normalized against their maximum possible values.
-#' The remaining measures are unnormalized.
-#'
-#' - `dpi`: Different Phylogenetic Information (Smith, forthcoming)
-#' - `msid`: Matching Split Information Distance (Smith, forthcoming)
-#' - `cid`: Clustering Information Distance (Smith, forthcoming)
-#' - `qd`: Quartet divergence (Smith, 2019)
-#' - `nts`: Nye _et al._ tree similarity (Nye _et al._ 2006)
-#' - `ja2`, `ja4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
-#' conflicting pairings prohibited
-#' - `jna2`, `jna4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
-#'  conflicting pairings permitted
-#' - `msd`: Matching Split Distance (Bogdanowicz & Giaro, 2012), unnormalized
-#' - `mast`: Size of Maximum Agreement Subtree (Valiente 2009)
-#' - `masti`: Information content of Maximum Agreement Subtree
-#' - `nni_l`, `nni_t`, `nni_u`: Lower bound, tight upper bound, and upper bound
-#'         for  nearest-neighbour interchange distance (Li _et al._ 1996)
-#' - `spr`: Approximate SPR distance, unnormalized
-#' - `tbr_l`, `tbr_u`: Lower and upper bound for tree bisection and reconnection
-#'          (TBR) distance
-#' - `rf`: Robinson-Foulds distance (Robinson & Foulds 1985), unnormalized
-#' - `rfi`: Robinson-Foulds distance, splits weighted by phylogenetic
-#' information content (Smith, forthcoming)
-#' - `path`: Path distance (Steel & Penny 1993), unnormalized
-#'
-#' Each item in the list contains a 945&times;945 matrix reporting the distance
-#' between each pair of seven-leaf trees.  The first 630 trees are pectinate
-#' (tree shape 0), the final 315 are balanced (tree shape 1).
-#'
-#' @examples
-#' library('TreeTools', quietly = TRUE, warn.conflicts = FALSE)
-#'
-#' # Pectinate unrooted tree shape:
-#' plot(UnrootedTreeWithShape(0, 7))
-#'
-#' # Balanced unrooted tree shape:
-#' plot(UnrootedTreeWithShape(1, 7))
-#' @template dataRaw
-#'
-#' @references
-#' \insertRef{Bogdanowicz2012}{TreeDist}
-#'
-#' \insertRef{Li1996}{TreeDist}
-#'
-#' \insertRef{Kendall2016}{TreeDistData}
-#'
-#' \insertRef{Nye2006}{TreeDist}
-#'
-#' \insertRef{Robinson1981}{TreeDist}
-#'
-#' \insertRef{SmithTern}{TreeSearch}
-#'
-#' \insertRef{SmithDist}{TreeDist}
-#'
-#' \insertRef{Steel1993}{TreeDist}
-#'
-#' \insertRef{Valiente2009}{TreeDist}
-#'
-#' @keywords datasets
-"sevenTipDistances"
-
 #' Bullseye test results
 #'
 #' Implementation and results of a 'Bullseye' test, after that proposed by
 #' Kuhner and Yamato (2015).
 #'
 #' `bullseyeTrees` is a list with four elements, named `5 leaves`, `10 leaves`,
-#' `20 leaves` and `50 leaves`.  Each element contains 1&nbsp;000 trees with _n_
-#' leaves, randomly sampled from the uniform distribution using `ape::rtree`.
-#'
-#' `bullXXInferred` is a list with four elements, named as in `bullseyeTrees`.
-#' Each element contains 1&nbsp;000 sub-elements. Each sub-element is a list of
-#' ten trees, which have been inferred from progressively more degraded datasets,
-#' originally simulated from the corresponding tree in `bullseyeTrees`.
-#'
-#' `bullXXScores` is a list with four elements, named as in `bullseyeTrees`.
-#' Each element contains a three dimensional array, in which the first dimension
-#' corresponds to the progressive degrees of degradation, labelled according to
-#' the number of characters present or the percentage of tokens switched;
-#' the second dimension is named with an abbreviation of the tree similarity /
-#' distance metric used to score the trees, and the third dimension contains
-#' 1&nbsp;000 entries corresponding to the trees in `bullseyeTrees`.
-#' Each cell contains the distance between the inferred tree and the generative
-#' tree under the stated tree distance metric.
+#' `20 leaves` and `50 leaves`.
+#' Each element contains 1&nbsp;000 trees with _n_ leaves, randomly sampled
+#' from the uniform distribution using [`ape::rtree()`].
 #'
 #' The `bullseyeMorph` prefix refers to the 'subsampling' experiment
 #' described by Smith (forthcoming); the `bullMoDi` prefix refers to the
 #' 'miscoding' experiment.
 #'
-# <!--#TODO delete irrelevant statement -->
-# `bullseyeDistances` contains four elements, each tabulating the distance
-# between each pair of _n_-leaf trees in `bullseyeTrees`.  For details, see
-# \code{\link{sevenTipDistances}}.
-#
-#' `bullseyeDistances` contains two elements, tabulating the distance
-#' between each pair of 20- and 50-leaf trees in `bullseyeTrees`.
-#' For details, see [`sevenTipDistances`].
+#' `bull...Inferred` is a list with four elements, named as in `bullseyeTrees`.
+#' Each element contains 1&nbsp;000 sub-elements. Each sub-element is a list of
+#' ten trees, which have been inferred from progressively more degraded datasets,
+#' originally simulated from the corresponding tree in `bullseyeTrees`.
 #'
+#' `bull...Scores` is a list with four elements, named as in `bullseyeTrees`.
+#' Each element contains a three dimensional array, in which the first dimension
+#' corresponds to the progressive degrees of degradation, labelled according to
+#' the number of characters present or the percentage of tokens switched;
+#' the second dimension is named with an abbreviation of the tree similarity /
+#' distance metric used to score the trees (see 'Methods tested' below),
+#' and the third dimension contains 1&nbsp;000 entries corresponding to the
+#' trees in `bullseyeTrees`.
+#' Each cell contains the distance between the inferred tree and the generative
+#' tree under the stated tree distance metric.
+#'
+#' `bullseyeDistances` contains two elements, named `20 leaves` and `50 leaves`.
+#' Each element contains a named list, with each element named according to
+#' the abbreviation of the corresponding distance metric (see 'Methods tested'
+#' below).
+#' Each of these lists contains a 1&nbsp;000 &times; 1&nbsp;000 matrix
+#' tabulating the distance between each pair of _n_-leaf trees in
+#' `bullseyeTrees`.
 #'
 #' @templateVar vignette 07-bullseye
 #' @template seeVignette
+#' @templateVar nni_t TRUE
+#' @template methodsTested
 #' @template dataRaw
 #' @references
-#' - \insertRef{Kuhner2015}{TreeDistData}
+#' \insertRef{Kuhner2015}{TreeDistData}
+#' @template methodRefs
 #'
-#' - \insertRef{SmithDist}{TreeDist}
-#'
+#' @encoding UTF-8
 #' @name bullseye
 
 #' @rdname bullseye
@@ -292,16 +61,49 @@ NULL
 #' @rdname bullseye
 'bullseyeDistances'
 
+#' Distances between random pairs of trees
+#'
+#' `distanceDistribution##` are two-dimensional matrices listing the normalized
+#' distances between random pairs of bifurcating trees with 25 and 50 leaves
+#' drawn from the uniform distribution using `ape::rtree(nTip, br = NULL)`
+#' (data object [`randomTreePairs##`][randomTreePairs]).
+#' `pectinateDistances11` reports distances between a pectinate 11-leaf tree
+#' and 100&nbsp;000 random binary trees.
+#'
+#' @format
+#' Objects of class `matrix` (inherits from `array`) with
+#' `r dim(distanceDistribution25)[1]` rows, each corresponding
+#' to a tree distance method and is named with its abbreviation
+#' (listed in 'Methods tested' below), and 10&nbsp;000 (`distanceDistribution##`)
+#'  or 100&nbsp;000 (`pectinateDistances11`) columns,
+#' listing the calculated distances between each pair of trees.
+#'
+#' @template allDistMethods
+#' @template dataRaw
+#' @template methodRefs
+#'
+#' @seealso Tree pairs between which distances were calculated are available
+#' in data objects [`randomTreePairs25`] and [`randomTreePairs50`].
+#'
+#' @name distanceDistributions
+#' @encoding UTF-8
+NULL
+
+#' @rdname distanceDistributions
+"distanceDistribution25"
+#' @rdname distanceDistributions
+"distanceDistribution50"
+#' @rdname distanceDistributions
+"pectinateDistances11"
+
 #' Evaluating tree distance metrics by cluster recovery
 #'
 #' An effective measure of tree distance will recover clusters of similar
 #' trees.  These datasets contain the results of tests modelled on those
 #' in Lin _et al._ (2012).
 #'
-#'
 #' I used three approaches to generate clusters of similar trees, and tested
 #' each metric in its ability to recover these clusters (Lin _et al._, 2012).
-#'
 #'
 #' For the first test, I generated 500 datasets of 100 binary trees with
 #' _n_ = 40 leaves.
@@ -321,7 +123,7 @@ NULL
 #'
 #' For each dataset, I calculated the distance between each pair of trees.
 #' Trees where then partitioned into clusters using five methods,
-#' using the \pkg{stats} and \pkg{cluster}.
+#' using the packages \pkg{stats} and \pkg{cluster}.
 #' I define the success rate of each distance measure as the proportion of
 #' datasets in which every tree generated from the same skeleton was placed
 #' in the same cluster.
@@ -353,12 +155,15 @@ NULL
 #' @templateVar vignette 06-lin-cluster-recovery
 #' @template seeVignette
 #'
-#' @template methodAbbrevs
+#' @templateVar nni_t FALSE
+#' @template methodsTested
 #'
 #' @template dataRaw
+#'
+#' @template methodRefs
 #' @references \insertRef{Lin2012}{TreeDistData}
 #' @name linTests
-#'
+
 #' @rdname linTests
 'linTestOneResults'
 #' @rdname linTests
@@ -366,6 +171,156 @@ NULL
 #' @rdname linTests
 'linTestSPRResults'
 
+#' Mean distances between random pairs of trees
+#'
+#' A three-dimensional array listing the normalized distances between 1&nbsp;000
+#' random pairs of trees drawn from the uniform distribution using
+#' `ape::rtree(nTip, br = NULL)`.
+#'
+#' Normalization is against the maximum possible value obtainable on a pair
+#' of trees of the shapes given, with the exception of the SPR distance,
+#' which is normalized against the upper bound (`spr`) and lower bound (`sprLB`)
+#' of its diameter on a tree with _n_ leaves.  The path and matching split
+#' distances are not normalized.
+#'
+#' Rows are named with abbreviations of the tree comparison metrics tested
+#' (see 'Methods tested' below).
+#'
+#' Columns list the summary statistics of calculated tree distances: the
+#' minimum (`min`),
+#' 1%, 5%, 10%, 25%, 50% (i.e. median), 75%, 90%, 95%, 99% percentiles,
+#' maximum (`max`), mean (`mean`) and standard deviation (`sd`).
+#'
+#' The third dimension lists the number of leaves in the trees compared.
+#'
+#' @templateVar vignette 09-expected-similarity
+#' @template seeVignette
+#' @template dataRaw
+#' @templateVar nni_t FALSE
+#' @template methodsTested
+#'
+#' @references
+#' - \insertRef{Allen2001}{TreeDist}
+#'
+#' - \insertRef{Bocker2013}{TreeDist}
+#' @template methodRefs
+#'
+#' @encoding UTF-8
+"randomTreeDistances"
+
+#' Pairs of random trees
+#'
+#' Lists of 10&nbsp;000 pairs of binary trees drawn from the uniform
+#' distribution using `ape::rtree(nTip, br = NULL)`.
+#'
+#' @seealso
+#' The distances between these pairs of trees are recorded in
+#' the data objects  [`distanceDistribution25`] and  [`distanceDistribution50`].
+#'
+#' @template dataRaw
+#' @name randomTreePairs
+#' @encoding UTF-8
+NULL
+
+#' @rdname randomTreePairs
+"randomTreePairs25"
+#' @rdname randomTreePairs
+"randomTreePairs50"
+
+#' Distances between unrooted seven-leaf trees
+#'
+#' Distances between each possible pairing of the 945 unrooted seven-leaf trees
+#' (equivalent to rooted 6-leaf trees).  Following Kendall and Colijn (2016).
+#'
+#' Each list entry is named with the abbreviation of the corresponding tree
+#' distance method (see 'Methods tested' below).
+#'
+#' Each item in the list contains a 945&times;945 matrix reporting the distance
+#' between each pair of seven-leaf trees.  The first 630 trees are pectinate
+#' (tree shape 0), the final 315 are balanced (tree shape 1).
+#'
+#' @template allDistMethods
+#'
+#' @examples
+#' library('TreeTools', quietly = TRUE, warn.conflicts = FALSE)
+#'
+#' # Pectinate unrooted tree shape:
+#' plot(UnrootedTreeWithShape(0, 7))
+#'
+#' # Balanced unrooted tree shape:
+#' plot(UnrootedTreeWithShape(1, 7))
+#' @template dataRaw
+#' @template methodRefs
+#'
+#' @encoding UTF-8
+"sevenTipDistances"
+
+#' Shape effect
+#'
+#' Results of tests exploring the influence of tree shape on reconstructed
+#' tree distances.
+#'
+#' For each of the four binary unrooted tree shapes on eight leaves, I labelled
+#' leaves at random until I had generated 100 distinct trees.
+#'
+#' I measured the distance from each tree to each of the other 399 trees.
+#'
+#' @templateVar vignette 05-tree-shape
+#' @template seeVignette
+#'
+#' @format A list of length `r length(shapeEffect)`.
+#' Each entry of the list is named according to the abbreviation of the
+#' corresponding method (see 'Methods tested' below).
+#'
+#' Each entry is itself a list of ten elements.  Each element contains a numeric
+#' vector listing the distances between each pair of trees with shape _x_ and
+#' shape _y_, where:
+#'
+#' `x = 1, 1, 1, 1, 2, 2, 2, 3, 3, 4`
+#' and
+#' `y = 1, 2, 3, 4, 2, 3, 4, 3, 4, 4`.
+#'
+#' As trees are not compared with themselves (to avoid zero distances), elements
+#' where _x_ = _y_ contain 4&nbsp;950 distances, whereas other elements contain
+#' 5&nbsp;050 distances.
+#'
+#' @templateVar nni_t TRUE
+#' @template methodsTested
+#' @template methodRefs
+#' @template dataRaw
+#' @encoding UTF-8
+'shapeEffect'
+
+#' Tree distance and SPR moves
+#'
+#' Datasets testing whether separating trees by increasingly many moves
+#' results in a corresponding increase in their distance.
+#'
+#' I generated a chain of 100 50-leaf trees, starting from a pectinate tree
+#' and deriving each tree in turn by performing an SPR operation on the previous
+#' tree.
+#' A consistent measure of tree similarity should correlate with the number of
+#' SPR operations separating a pair of trees in this chain.
+#' This said, because one SPR operation may counteract some of the difference
+#' introduced by a previous one, perfect correlation is unlikely.
+#'
+#' @format A list of length 21.
+#' Each entry is named according to the corresponding tree distance method; see
+#' 'Methods tested' below.
+#'
+#' Each member of the list is a 100 &times; 100 matrix listing the distance
+#' between each pair of trees in the SPR chain (see 'Details'),
+#' numbered from 1 to 100.
+#'
+#'
+#' @templateVar vignette 08-spr-walking
+#' @template seeVignette
+#' @templateVar nni_t TRUE
+#' @template methodsTested
+#' @template methodRefs
+#' @template dataRaw
+#' @encoding UTF-8
+'sprDistances'
 
 #' Method parameters
 #'
@@ -416,65 +371,3 @@ NULL
 
 #' @rdname TreeDistMethods
 'TDPair'
-
-#' Tree distance and SPR moves
-#'
-#' Datasets testing whether separating trees by increasingly many moves
-#' results in a corresponding increase to their distance.
-#'
-#' I generated a chain of 100 50-leaf trees, starting from a pectinate tree
-#' and deriving each tree in turn by performing an SPR operation on the previous
-#' tree.
-#' A consistent measure of tree similarity should correlate with the number of
-#' SPR operations separating a pair of trees in this chain.
-#' This said, because one SPR operation may counteract some of the difference
-#' introduced by a previous one, perfect correlation is unlikely.
-#'
-#' @format A list of length 21.
-#' Each entry is named according to the corresponding tree distance method; see
-#' 'Methods tested' below.
-#'
-#' Each member of the list is a 100 x 100 matrix listing the distance
-#' between each pair of trees in the SPR chain (see 'Details'),
-#' numbered from 1 to 100.
-#'
-#'
-#' @templateVar vignette 08-spr-walking
-#' @template seeVignette
-#' @template methodAbbrevs
-#' @template dataRaw
-'sprDistances'
-
-#' Shape effect
-#'
-#' Results of tests exploring the influence of tree shape on reconstructed
-#' tree distances.
-#'
-#' For each of the four binary unrooted tree shapes on eight leaves, I labelled
-#' leaves at random until I had generated 100 distinct trees.
-#'
-#' I measured the distance from each tree to each of the other 399 trees.
-#'
-#' @templateVar vignette 05-tree-shape
-#' @template seeVignette
-#'
-#' @format A list of length 21.
-#' Each entry of the list is named according to the abbreviation of the
-#' corresponding method (see 'Methods tested' below).
-#'
-#' Each entry is itself a list of ten elements.  Each element contains a numeric
-#' vector listing the distances between each pair of trees with shape _x_ and
-#' shape _y_, where:
-#'
-#' `x = 1, 1, 1, 1, 2, 2, 2, 3, 3, 4`
-#' and
-#' `y = 1, 2, 3, 4, 2, 3, 4, 3, 4, 4`.
-#'
-#' As trees are not compared with themselves (to avoid zero distances), elements
-#' where _x_ = _y_ contain 4950 distances, whereas other elements contain 5050
-#' distances.
-#'
-#'
-#' @template methodAbbrevs
-#' @template dataRaw
-'shapeEffect'
