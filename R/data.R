@@ -3,6 +3,8 @@
 #' Implementation and results of a 'Bullseye' test, after that proposed by
 #' Kuhner and Yamato (2015).
 #'
+#' @format
+#'
 #' `bullseyeTrees` is a list with four elements, named `5 leaves`, `10 leaves`,
 #' `20 leaves` and `50 leaves`.
 #' Each element contains 1&nbsp;000 trees with _n_ leaves, randomly sampled
