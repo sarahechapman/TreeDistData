@@ -13,7 +13,7 @@ Objects of class \code{matrix} (inherits from \code{array}) with
 21 rows, each corresponding
 to a tree distance method and is named with its abbreviation
 (listed in 'Methods tested' below), and 10 000
-(\code{distanceDistribution[25, 50]})
+(\code{distanceDistribution25/50})
 or 100 000 (\code{pectinateDistances11}) columns,
 listing the calculated distances between each pair of trees.
 
@@ -36,11 +36,11 @@ distanceDistribution50
 pectinateDistances11
 }
 \description{
-\code{distanceDistribution[25, 50]} are two-dimensional matrices listing the
+\verb{distanceDistribution25(/50)} are two-dimensional matrices listing the
 normalized distances between random pairs of bifurcating trees with 25 and
 50 leaves drawn from the uniform distribution using
 \code{ape::rtree(nTip, br = NULL)} (data object
-[randomTreePairs][\code{randomTreePairs[25, 50]}]).
+\code{\link{randomTreePairs25}}\verb{(/50)}).
 \code{pectinateDistances11} reports distances between a pectinate 11-leaf tree
 and 100 000 random binary trees.
 }
