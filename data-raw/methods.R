@@ -191,11 +191,15 @@ dr22 <- c("#D9CCE3", "#CAACCB", "#BA8DB4", "#AA6F9E", "#994F88", "#882E72",
           "#DC050C", "#A5170E", "#72190E", "#42150A")
 
 #tdCol <- tab30[c((1:10 * 2 - 1L), (seq_len(length(tdMethods) - 10L) * 2))]
-colOrder <- c(22, 21, 3, 4, 1, 2, nye = 10, 7, 11, 6:5,
-              15:17, 14, 18:19, 8:9, 12, 20, 13)
+colOrder <- c(pid = 7, msid = 6, cid = 11, qd = 20, nye = 10,
+              jnc2 = 3, jnc4 = 4, jco2 = 1, jco4 = 2,
+              ms = 5, mast = 8, masti = 9,
+              nni_l = 17, nni_t = 16, nni_u = 15,
+              spr = 14, tbr_l = 18, tbr_u = 19,
+              rf = 22, icrf = 21, path = 13, mafi = 12)
 if(any(duplicated(colOrder))) warning(ifelse(duplicated(colOrder), colOrder, 0))
 if (any(which(!1:22 %in% colOrder))) warning(which(!1:22 %in% colOrder))
-tdCol <- dr22[colOrder]
+tdCol <- dr22[colOrder[tdMethods]]
 names(tdCol) <- tdMethods
 tdCol[c('nni', 'nea', 'tbr')] <- tdCol[c('nni_u', 'nye', 'tbr_u')]
 

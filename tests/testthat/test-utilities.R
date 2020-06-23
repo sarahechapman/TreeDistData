@@ -37,8 +37,8 @@ test_that('Pairwise distances calculated correctly', {
 })
 
 test_that("Colours retrieved", {
-  expect_equal('#42150A', TreeDistCol('pid'))
-  expect_equal('#42150A99', TreeDistCol('pid', 99))
-  expect_warning(expect_equal(c('#42150A', 'NA'),
-                              TreeDistCol(c('pid', 'whoops'))))
+  expect_equal('#1965B0', TreeDistCol('pid'))
+  expect_equal('#90C98765', TreeDistCol('mafi', 65))
+  expect_warning(expect_equal(c('#F7F056', 'NA'),
+                              TreeDistCol(c('spr', 'whoops'))))
 })
