@@ -19,27 +19,27 @@
 #'
 #' @export
 AllDists <- function (tr1, tr2, verbose = FALSE) {
-  if (verbose) cat('q')
+  if (verbose) cat('q') # nocov
   qd <- QuartetDivergence(QuartetStatus(tr1, tr2), similarity = FALSE)
 
-  if (verbose) cat('m')
+  if (verbose) cat('m') # nocov
   mast <- MASTSize(tr1, tr2, rooted = FALSE)
   masti <-  LnUnrooted(mast) / log(2)
   attributes(masti) <- attributes(mast)
 
-  if (verbose) cat('n')
+  if (verbose) cat('n') # nocov
   nni <- NNIDist(tr1, tr2)
-  if (verbose) cat('t')
+  if (verbose) cat('t') # nocov
   tbr <- TBRDist(tr1, tr2)
 
   NNIPart <- function (name) {
     if (is.null(names(nni))) nni[name, ] else nni[[name]]
   }
-  if (verbose) cat('s')
+  if (verbose) cat('s') # nocov
   spr <- SPRDist(tr1, tr2)
   if (!is.null(names(spr))) spr <- spr[['spr']]
 
-  if (verbose) cat('.')
+  if (verbose) cat('.') # nocov
   Bind <- if (is.null(names(nni))) rbind else c
   Bind(
     dpi = DifferentPhylogeneticInfo(tr1, tr2, normalize = TRUE),
