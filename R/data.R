@@ -83,6 +83,8 @@
 #' listing the calculated distances between each pair of trees.
 #'
 #' @template allDistMethods
+#' @template mafiMethod
+#'
 #' @template dataRaw
 #' @template methodRefs
 #'

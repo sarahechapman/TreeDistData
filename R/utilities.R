@@ -13,7 +13,7 @@
 #' @family pairwise tree distances
 #'
 #' @examples
-#' library('TreeTools')
+#' library('TreeTools', quietly = TRUE, warn.conflict = FALSE)
 #' AllDists(BalancedTree(8), PectinateTree(8))
 #' AllDists(list(BalancedTree(6), PectinateTree(6)), BalancedTree(6))
 #'
@@ -66,7 +66,6 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
     spr = spr,
     tbr_l = tbr$tbr_min,
     tbr_u = tbr$tbr_max,
-    # mafi would go here
     rf = RobinsonFoulds(tr1, tr2),
     icrf = InfoRobinsonFoulds(tr1, tr2),
     path = PathDist(tr1, tr2)
@@ -217,7 +216,6 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
     tbr_l = tbr$tbr_min,
     tbr_u = tbr$tbr_max,
 
-    # mafi would go here
     rf = RobinsonFoulds(splits),
     icrf = InfoRobinsonFoulds(splits),
     path = pathDist

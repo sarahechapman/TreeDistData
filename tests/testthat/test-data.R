@@ -15,8 +15,9 @@ test_that("Data dimensions are correct", {
                dim(distanceDistribution25))
   expect_equal(dim(distanceDistribution50), dim(distanceDistribution25))
 
-  AllDistsThere <- function (x, nni_t = TRUE, mast = TRUE) {
-    exclude <- c('mafi')
+  AllDistsThere <- function (x, nni_t = TRUE, mast = TRUE, mafi = FALSE) {
+    exclude <- character(0)
+    if (!mafi) exclude <- c(exclude, 'mafi')
     if (!nni_t) exclude <- c(exclude, 'nni_t')
     if (!mast) exclude <- c(exclude, 'mast', 'masti')
     methods <- tdMethods[!tdMethods %in% exclude]
@@ -40,7 +41,7 @@ test_that("Data dimensions are correct", {
     AllDistsThere(dimnames(x)[[2]], nni_t = TRUE)
   })
   AllDistsThere(names(sevenTipDistances))
-  AllDistsThere(dimnames(pectinateDistances11)[[1]])
+  AllDistsThere(dimnames(pectinateDistances11)[[1]], mafi = TRUE)
   AllDistsThere(dimnames(distanceDistribution25)[[1]])
   AllDistsThere(dimnames(distanceDistribution50)[[1]])
   AllDistsThere(dimnames(linTestOneResults)[[2]], FALSE, FALSE)
