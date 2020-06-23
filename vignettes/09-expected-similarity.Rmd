@@ -162,7 +162,7 @@ expressed as percentages of the median.
 
 ```{R normalized-range, echo=FALSE, message=FALSE, cache=TRUE, output='asis'}
 IQRNorm <- function (methodDistances) {
-  iqr <- abs(methodDistances['75%', ] -  methodDistances['25%', ])
+  iqr <- abs(methodDistances['75%', ] - methodDistances['25%', ])
   iqr / methodDistances['50%', ]
 }
 iq <- colMeans(apply(randomTreeDistances, 1, IQRNorm)[as.character(20:200), ], 
