@@ -127,7 +127,7 @@ TDFunctions <- list(
   rf = TreeDist::RobinsonFoulds,
   icrf = TreeDist::InfoRobinsonFoulds,
   path = phangorn::path.dist,
-  mafi = TBRDist::MAFInfo,
+  mafi = TBRDist::MAFInfo
 )
 
 TDPair <- list(
