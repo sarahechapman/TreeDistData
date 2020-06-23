@@ -1,10 +1,10 @@
 library('TreeDist')
 
-tdPlotSequence <- c("cid", "dpi",
-                    "nts", "jna2", "jna4", "ja2", "ja4",
-                    "rf", "rfi",
+tdPlotSequence <- c("cid", "pid",
+                    "nye", "jco2", "jco4", "jnc2", "jnc4",
+                    "rf", "icrf",
                     "path",
-                    "msid", "msd",
+                    "msid", "ms",
                     "qd",
                     "mast", "masti",
                     "nni_u", "nni_l", "spr", "tbr_l", "tbr_u")
