@@ -79,6 +79,11 @@ unnormalized.
 information content (Smith, forthcoming), unnormalized.
 \item \code{path}: Path distance (Steel & Penny 1993), unnormalized.
 }
+
+\itemize{
+\item \code{mafi} (\code{pectinateDistances11} only): information content of the
+maximum agreement forest (Smith, forthcoming).
+}
 }
 
 \references{

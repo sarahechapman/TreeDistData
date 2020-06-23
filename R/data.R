@@ -83,7 +83,10 @@
 #' listing the calculated distances between each pair of trees.
 #'
 #' @template allDistMethods
-#' @template mafiMethod
+#' @details
+#' # Methods tested
+#' - `mafi` (`pectinateDistances11` only): information content of the
+#' maximum agreement forest (Smith, forthcoming).
 #'
 #' @template dataRaw
 #' @template methodRefs
