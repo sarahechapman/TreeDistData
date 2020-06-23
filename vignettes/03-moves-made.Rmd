@@ -21,9 +21,9 @@ pd11 <- pectinateDistances11
 abbrevs <- TreeDistData::tdAbbrevs
 pectinateTree <- Quartet::sq_trees$caterpillar
 
-pm1l <- ape::read.tree(text='(((((2, 3), 4), 5), 6), (7, (8, (9, (10, (11, 1))))));')
+pm1l <- ape::read.tree(text = '(((((2, 3), 4), 5), 6), (7, (8, (9, (10, (11, 1))))));')
 pm1l$edge.lengths <- c(rep(1, 4L), 2, rep(1, 12), .5, .5, 1.5)
-threeMoves <- ape::read.tree(text='(((((11, 2), 3), 4), 5), (7, (6, (8, (9, (10, 1))))));')
+threeMoves <- ape::read.tree(text = '(((((11, 2), 3), 4), 5), (7, (6, (8, (9, (10, 1))))));')
 threeMoves$edge.lengths <- rep(1, 20)
 threeMoves$edge.lengths[1] <- 2
 threeMoves$edge.lengths[c(12, 14)] <- 0.5
@@ -47,7 +47,7 @@ BoxPlot <- function (method) {
                    max(histy$breaks))
     xLim <- if(method %in% c('mast', 'masti')) c(xMax, 0) else c(0, xMax)
     plot(histy, axes = FALSE, main = NA, xlab = NA, ylab = NA, cex = 0.8,
-         col = faintCol, border=NA, xlim = xLim)
+         col = faintCol, border = NA, xlim = xLim)
   } else {
     # KDE not appropriate when not gamma distributed.
 #    dists <- sample(distances, min(1000, length(distances)))
@@ -66,7 +66,7 @@ BoxPlot <- function (method) {
     histMax <- max(histy$counts)
     xLim <- c(0, max(histy$breaks, TDPair[[method]](pectinateTree, topTail)))
     plot(histy, axes = FALSE, main = NA, xlab = NA, ylab = NA, cex = 0.8,
-         col = faintCol, border=NA, xlim = xLim)
+         col = faintCol, border = NA, xlim = xLim)
   }
   yAt <- histMax / 2L
   boxplot(distances, border = opaqueCol, horizontal = TRUE,
@@ -74,12 +74,12 @@ BoxPlot <- function (method) {
           boxwex = histMax * 0.6, col = '#ffffff00', lwd = 2)
   legend('left', bty = 'n', legend = tdAbbrevs[method])
   points(TDPair[[method]](pectinateTree, pm1l), histMax * 0.8,
-         pch = 25L, cex=1.5, col='black', bg = opaqueCol)
+         pch = 25L, cex = 1.5, col = 'black', bg = opaqueCol)
   points(TDPair[[method]](pectinateTree, threeMoves), histMax * 0.5,
-         pch = 3L, cex=1.5, col='black', bg = opaqueCol)
+         pch = 3L, cex = 1.5, col = 'black', bg = opaqueCol)
   points(TDPair[[method]](pectinateTree, topTail), histMax * 0.2,
-         pch = 24L, cex=1.5, col='black', bg = opaqueCol)
-  axis(1, col=opaqueCol)
+         pch = 24L, cex = 1.5, col = 'black', bg = opaqueCol)
+  axis(1, col = opaqueCol)
   invisible()
 }
 ```
@@ -90,18 +90,18 @@ TreePlotsPlotFunc <- function() {
   nMethod <- length(tdPlotSequence)
   nRow <- nMethod / 2
   layout(matrix(c(rep(1:4, each = nRow),
-                  4 + rep(seq_len(nMethod), each=4)), ncol=3),
-         widths=c(1, 2, 2))
+                  4 + rep(seq_len(nMethod), each = 4)), ncol = 3),
+         widths = c(1, 2, 2))
 
-  par(mar=c(0.2, 0, 1, 1))
+  par(mar = c(0.2, 0, 1, 1))
   TreeDistPlot(pectinateTree, '', leaveRoom = FALSE, 
-               cex=1, xpd=NA)
-  legend('bottomleft', legend = "Pectinate reference\ntree", bty='n',
-         inset=c(-0.1, -0.04))
+               cex = 1, xpd = NA)
+  legend('bottomleft', legend = "Pectinate reference\ntree", bty = 'n',
+         inset = c(-0.1, -0.04))
 
-  TreeDistPlot(pm1l, '', bold=1L, leaveRoom = FALSE, cex=1, graft=20)
+  TreeDistPlot(pm1l, '', bold = 1L, leaveRoom = FALSE, cex = 1, graft = 20)
   legend('bottomleft', legend = "Move one leaf (A)", pch = 25, bty = 'n',
-         inset=c(-0, -0.02), pt.cex = 1.5)
+         inset = c(-0, -0.02), pt.cex = 1.5)
 
   TreeDistPlot(topTail, '', leaveRoom = FALSE, cex = 1,
                bold = c(1, 11), graft = c(6, 20))
@@ -109,11 +109,11 @@ TreePlotsPlotFunc <- function() {
          bty = 'n', inset = c(-0.0, -0.005), pt.cex = 1.5)
 
   TreeDistPlot(threeMoves, '', leaveRoom = FALSE, cex = 1,
-               bold=c(1, 6, 11), graft = c(5, 13, 20))
+               bold = c(1, 6, 11), graft = c(5, 13, 20))
   legend('bottomleft', legend = "Three leaves\nmoved (A, K, F)", pch = 3, 
          bty = 'n', inset = c(-0.0, -0.005), pt.cex = 1.5)
 
-  par(mar=c(1.9, 0.2, 0.2, 0.2))
+  par(mar = c(1.9, 0.2, 0.2, 0.2))
   lapply(tdPlotSequence, BoxPlot) -> XX
 }
 
