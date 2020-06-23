@@ -118,7 +118,7 @@ Plot(times50, 50)
 results <- summary(times20, unit = 'us')
 #cols <- c('mean', 'median')
 cols <- c('mean')
-rownames(results) <- TreeDistData::tdAbbrevs[as.character(results[, 'expr'])]
+rownames(results) <- TreeDistData::tdMdAbbrevs[as.character(results[, 'expr'])]
 results <- cbind(results[, cols, drop = FALSE],
                  summary(times50, unit = 'us')[, cols, drop = FALSE])
 
