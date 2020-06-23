@@ -183,9 +183,10 @@ PlotKest <- function(method, points) {
 
 lapply(methods, PlotKest, points = nonMetricPts20) -> XX
 ```
+
 ## O-ring analysis 
 
-20 tips, metric and non-metric
+20 tips, metric and non-metric:
 
 ```{r o-ring-2d, echo=FALSE}
 par(mfrow=c(8, 5), mar = rep(0.2, 4))
