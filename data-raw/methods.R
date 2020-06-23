@@ -8,9 +8,6 @@ tdPlotSequence <- c("cid", "pid",
                     "qd",
                     "mast", "masti",
                     "nni_u", "nni_l", "spr", "tbr_l", "tbr_u")
-legendSequence <- c('dpi', 'cid', 'nts', 'msd', 'qd', 'path', 'rf', 'rfi',
-                    'ja4', 'ja2', 'jna4', 'jna2',
-                    'nni_t', 'spr', 'tbr_u', 'mafi', 'mast', 'masti')
 
 tdAbbrevs <- c(
   pid = 'Phylog. Info. Dist',
