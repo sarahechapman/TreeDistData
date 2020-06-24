@@ -124,9 +124,9 @@ results <- cbind(results[, cols, drop = FALSE],
 
 colnames (results) <- paste(rep(c(20, 50), each = length(cols)), 'leaves,', cols)
 
-.TDDTable(DT::datatable,
-          signif(results[order(results[, 1]), ] / nPairs, 2),
-          caption = "Time per comparison / µs")
+TreeDistData::.TDDTable(DT::datatable,
+                        signif(results[order(results[, 1]), ] / nPairs, 2),
+                        caption = "Time per comparison / µs")
 ```
 
 ## Reference
