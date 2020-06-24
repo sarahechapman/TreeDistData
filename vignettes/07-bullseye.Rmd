@@ -249,12 +249,13 @@ ret <- cbind(subsampling50 = rowSums(bA < bB),
              subsamplingAccuracy = round(Spear(bullseyeMorphScores)['mean', , '50 leaves'], 3),
              miscodingAccuracy = round(Spear(bullMoDiScores)['mean', , '50 leaves'], 3)
 )
+# nni_t contains NAs, which are not ignored, so values are misleading
+ret <- ret[!rownames(ret) %in% 'nni_t', ] 
 
 dimnames(ret) <- list(tdMdAbbrevs[rownames(ret)], 
                       c("Subsampling: Success rate (50&nbsp;leaves)",
                         "Miscoding: Success rate (50&nbsp;leaves)",
-                        "Subsampling: Accuracy (ρ)",
-                        "Miscoding: Accuracy (ρ)"))
+                        "Subsampling: Accuracy (&rho;)",
+                        "Miscoding: Accuracy (&rho;)"))
 knitr::kable(ret)
-
 ```
