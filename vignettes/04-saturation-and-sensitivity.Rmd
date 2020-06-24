@@ -18,7 +18,6 @@ library('TreeDist')
 library('TreeDistData')
 data('pectinateDistances11', package = 'TreeDistData')
 pd11 <- pectinateDistances11
-abbrevs <- TreeDistData::tdAbbrevs
 GetData <- function (distances) {
   c(
     atMax = sum(abs(distances - max(distances)) < .Machine$double.eps^0.5),
@@ -34,7 +33,7 @@ reference tree:
 
 ```{r kable, echo=FALSE}
 dat <- apply(pd11, 1, GetData)
-colnames(dat) <- tdAbbrevs[colnames(dat)]
+colnames(dat) <- tdMdAbbrevs[colnames(dat)]
 rownames(dat) <- c('Trees with maximum score', 'Unique distances')
 knitr::kable(t(dat))
 ```
