@@ -30,14 +30,6 @@
 #' Each cell contains the distance between the inferred tree and the generative
 #' tree under the stated tree distance metric.
 #'
-#' `bullseyeDistances` contains two elements, named `20 leaves` and `50 leaves`.
-#' Each element contains a named list, with each element named according to
-#' the abbreviation of the corresponding distance metric (see 'Methods tested'
-#' below).
-#' Each of these lists contains a 1&nbsp;000 &times; 1&nbsp;000 matrix
-#' tabulating the distance between each pair of _n_-leaf trees in
-#' `bullseyeTrees`.
-#'
 #' @templateVar vignette 07-bullseye
 #' @template seeVignette
 #' @templateVar nni_t TRUE
@@ -60,8 +52,6 @@
 'bullseyeMorphInferred'
 #' @rdname bullseye
 'bullseyeMorphScores'
-#' @rdname bullseye
-'bullseyeDistances'
 
 #' Distances between random pairs of trees
 #'

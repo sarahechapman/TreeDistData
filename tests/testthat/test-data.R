@@ -31,7 +31,7 @@ test_that("Data dimensions are correct", {
   expect_equal(c(LengthWithout('mafi', 'nni_t'), 13L, nLeafMeasurements),
                dim(randomTreeDistances))
 
-  lapply(bullseyeDistances, function (x) {
+  if (exists('bullseyeDistances')) lapply(bullseyeDistances, function (x) {
     AllDistsThere(names(x), nni_t = TRUE)
   })
   lapply(bullseyeMorphScores, function (x) {
