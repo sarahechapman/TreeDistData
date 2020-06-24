@@ -17,7 +17,7 @@ Each element contains 1 000 trees with \emph{n} leaves, randomly sampled
 from the uniform distribution using \code{\link[ape:rtree]{ape::rtree()}}.
 
 The \code{bullseyeMorph} prefix refers to the 'subsampling' experiment
-described by Smith (forthcoming); the \code{bullMoDi} prefix refers to the
+described by Smith (2020); the \code{bullMoDi} prefix refers to the
 'miscoding' experiment.
 
 \code{bull...Inferred} is a list with four elements, named as in \code{bullseyeTrees}.
@@ -70,10 +70,10 @@ For analysis of this data, see the
 }
 \section{Methods tested}{
 \itemize{
-\item \code{pid}: Phylogenetic Information Distance (Smith, forthcoming)
-\item \code{msid}: Matching Split Information Distance (Smith, forthcoming)
-\item \code{cid}: Clustering Information Distance (Smith, forthcoming)
-\item \code{qd}: Quartet divergence (Smith, 2019)
+\item \code{pid}: Phylogenetic Information Distance (Smith 2020)
+\item \code{msid}: Matching Split Information Distance (Smith 2020)
+\item \code{cid}: Clustering Information Distance (Smith 2020)
+\item \code{qd}: Quartet divergence (Smith 2019)
 \item \code{nye}: Nye \emph{et al.} tree distance (Nye \emph{et al.} 2006)
 \item \code{jnc2}, \code{jnc4}: Jaccard-Robinson-Foulds distances with \emph{k} = 2, 4,
 conflicting pairings prohibited ('no-conflict')
@@ -90,7 +90,7 @@ for nearest-neighbour interchange distance (Li \emph{et al.} 1996)
 (TBR) distance, calculated using
 \href{https://ms609.github.io/TBRDist/}{\pkg{TBRDist}}
 \item \code{rf}: Robinson-Foulds distance (Robinson & Foulds 1981)
-\item \code{icrf}: Information-corrected Robinson-Foulds distance (Smith, forthcoming)
+\item \code{icrf}: Information-corrected Robinson-Foulds distance (Smith 2020)
 \item \code{path}: Path distance (Steel & Penny 1993)
 }
 }

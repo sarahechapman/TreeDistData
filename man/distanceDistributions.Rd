@@ -46,13 +46,13 @@ and 100 000 random binary trees.
 }
 \section{Methods tested}{
 \itemize{
-\item \code{pid}: Phylogenetic Information Distance (Smith, forthcoming), normalized
+\item \code{pid}: Phylogenetic Information Distance (Smith 2020), normalized
 against the phylogenetic information content of the splits in the trees
 being compared.
-\item \code{msid}: Matching Split Information Distance (Smith, forthcoming), normalized
+\item \code{msid}: Matching Split Information Distance (Smith 2020), normalized
 against the phylogenetic information content of the splits in the trees
 being compared.
-\item \code{cid}: Clustering Information Distance (Smith, forthcoming), normalized
+\item \code{cid}: Clustering Information Distance (Smith 2020), normalized
 against the entropy of the splits in the trees being compared.
 \item \code{qd}: Quartet divergence (Smith 2019), normalized against its maximum
 possible value for \emph{n}-leaf trees.
@@ -76,13 +76,13 @@ unnormalized.
 \href{https://ms609.github.io/TBRDist/}{\pkg{TBRDist}}; unnormalized.
 \item \code{rf}: Robinson-Foulds distance (Robinson & Foulds 1981), unnormalized.
 \item \code{icrf}: Robinson-Foulds distance, splits weighted by phylogenetic
-information content (Smith, forthcoming), unnormalized.
+information content (Smith 2020), unnormalized.
 \item \code{path}: Path distance (Steel & Penny 1993), unnormalized.
 }
 
 \itemize{
 \item \code{mafi} (\code{pectinateDistances11} only): information content of the
-maximum agreement forest (Smith, forthcoming).
+maximum agreement forest (Smith 2020).
 }
 }
 

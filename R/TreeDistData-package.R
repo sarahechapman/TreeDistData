@@ -1,9 +1,9 @@
 #' 'TreeDistData' is an R package that contains the functions and scripts used to
-#' compare the performance of tree distance metrics in Smith (in review).
+#' compare the performance of tree distance metrics in Smith (2020).
 #'
 #' The "[Articles](https://ms609.github.io/TreeDistData/articles/)" link in the
 #' navigation bar lists vignettes detailing the output of analyses corresponding
-#' to the stated sections of Smith (in review).  Each of these pages includes a
+#' to the stated sections of Smith (2020).  Each of these pages includes a
 #' link to the R source code, which can be used to reproduce the analytical
 #' results.
 #'
@@ -17,8 +17,8 @@
 #'
 #' ## References
 #'
-#' Smith, M.R. (20XX). Information theoretic Generalized Robinson-Foulds metrics
-#' for comparing phylogenetic trees. In review.
+#' Smith, M.R. (2020). Information theoretic Generalized Robinson-Foulds metrics
+#' for comparing phylogenetic trees. Bioinformatics, in production.
 #' @keywords internal
 "_PACKAGE"
 

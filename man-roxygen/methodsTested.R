@@ -1,10 +1,10 @@
 #' @details
 #' # Methods tested
 #'
-#' - `pid`: Phylogenetic Information Distance (Smith, forthcoming)
-#' - `msid`: Matching Split Information Distance (Smith, forthcoming)
-#' - `cid`: Clustering Information Distance (Smith, forthcoming)
-#' - `qd`: Quartet divergence (Smith, 2019)
+#' - `pid`: Phylogenetic Information Distance (Smith 2020)
+#' - `msid`: Matching Split Information Distance (Smith 2020)
+#' - `cid`: Clustering Information Distance (Smith 2020)
+#' - `qd`: Quartet divergence (Smith 2019)
 #' - `nye`: Nye _et al._ tree distance (Nye _et al._ 2006)
 #' - `jnc2`, `jnc4`: Jaccard-Robinson-Foulds distances with _k_ = 2, 4,
 #' conflicting pairings prohibited ('no-conflict')
@@ -21,5 +21,5 @@
 #' (TBR) distance, calculated using
 #' [\pkg{TBRDist}](https://ms609.github.io/TBRDist/)
 #' - `rf`: Robinson-Foulds distance (Robinson & Foulds 1981)
-#' - `icrf`: Information-corrected Robinson-Foulds distance (Smith, forthcoming)
+#' - `icrf`: Information-corrected Robinson-Foulds distance (Smith 2020)
 #' - `path`: Path distance (Steel & Penny 1993)

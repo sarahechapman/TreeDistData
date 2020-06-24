@@ -1,18 +1,19 @@
-citHeader(paste0("When using data from this package, please cite Smith (202X)."))
+citHeader(paste0("When using data from this package, please cite Smith (2020)."))
 
 vers <- paste("R package version", meta$Version)
 
 citEntry(entry = "Article",
-      key = "Smith202X",
+      key = "Smith2020",
       title = "Information theoretic Generalized Robinson-Foulds metrics
 for comparing phylogenetic trees",
       author = personList(as.person("Martin R. Smith")),
-      journal = "Under review", #TODO
-      year = "202X",
+      journal = "Bioinformatics",
+      pages = "in production",
+      year = "2020",
 
       textVersion =
-      paste0("Smith, M.R. (202X).",
+      paste0("Smith, M.R. (2020).",
              " Information theoretic Generalized Robinson-Foulds metrics
 for comparing phylogenetic trees",
-             " Under review.",
+             " Bioinformatics, in production.",
              " doi: 10.XXXX/XXXXX"))

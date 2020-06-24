@@ -11,7 +11,7 @@
 #' from the uniform distribution using [`ape::rtree()`].
 #'
 #' The `bullseyeMorph` prefix refers to the 'subsampling' experiment
-#' described by Smith (forthcoming); the `bullMoDi` prefix refers to the
+#' described by Smith (2020); the `bullMoDi` prefix refers to the
 #' 'miscoding' experiment.
 #'
 #' `bull...Inferred` is a list with four elements, named as in `bullseyeTrees`.
@@ -76,7 +76,7 @@
 #' @details
 #' # Methods tested
 #' - `mafi` (`pectinateDistances11` only): information content of the
-#' maximum agreement forest (Smith, forthcoming).
+#' maximum agreement forest (Smith 2020).
 #'
 #' @template dataRaw
 #' @template methodRefs

@@ -27,6 +27,6 @@ directory.
 
 ## References
 
-Smith, M.R. (202X). Information theoretic Generalized Robinson-Foulds metrics
-  for comparing phylogenetic trees. In review.
+Smith, M.R. (2020). Information theoretic Generalized Robinson-Foulds metrics
+  for comparing phylogenetic trees. Bioinformatics, in production.
 
