@@ -26,6 +26,7 @@ Suggests:
     binom,
     bookdown,
     colorspace,
+    DT,
     kdensity,
     knitr,
     MASS,
@@ -39,8 +40,8 @@ Suggests:
 Remotes:
     KlausVigo/phangorn,
     ms609/TBRDist,
-    ms609/TreeDist,
     ms609/TreeTools
+    ms609/TreeDist
 RdMacros: Rdpack
 LazyData: true
 ByteCompile: true
