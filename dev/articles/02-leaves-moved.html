@@ -5,13 +5,13 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1.2: Number of leaves moved • TreeDistData</title>
+<title>3.1.2: Number of leaves moved • TreeDistData</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha256-bZLfwXAP04zRMK2BjiO8iu9pf4FbLqX6zitd+tIvLhE=" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><meta property="og:title" content="1.2: Number of leaves moved">
+<script src="../pkgdown.js"></script><meta property="og:title" content="3.1.2: Number of leaves moved">
 <meta property="og:description" content="TreeDistData">
 <meta name="robots" content="noindex">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -55,34 +55,34 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="../articles/01-length-of-move.html">1.1: Length of move</a>
+      <a href="../articles/01-length-of-move.html">3.1.1: Length of move</a>
     </li>
     <li>
-      <a href="../articles/02-leaves-moved.html">1.2: Number of leaves moved</a>
+      <a href="../articles/02-leaves-moved.html">3.1.2: Number of leaves moved</a>
     </li>
     <li>
-      <a href="../articles/03-moves-made.html">1.3: Number of moves made</a>
+      <a href="../articles/03-moves-made.html">3.1.3: Number of moves made</a>
     </li>
     <li>
-      <a href="../articles/04-saturation-and-sensitivity.html">1.4, 1.5: Saturation and sensitivity</a>
+      <a href="../articles/04-saturation-and-sensitivity.html">3.1.4, 3.1.5: Saturation and sensitivity</a>
     </li>
     <li>
-      <a href="../articles/05-tree-shape.html">1.6: Independent of tree shape</a>
+      <a href="../articles/05-tree-shape.html">3.1.6: Independent of tree shape</a>
     </li>
     <li>
-      <a href="../articles/06-lin-cluster-recovery.html">1.7: Consistent cluster recovery</a>
+      <a href="../articles/06-lin-cluster-recovery.html">3.1.7: Consistent cluster recovery</a>
     </li>
     <li>
-      <a href="../articles/07-bullseye.html">1.8: Bullseye tests</a>
+      <a href="../articles/07-bullseye.html">3.1.8: Bullseye tests</a>
     </li>
     <li>
-      <a href="../articles/08-spr-walking.html">1.9: Artificial tree rearrangement</a>
+      <a href="../articles/08-spr-walking.html">3.1.9: Artificial tree rearrangement</a>
     </li>
     <li>
-      <a href="../articles/09-expected-similarity.html">2.2: Context: tree distance values</a>
+      <a href="../articles/09-expected-similarity.html">3.2.2: Context: tree distance values</a>
     </li>
     <li>
-      <a href="../articles/10-timing.html">4: Timing benchmarks</a>
+      <a href="../articles/10-timing.html">3.4: Timing benchmarks</a>
     </li>
     <li>
       <a href="../articles/11-correlation.html">Supplementary Figures: Metric correlation</a>
@@ -116,7 +116,7 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1 data-toc-skip>1.2: Number of leaves moved</h1>
+      <h1 data-toc-skip>3.1.2: Number of leaves moved</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/ms609/TreeDistData/blob/master/vignettes/02-leaves-moved.Rmd"><code>vignettes/02-leaves-moved.Rmd</code></a></small>
@@ -131,13 +131,14 @@
 <a href="#method" class="anchor"></a>Method</h2>
 <p>Take an unrooted ten-leaf tree: <img src="02-leaves-moved_files/figure-html/backbone-1.png" width="192" style="display: block; margin: auto;"></p>
 <p>The backbone tree has 10 leaves; 17 test trees were generated by adding an clade of three leaves at each of the 17 edges of the unrooted backbone tree.</p>
-<p>These are trees A<sub>1</sub>–A<sub>17</sub>.</p>
+<p>These are trees T<sub>1</sub>–T<sub>17</sub>.</p>
 <p><img src="02-leaves-moved_files/figure-html/unnamed-chunk-1-1.png" width="691.2"></p>
-<p>For each of these trees – we’ll consider A<sub>1</sub> first – we can then move the eleventh leaf to each of the other edges of the tree, giving trees B<sub>1.1</sub>-B<sub>1.19</sub>:</p>
+<p>For each of these trees – we’ll consider T<sub>1</sub> first – we can then move the eleventh leaf to each of the other edges of the tree, giving trees U<sub>1.1</sub>-U<sub>1.19</sub>:</p>
 <p><img src="02-leaves-moved_files/figure-html/unnamed-chunk-2-1.png" width="700"></p>
-<p>or the cherry containing the twelfth and thirteenth, giving trees C<sub>1.1</sub> to C<sub>1.19</sub>:</p>
+<p>or the cherry containing the twelfth and thirteenth, giving trees V<sub>1.1</sub> to V<sub>1.19</sub>:</p>
 <p><img src="02-leaves-moved_files/figure-html/unnamed-chunk-3-1.png" width="700"></p>
-<p>We then expect the distance from A<sub>i</sub> to B<sub>i.j</sub> (i.e. move one tip to a new location) to be less than the distance from A<sub>i</sub> to C<sub>i.j</sub> (i.e. move two tips to the same location)</p>
+<p>Two trees occur in both U<sub>i</sub> and V<sub>i</sub>, i.e. they can be generated by moving one leaf or moving two leaves. These trees are excluded from further analysis.</p>
+<p>We then expect the distance from T<sub>i</sub> to U<sub>i.j</sub> (i.e. move one tip to a new location) to be less than the distance from T<sub>i</sub> to V<sub>i.j</sub> (i.e. move two tips to the same location)</p>
 </div>
 <div id="results" class="section level2">
 <h2 class="hasAnchor">
