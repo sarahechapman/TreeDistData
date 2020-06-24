@@ -109,7 +109,11 @@
 
       
 
-      </header><div class="row">
+      </header><script src="05-tree-shape_files/htmlwidgets-1.5.1/htmlwidgets.js"></script><script src="05-tree-shape_files/jquery-1.12.4/jquery.min.js"></script><link href="05-tree-shape_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="05-tree-shape_files/datatables-binding-0.14/datatables.js"></script><link href="05-tree-shape_files/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="05-tree-shape_files/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="05-tree-shape_files/dt-core-1.10.20/js/jquery.dataTables.min.js"></script><link href="05-tree-shape_files/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet">
+<script src="05-tree-shape_files/crosstalk-1.1.0.1/js/crosstalk.min.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>3.1.6: Independent of tree shape</h1>
@@ -126,121 +130,8 @@
 <p><img src="05-tree-shape_files/figure-html/tree-shapes-1.png" width="576" style="display: block; margin: auto;"></p>
 <p>To evaluate the extent to which trees are ranked as less (or more) different simply because they exhibit the same shape, I evaluated the extent to which tree distance could be predicted based only on knowledge of the topology of the two input trees.</p>
 <p><img src="05-tree-shape_files/figure-html/analyse-1.png" width="700"></p>
-<table class="table">
-<thead><tr class="header">
-<th align="left"></th>
-<th align="right">r²</th>
-<th align="right">adjusted r²</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Phylog. Info. Dist</td>
-<td align="right">0.0095</td>
-<td align="right">0.0093</td>
-</tr>
-<tr class="even">
-<td align="left">Match. Split Info Dist</td>
-<td align="right">0.0130</td>
-<td align="right">0.0128</td>
-</tr>
-<tr class="odd">
-<td align="left">Clust. Info. Dist.</td>
-<td align="right">0.0100</td>
-<td align="right">0.0098</td>
-</tr>
-<tr class="even">
-<td align="left">Quartet</td>
-<td align="right">0.0001</td>
-<td align="right">-0.0001</td>
-</tr>
-<tr class="odd">
-<td align="left">Nye <em>et al.</em>
-</td>
-<td align="right">0.0136</td>
-<td align="right">0.0134</td>
-</tr>
-<tr class="even">
-<td align="left">JRF (k = 2, no conflict)</td>
-<td align="right">0.0097</td>
-<td align="right">0.0095</td>
-</tr>
-<tr class="odd">
-<td align="left">JRF (k = 4, no conflict)</td>
-<td align="right">0.0044</td>
-<td align="right">0.0042</td>
-</tr>
-<tr class="even">
-<td align="left">JRF (k = 2, conflict ok)</td>
-<td align="right">0.0037</td>
-<td align="right">0.0035</td>
-</tr>
-<tr class="odd">
-<td align="left">JRF (k = 4, conflict ok)</td>
-<td align="right">0.0021</td>
-<td align="right">0.0019</td>
-</tr>
-<tr class="even">
-<td align="left">Match. Split Dist.</td>
-<td align="right">0.0661</td>
-<td align="right">0.0659</td>
-</tr>
-<tr class="odd">
-<td align="left">MAST size</td>
-<td align="right">0.0075</td>
-<td align="right">0.0074</td>
-</tr>
-<tr class="even">
-<td align="left">MAST info</td>
-<td align="right">0.0078</td>
-<td align="right">0.0076</td>
-</tr>
-<tr class="odd">
-<td align="left">NNI (lwr bnd)</td>
-<td align="right">0.0192</td>
-<td align="right">0.0190</td>
-</tr>
-<tr class="even">
-<td align="left">NNI (ub tight)</td>
-<td align="right">0.0156</td>
-<td align="right">0.0154</td>
-</tr>
-<tr class="odd">
-<td align="left">NNI (upr bnd)</td>
-<td align="right">0.0265</td>
-<td align="right">0.0263</td>
-</tr>
-<tr class="even">
-<td align="left">SPR (approx.)</td>
-<td align="right">0.0099</td>
-<td align="right">0.0098</td>
-</tr>
-<tr class="odd">
-<td align="left">TBR (lwr bnd)</td>
-<td align="right">0.0089</td>
-<td align="right">0.0087</td>
-</tr>
-<tr class="even">
-<td align="left">TBR (upr bnd)</td>
-<td align="right">0.0011</td>
-<td align="right">0.0009</td>
-</tr>
-<tr class="odd">
-<td align="left">Robinson-Foulds</td>
-<td align="right">0.0192</td>
-<td align="right">0.0190</td>
-</tr>
-<tr class="even">
-<td align="left">Info. Corr. RF</td>
-<td align="right">0.2484</td>
-<td align="right">0.2483</td>
-</tr>
-<tr class="odd">
-<td align="left">Path</td>
-<td align="right">0.4852</td>
-<td align="right">0.4851</td>
-</tr>
-</tbody>
-</table>
+<div id="htmlwidget-d5b7cec80a997781466c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-d5b7cec80a997781466c">{"x":{"filter":"none","data":[["Phylog. Info. Dist","Match. Split Info Dist","Clust. Info. Dist.","Quartet","Nye _et al._","JRF (k = 2, no conflict)","JRF (k = 4, no conflict)","JRF (k = 2, conflict ok)","JRF (k = 4, conflict ok)","Match. Split Dist.","MAST size","MAST info","NNI (lwr bnd)","NNI (ub tight)","NNI (upr bnd)","SPR (approx.)","TBR (lwr bnd)","TBR (upr bnd)","Robinson-Foulds","Info. Corr. RF","Path"],[0.0095,0.013,0.01,0.0001,0.0136,0.0097,0.0044,0.0037,0.0021,0.0661,0.0075,0.0078,0.0192,0.0156,0.0265,0.0099,0.0089,0.0011,0.0192,0.2484,0.4852],[0.0093,0.0128,0.0098,-0.0001,0.0134,0.0095,0.0042,0.0035,0.0019,0.0659,0.0074,0.0076,0.019,0.0154,0.0263,0.0098,0.0087,0.0009,0.019,0.2483,0.4851]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>r²<\/th>\n      <th>adjusted r²<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
