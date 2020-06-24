@@ -11,8 +11,8 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 ---
 
-```{r define-parameters, echo=FALSE, message=FALSE}
-require('TreeTools')
+```{r define-parameters, echo=FALSE}
+require('TreeTools', quietly = TRUE, warn.conflicts = FALSE)
 require('TreeDist')
 require('TreeDistData')
 nSample <- 100L
@@ -31,7 +31,7 @@ PlotMethod <- function (method, doPlot = TRUE) {
   reg <- summary(lm(distance ~ shapePair, data = dat))
 
   if (doPlot) {
-    plot(type='n', 0, 0, xlim = c(-1, 1), ylim = c(-1, 1), axes = F)
+    plot(type = 'n', 0, 0, xlim = c(-1, 1), ylim = c(-1, 1), axes = F)
     text(0, 0.5, tdAbbrevs[method], col = TreeDistCol(method))
     text(0, -0.5, signif(reg$adj.r.squared, 3))
 
@@ -44,7 +44,7 @@ PlotMethod <- function (method, doPlot = TRUE) {
 There are four unrooted tree shapes on eight leaves:
 
 ```{r tree-shapes, echo=FALSE, fig.asp=1/4, fig.align='center', fig.width=6}
-par(mfrow=c(1, 4), mar=rep(0.3, 4))
+par(mfrow = c(1, 4), mar = rep(0.3, 4))
 lapply(lapply(0:3, UnrootedTreeWithShape, 8), plot) -> XX
 ```
 
@@ -53,17 +53,17 @@ simply because they exhibit the same shape, I evaluated the extent to which
 tree distance could be predicted based only on knowledge of the topology of 
 the two input trees.
 
-```{r analyse, echo = FALSE}
+```{r analyse, echo=FALSE}
 par(xpd = NA)
 r <- vapply(seMethods, PlotMethod, doPlot = FALSE, double(2))
 r2 <- r[1, ]
-plot(r2, ylab='', xlab='', axes = FALSE, pch = 3, ylim=c(-0.5, max(r2)))
+plot(r2, ylab = '', xlab = '', axes = FALSE, pch = 3, ylim = c(-0.5, max(r2)))
 text(seq_along(seMethods), r2, paste(' ', round(r2 * 100, 1), '%'),
-     col = TreeDistCol(seMethods), srt = 90, pos=4, offset=0)
+     col = TreeDistCol(seMethods), srt = 90, pos = 4, offset = 0)
 text(srt = 90, seq_along(seMethods), -0.12,
      TreeDistData::tdAbbrevs[seMethods], 
-     col = TreeDistCol(seMethods), pos = 2, offset=0)
-axis(2, at = seq(0, 0.6, 0.1), pos=-0.6)
+     col = TreeDistCol(seMethods), pos = 2, offset = 0)
+axis(2, at = seq(0, 0.6, 0.1), pos = -0.6)
 axis(1, at = c(0, length(seMethods)) + 0.5, pos = 0, labels = FALSE)
 #mtext(expression('log'[10]*'(r'^2*')'), 2, 2.5)
 mtext(expression('r'^2), 2, 2.5)
@@ -72,7 +72,7 @@ mtext(expression('r'^2), 2, 2.5)
 ```{r text-table, output = 'asis', echo= FALSE}
 result <- t(round(r, 4L))
 dimnames(result) <- list(
-  TreeDistData::tdAbbrevs[rownames(result)],
+  TreeDistData::tdMdAbbrevs[rownames(result)],
   c('r²', 'adjusted r²'))
 knitr::kable(result)
 ```
@@ -80,26 +80,13 @@ knitr::kable(result)
 ```{r plot, echo=FALSE, fig.height=12, fig.width=8, eval=FALSE}
 cbPalette8 <- c("#000000", "#E69F00", "#56B4E9", "#009E73", "#F0E442", "#0072B2", 
 "#D55E00", "#CC79A7")
-header <- cbind(c(1, 1), matrix(2:21, ncol=10, byrow=TRUE))
+header <- cbind(c(1, 1), matrix(2:21, ncol = 10, byrow = TRUE))
 body <- matrix(rep(21 + seq_len(nMethod * 2), rep(c(1, 10), nMethod)),
-               byrow=TRUE, ncol = 11)
+               byrow = TRUE, ncol = 11)
 layout(rbind(header, body), widths = c(2, rep(1, 10)))
 par(mar = rep(0, 4L))
 
-plot(type='n', 0, 0, xlim = c(-1, 1), ylim = c(-1, 1), axes = F)
-#text(0, 0.8, 'p(same)')
-
-#palette <- c( colorspace::sequential_hcl(8, h = 0, c = 0, l = c(10, 95),
-#                                         power = 0.9)[3:8], '#FFFFFF')
-#alongPal <- seq_along(palette)
-#nPal <- length(palette)
-
-#xMid <- c(-0.7, 0, 0.7)
-#xWid <- 0.15
-#rect(xMid - xWid, 0.4, xMid + xWid, 0.2, col = palette[6:4])
-#text(xMid, 0.2, pos = 1, labels = c('p \u2264 1', '\u2264 0.1', '0.05'))
-#rect(xMid - xWid, -0.2, xMid + xWid, -0.4, col = palette[3:1])
-#text(xMid, -0.4, pos = 1, labels = c('0.01', '0.001', '0.0001'))
+plot(type = 'n', 0, 0, xlim = c(-1, 1), ylim = c(-1, 1), axes = F)
 
 shape1 <- c(0,0,0,0, 1,1,1, 2,2, 3)
 shape2 <- c(0,1,2,3, 1,2,3, 2,3, 3)
