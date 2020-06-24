@@ -253,9 +253,9 @@ ret <- cbind(subsampling50 = rowSums(bA < bB),
 ret <- ret[!rownames(ret) %in% 'nni_t', ] 
 
 dimnames(ret) <- list(tdMdAbbrevs[rownames(ret)], 
-                      c("Subsampling: Success rate (50&nbsp;leaves)",
-                        "Miscoding: Success rate (50&nbsp;leaves)",
-                        "Subsampling: Accuracy (&rho;)",
-                        "Miscoding: Accuracy (&rho;)"))
+                      c("Subsampling: Success rate (50\U00A0leaves)",
+                        "Miscoding: Success rate (50\U00A0leaves)",
+                        "Subsampling: Accuracy (\U03C1)",
+                        "Miscoding: Accuracy (\U03C1)"))
 .TDDTable(DT::datatable, ret)
 ```
