@@ -157,7 +157,7 @@ absolute value difficult to interpret.
 
 ## Ranges
 
-Average range of distance between random trees with 20-200 leaves, 
+Average range of distance between random trees with 20&ndash;200 leaves, 
 expressed as percentages of the median.
 
 ```{R normalized-range, echo=FALSE, message=FALSE, cache=TRUE, output='asis'}
