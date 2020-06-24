@@ -12,9 +12,9 @@ vignette: >
 ---
 
 ```{r define-parameters, echo=FALSE}
-require('TreeTools', quietly = TRUE, warn.conflicts = FALSE)
-require('TreeDist')
-require('TreeDistData')
+library('TreeTools', quietly = TRUE, warn.conflicts = FALSE)
+library('TreeDist')
+library('TreeDistData')
 nSample <- 100L
 se <- TreeDistData::shapeEffect
 seMethods <- names(se)
