@@ -35,5 +35,6 @@ reference tree:
 dat <- apply(pd11, 1, GetData)
 colnames(dat) <- tdMdAbbrevs[colnames(dat)]
 rownames(dat) <- c('Trees with maximum score', 'Unique distances')
-knitr::kable(t(dat))
+DT::datatable(t(dat), options = list(lengthChange = FALSE, paging = FALSE,
+                                     searching = FALSE))
 ```

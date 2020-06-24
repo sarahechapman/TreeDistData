@@ -257,5 +257,6 @@ dimnames(ret) <- list(tdMdAbbrevs[rownames(ret)],
                         "Miscoding: Success rate (50&nbsp;leaves)",
                         "Subsampling: Accuracy (&rho;)",
                         "Miscoding: Accuracy (&rho;)"))
-knitr::kable(ret)
+DT::datatable(ret, options = list(lengthChange = FALSE, paging = FALSE,
+                                     searching = FALSE)))
 ```

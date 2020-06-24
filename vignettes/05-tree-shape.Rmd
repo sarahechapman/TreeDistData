@@ -74,7 +74,9 @@ result <- t(round(r, 4L))
 dimnames(result) <- list(
   TreeDistData::tdMdAbbrevs[rownames(result)],
   c('r²', 'adjusted r²'))
-DT::datatable(result)
+
+DT::datatable(result, options = list(lengthChange = FALSE, paging = FALSE,
+                                     searching = FALSE))
 ```
 
 ```{r plot, echo=FALSE, fig.height=12, fig.width=8, eval=FALSE}

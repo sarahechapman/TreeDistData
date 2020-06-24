@@ -92,5 +92,6 @@ baddies <- vapply(seq_along(add3), function(i) {
 ```{r, output='asis', echo=FALSE}
 errors <- t(t(rowSums(baddies) - (2L * length(add3))))
 dimnames(errors) <- list(tdMdAbbrevs[rownames(errors)], 'Inconsistencies')
-knitr::kable(errors)
+DT::datatable(errors, options = list(lengthChange = FALSE, paging = FALSE,
+                                     searching = FALSE))
 ```
