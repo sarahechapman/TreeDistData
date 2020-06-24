@@ -9,7 +9,6 @@
 \alias{bullMoDiScores}
 \alias{bullseyeMorphInferred}
 \alias{bullseyeMorphScores}
-\alias{bullseyeDistances}
 \title{Bullseye test results}
 \format{
 \code{bullseyeTrees} is a list with four elements, named \verb{5 leaves}, \verb{10 leaves},
@@ -37,14 +36,6 @@ trees in \code{bullseyeTrees}.
 Each cell contains the distance between the inferred tree and the generative
 tree under the stated tree distance metric.
 
-\code{bullseyeDistances} contains two elements, named \verb{20 leaves} and \verb{50 leaves}.
-Each element contains a named list, with each element named according to
-the abbreviation of the corresponding distance metric (see 'Methods tested'
-below).
-Each of these lists contains a 1 000 × 1 000 matrix
-tabulating the distance between each pair of \emph{n}-leaf trees in
-\code{bullseyeTrees}.
-
 An object of class \code{list} of length 4.
 
 An object of class \code{list} of length 4.
@@ -52,8 +43,6 @@ An object of class \code{list} of length 4.
 An object of class \code{list} of length 4.
 
 An object of class \code{list} of length 4.
-
-An object of class \code{list} of length 2.
 }
 \source{
 Scripts used to generate data objects are housed in the
@@ -70,8 +59,6 @@ bullMoDiScores
 bullseyeMorphInferred
 
 bullseyeMorphScores
-
-bullseyeDistances
 }
 \description{
 Implementation and results of a 'Bullseye' test, after that proposed by
