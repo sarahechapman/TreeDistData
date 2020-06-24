@@ -24,7 +24,7 @@ toCorrelate <- c(
                  "qd", 
                  "ms", "msid", 
                  "pid", "cid", "nye",
-                 "jnc2", "jnc4", "jco2", "jco4",
+                 "jco2", "jnc2", "jco4", "jnc4",
                  "icrf", "rf",
                  "spr", "tbr_l", "tbr_u", "mast" # Integers
                  )
