@@ -108,6 +108,5 @@ dimnames(ranks) <- list(tdMdAbbrevs[rownames(ranks)],
 ranks <- cbind(ranks, 'Mean rank' = round(rowMeans(ranks), 2))
 ranks <- ranks[order(ranks[, 'Mean rank']), ]
 
-DT::datatable(ranks, options = list(lengthChange = FALSE, paging = FALSE,
-                                     searching = FALSE))
+.TDDTable(DT::datatable, ranks)
 ```

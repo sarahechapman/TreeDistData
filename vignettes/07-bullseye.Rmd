@@ -257,6 +257,5 @@ dimnames(ret) <- list(tdMdAbbrevs[rownames(ret)],
                         "Miscoding: Success rate (50&nbsp;leaves)",
                         "Subsampling: Accuracy (&rho;)",
                         "Miscoding: Accuracy (&rho;)"))
-DT::datatable(ret, options = list(lengthChange = FALSE, paging = FALSE,
-                                     searching = FALSE)))
+.TDDTable(DT::datatable, ret)
 ```

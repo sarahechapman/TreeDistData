@@ -89,6 +89,5 @@ with _n_ &minus; 1 edges between the added leaves.
 toPrint <- t(t(errors))
 dimnames(toPrint) <- list(tdMdAbbrevs[tdPlotSequence], 'Mis-orderings')
 
-DT::datatable(toPrint, options = list(lengthChange = FALSE, paging = FALSE,
-                                      searching = FALSE))
+.TDDTable(DT::datatable, toPrint)
 ```

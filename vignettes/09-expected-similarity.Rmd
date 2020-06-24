@@ -168,9 +168,7 @@ IQRNorm <- function (methodDistances) {
 iq <- colMeans(apply(randomTreeDistances, 1, IQRNorm)[as.character(20:200), ], 
                na.rm = TRUE)
 names(iq) <- tdMdAbbrevs[names(iq)]
-DT::datatable(round(iq[order(iq, decreasing = TRUE)] * 100, 1),
-              options = list(lengthChange = FALSE, paging = FALSE,
-                             searching = FALSE))
+.TDDTable(DT::datatable, round(iq[order(iq, decreasing = TRUE)] * 100, 1))
 ```
 
 ## References

@@ -58,6 +58,5 @@ tauB <- abs(signif(tauB[order(abs(tauB), decreasing = TRUE)], 3))
 tauB <- matrix(tauB, dimnames = list(TreeDistData::tdMdAbbrevs[names(tauB)], 
                                      "\u03c4<sub>B</sub>"))
 
-DT::datatable(tauB, options = list(lengthChange = FALSE, paging = FALSE,
-                                     searching = FALSE))
+.TDDTable(DT::datatable, tauB)
 ```

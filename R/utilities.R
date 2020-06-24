@@ -238,3 +238,21 @@ TreeDistCol <- function (method, opacity = '') {
   }
   paste0(TreeDistData::tdCol[method], opacity)
 }
+
+#' Tabulate method outputs
+#'
+#' Helper function to tabulate sortable data in package vignettes.
+#'
+#' @param Table `DT::DataTable()` or an equivalent tabulation function
+#' @param dat Matrix of data to be tabulated, with row names corresponding to
+#' the methods employed.
+#'
+#' @return `.TDDTable()` produces a table plotted using `Table()`.
+#' @template MRS
+#' @keywords internal
+#' @export
+.TDDTable <- function (Table, dat, ...) {
+  dat <- cbind(Method = rownames(dat), dat)
+  rownames(dat) <- NULL
+  Table(dat, options = list(paging = FALSE, searching = FALSE), ...)
+}
