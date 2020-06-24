@@ -18,6 +18,7 @@ library('TreeDist')
 library('TreeDistData')
 data('pectinateDistances11', package = 'TreeDistData')
 pd11 <- pectinateDistances11
+pd11[c('mast', 'masti'), ] <- -pd11[c('mast', 'masti'), ]
 GetData <- function (distances) {
   c(
     atMax = sum(abs(distances - max(distances)) < .Machine$double.eps^0.5),
