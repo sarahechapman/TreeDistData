@@ -1,12 +1,12 @@
 ---
-title: "1.6: Independent of tree shape"
+title: "3.1.6: Independent of tree shape"
 output: 
   bookdown::pdf_document2:
     toc: no
   rmarkdown::html_vignette:
     default: yes
 vignette: >
-  %\VignetteIndexEntry{1.6: Independent of tree shape}
+  %\VignetteIndexEntry{3.1.6: Independent of tree shape}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

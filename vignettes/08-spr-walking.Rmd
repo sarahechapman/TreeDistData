@@ -1,12 +1,12 @@
 ---
-title: "1.9: Artificial tree rearrangement"
+title: "3.1.9: Artificial tree rearrangement"
 output: 
   bookdown::pdf_document2:
     toc: no
   rmarkdown::html_vignette:
     default: yes
 vignette: >
-  %\VignetteIndexEntry{1.9: Artificial tree rearrangement}
+  %\VignetteIndexEntry{3.1.9: Artificial tree rearrangement}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

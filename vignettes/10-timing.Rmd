@@ -1,5 +1,5 @@
 ---
-title: "4: Timing benchmarks"
+title: "3.4: Timing benchmarks"
 output: 
   bookdown::pdf_document2:
     toc: no

@@ -1,12 +1,12 @@
 ---
-title: "1.8: Bullseye tests"
+title: "3.1.8: Bullseye tests"
 output: 
   bookdown::pdf_document2:
     toc: no
   rmarkdown::html_vignette:
     default: yes
 vignette: >
-  %\VignetteIndexEntry{1.8: Bullseye tests}
+  %\VignetteIndexEntry{3.1.8: Bullseye tests}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---

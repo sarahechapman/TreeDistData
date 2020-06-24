@@ -1,12 +1,12 @@
 ---
-title: "1.2: Number of leaves moved"
+title: "3.1.2: Number of leaves moved"
 output: 
   rmarkdown::html_vignette:
     default: yes
   bookdown::pdf_document2:
     toc: no
 vignette: >
-  %\VignetteIndexEntry{1.2: Number of leaves moved}
+  %\VignetteIndexEntry{3.1.2: Number of leaves moved}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -86,7 +86,7 @@ baddies <- vapply(seq_along(add3), function(i) {
 ## Results
 
 ```{r, output='asis', echo=FALSE}
-errors <- t(t(rowSums(baddies) - (2 * length(add3))))
+errors <- t(t(rowSums(baddies) - (2L * length(add3))))
 dimnames(errors) <- list(tdMdAbbrevs[rownames(errors)], 'Inconsistencies')
 knitr::kable(errors)
 ```

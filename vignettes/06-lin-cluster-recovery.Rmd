@@ -1,12 +1,12 @@
 ---
-title: "1.7: Consistent cluster recovery"
+title: "3.1.7: Consistent cluster recovery"
 output: 
   bookdown::pdf_document2:
     toc: no
   rmarkdown::html_vignette:
     default: yes
 vignette: >
-  %\VignetteIndexEntry{1.7: Consistent cluster recovery}
+  %\VignetteIndexEntry{3.1.7: Consistent cluster recovery}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
