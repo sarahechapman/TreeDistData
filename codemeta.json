@@ -110,6 +110,18 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "DT",
+      "name": "DT",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=DT"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "kdensity",
       "name": "kdensity",
       "provider": {
@@ -167,7 +179,7 @@
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://github.com/KlausVigo/phangorn"
+      "sameAs": "https://CRAN.R-project.org/package=phangorn"
     },
     {
       "@type": "SoftwareApplication",
@@ -253,14 +265,12 @@
     {
       "@type": "SoftwareApplication",
       "identifier": "TBRDist",
-      "name": "TBRDist",
-      "sameAs": "https://github.com/ms609/TBRDist"
+      "name": "TBRDist"
     },
     {
       "@type": "SoftwareApplication",
       "identifier": "TreeDist",
-      "name": "TreeDist",
-      "sameAs": "https://github.com/ms609/TreeDist"
+      "name": "TreeDist"
     },
     {
       "@type": "SoftwareApplication",
@@ -273,7 +283,7 @@
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://github.com/ms609/TreeTools"
+      "sameAs": "https://CRAN.R-project.org/package=TreeTools"
     }
   ],
   "releaseNotes": "https://github.com/ms609/TreeDistData/blob/master/NEWS.md",
@@ -283,7 +293,7 @@
   "citation": [
     {
       "@type": "ScholarlyArticle",
-      "datePublished": "202X",
+      "datePublished": "2020",
       "author": [
         {
           "@type": "Person",
@@ -292,12 +302,13 @@
         }
       ],
       "name": "Information theoretic Generalized Robinson-Foulds metrics\nfor comparing phylogenetic trees",
+      "paginiation": "in production",
       "isPartOf": {
         "@type": "PublicationIssue",
-        "datePublished": "202X",
+        "datePublished": "2020",
         "isPartOf": {
           "@type": ["PublicationVolume", "Periodical"],
-          "name": "Under review"
+          "name": "Bioinformatics"
         }
       }
     }
@@ -306,5 +317,5 @@
     "https://ms609.github.io/TreeDistData",
     "https://ms609.github.io/TreeDistData/"
   ],
-  "fileSize": "18639.011KB"
+  "fileSize": "18638.561KB"
 }
