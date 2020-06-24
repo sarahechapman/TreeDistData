@@ -5,19 +5,19 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "TreeDistData",
-  "description": "Data used to perform analyses of unrooted tree distance measures,\n  underlying tables and figures in Smith (20XX).",
-  "name": "TreeDistData: Analysis of Unrooted Tree Distance Measures",
+  "description": "Data used to perform analyses of tree distance measures in unrooted\n  phylogenetic trees, underlying tables and figures in Smith (202X)\n  <doi:10.1093/bioinformatics/xxxxx>.",
+  "name": "TreeDistData: Analysis of Phylogenetic Tree Distance Measures",
   "codeRepository": "https://github.com/ms609/TreeDistData/",
   "issueTracker": "https://github.com/ms609/TreeDistData/issues/",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.3",
+    "version": "4.0.2",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.3 (2020-02-29)",
+  "runtimePlatform": "R version 4.0.2 (2020-06-22)",
   "author": [
     {
       "@type": "Person",
@@ -160,13 +160,14 @@
       "@type": "SoftwareApplication",
       "identifier": "phangorn",
       "name": "phangorn",
+      "version": "> 2.5.5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=phangorn"
+      "sameAs": "https://github.com/KlausVigo/phangorn"
     },
     {
       "@type": "SoftwareApplication",
@@ -191,6 +192,18 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "spatstat",
+      "name": "spatstat",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=spatstat"
     },
     {
       "@type": "SoftwareApplication",
@@ -260,17 +273,17 @@
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=TreeTools"
+      "sameAs": "https://github.com/ms609/TreeTools"
     }
   ],
-  "releaseNotes": "https://github.com/ms609/TreeDistData.git/blob/master/NEWS.md",
+  "releaseNotes": "https://github.com/ms609/TreeDistData/blob/master/NEWS.md",
   "readme": "https://github.com/ms609/TreeDistData/blob/master/README.md",
   "contIntegration": "https://travis-ci.org/ms609/TreeDistData",
   "developmentStatus": "http://www.repostatus.org/#inactive",
   "citation": [
     {
       "@type": "ScholarlyArticle",
-      "datePublished": "20XX",
+      "datePublished": "202X",
       "author": [
         {
           "@type": "Person",
@@ -281,14 +294,17 @@
       "name": "Information theoretic Generalized Robinson-Foulds metrics\nfor comparing phylogenetic trees",
       "isPartOf": {
         "@type": "PublicationIssue",
-        "datePublished": "20XX",
+        "datePublished": "202X",
         "isPartOf": {
           "@type": ["PublicationVolume", "Periodical"],
-          "name": "Unsubmitted"
+          "name": "Under review"
         }
       }
     }
   ],
-  "relatedLink": ["https://ms609.github.io/TreeDistData", "https://ms609.github.io/TreeDistData/"],
-  "fileSize": "106067.237KB"
+  "relatedLink": [
+    "https://ms609.github.io/TreeDistData",
+    "https://ms609.github.io/TreeDistData/"
+  ],
+  "fileSize": "106028.497KB"
 }
