@@ -254,5 +254,6 @@ TreeDistCol <- function (method, opacity = '') {
 .TDDTable <- function (Table, dat, ...) {
   dat <- cbind(Method = rownames(dat), dat)
   rownames(dat) <- NULL
-  Table(dat, options = list(paging = FALSE, searching = FALSE), ...)
+  Table(dat, options = list(paging = FALSE, searching = FALSE, info = FALSE),
+        ...)
 }
