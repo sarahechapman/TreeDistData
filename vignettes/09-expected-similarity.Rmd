@@ -36,7 +36,7 @@ abbrevs <- tdAbbrevs
 totalInfoContent <- 3L
 methodLCH <- colorspace::coords(as(colorspace::hex2RGB(TreeDistCol(methods)), 'polarLUV'))
 
-data('randomTreeDistances', package='TreeDistData')
+data('randomTreeDistances', package = 'TreeDistData')
 pathMax <- randomTreeDistances['path', 'max', ]
 msMax <- randomTreeDistances['ms', 'max', ]
 nniMax <- randomTreeDistances['nni_u', 'max', ]
@@ -48,13 +48,13 @@ pathNorm <- nls(pathMax ~ a * (nTip ^2) + b * (nTip ^3) + nTip ^ c,
                 start = list(a = -0.0444, b = 4.6e-5, c = 1.478))
 
 msNorm <- nls(msMax ~ (a * nTip) + (c * nTip ^ b) + d,
-              start = list(a = -16.795, b=1.135, c = 14.25, d = 1.86))
+              start = list(a = -16.795, b = 1.135, c = 14.25, d = 1.86))
 
 nniNorm <-  nls(nniMax ~ (a * nTip) + (c * nTip ^ b) + d + e * (nTip ^2) + f * (nTip ^3),
-                start = list(a = -16.7, b=1.1, c = 14, d = 6, e = 0.01, f = 0.01))
+                start = list(a = -16.7, b = 1.1, c = 14, d = 6, e = 0.01, f = 0.01))
 
 #tbrNorm <-  nls(tbrMax ~ (a * nTip) + (c * nTip ^ b) + d + e * (nTip ^2) + f * (nTip ^3),
-#                start = list(a = 1, b=1, c = 0.01, d = 1, e = 0.01, f = 0.01))
+#                start = list(a = 1, b = 1, c = 0.01, d = 1, e = 0.01, f = 0.01))
 tbrNorm <-  lm(tbrMax ~ nTip)
 
 
@@ -89,13 +89,13 @@ AddLine <- function (method, normalize = FALSE) {
   
   col <- TreeDistCol(method, '')
   
-  lines(nLeaves, dat['50%', ], pch=1, col=col)
+  lines(nLeaves, dat['50%', ], pch = 1, col = col)
   polygon(c(nLeaves, rev(nLeaves)), c(dat['10%', ], rev(dat['90%', ])),
-          border=NA, col = paste0(col, '33'),)
+          border = NA, col = paste0(col, '33'),)
   polygon(c(nLeaves, rev(nLeaves)), c(dat['25%', ], rev(dat['75%', ])),
-          border=NA, col = paste0(col, '33'),)
-  #lines(nLeaves, dat['25%', ], lty=2, col=col)
-  #lines(nLeaves, dat['75%', ], lty=2, col=col)
+          border = NA, col = paste0(col, '33'),)
+  #lines(nLeaves, dat['25%', ], lty = 2, col = col)
+  #lines(nLeaves, dat['75%', ], lty = 2, col = col)
   #pointsAt <- 1:10 * 20L
 }
 ```
@@ -115,17 +115,17 @@ PlotMethods <- function (methods, yMin = 0.4,
                                   method %in% c('ms', rownames(normalizeAgainst)))
   
   
-  legend(lp[1], bty='n',
-         lty = 1, legend=abbrevs[methods], col = TreeDistCol(methods, 44),
+  legend(lp[1], bty = 'n',
+         lty = 1, legend = abbrevs[methods], col = TreeDistCol(methods, 44),
          text.col = '#FFFFFFFF', pch = 15, pt.cex = 1.8
   )
   
-  legend(lp[1], bty='n', lty=1, 
-         legend=abbrevs[methods], col = TreeDistCol(methods))
+  legend(lp[1], bty = 'n', lty = 1, 
+         legend = abbrevs[methods], col = TreeDistCol(methods))
   
-  legend(lp[2], bty='n', inset=c(0.09, 0),
-         lty=1, lwd = c(1, 4, 6), col=c(1, "#00000066", "#00000033"),
-         legend=c('Median', 'Interquartile range', 'Interdecile range'))
+  legend(lp[2], bty = 'n', inset = c(0.09, 0),
+         lty = 1, lwd = c(1, 4, 6), col = c(1, "#00000066", "#00000033"),
+         legend = c('Median', 'Interquartile range', 'Interdecile range'))
 }
 PlotMethods(c('rf', 'pid', 'cid', 'ms', 'nye', 'msid'))
 PlotMethods(c('rf', 'jnc4', 'jco4', 'jnc2', 'jco2', 'nye'), yMin = 0.7)
@@ -168,7 +168,8 @@ IQRNorm <- function (methodDistances) {
 iq <- colMeans(apply(randomTreeDistances, 1, IQRNorm)[as.character(20:200), ], 
                na.rm = TRUE)
 names(iq) <- tdMdAbbrevs[names(iq)]
-.TDDTable(DT::datatable, round(iq[order(iq, decreasing = TRUE)] * 100, 1))
+.TDDTable(DT::datatable, 
+          cbind("Range (%)" = round(iq[order(iq, decreasing = TRUE)] * 100, 1)))
 ```
 
 ## References
