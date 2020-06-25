@@ -87,7 +87,7 @@ Plot <- function (timings, nTip) {
 
 ```
 
-The time taken to compare all `r nPairs` pairs of trees by each method, 
+The time taken to compare all `r nPairs` pairs of trees by each method
 was calculated, replicating timing `r nRepeats` times.
 
 The below are the results of a benchmarking exercise conducted on an
