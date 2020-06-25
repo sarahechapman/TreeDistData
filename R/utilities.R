@@ -254,6 +254,7 @@ TreeDistCol <- function (method, opacity = '') {
 .TDDTable <- function (Table, dat, ...) {
   method <- rownames(dat)
   if (is.null(method)) method <- names(dat)
+  method[method == 'Nye _et al._'] <- 'Nye <i>et al.</i>'
   dat <- cbind(Method = method, dat)
   rownames(dat) <- NULL
   Table(dat, options = list(paging = FALSE, searching = FALSE, info = FALSE),
