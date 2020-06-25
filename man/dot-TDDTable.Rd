@@ -7,10 +7,10 @@
 .TDDTable(Table, dat, ...)
 }
 \arguments{
-\item{Table}{\code{DT::DataTable()} or an equivalent tabulation function}
+\item{Table}{\code{DT::DataTable()} or an equivalent tabulation function.}
 
-\item{dat}{Matrix of data to be tabulated, with row names corresponding to
-the methods employed.}
+\item{dat}{Matrix or vector of data to be tabulated, with (row) names
+corresponding to the methods employed.}
 }
 \value{
 \code{.TDDTable()} produces a table plotted using \code{Table()}.
