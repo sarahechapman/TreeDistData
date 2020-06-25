@@ -43,6 +43,15 @@ CorrPlot <- function (distribution, methodA, methodB) {
   abline(reg, col = '#ff3333')
 }
 
+FormatR2 <- function (r2) {
+  if (r2 < 1e-3) {
+    pow <- floor(log10(r2))
+    paste0(signif(r2, 2) * 10^-pow, "e\U2212", -pow)
+  } else {
+    format(r2, digits = 2, nsmall = 2)
+  }
+}
+
 PlotR2 <- function (distribution, methodA, methodB) {
   a <- distribution[methodA, ]
   b <- distribution[methodB, ]
@@ -50,10 +59,10 @@ PlotR2 <- function (distribution, methodA, methodB) {
   reg <- lm(a ~ b)
   r2 <- summary(reg)$adj.r.squared
   regCol <- colScale[max(ceiling((r2 - 0.5) * 2000), 1L)]
-  text(0.5, 0.5, format(r2, digits = 2, nsmall = 2), col = regCol, cex = 1.4)
+  text(0.5, 0.5, FormatR2(r2), col = regCol, cex = if (r2 < 1e-3) 1.1 else 1.4)
 }
 
-PlotCorr <- function(distribution) {
+PlotCorr <- function (distribution) {
   par(mfrow = length(toCorrelate) + c(0L, 0L), mar = rep(0.2, 4))
   lapply(seq_along(toCorrelate), function(i)
     lapply(seq_along(toCorrelate), function(j) {
