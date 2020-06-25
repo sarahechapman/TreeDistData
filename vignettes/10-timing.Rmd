@@ -34,7 +34,7 @@ TBRDist <- TBRDist::TBRDist
 RF <- TreeDist::RobinsonFoulds
 
 nTrees <- 45L # For c. 1000 comparisons
-nRepeats <- 10L # Increase locally for slower but more accurate benchmarking
+nRepeats <- 10L
 nPairs <- nTrees * (nTrees - 1) / 2
 
 SPRWalk <- function (nTip) {
@@ -116,17 +116,15 @@ Plot(times50, 50)
 
 ```{r timings-table, echo = FALSE}
 results <- summary(times20, unit = 'us')
-cols <- c('mean', 'median')
-#cols <- 'mean'
 rownames(results) <- TreeDistData::tdMdAbbrevs[as.character(results[, 'expr'])]
-results <- cbind(results[, cols, drop = FALSE],
-                 summary(times50, unit = 'us')[, cols, drop = FALSE])
+results <- cbind(results[, 'mean', drop = FALSE],
+                 summary(times50, unit = 'us')[, 'mean', drop = FALSE])
 
-colnames(results) <- paste(rep(c(20, 50), each = length(cols)), 'leaves,', cols)
-
-TreeDistData::.TDDTable(DT::datatable,
-                        signif(results[order(results[, 1]), ] / nPairs, 2),
-                        caption = "Time per comparison / µs")
+colnames(results) <- paste(c(20, 50), 'leaves')
+twoSF <- formatC(as.matrix(signif(results[order(results[, 1]), ] / nPairs, 2)),
+                 format = 'fg', digits = 2L)
+TreeDistData::.TDDTable(DT::datatable, twoSF,
+                        caption = "Mean time per comparison / µs")
 ```
 
 ## Reference
