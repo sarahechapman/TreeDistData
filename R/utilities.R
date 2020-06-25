@@ -255,7 +255,7 @@ TreeDistCol <- function (method, opacity = '') {
   method <- rownames(dat)
   if (is.null(method)) method <- names(dat)
   method[method == 'Nye _et al._'] <- 'Nye <i>et al.</i>'
-  dat <- cbind(Method = method, dat)
+  dat <- as.matrix(cbind(Method = method, dat))
   rownames(dat) <- NULL
   Table(dat, options = list(paging = FALSE, searching = FALSE, info = FALSE),
         escape = FALSE, ...)
