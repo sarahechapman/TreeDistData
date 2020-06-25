@@ -116,13 +116,13 @@ Plot(times50, 50)
 
 ```{r timings-table, echo = FALSE}
 results <- summary(times20, unit = 'us')
-#cols <- c('mean', 'median')
-cols <- c('mean')
+cols <- c('mean', 'median')
+#cols <- 'mean'
 rownames(results) <- TreeDistData::tdMdAbbrevs[as.character(results[, 'expr'])]
 results <- cbind(results[, cols, drop = FALSE],
                  summary(times50, unit = 'us')[, cols, drop = FALSE])
 
-colnames (results) <- paste(rep(c(20, 50), each = length(cols)), 'leaves,', cols)
+colnames(results) <- paste(rep(c(20, 50), each = length(cols)), 'leaves,', cols)
 
 TreeDistData::.TDDTable(DT::datatable,
                         signif(results[order(results[, 1]), ] / nPairs, 2),
