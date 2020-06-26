@@ -9,11 +9,11 @@
 '[TreeDistData](https://ms609.github.io/TreeDistData/)' is an R package 
 intended to accompany the '[TreeDist](https://ms609.github.io/TreeDist/)' 
 package. It contains the functions and scripts used to compare the performance 
-of tree distance measures in Smith (in review).
+of tree distance measures in Smith (2020).
 
 "[Articles](https://ms609.github.io/TreeDistData/articles/)" lists vignettes
 detailing the output of analyses corresponding
-to the stated sections of Smith (in review).  Each of these pages includes a
+to the stated sections of Smith (2020).  Each of these pages includes a
 link to the R source code, which can be used to reproduce the analytical
 results.
 
@@ -27,6 +27,7 @@ directory.
 
 ## References
 
-Smith, M.R. (2020). Information theoretic Generalized Robinson-Foulds metrics
-  for comparing phylogenetic trees. Bioinformatics, in production.
+Smith, M.R. (2020). [Information theoretic Generalized Robinson-Foulds metrics
+  for comparing phylogenetic trees](10.1093/bioinformatics/btaa614).
+  _Bioinformatics_, in production.
 

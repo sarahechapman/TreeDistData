@@ -4,16 +4,17 @@ vers <- paste("R package version", meta$Version)
 
 citEntry(entry = "Article",
       key = "Smith2020",
-      title = "Information theoretic Generalized Robinson-Foulds metrics
-for comparing phylogenetic trees",
+      title = paste("Information theoretic Generalized Robinson-Foulds metrics"
+                    "for comparing phylogenetic trees"),
       author = personList(as.person("Martin R. Smith")),
       journal = "Bioinformatics",
+      doi = "10.1093/bioinformatics/btaa614",
       pages = "in production",
       year = "2020",
 
       textVersion =
       paste0("Smith, M.R. (2020).",
-             " Information theoretic Generalized Robinson-Foulds metrics
-for comparing phylogenetic trees",
+             " Information theoretic Generalized Robinson-Foulds metrics",
+             " for comparing phylogenetic trees.",
              " Bioinformatics, in production.",
-             " doi: 10.XXXX/XXXXX"))
+             " doi: 10.1093/bioinformatics/btaa614"))

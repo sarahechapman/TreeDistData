@@ -22,8 +22,8 @@ these data objects is available in the
 directory.
 \subsection{References}{
 
-Smith, M.R. (2020). Information theoretic Generalized Robinson-Foulds metrics
-for comparing phylogenetic trees. Bioinformatics, in production.
+Smith, M.R. (2020). \href{https://dx.doi.org/10.1093/bioinformatics/btaa614}{Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees}. \emph{Bioinformatics},
+in production.
 }
 }
 \seealso{
