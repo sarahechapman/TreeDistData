@@ -40,6 +40,9 @@ jobs:
     - r: 3.6.0 # phangorn requires 3.6.0
     - os: osx
       r: release
+      r_github_packages:
+        - ms609/TBRDist
+        - ms609/TreeDist
       before_install:
         - sudo tlmgr install doi titling hyperref
   allow_failures:
