@@ -5,7 +5,7 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "TreeDistData",
-  "description": "Data used to perform analyses of tree distance measures in unrooted\n  phylogenetic trees, underlying tables and figures in Smith (202X)\n  <doi:10.1093/bioinformatics/xxxxx>.",
+  "description": "Data used to perform analyses of tree distance measures in unrooted\n  phylogenetic trees, underlying tables and figures in Smith (2020)\n  <doi:10.1093/bioinformatics/btaa614>.",
   "name": "TreeDistData: Analysis of Phylogenetic Tree Distance Measures",
   "codeRepository": "https://github.com/ms609/TreeDistData/",
   "issueTracker": "https://github.com/ms609/TreeDistData/issues/",
@@ -301,8 +301,11 @@
           "familyName": "Smith"
         }
       ],
-      "name": "Information theoretic Generalized Robinson-Foulds metrics\nfor comparing phylogenetic trees",
-      "paginiation": "in production",
+      "name": "Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees",
+      "identifier": "10.1093/bioinformatics/btaa614",
+      "paginiation": "online ahead of print",
+      "@id": "https://doi.org/10.1093/bioinformatics/btaa614",
+      "sameAs": "https://doi.org/10.1093/bioinformatics/btaa614",
       "isPartOf": {
         "@type": "PublicationIssue",
         "datePublished": "2020",
@@ -317,5 +320,5 @@
     "https://ms609.github.io/TreeDistData",
     "https://ms609.github.io/TreeDistData/"
   ],
-  "fileSize": "18638.561KB"
+  "fileSize": "18640.675KB"
 }
