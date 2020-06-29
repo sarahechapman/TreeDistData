@@ -19,8 +19,10 @@ library('Quartet', exclude = 'RobinsonFoulds')
 library('TreeTools', quietly = TRUE, warn.conflicts = FALSE)
 library('TreeDist')
 library('TreeDistData')
+
+origPar <- par(mar = rep(0, 4))
+
 backbone <- ape::read.tree(text='(a, (b, (c, (d, (((e, f), g), (h, (i, j)))))));')
-par(mar = rep(0, 4))
 plot(UnrootTree(backbone))
 nTip <- length(backbone$tip.label)
 add3 <- structure(lapply(lapply(AddTipEverywhere(backbone, '11th leaf'),
@@ -64,6 +66,7 @@ V<sub>1.1</sub> to V<sub>1.19</sub>:
 par(mfrow = c(4, 5), mar = rep(0.2, 4))
 urt <- lapply(add2then1[[1]], unroot)
 lapply(urt, plot) -> XX
+par(origPar)
 ```
 
 Two trees occur in both U<sub>i</sub> and V<sub>i</sub>, i.e. they can be 
