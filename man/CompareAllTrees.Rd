@@ -22,9 +22,8 @@ is presently being performed.}
 All distances between each pair of trees
 }
 \examples{
-  trees <- lapply(rep(8, 5), ape::rtree, br = NULL)
-  CompareAllTrees(trees)
-
+trees <- lapply(rep(8, 5), TreeTools::RandomTree, root = TRUE)
+CompareAllTrees(trees)
 }
 \seealso{
 Other pairwise tree distances: 

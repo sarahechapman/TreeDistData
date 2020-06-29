@@ -124,9 +124,8 @@ PairwiseDistances <- function (trees, Func, valueLength = 1L, ...) {
 #' @importFrom Quartet ManyToManyQuartetAgreement
 #'
 #' @examples
-#'   trees <- lapply(rep(8, 5), ape::rtree, br = NULL)
-#'   CompareAllTrees(trees)
-#'
+#' trees <- lapply(rep(8, 5), TreeTools::RandomTree, root = TRUE)
+#' CompareAllTrees(trees)
 #' @template MRS
 #' @family pairwise tree distances
 #' @export

@@ -11,7 +11,7 @@ test_that('Pairwise distances calculated correctly', {
   nTip <- 16L
 
   set.seed(0)
-  trees <- lapply(rep(nTip, nTrees), ape::rtree, br = NULL)
+  trees <- lapply(rep(nTip, nTrees), TreeTools::RandomTree, root = TRUE)
   trees[[1]] <- TreeTools::BalancedTree(nTip)
   trees[[nTrees - 1L]] <- TreeTools::PectinateTree(nTip)
   class(trees) <- 'multiPhylo'
