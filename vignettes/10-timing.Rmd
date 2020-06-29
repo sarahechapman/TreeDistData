@@ -24,7 +24,9 @@ if (requireNamespace('benchmarkme', quietly = TRUE)) {
 ```
 
 
-```{r setup, echo = FALSE, message = FALSE}
+```{r setup, echo=FALSE, message=FALSE}
+origPar <- par()
+
 # Note: For maximum speed, check compiler options in ~/.R/Makevars when building 
 # the package.  Suggest setting PKG_CXXFLAGS = -Ofast -march=native -mtune=native 
 library('TreeDist')
@@ -125,6 +127,10 @@ twoSF <- formatC(as.matrix(signif(results[order(results[, 1]), ] / nPairs, 2)),
                  format = 'fg', digits = 2L)
 TreeDistData::.TDDTable(DT::datatable, twoSF,
                         caption = "Mean time per comparison / µs")
+```
+
+```{r echo=FALSE}
+par(origPar)
 ```
 
 ## Reference

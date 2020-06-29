@@ -12,6 +12,7 @@ vignette: >
 ---
 
 ```{r data-load, echo=FALSE}
+origPar <- par()
 library('TreeDistData')
 data("distanceDistribution25", package = "TreeDistData")
 # No point in plotting both MAST and MASTI, as they're perfect rank correlates
@@ -101,3 +102,6 @@ Not plotted:
 - NNI: both upper and lower bounds correlate almost perfectly with RF, due to
   the method of calculating the approximation.
 
+```{r echo=FALSE}
+par(origPar)
+```

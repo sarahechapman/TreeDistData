@@ -101,10 +101,8 @@ AddLine <- function (method, normalize = FALSE) {
 ```
 
 ```{R tree-distance-averages, echo=FALSE, message=FALSE, cache=TRUE, fig.asp=2, fig.width=6, fig.align='center'}
-par(mfrow = c(3, 1))
-par(cex = 0.7)
-par(oma = rep(0, 4))
-par(mar = c(5, 5, 0.01, 0.01))
+origPar <- par(mfrow = c(3, 1), cex = 0.7, oma = rep(0, 4), 
+               mar = c(5, 5, 0.01, 0.01))
 PlotMethods <- function (methods, yMin = 0.4,
                          lp = c('bottomright', 'bottomleft')) {
   plot(as.integer(dimnames(randomTreeDistances)[[3]]),
@@ -132,6 +130,7 @@ PlotMethods(c('rf', 'jnc4', 'jco4', 'jnc2', 'jco2', 'nye'), yMin = 0.7)
 PlotMethods(c('nni_u', 'tbr_u', 'spr', 'masti', 'mast',
               'path', 'qd', 'tbr_l', 'nni_l'), yMin = 0.14, 
             lp = c('bottomright', 'right'))
+par(origPar)
 ```
 
 

@@ -44,7 +44,7 @@ PlotMethod <- function (method, doPlot = TRUE) {
 There are four unrooted tree shapes on eight leaves:
 
 ```{r tree-shapes, echo=FALSE, fig.asp=1/4, fig.align='center', fig.width=6}
-par(mfrow = c(1, 4), mar = rep(0.3, 4))
+origPar <- par(mfrow = c(1, 4), mar = rep(0.3, 4))
 lapply(lapply(0:3, UnrootedTreeWithShape, 8), plot) -> XX
 ```
 
@@ -99,5 +99,6 @@ xx <- lapply(c(shape1, shape2), function (shape) {
 })
 
 lapply(seMethods, PlotMethod) -> XX
+par(origPar)
 ```
 
