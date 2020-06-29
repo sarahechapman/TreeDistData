@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">TreeDistData</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.0.0.9000</span>
       </span>
     </div>
 
@@ -87,9 +87,6 @@
     <li>
       <a href="../articles/11-correlation.html">Supplementary Figures: Metric correlation</a>
     </li>
-    <li>
-      <a href="../articles/X-heterogeneity.html">Heterogeneity</a>
-    </li>
   </ul>
 </li>
 <li>
@@ -113,7 +110,11 @@
 
       
 
-      </header><div class="row">
+      </header><script src="10-timing_files/htmlwidgets-1.5.1/htmlwidgets.js"></script><script src="10-timing_files/jquery-1.12.4/jquery.min.js"></script><link href="10-timing_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="10-timing_files/datatables-binding-0.14/datatables.js"></script><link href="10-timing_files/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="10-timing_files/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="10-timing_files/dt-core-1.10.20/js/jquery.dataTables.min.js"></script><link href="10-timing_files/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet">
+<script src="10-timing_files/crosstalk-1.1.0.1/js/crosstalk.min.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>3.4: Timing benchmarks</h1>
@@ -126,7 +127,7 @@
 
     
     
-<p>The time taken to compare all 990 pairs of trees by each method, was calculated, replicating timing 10 times.</p>
+<p>The time taken to compare all 990 pairs of trees by each method was calculated, replicating timing 10 times.</p>
 <p>The below are the results of a benchmarking exercise conducted on an Intel(R) Xeon(R) CPU machine with <!--2 cores and--> 8.36 GB of RAM, comparing 45 trees obtained by performing successive subtree pruning and regrafting rearrangements on a pectinate starting tree.<br>
 The values reported in Smith <span class="citation">(2020)</span> were calculated on a modest desktop computer, and will differ from those reported here, which will have been generated on the hardware system used to render the documentation.</p>
 <div id="figure" class="section level2">
@@ -138,109 +139,20 @@ The values reported in Smith <span class="citation">(2020)</span> were calculate
 <div id="tabulation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#tabulation" class="anchor"></a>Tabulation</h2>
-<table class="table">
-<caption>Time per comparison / µs</caption>
-<thead><tr class="header">
-<th align="left"></th>
-<th align="right">20 leaves, mean</th>
-<th align="right">50 leaves, mean</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Path</td>
-<td align="right">9.1</td>
-<td align="right">16</td>
-</tr>
-<tr class="even">
-<td align="left">Robinson-Foulds</td>
-<td align="right">11.0</td>
-<td align="right">14</td>
-</tr>
-<tr class="odd">
-<td align="left">Match. Split Dist.</td>
-<td align="right">18.0</td>
-<td align="right">46</td>
-</tr>
-<tr class="even">
-<td align="left">Info. Corr. RF</td>
-<td align="right">19.0</td>
-<td align="right">35</td>
-</tr>
-<tr class="odd">
-<td align="left">Phylog. Info. Dist</td>
-<td align="right">21.0</td>
-<td align="right">80</td>
-</tr>
-<tr class="even">
-<td align="left">Match. Split Info Dist</td>
-<td align="right">24.0</td>
-<td align="right">140</td>
-</tr>
-<tr class="odd">
-<td align="left">JRF (k = 2, no conflict)</td>
-<td align="right">26.0</td>
-<td align="right">110</td>
-</tr>
-<tr class="even">
-<td align="left">JRF (k = 2, conflict ok)</td>
-<td align="right">29.0</td>
-<td align="right">170</td>
-</tr>
-<tr class="odd">
-<td align="left">Nye <em>et al.</em>
-</td>
-<td align="right">40.0</td>
-<td align="right">130</td>
-</tr>
-<tr class="even">
-<td align="left">Clust. Info. Dist.</td>
-<td align="right">43.0</td>
-<td align="right">250</td>
-</tr>
-<tr class="odd">
-<td align="left">JRF (k = 4, no conflict)</td>
-<td align="right">45.0</td>
-<td align="right">520</td>
-</tr>
-<tr class="even">
-<td align="left">JRF (k = 4, conflict ok)</td>
-<td align="right">55.0</td>
-<td align="right">830</td>
-</tr>
-<tr class="odd">
-<td align="left">NNI (approx.)</td>
-<td align="right">63.0</td>
-<td align="right">78</td>
-</tr>
-<tr class="even">
-<td align="left">SPR (approx.)</td>
-<td align="right">100.0</td>
-<td align="right">1000</td>
-</tr>
-<tr class="odd">
-<td align="left">TBR (approx.)</td>
-<td align="right">210.0</td>
-<td align="right">370</td>
-</tr>
-<tr class="even">
-<td align="left">Quartet</td>
-<td align="right">250.0</td>
-<td align="right">450</td>
-</tr>
-<tr class="odd">
-<td align="left">MAST size</td>
-<td align="right">4200.0</td>
-<td align="right">20000</td>
-</tr>
-</tbody>
-</table>
+<div id="htmlwidget-645c4a0173fa826ea5fd" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-645c4a0173fa826ea5fd">{"x":{"filter":"none","caption":"<caption>Mean time per comparison / µs<\/caption>","data":[["Path","Robinson-Foulds","Match. Split Dist.","Info. Corr. RF","Phylog. Info. Dist","Match. Split Info Dist","Nye <i>et al.<\/i>","JRF (k = 2, no conflict)","JRF (k = 2, conflict ok)","Clust. Info. Dist.","JRF (k = 4, no conflict)","JRF (k = 4, conflict ok)","NNI (approx.)","SPR (approx.)","TBR (approx.)","Quartet","MAST size"],["8.5"," 11"," 16"," 19"," 20"," 23"," 24"," 26"," 31"," 43"," 48"," 57"," 65","100","200","250","4200"],[" 18"," 15"," 44"," 36"," 80","140","130","110","170","260","530","850"," 81","1100","370","450","20000"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>20 leaves<\/th>\n      <th>50 leaves<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"info":false,"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script><pre><code>## Warning in par(origPar): graphical parameter "cin" cannot be set</code></pre>
+<pre><code>## Warning in par(origPar): graphical parameter "cra" cannot be set</code></pre>
+<pre><code>## Warning in par(origPar): graphical parameter "csi" cannot be set</code></pre>
+<pre><code>## Warning in par(origPar): graphical parameter "cxy" cannot be set</code></pre>
+<pre><code>## Warning in par(origPar): graphical parameter "din" cannot be set</code></pre>
+<pre><code>## Warning in par(origPar): graphical parameter "page" cannot be set</code></pre>
 </div>
 <div id="reference" class="section level2 unnumbered">
 <h2 class="hasAnchor">
 <a href="#reference" class="anchor"></a>Reference</h2>
 <div id="refs" class="references">
 <div id="ref-Smith2020">
-<p>Smith, M. R. (2020). Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees. <em>In Review</em>.</p>
+<p>Smith, M. R. (2020). Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees. <em>Bioinformatics</em>, in production. doi: <a href="https://doi.org/10.1093/bioinformatics/btaa614">10.1093/bioinformatics/btaa614</a></p>
 </div>
 </div>
 </div>

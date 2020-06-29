@@ -32,7 +32,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">TreeDistData</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.0.0.9000</span>
       </span>
     </div>
 
@@ -87,9 +87,6 @@
     <li>
       <a href="../articles/11-correlation.html">Supplementary Figures: Metric correlation</a>
     </li>
-    <li>
-      <a href="../articles/X-heterogeneity.html">Heterogeneity</a>
-    </li>
   </ul>
 </li>
 <li>
@@ -113,7 +110,11 @@
 
       
 
-      </header><div class="row">
+      </header><script src="04-saturation-and-sensitivity_files/htmlwidgets-1.5.1/htmlwidgets.js"></script><script src="04-saturation-and-sensitivity_files/jquery-1.12.4/jquery.min.js"></script><link href="04-saturation-and-sensitivity_files/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
+<script src="04-saturation-and-sensitivity_files/datatables-binding-0.14/datatables.js"></script><link href="04-saturation-and-sensitivity_files/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="04-saturation-and-sensitivity_files/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet">
+<script src="04-saturation-and-sensitivity_files/dt-core-1.10.20/js/jquery.dataTables.min.js"></script><link href="04-saturation-and-sensitivity_files/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet">
+<script src="04-saturation-and-sensitivity_files/crosstalk-1.1.0.1/js/crosstalk.min.js"></script><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1 data-toc-skip>3.1.4, 3.1.5: Saturation and sensitivity</h1>
@@ -127,126 +128,8 @@
     
     
 <p>Number of 100 000 trees at maximum distance from a pectinate 11-leaf reference tree:</p>
-<table class="table">
-<thead><tr class="header">
-<th align="left"></th>
-<th align="right">Trees with maximum score</th>
-<th align="right">Unique distances</th>
-</tr></thead>
-<tbody>
-<tr class="odd">
-<td align="left">Phylog. Info. Dist</td>
-<td align="right">36</td>
-<td align="right">26478</td>
-</tr>
-<tr class="even">
-<td align="left">Match. Split Info Dist</td>
-<td align="right">1</td>
-<td align="right">24167</td>
-</tr>
-<tr class="odd">
-<td align="left">Clust. Info. Dist.</td>
-<td align="right">1</td>
-<td align="right">28939</td>
-</tr>
-<tr class="even">
-<td align="left">Quartet</td>
-<td align="right">1</td>
-<td align="right">200</td>
-</tr>
-<tr class="odd">
-<td align="left">Nye <em>et al.</em>
-</td>
-<td align="right">2</td>
-<td align="right">4381</td>
-</tr>
-<tr class="even">
-<td align="left">JRF (k = 2, no conflict)</td>
-<td align="right">36</td>
-<td align="right">19221</td>
-</tr>
-<tr class="odd">
-<td align="left">JRF (k = 4, no conflict)</td>
-<td align="right">36</td>
-<td align="right">20488</td>
-</tr>
-<tr class="even">
-<td align="left">JRF (k = 2, conflict ok)</td>
-<td align="right">1</td>
-<td align="right">27790</td>
-</tr>
-<tr class="odd">
-<td align="left">JRF (k = 4, conflict ok)</td>
-<td align="right">2</td>
-<td align="right">28781</td>
-</tr>
-<tr class="even">
-<td align="left">Match. Split Dist.</td>
-<td align="right">11</td>
-<td align="right">28</td>
-</tr>
-<tr class="odd">
-<td align="left">MAST size</td>
-<td align="right">1</td>
-<td align="right">7</td>
-</tr>
-<tr class="even">
-<td align="left">MAST info</td>
-<td align="right">1</td>
-<td align="right">7</td>
-</tr>
-<tr class="odd">
-<td align="left">NNI (lwr bnd)</td>
-<td align="right">86336</td>
-<td align="right">6</td>
-</tr>
-<tr class="even">
-<td align="left">NNI (ub tight)</td>
-<td align="right">86336</td>
-<td align="right">12</td>
-</tr>
-<tr class="odd">
-<td align="left">NNI (upr bnd)</td>
-<td align="right">86336</td>
-<td align="right">16</td>
-</tr>
-<tr class="even">
-<td align="left">SPR (approx.)</td>
-<td align="right">2388</td>
-<td align="right">5</td>
-</tr>
-<tr class="odd">
-<td align="left">TBR (lwr bnd)</td>
-<td align="right">7474</td>
-<td align="right">4</td>
-</tr>
-<tr class="even">
-<td align="left">TBR (upr bnd)</td>
-<td align="right">7474</td>
-<td align="right">7</td>
-</tr>
-<tr class="odd">
-<td align="left">Robinson-Foulds</td>
-<td align="right">86336</td>
-<td align="right">6</td>
-</tr>
-<tr class="even">
-<td align="left">Info. Corr. RF</td>
-<td align="right">13044</td>
-<td align="right">208</td>
-</tr>
-<tr class="odd">
-<td align="left">Path</td>
-<td align="right">1</td>
-<td align="right">302</td>
-</tr>
-<tr class="even">
-<td align="left">MAF info</td>
-<td align="right">2</td>
-<td align="right">20</td>
-</tr>
-</tbody>
-</table>
+<div id="htmlwidget-f0c7424bd1f3417c51de" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-f0c7424bd1f3417c51de">{"x":{"filter":"none","data":[["Phylog. Info. Dist","Match. Split Info Dist","Clust. Info. Dist.","Quartet","Nye <i>et al.<\/i>","JRF (k = 2, no conflict)","JRF (k = 4, no conflict)","JRF (k = 2, conflict ok)","JRF (k = 4, conflict ok)","Match. Split Dist.","MAST size","MAST info","NNI (lwr bnd)","NNI (ub tight)","NNI (upr bnd)","SPR (approx.)","TBR (lwr bnd)","TBR (upr bnd)","Robinson-Foulds","Info. Corr. RF","Path","MAF info"],["36","1","1","1","2","36","36","1","2","11","6154","6154","86336","86336","86336","2388","7474","7474","86336","13044","1","2"],["26478","24167","28939","200","4381","19221","20488","27790","28781","28","7","7","6","12","16","5","4","7","6","208","302","20"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Method<\/th>\n      <th>Trees with maximum score<\/th>\n      <th>Unique distances<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"paging":false,"searching":false,"info":false,"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

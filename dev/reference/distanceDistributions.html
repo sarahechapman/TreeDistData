@@ -43,8 +43,7 @@
 <meta property="og:description" content="distanceDistribution25(/50) are two-dimensional matrices listing the
 normalized distances between random pairs of bifurcating trees with 25 and
 50 leaves drawn from the uniform distribution using
-ape::rtree(nTip, br = NULL) (data object
-randomTreePairs25(/50)).
+TreeTools::RandomTree() (data object randomTreePairs25(/50)).
 pectinateDistances11 reports distances between a pectinate 11-leaf tree
 and 100 000 random binary trees." />
 
@@ -78,7 +77,7 @@ and 100 000 random binary trees." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">TreeDistData</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">0.1.0.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="In-development version">1.0.0.9000</span>
       </span>
     </div>
 
@@ -133,9 +132,6 @@ and 100 000 random binary trees." />
     <li>
       <a href="../articles/11-correlation.html">Supplementary Figures: Metric correlation</a>
     </li>
-    <li>
-      <a href="../articles/X-heterogeneity.html">Heterogeneity</a>
-    </li>
   </ul>
 </li>
 <li>
@@ -171,8 +167,7 @@ and 100 000 random binary trees." />
     <p><code>distanceDistribution25(/50)</code> are two-dimensional matrices listing the
 normalized distances between random pairs of bifurcating trees with 25 and
 50 leaves drawn from the uniform distribution using
-<code><a href='https://rdrr.io/pkg/ape/man/rtree.html'>ape::rtree(nTip, br = NULL)</a></code> (data object
-<code><a href='randomTreePairs.html'>randomTreePairs25</a></code><code>(/50)</code>).
+<code><a href='https://ms609.github.io/TreeTools/reference/GenerateTree.html'>TreeTools::RandomTree()</a></code> (data object <code><a href='randomTreePairs.html'>randomTreePairs25</a></code><code>(/50)</code>).
 <code>pectinateDistances11</code> reports distances between a pectinate 11-leaf tree
 and 100 000 random binary trees.</p>
     </div>
@@ -205,13 +200,13 @@ directory.</p>
 
     
 <ul>
-<li><p><code>pid</code>: Phylogenetic Information Distance (Smith, forthcoming), normalized
+<li><p><code>pid</code>: Phylogenetic Information Distance (Smith 2020), normalized
 against the phylogenetic information content of the splits in the trees
 being compared.</p></li>
-<li><p><code>msid</code>: Matching Split Information Distance (Smith, forthcoming), normalized
+<li><p><code>msid</code>: Matching Split Information Distance (Smith 2020), normalized
 against the phylogenetic information content of the splits in the trees
 being compared.</p></li>
-<li><p><code>cid</code>: Clustering Information Distance (Smith, forthcoming), normalized
+<li><p><code>cid</code>: Clustering Information Distance (Smith 2020), normalized
 against the entropy of the splits in the trees being compared.</p></li>
 <li><p><code>qd</code>: Quartet divergence (Smith 2019), normalized against its maximum
 possible value for <em>n</em>-leaf trees.</p></li>
@@ -235,13 +230,13 @@ unnormalized.</p></li>
 <a href='https://ms609.github.io/TBRDist/'><span class="pkg">TBRDist</span></a>; unnormalized.</p></li>
 <li><p><code>rf</code>: Robinson-Foulds distance (Robinson &amp; Foulds 1981), unnormalized.</p></li>
 <li><p><code>icrf</code>: Robinson-Foulds distance, splits weighted by phylogenetic
-information content (Smith, forthcoming), unnormalized.</p></li>
+information content (Smith 2020), unnormalized.</p></li>
 <li><p><code>path</code>: Path distance (Steel &amp; Penny 1993), unnormalized.</p></li>
 </ul>
 
 <ul>
 <li><p><code>mafi</code> (<code>pectinateDistances11</code> only): information content of the
-maximum agreement forest (Smith, forthcoming).</p></li>
+maximum agreement forest (Smith 2020).</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
@@ -279,7 +274,9 @@ doi: <a href='https://doi.org/10.1098/rsbl.2018.0632'>10.1098/rsbl.2018.0632</a>
 .</p>
 <p>Smith MR (2020).
 &#8220;Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees.&#8221;
-<em>Bioinformatics</em>, in production.</p>
+<em>Bioinformatics</em>, in production.
+doi: <a href='https://doi.org/10.1093/bioinformatics/btaa614'>10.1093/bioinformatics/btaa614</a>
+.</p>
 <p>Steel MA, Penny D (1993).
 &#8220;Distributions of tree comparison metrics—some new results.&#8221;
 <em>Systematic Biology</em>, <b>42</b>(2), 126--141.
