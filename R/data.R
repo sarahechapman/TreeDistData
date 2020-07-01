@@ -8,7 +8,7 @@
 #' `bullseyeTrees` is a list with four elements, named `5 leaves`, `10 leaves`,
 #' `20 leaves` and `50 leaves`.
 #' Each element contains 1&nbsp;000 trees with _n_ leaves, randomly sampled
-#' (note: *not* from the uniform distribtion) using [`ape::rtree()`].
+#' (note: *not* from the uniform distribution) using [`ape::rtree()`].
 #'
 #' The `bullseyeMorph` prefix refers to the 'subsampling' experiment
 #' described by Smith (2020); the `bullMoDi` prefix refers to the
@@ -172,8 +172,8 @@ NULL
 #' Mean distances between random pairs of trees
 #'
 #' A three-dimensional array listing the normalized distances between 1&nbsp;000
-#' random pairs of trees drawn from the uniform distribution using
-#' `RandomTree(nTip, root = TRUE)`.
+#' random pairs of trees (nb. *not* from the uniform distribution) using
+#' `ape::rtree(nTip, br = NULL)`.
 #'
 #' Normalization is against the maximum possible value obtainable on a pair
 #' of trees of the shapes given, with the exception of the SPR distance,
