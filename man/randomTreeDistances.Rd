@@ -69,10 +69,9 @@ for nearest-neighbour interchange distance (Li \emph{et al.} 1996)
 }
 
 \references{
-\itemize{
-\item \insertRef{Allen2001}{TreeDist}
-\item \insertRef{Bocker2013}{TreeDist}
-}
+\insertRef{Allen2001}{TreeDist}
+
+\insertRef{Bocker2013}{TreeDist}
 
 \insertRef{Bogdanowicz2012}{TreeDist}
 

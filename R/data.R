@@ -198,9 +198,9 @@ NULL
 #' @template methodsTested
 #'
 #' @references
-#' - \insertRef{Allen2001}{TreeDist}
+#' \insertRef{Allen2001}{TreeDist}
 #'
-#' - \insertRef{Bocker2013}{TreeDist}
+#' \insertRef{Bocker2013}{TreeDist}
 #' @template methodRefs
 #'
 #' @encoding UTF-8
