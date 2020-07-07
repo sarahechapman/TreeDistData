@@ -10,16 +10,16 @@
 \title{Distances between random pairs of trees}
 \format{
 Objects of class \code{matrix} (inherits from \code{array}) with
-21 rows, each corresponding
+23 rows, each corresponding
 to a tree distance method and is named with its abbreviation
 (listed in 'Methods tested' below), and 10 000
 (\code{distanceDistribution25/50})
 or 100 000 (\code{pectinateDistances11}) columns,
 listing the calculated distances between each pair of trees.
 
-An object of class \code{matrix} (inherits from \code{array}) with 21 rows and 10000 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 23 rows and 10000 columns.
 
-An object of class \code{matrix} (inherits from \code{array}) with 21 rows and 10000 columns.
+An object of class \code{matrix} (inherits from \code{array}) with 23 rows and 10000 columns.
 
 An object of class \code{matrix} (inherits from \code{array}) with 22 rows and 100000 columns.
 }
@@ -39,7 +39,8 @@ pectinateDistances11
 \verb{distanceDistribution25(/50)} are two-dimensional matrices listing the
 normalized distances between random pairs of bifurcating trees with 25 and
 50 leaves drawn from the uniform distribution using
-\code{\link[TreeTools:RandomTree]{TreeTools::RandomTree()}} (data object \code{\link{randomTreePairs25}}\verb{(/50)}).
+\code{\link[TreeTools:GenerateTree]{TreeTools::RandomTree()}}
+(data object \code{\link{randomTreePairs25}}\verb{(/50)}).
 \code{pectinateDistances11} reports distances between a pectinate 11-leaf tree
 and 100 000 random binary trees.
 }
@@ -66,8 +67,13 @@ the total number of splits in the trees being compared.
 \item \code{ms}: Matching Split Distance (Bogdanowicz & Giaro 2012), unnormalized.
 \item \code{mast}: Size of Maximum Agreement Subtree (Valiente 2009), unnormalized.
 \item \code{masti}: Information content of Maximum Agreement Subtree, unnormalized.
-\item \code{nni_l}, \code{nni_t}, \code{nni_u}: Lower bound, tight upper bound, and upper bound
-for nearest-neighbour interchange distance (Li \emph{et al.} 1996), unnormalized.
+\item \code{nni_l}, \code{nni_L}, \code{nni_t}, \code{nni_U}, \code{nni_u}:
+Lower, best lower, tight upper, best upper, and
+upper bounds for nearest-neighbour interchange distance (Li \emph{et al.} 1996),
+unnormalized.
+'Best' lower bounds jump sharply when mismatched regions of a tree become
+large enough that a tight upper bound cannot be exactly calculated, so
+are discontinuous and cannot readily be compared between trees.
 \item \code{spr}: Approximate subtree prune and regraft \acronym{SPR} distance,
 unnormalized.
 \item \code{tbr_l}, \code{tbr_u}: Lower and upper bound for tree bisection and reconnection

@@ -1,6 +1,15 @@
 #' All distances between a pair of trees
+#'
+#' `AllDists()` calculates the distances between two trees, using a suite
+#' of distance measures.
+#'
+#' @templateVar nni_t TRUE
+#' @template allDistMethods
+#' @template methodRefs
+#'
 #' @param tr1,tr2 Phylogenetic trees of class `phylo`.
-#' @param verbose Logical specifying whether to notify user of progress.
+#' @param verbose Logical specifying whether to print messages allowing the
+#' user to keep track of progress.
 #'
 #' @template MRS
 #' @importFrom TreeDist MASTSize NNIDist SPRDist PathDist
@@ -61,7 +70,9 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
     mast = mast,
     masti = masti,
     nni_l = NNIPart('lower'),
+    nni_L = NNIPart('best_lower'),
     nni_t = NNIPart('tight_upper'),
+    nni_U = NNIPart('best_upper'),
     nni_u = NNIPart('loose_upper'),
     spr = spr,
     tbr_l = tbr$tbr_min,
@@ -155,7 +166,7 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
   }
 
   MSG('NNI')
-  nni <- PairwiseDistances(trees, NNIDist, 3L)
+  nni <- PairwiseDistances(trees, NNIDist, 7L)
 
   MSG('SPR')
   sprDist <- as.matrix(SPRDist(trees))
@@ -208,7 +219,9 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
     masti = masti,
 
     nni_l = nni$lower,
+    nni_L = nni$best_lower,
     nni_t = nni$tight_upper,
+    nni_U = nni$best_upper,
     nni_u = nni$loose_upper,
 
     spr = sprDist,

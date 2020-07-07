@@ -24,10 +24,10 @@ randomTreePairs50
 }
 \description{
 Lists of 10 000 pairs of binary trees drawn from the uniform
-distribution using \code{ape::rtree(nTip, br = NULL)}.
+distribution using \code{\link[TreeTools:GenerateTree]{TreeTools::RandomTree()}}.
 }
 \seealso{
 The distances between these pairs of trees are recorded in
-the data objects  \code{\link{distanceDistribution25}} and  \code{\link{distanceDistribution50}}.
+the data objects \code{\link{distanceDistribution25}} and  \code{\link{distanceDistribution50}}.
 }
 \keyword{datasets}
