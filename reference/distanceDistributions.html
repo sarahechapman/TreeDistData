@@ -182,14 +182,14 @@ and 100 000 random binary trees.</p>
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
     <p>Objects of class <code>matrix</code> (inherits from <code>array</code>) with
-21 rows, each corresponding
+23 rows, each corresponding
 to a tree distance method and is named with its abbreviation
 (listed in 'Methods tested' below), and 10 000
 (<code>distanceDistribution25/50</code>)
 or 100 000 (<code>pectinateDistances11</code>) columns,
 listing the calculated distances between each pair of trees.</p>
-<p>An object of class <code>matrix</code> (inherits from <code>array</code>) with 21 rows and 10000 columns.</p>
-<p>An object of class <code>matrix</code> (inherits from <code>array</code>) with 21 rows and 10000 columns.</p>
+<p>An object of class <code>matrix</code> (inherits from <code>array</code>) with 23 rows and 10000 columns.</p>
+<p>An object of class <code>matrix</code> (inherits from <code>array</code>) with 23 rows and 10000 columns.</p>
 <p>An object of class <code>matrix</code> (inherits from <code>array</code>) with 22 rows and 100000 columns.</p>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
@@ -221,8 +221,13 @@ the total number of splits in the trees being compared.</p></li>
 <li><p><code>ms</code>: Matching Split Distance (Bogdanowicz &amp; Giaro 2012), unnormalized.</p></li>
 <li><p><code>mast</code>: Size of Maximum Agreement Subtree (Valiente 2009), unnormalized.</p></li>
 <li><p><code>masti</code>: Information content of Maximum Agreement Subtree, unnormalized.</p></li>
-<li><p><code>nni_l</code>, <code>nni_t</code>, <code>nni_u</code>: Lower bound, tight upper bound, and upper bound
-for nearest-neighbour interchange distance (Li <em>et al.</em> 1996), unnormalized.</p></li>
+<li><p><code>nni_l</code>, <code>nni_L</code>, <code>nni_t</code>, <code>nni_U</code>, <code>nni_u</code>:
+Lower, best lower, tight upper, best upper, and
+upper bounds for nearest-neighbour interchange distance (Li <em>et al.</em> 1996),
+unnormalized.
+'Best' lower bounds jump sharply when mismatched regions of a tree become
+large enough that a tight upper bound cannot be exactly calculated, so
+are discontinuous and cannot readily be compared between trees.</p></li>
 <li><p><code>spr</code>: Approximate subtree prune and regraft <acronym>SPR</acronym> distance,
 unnormalized.</p></li>
 <li><p><code>tbr_l</code>, <code>tbr_u</code>: Lower and upper bound for tree bisection and reconnection
@@ -256,7 +261,7 @@ ISBN 978-3-540-61332-9 978-3-540-68461-9, doi: <a href='https://doi.org/10.1007/
 &#8220;Mapping phylogenetic trees to reveal distinct patterns of evolution.&#8221;
 <em>Molecular Biology and Evolution</em>, <b>33</b>(10), 2735--2743.
 doi: <a href='https://doi.org/10.1093/molbev/msw124'>10.1093/molbev/msw124</a>
-, <a href='2019-07-10'>2019-07-10</a>.</p>
+.</p>
 <p>Nye TMW, Liò P, Gilks WR (2006).
 &#8220;A novel algorithm and web-based tool for comparing two alternative phylogenetic trees.&#8221;
 <em>Bioinformatics</em>, <b>22</b>(1), 117--119.

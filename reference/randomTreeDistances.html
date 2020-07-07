@@ -40,9 +40,9 @@
 
 
 <meta property="og:title" content="Mean distances between random pairs of trees — randomTreeDistances" />
-<meta property="og:description" content="A three-dimensional array listing the normalized distances between 1 000
-random pairs of trees (nb. not from the uniform distribution) using
-ape::rtree(nTip, br = NULL)." />
+<meta property="og:description" content="A three-dimensional array listing the distances between 1 000
+random pairs of trees drawn from the uniform distribution using
+RandomTree(nTip, root = TRUE)." />
 
 
 
@@ -161,9 +161,9 @@ ape::rtree(nTip, br = NULL)." />
     </div>
 
     <div class="ref-description">
-    <p>A three-dimensional array listing the normalized distances between 1 000
-random pairs of trees (nb. <em>not</em> from the uniform distribution) using
-<code><a href='https://rdrr.io/pkg/ape/man/rtree.html'>ape::rtree(nTip, br = NULL)</a></code>.</p>
+    <p>A three-dimensional array listing the distances between 1 000
+random pairs of trees drawn from the uniform distribution using
+<code>RandomTree(nTip, root = TRUE)</code>.</p>
     </div>
 
     <pre class="usage"><span class='no'>randomTreeDistances</span></pre>
@@ -171,7 +171,7 @@ random pairs of trees (nb. <em>not</em> from the uniform distribution) using
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>array</code> of dimension 20 x 13 x 197.</p>
+    <p>An object of class <code>array</code> of dimension 22 x 13 x 197.</p>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p>Scripts used to generate data objects are housed in the
@@ -179,11 +179,8 @@ random pairs of trees (nb. <em>not</em> from the uniform distribution) using
 directory.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Normalization is against the maximum possible value obtainable on a pair
-of trees of the shapes given, with the exception of the SPR distance,
-which is normalized against the upper bound (<code>spr</code>) and lower bound (<code>sprLB</code>)
-of its diameter on a tree with <em>n</em> leaves.  The path and matching split
-distances are not normalized.</p>
+    <p>Distances were calculated using <code><a href='AllDists.html'>AllDists()</a></code>; see the documentation at
+there for details of methods and their normalization.</p>
 <p>Rows are named with abbreviations of the tree comparison metrics tested
 (see 'Methods tested' below).</p>
 <p>Columns list the summary statistics of calculated tree distances: the
@@ -197,44 +194,48 @@ maximum (<code>max</code>), mean (<code>mean</code>) and standard deviation (<co
 
     
 <ul>
-<li><p><code>pid</code>: Phylogenetic Information Distance (Smith 2020)</p></li>
-<li><p><code>msid</code>: Matching Split Information Distance (Smith 2020)</p></li>
-<li><p><code>cid</code>: Clustering Information Distance (Smith 2020)</p></li>
-<li><p><code>qd</code>: Quartet divergence (Smith 2019)</p></li>
-<li><p><code>nye</code>: Nye <em>et al.</em> tree distance (Nye <em>et al.</em> 2006)</p></li>
+<li><p><code>pid</code>: Phylogenetic Information Distance (Smith 2020), normalized
+against the phylogenetic information content of the splits in the trees
+being compared.</p></li>
+<li><p><code>msid</code>: Matching Split Information Distance (Smith 2020), normalized
+against the phylogenetic information content of the splits in the trees
+being compared.</p></li>
+<li><p><code>cid</code>: Clustering Information Distance (Smith 2020), normalized
+against the entropy of the splits in the trees being compared.</p></li>
+<li><p><code>qd</code>: Quartet divergence (Smith 2019), normalized against its maximum
+possible value for <em>n</em>-leaf trees.</p></li>
+<li><p><code>nye</code>: Nye <em>et al.</em> tree distance (Nye <em>et al.</em> 2006), normalized against
+the total number of splits in the trees being compared.</p></li>
 <li><p><code>jnc2</code>, <code>jnc4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4,
-conflicting pairings prohibited ('no-conflict')</p></li>
-<li><p><code>joc2</code>, <code>jco4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4,
-conflicting pairings permitted ('conflict-ok')</p></li>
-<li><p><code>ms</code>: Matching Split Distance (Bogdanowicz &amp; Giaro 2012)</p></li>
-<li><p><code>mast</code>: Size of Maximum Agreement Subtree (Valiente 2009)</p></li>
-<li><p><code>masti</code>: Information content of Maximum Agreement Subtree</p></li>
-<li><p><code>nni_l</code>, <code>nni_u</code>: Lower
-and upper bounds
-for nearest-neighbour interchange distance (Li <em>et al.</em> 1996)</p></li>
-<li><p><code>spr</code>: Approximate SPR distance</p></li>
+conflicting pairings prohibited ('no-conflict'), normalized against
+the total number of splits in the trees being compared.</p></li>
+<li><p><code>jco2</code>, <code>jco4</code>: Jaccard-Robinson-Foulds distances with <em>k</em> = 2, 4,
+conflicting pairings permitted ('conflict-ok'), normalized against
+the total number of splits in the trees being compared.</p></li>
+<li><p><code>ms</code>: Matching Split Distance (Bogdanowicz &amp; Giaro 2012), unnormalized.</p></li>
+<li><p><code>mast</code>: Size of Maximum Agreement Subtree (Valiente 2009), unnormalized.</p></li>
+<li><p><code>masti</code>: Information content of Maximum Agreement Subtree, unnormalized.</p></li>
+<li><p><code>nni_l</code>, <code>nni_L</code>, <code>nni_U</code>, <code>nni_u</code>:
+Lower, best lower, best upper, and
+upper bounds for nearest-neighbour interchange distance (Li <em>et al.</em> 1996),
+unnormalized.
+'Best' lower bounds jump sharply when mismatched regions of a tree become
+large enough that a tight upper bound cannot be exactly calculated, so
+are discontinuous and cannot readily be compared between trees.</p></li>
+<li><p><code>spr</code>: Approximate subtree prune and regraft <acronym>SPR</acronym> distance,
+unnormalized.</p></li>
 <li><p><code>tbr_l</code>, <code>tbr_u</code>: Lower and upper bound for tree bisection and reconnection
-(TBR) distance, calculated using
-<a href='https://ms609.github.io/TBRDist/'><span class="pkg">TBRDist</span></a></p></li>
-<li><p><code>rf</code>: Robinson-Foulds distance (Robinson &amp; Foulds 1981)</p></li>
-<li><p><code>icrf</code>: Information-corrected Robinson-Foulds distance (Smith 2020)</p></li>
-<li><p><code>path</code>: Path distance (Steel &amp; Penny 1993)</p></li>
+(<acronym>TBR</acronym>) distance, calculated using
+<a href='https://ms609.github.io/TBRDist/'><span class="pkg">TBRDist</span></a>; unnormalized.</p></li>
+<li><p><code>rf</code>: Robinson-Foulds distance (Robinson &amp; Foulds 1981), unnormalized.</p></li>
+<li><p><code>icrf</code>: Robinson-Foulds distance, splits weighted by phylogenetic
+information content (Smith 2020), unnormalized.</p></li>
+<li><p><code>path</code>: Path distance (Steel &amp; Penny 1993), unnormalized.</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Allen BL, Steel MA (2001).
-&#8220;Subtree transfer operations and their induced metrics on evolutionary trees.&#8221;
-<em>Annals of Combinatorics</em>, <b>5</b>(1), 1--15.
-doi: <a href='https://doi.org/10.1007/s00026-001-8006-8'>10.1007/s00026-001-8006-8</a>
-.</p>
-<p>Böcker S, Canzar S, Klau GW (2013).
-&#8220;The generalized Robinson-Foulds metric.&#8221;
-In Darling A, Stoye J (eds.), <em>Algorithms in Bioinformatics. WABI 2013. Lecture Notes in Computer Science, vol 8126</em>, 156--169.
-Springer, Berlin, Heidelberg.
-doi: <a href='https://doi.org/10.1007/978-3-642-40453-5_13'>10.1007/978-3-642-40453-5_13</a>
-.</p>
-<p>Bogdanowicz D, Giaro K (2012).
+    <p>Bogdanowicz D, Giaro K (2012).
 &#8220;Matching split distance for unrooted binary phylogenetic trees.&#8221;
 <em>IEEE/ACM Transactions on Computational Biology and Bioinformatics</em>, <b>9</b>(1), 150--160.
 doi: <a href='https://doi.org/10.1109/TCBB.2011.48'>10.1109/TCBB.2011.48</a>
@@ -249,7 +250,7 @@ ISBN 978-3-540-61332-9 978-3-540-68461-9, doi: <a href='https://doi.org/10.1007/
 &#8220;Mapping phylogenetic trees to reveal distinct patterns of evolution.&#8221;
 <em>Molecular Biology and Evolution</em>, <b>33</b>(10), 2735--2743.
 doi: <a href='https://doi.org/10.1093/molbev/msw124'>10.1093/molbev/msw124</a>
-, <a href='2019-07-10'>2019-07-10</a>.</p>
+.</p>
 <p>Nye TMW, Liò P, Gilks WR (2006).
 &#8220;A novel algorithm and web-based tool for comparing two alternative phylogenetic trees.&#8221;
 <em>Bioinformatics</em>, <b>22</b>(1), 117--119.
