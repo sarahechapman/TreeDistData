@@ -1,8 +1,6 @@
 ---
 title: "3.1.4, 3.1.5: Saturation and sensitivity"
-output: 
-  bookdown::pdf_document2:
-    toc: no
+output:
   rmarkdown::html_vignette:
     default: yes
 vignette: >

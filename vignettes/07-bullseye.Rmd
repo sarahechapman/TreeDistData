@@ -1,8 +1,6 @@
 ---
 title: "3.1.8: Bullseye tests"
 output: 
-  bookdown::pdf_document2:
-    toc: no
   rmarkdown::html_vignette:
     default: yes
 vignette: >
@@ -125,7 +123,7 @@ RowTitle <- function (words, font = 2, cex = 1) {
 
 ## Figure
 
-```{r bullseye-results, echo=FALSE, fig.width=9, fig.asp = 4.9/5.15}
+```{r bullseye-results, echo=FALSE, fig.width=9, fig.asp = 4.9/5.15, fig.align='center'}
 PlotFunc <- function() {
   layout(matrix(c(rep(1, 5), t(cbind(matrix(2:9, 2), c(19, 21))),
                   rep(10, 5), t(cbind(matrix(11:18, 2), c(20, 22)))),

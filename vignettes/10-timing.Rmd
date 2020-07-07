@@ -1,8 +1,6 @@
 ---
 title: "3.4: Timing benchmarks"
 output: 
-  bookdown::pdf_document2:
-    toc: no
   rmarkdown::html_vignette:
     default: yes
 bibliography: ../inst/REFERENCES.bib
@@ -68,7 +66,7 @@ Times <- function (trees) {
     ms = MatchingSplitDistance(splits),
     qd = Quartet::ManyToManyQuartetAgreement(trees),
     mast = TreeDistData::PairwiseDistances(trees, MASTSize, rooted = FALSE),
-    nni = TreeDistData::PairwiseDistances(trees, NNIDist, 3L),
+    nni = TreeDistData::PairwiseDistances(trees, NNIDist, 7L),
     spr = SPR.dist(trees),
     tbr = TBRDist(trees, exact = FALSE),
     rf = RF(splits),

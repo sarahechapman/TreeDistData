@@ -1,8 +1,6 @@
 ---
 title: "3.1.9: Artificial tree rearrangement"
-output: 
-  bookdown::pdf_document2:
-    toc: no
+output:
   rmarkdown::html_vignette:
     default: yes
 vignette: >
@@ -51,8 +49,8 @@ par(origPar)
 ```{r table, output="asis", echo = FALSE}
 Tabler <- function (method) {
   dat <- as.matrix(distances[[method]])
-  cor.test(dat[!is.na(dat)], moves[!is.na(dat)], method="kendall",
-           use="pairwise")$estimate
+  cor.test(dat[!is.na(dat)], moves[!is.na(dat)], method = "kendall",
+           use = "pairwise")$estimate
 }
 tauB <- vapply(plotSequence, Tabler, double(1))
 tauB <- abs(signif(tauB[order(abs(tauB), decreasing = TRUE)], 3))

@@ -1,8 +1,6 @@
 ---
 title: "3.1.6: Independent of tree shape"
-output: 
-  bookdown::pdf_document2:
-    toc: no
+output:
   rmarkdown::html_vignette:
     default: yes
 vignette: >
@@ -53,7 +51,7 @@ simply because they exhibit the same shape, I evaluated the extent to which
 tree distance could be predicted based only on knowledge of the topology of 
 the two input trees.
 
-```{r analyse, echo=FALSE}
+```{r analyse, echo=FALSE, fig.width=6, fig.align='center'}
 par(xpd = NA)
 r <- vapply(seMethods, PlotMethod, doPlot = FALSE, double(2))
 r2 <- r[1, ]
