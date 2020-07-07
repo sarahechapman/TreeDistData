@@ -53,7 +53,7 @@ For each of these trees -- we'll consider T<sub>1</sub> first -- we can then mov
 the eleventh leaf to each of the other edges of the tree, giving trees 
 U<sub>1.1</sub>-U<sub>1.19</sub>:
 
-```{r, echo=FALSE, fig.asp=4/5}
+```{r, echo=FALSE, fig.width=7.2, fig.asp=4/5}
 par(mfrow = c(4, 5), mar = rep(0.2, 4))
 urt <- lapply(add1then2[[1]], unroot)
 lapply(urt, plot) -> XX
@@ -62,7 +62,7 @@ lapply(urt, plot) -> XX
 or the cherry containing the twelfth and thirteenth, giving trees 
 V<sub>1.1</sub> to V<sub>1.19</sub>:
 
-```{r, echo=FALSE, fig.asp=4/5}
+```{r, echo=FALSE, fig.width=7.2, fig.asp=4/5}
 par(mfrow = c(4, 5), mar = rep(0.2, 4))
 urt <- lapply(add2then1[[1]], unroot)
 lapply(urt, plot) -> XX
@@ -79,15 +79,13 @@ to be less than the distance from T<sub>i</sub> to V<sub>i.j</sub>
 (i.e. move two tips to the same location)
 
 ```{r, echo=FALSE, fig.width=7.2, fig.asp=4/5, message=FALSE}
-methods <- tdMethods[!tdMethods %in% c('mafi', 'masti')]
-
 baddies <- vapply(seq_along(add3), function(i) {
   move1 <- AllDists(add2then1[[i]], add3[[i]])
   move2 <- AllDists(add1then2[[i]], add3[[i]])
   move1[c('mast', 'masti'), ] <- -move1[c('mast', 'masti'), ]
   move2[c('mast', 'masti'), ] <- -move2[c('mast', 'masti'), ]
   rowSums(move2 <= move1)
-}, double(21))
+}, double(23))
 ```
 
 ## Results
