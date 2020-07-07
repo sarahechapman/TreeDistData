@@ -58,8 +58,7 @@
 #' `distanceDistribution25(/50)` are two-dimensional matrices listing the
 #' normalized distances between random pairs of bifurcating trees with 25 and
 #' 50 leaves drawn from the uniform distribution using
-#' [`TreeTools::RandomTree()`][TreeTools::GenerateTree]
-#' (data object [`randomTreePairs25`]`(/50)`).
+#' [`TreeTools::RandomTree()`] (data object [`randomTreePairs25`]`(/50)`).
 #' `pectinateDistances11` reports distances between a pectinate 11-leaf tree
 #' and 100&nbsp;000 random binary trees.
 #'
