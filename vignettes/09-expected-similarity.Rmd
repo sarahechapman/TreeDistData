@@ -1,16 +1,16 @@
 ---
 title: "3.2.2: Context: tree distance values"
 output: 
-  bookdown::pdf_document2:
-    toc: no
   rmarkdown::html_vignette:
     default: yes
+  bookdown::pdf_document2:
+    toc: no
 bibliography: ../inst/REFERENCES.bib
 csl: https://raw.githubusercontent.com/citation-style-language/styles/master/apa-old-doi-prefix.csl
 vignette: >
+  %\VignetteEncoding{UTF-8}
   %\VignetteIndexEntry{3.2.2: Context: tree distance values}
   %\VignetteEngine{knitr::rmarkdown}
-  %\VignetteEncoding{UTF-8}
 ---
 
 ## Expected values for random trees
@@ -39,30 +39,20 @@ methodLCH <- colorspace::coords(as(colorspace::hex2RGB(TreeDistCol(methods)), 'p
 data('randomTreeDistances', package = 'TreeDistData')
 pathMax <- randomTreeDistances['path', 'max', ]
 msMax <- randomTreeDistances['ms', 'max', ]
-nniMax <- randomTreeDistances['nni_u', 'max', ]
-tbrMax <- randomTreeDistances['tbr_u', 'max', ]
 
 nTip <- as.integer(dimnames(randomTreeDistances)[[3]])
 
-pathNorm <- nls(pathMax ~ a * (nTip ^2) + b * (nTip ^3) + nTip ^ c,
-                start = list(a = -0.0444, b = 4.6e-5, c = 1.478))
-
-msNorm <- nls(msMax ~ (a * nTip) + (c * nTip ^ b) + d,
-              start = list(a = -16.795, b = 1.135, c = 14.25, d = 1.86))
-
-nniNorm <-  nls(nniMax ~ (a * nTip) + (c * nTip ^ b) + d + e * (nTip ^2) + f * (nTip ^3),
-                start = list(a = -16.7, b = 1.1, c = 14, d = 6, e = 0.01, f = 0.01))
-
-#tbrNorm <-  nls(tbrMax ~ (a * nTip) + (c * nTip ^ b) + d + e * (nTip ^2) + f * (nTip ^3),
-#                start = list(a = 1, b = 1, c = 0.01, d = 1, e = 0.01, f = 0.01))
-tbrNorm <-  lm(tbrMax ~ nTip)
-
+pathNorm <- lm(log(pathMax) ~ log(nTip))
+msNorm <- lm(log(msMax) ~ log(nTip))
+nniNorm <- TreeDist::NNIDiameter(nTip)
 
 normalizeAgainst <- rbind(
-  path = predict(pathNorm),
-  ms = predict(msNorm),
-  nni_u = predict(nniNorm),
-  nni_l = predict(nniNorm),
+  path = exp(predict(pathNorm)),
+  ms = exp(predict(msNorm)),
+  nni_u = nniNorm[, 'max'],
+  nni_U = nniNorm[, 'max'],
+  nni_l = nniNorm[, 'min'],
+  nni_L = nniNorm[, 'min'],
   spr = nTip / 2L,
   tbr_u = nTip,
   tbr_l = nTip,
@@ -100,8 +90,8 @@ AddLine <- function (method, normalize = FALSE) {
 }
 ```
 
-```{R tree-distance-averages, echo=FALSE, message=FALSE, cache=TRUE, fig.asp=2, fig.width=6, fig.align='center'}
-origPar <- par(mfrow = c(3, 1), cex = 0.7, oma = rep(0, 4), 
+```{R tree-distance-averages, echo=FALSE, message=FALSE, cache=TRUE, fig.asp=2.8, fig.width=6, fig.align='center'}
+origPar <- par(mfrow = c(4, 1), cex = 0.7, oma = rep(0, 4), 
                mar = c(5, 5, 0.01, 0.01))
 PlotMethods <- function (methods, yMin = 0.4,
                          lp = c('bottomright', 'bottomleft')) {
@@ -125,11 +115,10 @@ PlotMethods <- function (methods, yMin = 0.4,
          lty = 1, lwd = c(1, 4, 6), col = c(1, "#00000066", "#00000033"),
          legend = c('Median', 'Interquartile range', 'Interdecile range'))
 }
-PlotMethods(c('rf', 'pid', 'cid', 'ms', 'nye', 'msid'))
-PlotMethods(c('rf', 'jnc4', 'jco4', 'jnc2', 'jco2', 'nye'), yMin = 0.7)
-PlotMethods(c('nni_u', 'tbr_u', 'spr', 'masti', 'mast',
-              'path', 'qd', 'tbr_l', 'nni_l'), yMin = 0.14, 
-            lp = c('bottomright', 'right'))
+PlotMethods(c('rf', 'pid', 'cid', 'nye', 'msid'))
+PlotMethods(c('jnc4', 'jco4', 'jnc2', 'jco2', 'nye'), yMin = 0.7)
+PlotMethods(c('ms', 'masti', 'mast', 'path', 'qd'), yMin = 0.42)
+PlotMethods(c('tbr_u', 'spr', 'nni_u', 'nni_l', 'tbr_l'), yMin = 0.14)
 par(origPar)
 ```
 

@@ -18,8 +18,8 @@ Depends:
 Imports:
     Quartet,
     TBRDist,
-    TreeDist,
-    TreeTools (>= 1.0.0)
+    TreeDist (> 1.0.0),
+    TreeTools (>= 1.1.0)
 Suggests:
     ape,
     benchmarkme,
@@ -31,7 +31,7 @@ Suggests:
     knitr,
     MASS,
     microbenchmark,
-    phangorn (> 2.5.5),
+    phangorn (>= 2.5.5),
     Rdpack,
     rmarkdown,
     spatstat,
@@ -43,5 +43,5 @@ LazyData: true
 ByteCompile: true
 Encoding: UTF-8
 Language: en-GB
-RoxygenNote: 7.1.0
+RoxygenNote: 7.1.1
 Roxygen: list(markdown = TRUE)

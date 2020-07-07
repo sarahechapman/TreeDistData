@@ -1,6 +1,6 @@
 library('TreeDistData')
 library('usethis')
-suppressWarnings(RNGversion("3.5.0")) # Stopgap until we can require R 3.6.0
+RNGversion("3.6.0")
 repls <- 1000
 ourMethods <- tdMethods[!tdMethods %in% c('nni_t', 'mafi')]
 
@@ -20,14 +20,12 @@ if (file.exists(proj_path(paths))) {
   usethis::use_data(randomTreeDistances, compress = 'xz', overwrite = TRUE)
 }
 RandomDistances <- function (nLeaves, repls) {
-  set.seed(0)
-  RandomTree <- function (nTip) ape::rtree(nTip, br = NULL)
+  set.seed(nLeaves)
   distances <- vapply(seq_len(repls),
                       function (XX) {
-                        #cat(".")
                         if (XX %% 72 == 0) cat(' ...', XX)
-                        tr1 <- RandomTree(nLeaves)
-                        tr2 <- RandomTree(nLeaves)
+                        tr1 <- TreeTools::RandomTree(nLeaves, TRUE)
+                        tr2 <- TreeTools::RandomTree(nLeaves, TRUE)
                         TreeDistData:::AllDists(tr1, tr2, verbose = FALSE)
                       },
                       double(length(tdMethods) - 1L)) # no MAFI in AllDists
