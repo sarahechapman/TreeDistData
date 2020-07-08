@@ -16,3 +16,5 @@
 #' \insertRef{Steel1993}{TreeDist}
 #'
 #' \insertRef{Valiente2009}{TreeDist}
+#'
+#' @encoding UTF-8

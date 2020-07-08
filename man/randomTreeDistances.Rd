@@ -17,7 +17,8 @@ directory.
 randomTreeDistances
 }
 \description{
-A three-dimensional array listing the distances between 1 000
+A three-dimensional array listing the distances between
+1\ifelse{html}{&nbsp;}{,}000
 random pairs of trees drawn from the uniform distribution using
 \code{RandomTree(nTip, root = TRUE)}.
 }

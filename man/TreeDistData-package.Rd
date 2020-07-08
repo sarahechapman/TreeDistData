@@ -23,7 +23,7 @@ directory.
 \subsection{References}{
 
 Smith, M.R. (2020). \href{https://dx.doi.org/10.1093/bioinformatics/btaa614}{Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees}. \emph{Bioinformatics},
-in production.
+online ahead of print.
 }
 }
 \seealso{

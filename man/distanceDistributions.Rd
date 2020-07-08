@@ -12,10 +12,10 @@
 Objects of class \code{matrix} (inherits from \code{array}) with
 23 rows, each corresponding
 to a tree distance method and is named with its abbreviation
-(listed in 'Methods tested' below), and 10 000
-(\code{distanceDistribution25/50})
-or 100 000 (\code{pectinateDistances11}) columns,
-listing the calculated distances between each pair of trees.
+(listed in 'Methods tested' below), and
+10\ifelse{html}{&nbsp;}{,}000 (\code{distanceDistribution25/50})
+or 100\ifelse{html}{&nbsp;}{,}000 (\code{pectinateDistances11})
+columns, listing the calculated distances between each pair of trees.
 
 An object of class \code{matrix} (inherits from \code{array}) with 23 rows and 10000 columns.
 
@@ -39,10 +39,9 @@ pectinateDistances11
 \verb{distanceDistribution25(/50)} are two-dimensional matrices listing the
 normalized distances between random pairs of bifurcating trees with 25 and
 50 leaves drawn from the uniform distribution using
-\code{\link[TreeTools:GenerateTree]{TreeTools::RandomTree()}}
-(data object \code{\link{randomTreePairs25}}\verb{(/50)}).
+\code{\link[TreeTools:GenerateTree]{TreeTools::RandomTree()}} (data object \code{\link{randomTreePairs25}}\verb{(/50)}).
 \code{pectinateDistances11} reports distances between a pectinate 11-leaf tree
-and 100 000 random binary trees.
+and 100\ifelse{html}{&nbsp;}{,}000 random binary trees.
 }
 \section{Methods tested}{
 \itemize{

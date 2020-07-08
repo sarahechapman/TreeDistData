@@ -7,7 +7,7 @@
 #'
 #' `bullseyeTrees` is a list with four elements, named `5 leaves`, `10 leaves`,
 #' `20 leaves` and `50 leaves`.
-#' Each element contains 1&nbsp;000 trees with _n_ leaves, randomly sampled
+#' Each element contains 1\ifelse{html}{&nbsp;}{,}000 trees with _n_ leaves, randomly sampled
 #' (note: *not* from the uniform distribution) using [`ape::rtree()`].
 #'
 #' The `bullseyeMorph` prefix refers to the 'subsampling' experiment
@@ -15,7 +15,8 @@
 #' 'miscoding' experiment.
 #'
 #' `bull...Inferred` is a list with four elements, named as in `bullseyeTrees`.
-#' Each element contains 1&nbsp;000 sub-elements. Each sub-element is a list of
+#' Each element contains 1\ifelse{html}{&nbsp;}{,}000 sub-elements.
+#' Each sub-element is a list of
 #' ten trees, which have been inferred from progressively more degraded datasets,
 #' originally simulated from the corresponding tree in `bullseyeTrees`.
 #'
@@ -25,8 +26,8 @@
 #' the number of characters present or the percentage of tokens switched;
 #' the second dimension is named with an abbreviation of the tree similarity /
 #' distance metric used to score the trees (see 'Methods tested' below),
-#' and the third dimension contains 1&nbsp;000 entries corresponding to the
-#' trees in `bullseyeTrees`.
+#' and the third dimension contains 1\ifelse{html}{&nbsp;}{,}000
+#' entries corresponding to the trees in `bullseyeTrees`.
 #' Each cell contains the distance between the inferred tree and the generative
 #' tree under the stated tree distance metric.
 #'
@@ -60,16 +61,16 @@
 #' 50 leaves drawn from the uniform distribution using
 #' [`TreeTools::RandomTree()`] (data object [`randomTreePairs25`]`(/50)`).
 #' `pectinateDistances11` reports distances between a pectinate 11-leaf tree
-#' and 100&nbsp;000 random binary trees.
+#' and 100\ifelse{html}{&nbsp;}{,}000 random binary trees.
 #'
 #' @format
 #' Objects of class `matrix` (inherits from `array`) with
 #' `r dim(distanceDistribution25)[1]` rows, each corresponding
 #' to a tree distance method and is named with its abbreviation
-#' (listed in 'Methods tested' below), and 10&nbsp;000
-#' (`distanceDistribution25/50`)
-#'  or 100&nbsp;000 (`pectinateDistances11`) columns,
-#' listing the calculated distances between each pair of trees.
+#' (listed in 'Methods tested' below), and
+#' 10\ifelse{html}{&nbsp;}{,}000 (`distanceDistribution25/50`)
+#' or 100\ifelse{html}{&nbsp;}{,}000 (`pectinateDistances11`)
+#' columns, listing the calculated distances between each pair of trees.
 #'
 #' @templateVar nni_t TRUE
 #' @template allDistMethods
@@ -172,7 +173,8 @@ NULL
 
 #' Mean distances between random pairs of trees
 #'
-#' A three-dimensional array listing the distances between 1&nbsp;000
+#' A three-dimensional array listing the distances between
+#' 1\ifelse{html}{&nbsp;}{,}000
 #' random pairs of trees drawn from the uniform distribution using
 #' `RandomTree(nTip, root = TRUE)`.
 #'
@@ -200,8 +202,8 @@ NULL
 
 #' Pairs of random trees
 #'
-#' Lists of 10&nbsp;000 pairs of binary trees drawn from the uniform
-#' distribution using [`TreeTools::RandomTree()`].
+#' Lists of 10\ifelse{html}{&nbsp;}{,}000 pairs of binary trees
+#' drawn from the uniform distribution using [`TreeTools::RandomTree()`].
 #'
 #' @seealso
 #' The distances between these pairs of trees are recorded in
@@ -272,8 +274,9 @@ NULL
 #' `y = 1, 2, 3, 4, 2, 3, 4, 3, 4, 4`.
 #'
 #' As trees are not compared with themselves (to avoid zero distances), elements
-#' where _x_ = _y_ contain 4&nbsp;950 distances, whereas other elements contain
-#' 5&nbsp;050 distances.
+#' where _x_ = _y_ contain 4\ifelse{html}{&nbsp;}{,}950 distances,
+#' whereas other elements contain 5\ifelse{html}{&nbsp;}{,}050
+#' distances.
 #'
 #' @templateVar nni_t TRUE
 #' @template methodsTested

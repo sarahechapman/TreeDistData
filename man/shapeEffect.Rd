@@ -19,8 +19,9 @@ and
 \verb{y = 1, 2, 3, 4, 2, 3, 4, 3, 4, 4}.
 
 As trees are not compared with themselves (to avoid zero distances), elements
-where \emph{x} = \emph{y} contain 4 950 distances, whereas other elements contain
-5 050 distances.
+where \emph{x} = \emph{y} contain 4\ifelse{html}{&nbsp;}{,}950 distances,
+whereas other elements contain 5\ifelse{html}{&nbsp;}{,}050
+distances.
 }
 \source{
 Scripts used to generate data objects are housed in the

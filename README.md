@@ -2,8 +2,8 @@
 
 [![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](http://www.repostatus.org/badges/latest/inactive.svg)](http://www.repostatus.org/#inactive)
 [![Build Status](https://travis-ci.org/ms609/TreeDistData.svg?branch=master)](https://travis-ci.org/ms609/TreeDistData)
-[![CRAN Status Badge](http://www.r-pkg.org/badges/version/TreeDistData)](https://cran.r-project.org/package=TreeDistData)<!--
-[![CRAN Downloads](http://cranlogs.r-pkg.org/badges/TreeDistData)](https://cran.r-project.org/package=TreeDistData)-->
+[![CRAN Status Badge](http://www.r-pkg.org/badges/version/TreeDistData)](https://cran.r-project.org/package=TreeDistData)
+[![CRAN Downloads](http://cranlogs.r-pkg.org/badges/TreeDistData)](https://cran.r-project.org/package=TreeDistData)
 [![DOI](https://zenodo.org/badge/196380775.svg)](https://zenodo.org/badge/latestdoi/196380775)
 
 '[TreeDistData](https://ms609.github.io/TreeDistData/)' is an R package 

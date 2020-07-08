@@ -13,7 +13,7 @@
 \format{
 \code{bullseyeTrees} is a list with four elements, named \verb{5 leaves}, \verb{10 leaves},
 \verb{20 leaves} and \verb{50 leaves}.
-Each element contains 1 000 trees with \emph{n} leaves, randomly sampled
+Each element contains 1\ifelse{html}{&nbsp;}{,}000 trees with \emph{n} leaves, randomly sampled
 (note: \emph{not} from the uniform distribution) using \code{\link[ape:rtree]{ape::rtree()}}.
 
 The \code{bullseyeMorph} prefix refers to the 'subsampling' experiment
@@ -21,7 +21,8 @@ described by Smith (2020); the \code{bullMoDi} prefix refers to the
 'miscoding' experiment.
 
 \code{bull...Inferred} is a list with four elements, named as in \code{bullseyeTrees}.
-Each element contains 1 000 sub-elements. Each sub-element is a list of
+Each element contains 1\ifelse{html}{&nbsp;}{,}000 sub-elements.
+Each sub-element is a list of
 ten trees, which have been inferred from progressively more degraded datasets,
 originally simulated from the corresponding tree in \code{bullseyeTrees}.
 
@@ -31,8 +32,8 @@ corresponds to the progressive degrees of degradation, labelled according to
 the number of characters present or the percentage of tokens switched;
 the second dimension is named with an abbreviation of the tree similarity /
 distance metric used to score the trees (see 'Methods tested' below),
-and the third dimension contains 1 000 entries corresponding to the
-trees in \code{bullseyeTrees}.
+and the third dimension contains 1\ifelse{html}{&nbsp;}{,}000
+entries corresponding to the trees in \code{bullseyeTrees}.
 Each cell contains the distance between the inferred tree and the generative
 tree under the stated tree distance metric.
 
