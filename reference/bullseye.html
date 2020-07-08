@@ -179,13 +179,14 @@ Kuhner and Yamato (2015).</p>
 
     <p><code>bullseyeTrees</code> is a list with four elements, named <code>5 leaves</code>, <code>10 leaves</code>,
 <code>20 leaves</code> and <code>50 leaves</code>.
-Each element contains 1 000 trees with <em>n</em> leaves, randomly sampled
+Each element contains 1&amp;nbsp;000 trees with <em>n</em> leaves, randomly sampled
 (note: <em>not</em> from the uniform distribution) using <code><a href='https://rdrr.io/pkg/ape/man/rtree.html'>ape::rtree()</a></code>.</p>
 <p>The <code>bullseyeMorph</code> prefix refers to the 'subsampling' experiment
 described by Smith (2020); the <code>bullMoDi</code> prefix refers to the
 'miscoding' experiment.</p>
 <p><code>bull...Inferred</code> is a list with four elements, named as in <code>bullseyeTrees</code>.
-Each element contains 1 000 sub-elements. Each sub-element is a list of
+Each element contains 1&amp;nbsp;000 sub-elements.
+Each sub-element is a list of
 ten trees, which have been inferred from progressively more degraded datasets,
 originally simulated from the corresponding tree in <code>bullseyeTrees</code>.</p>
 <p><code>bull...Scores</code> is a list with four elements, named as in <code>bullseyeTrees</code>.
@@ -194,8 +195,8 @@ corresponds to the progressive degrees of degradation, labelled according to
 the number of characters present or the percentage of tokens switched;
 the second dimension is named with an abbreviation of the tree similarity /
 distance metric used to score the trees (see 'Methods tested' below),
-and the third dimension contains 1 000 entries corresponding to the
-trees in <code>bullseyeTrees</code>.
+and the third dimension contains 1&amp;nbsp;000
+entries corresponding to the trees in <code>bullseyeTrees</code>.
 Each cell contains the distance between the inferred tree and the generative
 tree under the stated tree distance metric.</p>
 <p>An object of class <code>list</code> of length 4.</p>
@@ -279,11 +280,11 @@ doi: <a href='https://doi.org/10.1098/rsbl.2018.0632'>10.1098/rsbl.2018.0632</a>
 .</p>
 <p>Smith MR (2020).
 &#8220;Information theoretic Generalized Robinson-Foulds metrics for comparing phylogenetic trees.&#8221;
-<em>Bioinformatics</em>, in production.
+<em>Bioinformatics</em>, online ahead of print.
 doi: <a href='https://doi.org/10.1093/bioinformatics/btaa614'>10.1093/bioinformatics/btaa614</a>
 .</p>
 <p>Steel MA, Penny D (1993).
-&#8220;Distributions of tree comparison metrics—some new results.&#8221;
+&#8220;Distributions of tree comparison metrics---some new results.&#8221;
 <em>Systematic Biology</em>, <b>42</b>(2), 126--141.
 doi: <a href='https://doi.org/10.1093/sysbio/42.2.126'>10.1093/sysbio/42.2.126</a>
 .</p>
