@@ -16,7 +16,7 @@ origPar <- par()
 library('TreeDistData')
 data("distanceDistribution25", package = "TreeDistData")
 # No point in plotting both MAST and MASTI, as they're perfect rank correlates
-exclude <- c('nni_t', 'nni_u', 'nni_l', 'masti')
+exclude <- c('nni_t', 'nni_u', 'nni_l', 'nni_L', 'nni_U', 'masti')
 distanceDistribution25 <- distanceDistribution25[!rownames(distanceDistribution25) %in% exclude, ]
 data("distanceDistribution50", package = "TreeDistData")
 distanceDistribution50 <- distanceDistribution50[!rownames(distanceDistribution50) %in% exclude, ]
