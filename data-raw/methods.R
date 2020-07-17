@@ -18,10 +18,10 @@ tdAbbrevs <- c(
   nea = 'Nye et al.',
   nye = expression(paste(plain('Nye '), italic('et al.'))),
 
-  jnc2 = 'JRF (k = 2, no conflict)',
-  jnc4 = 'JRF (k = 4, no conflict)',
-  jco2 = 'JRF (k = 2, conflict ok)',
-  jco4 = 'JRF (k = 4, conflict ok)',
+  jnc2 = 'JRF (k = 2, no-conflict)',
+  jnc4 = 'JRF (k = 4, no-conflict)',
+  jco2 = 'JRF (k = 2, conflict-ok)',
+  jco4 = 'JRF (k = 4, conflict-ok)',
 
   ms = 'Match. Split Dist.',
   mast = 'MAST size',
@@ -58,10 +58,10 @@ tdBoxAbbrevs <- c(
   nea = 'Nye\net al.',
   nye = 'Nye\net al.',#expression(paste(plain('Nye\n'), italic('et al.'))),
 
-  jnc2 = 'JRF\n(k = 2,\nno conf.)',
-  jnc4 = 'JRF\n(k = 4,\nno conf.)',
-  jco2 = 'JRF\n(k = 2,\nconf. ok)',
-  jco4 = 'JRF\n(k = 4,\nconf. ok)',
+  jnc2 = 'JRF\n(k = 2,\nno-conf.)',
+  jnc4 = 'JRF\n(k = 4,\nno-conf.)',
+  jco2 = 'JRF\n(k = 2,\nconf.-ok)',
+  jco4 = 'JRF\n(k = 4,\nconf.-ok)',
 
   ms = 'Match.\nSplit\nDist.',
   mast = 'MAST\nsize',
