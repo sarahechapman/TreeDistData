@@ -18,10 +18,10 @@ tdAbbrevs <- c(
   nea = 'Nye et al.',
   nye = expression(paste(plain('Nye '), italic('et al.'))),
 
-  jnc2 = 'JRF (k = 2, no-conflict)',
-  jnc4 = 'JRF (k = 4, no-conflict)',
-  jco2 = 'JRF (k = 2, conflict-ok)',
-  jco4 = 'JRF (k = 4, conflict-ok)',
+  jnc2 = 'JRF (k = 2, no-confl.)',
+  jnc4 = 'JRF (k = 4, no-confl.)',
+  jco2 = 'JRF (k = 2, confl.-ok)',
+  jco4 = 'JRF (k = 4, confl.-ok)',
 
   ms = 'Match. Split Dist.',
   mast = 'MAST size',
