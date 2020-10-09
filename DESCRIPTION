@@ -40,7 +40,6 @@ Suggests:
 Remotes:
   ms609/TreeTools
   ms609/TreeDist
-Additional_repositories: https://ms609.github.io/packages
 RdMacros: Rdpack
 LazyData: true
 ByteCompile: true
