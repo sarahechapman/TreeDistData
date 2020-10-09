@@ -83,40 +83,6 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
   )
 }
 
-#' Distances between each pair of trees
-#'
-#' @param trees List of trees of class `phylo`.
-#' @param Func Function returning distance between two trees.
-#' @param valueLength Integer specifying expected length of the value returned
-#' by `Func`.
-#' @param \dots Additional arguments to `Func`.
-#'
-#' @return Matrix detailing distance between each pair of trees.
-#' Identical trees are assumed to have zero distance.
-#' @template MRS
-#' @family pairwise tree distances
-#' @importFrom stats as.dist
-#' @export
-PairwiseDistances <- function (trees, Func, valueLength = 1L, ...) {
-  ret <- array(0, c(length(trees), length(trees), valueLength))
-  for (i in seq_along(trees)) {
-    trI <- trees[[i]]
-    for (j in i + seq_len(length(trees) - i)) {
-      val <- Func(trI, trees[[j]], ...)
-      ret[j, i, ] <- unlist(val)
-    }
-  }
-
-  # Return:
-  if (valueLength > 1L) {
-    structure(lapply(seq_len(valueLength), function (i) {
-      as.dist(ret[, , i], upper = TRUE)
-    }), names = names(val))
-  } else {
-    as.dist(ret[, , 1], upper = TRUE)
-  }
-}
-
 #' All distances between each pair of trees
 #'
 #' @param trees List of bifurcating trees of class `phylo`.
@@ -127,7 +93,7 @@ PairwiseDistances <- function (trees, Func, valueLength = 1L, ...) {
 #' @param verbose Logical specifying whether to report which calculation
 #' is presently being performed.
 #'
-#' @importFrom TreeTools as.Splits Postorder LnUnrooted
+#' @importFrom TreeTools as.Splits Postorder LnUnrooted PairwiseDistances
 #' @importFrom TBRDist TBRDist USPRDist
 #' @importFrom TreeDist DifferentPhylogeneticInfo MatchingSplitInfoDistance
 #' NyeSimilarity MatchingSplitDistance MASTSize SPRDist
@@ -228,7 +194,7 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
     tbr_l = tbr$tbr_min,
     tbr_u = tbr$tbr_max,
 
-    rf = RobinsonFoulds(splits),
+    rf = RobinsonFoulds(trees),
     icrf = InfoRobinsonFoulds(splits),
     path = pathDist
   )

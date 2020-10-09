@@ -1,6 +1,6 @@
 Package: TreeDistData
 Title: Analysis of Phylogenetic Tree Distance Measures
-Version: 1.1.0
+Version: 1.1.0.9000
 Authors@R: c(person("Martin R.", 'Smith',
                     email = "martin.smith@durham.ac.uk", 
                     role = c("aut", "cre", "cph"), 
@@ -18,8 +18,8 @@ Depends:
 Imports:
     Quartet,
     TBRDist,
-    TreeDist (> 1.0.0),
-    TreeTools (>= 1.1.0)
+    TreeDist (>= 1.2.1.9200),
+    TreeTools (>= 1.3.1.9000)
 Suggests:
     ape,
     benchmarkme,
@@ -37,6 +37,9 @@ Suggests:
     spatstat,
     testthat,
     TreeSearch (>= 0.4.0)
+Remotes:
+  ms609/TreeTools
+  ms609/TreeDist
 Additional_repositories: https://ms609.github.io/packages
 RdMacros: Rdpack
 LazyData: true

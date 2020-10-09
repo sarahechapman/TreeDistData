@@ -16,13 +16,9 @@ test_that('Pairwise distances calculated correctly', {
   trees[[nTrees - 1L]] <- TreeTools::PectinateTree(nTip)
   class(trees) <- 'multiPhylo'
 
-  dists <- PairwiseDistances(trees, phangorn::RF.dist)
-  expect_equivalent(phangorn::RF.dist(trees), dists)
-
   lapply(CompareAllTrees(trees), function (dist) {
     expect_equal(c(nTrees, nTrees), dim(as.matrix(dist)))
   })
-
 
   sprWalk <- vector('list', nTrees)
   sprWalk[[1]] <- lastTree <- TreeTools::PectinateTree(nTip)
