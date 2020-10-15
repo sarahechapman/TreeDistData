@@ -8,7 +8,7 @@ cat(paste0(seq_along(TDFunctions), ': ', names(TDFunctions), '\n'))
 
 
 tipLabels <- paste0('t', seq_len(nTip))
-nShapes <- NUnrootedShapes(nTip)
+nShapes <- as.integer(NUnrootedShapes(nTip))
 shapeKeys <- UnrootedKeys(nTip)
 shapes <- lapply(shapeKeys, UnrootedTreeWithKey, nTip = nTip)
 trees <- structure(unlist(lapply(shapes, function(skeleton) {
