@@ -86,8 +86,7 @@ AllDists(list(BalancedTree(6), PectinateTree(6)), BalancedTree(6))
 }
 \seealso{
 Other pairwise tree distances: 
-\code{\link{CompareAllTrees}()},
-\code{\link{PairwiseDistances}()}
+\code{\link{CompareAllTrees}()}
 }
 \author{
 \href{https://orcid.org/0000-0001-5660-1727}{Martin R. Smith}

@@ -27,8 +27,7 @@ CompareAllTrees(trees)
 }
 \seealso{
 Other pairwise tree distances: 
-\code{\link{AllDists}()},
-\code{\link{PairwiseDistances}()}
+\code{\link{AllDists}()}
 }
 \author{
 \href{https://orcid.org/0000-0001-5660-1727}{Martin R. Smith}
