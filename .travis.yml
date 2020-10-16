@@ -12,7 +12,8 @@ jobs:
       after_success:
         - Rscript -e "covr::codecov()"
     - r: release
-      before_cache: Rscript -e 'remotes::install_cran("pkgdown")'
+      before_install:
+        - sudo apt-get -y install libharfbuzz-dev libfribidi-dev
       #r_binary_packages:
       # - benchmarkme
       # - binom
@@ -30,7 +31,6 @@ jobs:
       # - testthat
       r_packages:
         - devtools
-        - freetypeharfbuzz
         - pkgdown
         - Rdpack
       deploy:
