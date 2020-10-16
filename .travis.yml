@@ -34,6 +34,8 @@ jobs:
         - freetypeharfbuzz
         - pkgdown
         - Rdpack
+      r_github_packages:
+        - ms609/TreeDist
       deploy:
         provider: script
         script: Rscript -e 'pkgdown::deploy_site_github()'
@@ -43,7 +45,6 @@ jobs:
     - os: osx
       r: release
       r_github_packages:
-        - ms609/TBRDist
         - ms609/TreeDist
       before_install:
         - sudo tlmgr install doi titling hyperref
