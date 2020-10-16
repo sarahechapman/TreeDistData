@@ -31,6 +31,7 @@ jobs:
       # - testthat
       r_packages:
         - devtools
+        - freetypeharfbuzz
         - pkgdown
         - Rdpack
       deploy:
