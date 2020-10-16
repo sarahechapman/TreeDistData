@@ -44,7 +44,7 @@ Spear <- function (scoreList) {
       rbind(mean = rowMeans(rhos),
             'Std. Err.' = apply(rhos, 1, sd) / sqrt(dim(rhos)[2]))
     },
-    matrix(0, nrow=2, ncol=dim(scoreList[[1]])[2]))
+    matrix(0, nrow = 2, ncol = dim(scoreList[[1]])[2]))
 }
 # Note the surprising performance of rf
 
