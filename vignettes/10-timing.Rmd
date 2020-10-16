@@ -69,7 +69,7 @@ Times <- function (trees) {
     nni = TreeTools::PairwiseDistances(trees, NNIDist, 7L),
     spr = SPR.dist(trees),
     tbr = TBRDist(trees, exact = FALSE),
-    rf = RF(splits),
+    rf = RF(trees),
     icrf = InfoRobinsonFoulds(splits),
     path = path.dist(trees),
     
