@@ -7,7 +7,7 @@ tdPlotSequence <- c("cid", "pid",
                     "msid", "ms",
                     "qd",
                     "mast", "masti",
-                    "nni_u", "nni_l", "spr", "tbr_l", "tbr_u")
+                    "nni_u", "nni_l", "spr", "tbr_l", "tbr_u", "hvi")
 
 tdAbbrevs <- c(
   pid = 'Phylog. Info. Dist',
@@ -43,7 +43,9 @@ tdAbbrevs <- c(
   icrf = 'Info. Corr. RF',
   path = 'Path',
 
-  mafi = 'MAF info'
+  mafi = 'MAF info',
+  
+  hvi = "Hierachical Variation of Information"
 )
 
 tdMdAbbrevs <- tdAbbrevs
@@ -167,7 +169,10 @@ TDPair <- list(
   rf = function (tr, ref) TreeDist::RobinsonFoulds(tr, ref),
   icrf = function (tr, ref) TreeDist::InfoRobinsonFoulds(tr, ref),
   path = function (tr, ref) signif(phangorn::path.dist(tr, ref), 4L),
-  mafi = function (...) TBRDist::MAFInfo(...)
+  mafi = function (...) TBRDist::MAFInfo(...),
+  
+  hvi = function (...) TreeDist::x()
+  #need to fix this line
 )
 
 
