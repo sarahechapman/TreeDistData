@@ -86,7 +86,7 @@ tdBoxAbbrevs <- c(
 
   mafi = 'MAF\ninfo',
   
-  #hvi = "Hierachical Variation of Information"
+  hvi = "Hierachical Variation of Information"
 )
 
 tdMethods <- names(tdAbbrevs)
@@ -135,7 +135,7 @@ TDFunctions <- list(
   icrf = TreeDist::InfoRobinsonFoulds,
   path = phangorn::path.dist,
   mafi = TBRDist::MAFInfo,
-  #hvi = TreeDist::HierachicalVariation
+  hvi = TreeDist::HierachicalVariation
 )
 
 TDPair <- list(
@@ -174,7 +174,7 @@ TDPair <- list(
   path = function (tr, ref) signif(phangorn::path.dist(tr, ref), 4L),
   mafi = function (...) TBRDist::MAFInfo(...),
   
-  #hvi = function (...) TreeDist:::HierachicalVariation(tr, ref)
+  hvi = function (...) TreeDist:::HierachicalVariation(tr, ref)
 )
 
 
