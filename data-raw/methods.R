@@ -1,4 +1,4 @@
-#library('TreeDist')
+library('TreeDist')
 
 tdPlotSequence <- c("cid", "pid",
                     "nye", "jco2", "jco4", "jnc2", "jnc4",
