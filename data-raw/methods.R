@@ -1,4 +1,4 @@
-library('TreeDist')
+#library('TreeDist')
 
 tdPlotSequence <- c("cid", "pid",
                     "nye", "jco2", "jco4", "jnc2", "jnc4",
@@ -84,7 +84,9 @@ tdBoxAbbrevs <- c(
   icrf = 'Info.\nCorr.\nRF',
   path = 'Path',
 
-  mafi = 'MAF\ninfo'
+  mafi = 'MAF\ninfo',
+  
+  #hvi = "Hierachical Variation of Information"
 )
 
 tdMethods <- names(tdAbbrevs)
@@ -132,7 +134,8 @@ TDFunctions <- list(
   rf = TreeDist::RobinsonFoulds,
   icrf = TreeDist::InfoRobinsonFoulds,
   path = phangorn::path.dist,
-  mafi = TBRDist::MAFInfo
+  mafi = TBRDist::MAFInfo,
+  #hvi = TreeDist::HierachicalVariation
 )
 
 TDPair <- list(
@@ -171,8 +174,7 @@ TDPair <- list(
   path = function (tr, ref) signif(phangorn::path.dist(tr, ref), 4L),
   mafi = function (...) TBRDist::MAFInfo(...),
   
-  hvi = function (...) TreeDist::x()
-  #need to fix this line
+  #hvi = function (...) TreeDist:::HierachicalVariation(tr, ref)
 )
 
 
