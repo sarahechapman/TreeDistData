@@ -7,7 +7,7 @@ tdPlotSequence <- c("cid", "pid",
                     "msid", "ms",
                     "qd",
                     "mast", "masti",
-                    "nni_u", "nni_l", "spr", "tbr_l", "tbr_u", "hvi")
+                    "nni_u", "nni_l", "spr", "tbr_l", "tbr_u", "hvi2")
 
 tdAbbrevs <- c(
   pid = 'Phylog. Info. Dist',
@@ -45,7 +45,7 @@ tdAbbrevs <- c(
 
   mafi = 'MAF info',
   
-  hvi = "Hierachical Variation of Information"
+  hvi2 = "Hierachical Variation of Information"
 )
 
 tdMdAbbrevs <- tdAbbrevs
@@ -86,8 +86,9 @@ tdBoxAbbrevs <- c(
 
   mafi = 'MAF\ninfo',
   
-  hvi = "Hierachical Variation of Information"
+  hvi2 = "Hierachical Variation of Information"
 )
+
 
 tdMethods <- names(tdAbbrevs)
 tdMethods <- tdMethods[!tdMethods %in% c('nni', 'nea', 'tbr')]
@@ -135,8 +136,10 @@ TDFunctions <- list(
   icrf = TreeDist::InfoRobinsonFoulds,
   path = phangorn::path.dist,
   mafi = TBRDist::MAFInfo,
-  hvi = TreeDist::HierachicalVariation
+  hvi2 = function (...) TreeDist::CompareAll(..., TreeDist::HierachicalVariation)
 )
+
+
 
 TDPair <- list(
   pid = function (tr, ref) round(TreeDist::DifferentPhylogeneticInfo(
@@ -173,10 +176,8 @@ TDPair <- list(
   icrf = function (tr, ref) TreeDist::InfoRobinsonFoulds(tr, ref),
   path = function (tr, ref) signif(phangorn::path.dist(tr, ref), 4L),
   mafi = function (...) TBRDist::MAFInfo(...),
-  
-  hvi = function (...) TreeDist:::HierachicalVariation(tr, ref)
+  hvi2 = function (tr, ref) TreeDist:::HierachicalVariation(tr, ref)
 )
-
 
 
 
@@ -199,11 +200,11 @@ tableau20 <- c('#4e78a8', '#A0CBE8',
 tab30 <- as.character(matrix(c(tableau20, tableau10), 3, byrow = TRUE))
 
 # https://personal.sron.nl/~pault/data/colourschemes.pdf
-# plot(inlmisc::GetColors(n = 22, scheme = 'discrete rainbow'))
-dr22 <- c("#D9CCE3", "#CAACCB", "#BA8DB4", "#AA6F9E", "#994F88", "#882E72",
-          "#1965B0", "#437DBF", "#6195CF", "#7BAFDE", "#4EB265", "#90C987",
-          "#CAE0AB", "#F7F056", "#F7CB45", "#F4A736", "#EE8026", "#E65518",
-          "#DC050C", "#A5170E", "#72190E", "#42150A")
+# plot(inlmisc::GetColors(n = 23, scheme = 'discrete rainbow'))
+dr22 <- c("#E8ECFB", "#D9CCE3", "#CAACCB", "#BA8DB4", "#AA6F9E", "#994F88",
+          "#882E72", "#1965B0", "#437DBF", "#6195CF", "#7BAFDE", "#4EB265",
+          "#90C987", "#CAE0AB", "#F7F056", "#F7CB45", "#F4A736", "#EE8026",
+          "#E65518", "#DC050C", "#A5170E", "#72190E", "#42150A")
 
 #tdCol <- tab30[c((1:10 * 2 - 1L), (seq_len(length(tdMethods) - 10L) * 2))]
 colOrder <- c(pid = 7, msid = 6, cid = 11, qd = 20, nye = 10,
@@ -211,14 +212,13 @@ colOrder <- c(pid = 7, msid = 6, cid = 11, qd = 20, nye = 10,
               ms = 5, mast = 8, masti = 9,
               nni_l = 17, nni_t = 16, nni_u = 15,
               spr = 14, tbr_l = 18, tbr_u = 19,
-              rf = 22, icrf = 21, path = 13, mafi = 12)
+              rf = 22, icrf = 21, path = 13, mafi = 12, hvi2 = 23)
 if(any(duplicated(colOrder))) warning(ifelse(duplicated(colOrder), colOrder, 0))
-if (any(which(!1:22 %in% colOrder))) warning(which(!1:22 %in% colOrder))
+if (any(which(!1:23 %in% colOrder))) warning(which(!1:23 %in% colOrder))
 tdCol <- dr22[colOrder[tdMethods]]
 names(tdCol) <- tdMethods
 tdCol[c('nni', 'nea', 'tbr', 'nni_L', 'nni_U')] <-
   tdCol[c('nni_u', 'nye', 'tbr_u', 'nni_l', 'nni_u')]
-
 
 usethis::use_data(tdAbbrevs, compress = 'gzip', overwrite = TRUE)
 usethis::use_data(tdMdAbbrevs, compress = 'gzip', overwrite = TRUE)

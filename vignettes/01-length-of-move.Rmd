@@ -13,8 +13,9 @@ vignette: >
 
 ```{r setup, echo=FALSE}
 library('Quartet', exclude = 'RobinsonFoulds')
-library('TreeDist')
 library('TreeDistData')
+library('TreeDist')
+library('TBRDist')
 backbone <- ape::read.tree(text='(a, (b, (c, (d, (((e, f), g), (h, (i, j)))))));')
 nTip <- length(backbone$tip.label)
 newTrees <- structure(TreeTools::AddTipEverywhere(backbone, '11th leaf'),
@@ -24,9 +25,10 @@ ordr <- order(backbone$edge[, 2])[-(nTip + 1L)]
 dists <- TreeTools::EdgeDistances(backbone)[ordr, ordr]
 ```
 
-```{r, echo=FALSE, fig.width=7.2, fig.asp=4/5}
+```{r echo=FALSE, fig.asp=4/5, fig.width=7.2, message=TRUE}
 BoxPlot <- function (method) {
   d <- as.matrix(TDFunctions[[method]](newTrees))
+  d
   boxplot(d ~ dists, border = TreeDistCol(method), xlab = '', ylab = '')
   mtext(tdAbbrevs[method], 2, line = 2, cex = 0.75)
   
@@ -48,7 +50,7 @@ BoxPlot <- function (method) {
   nErrors
 }
 
-origPar <- par(mfrow = c(4, 5), mar = c(2.5, 3.5, 0, 0.5),
+origPar <- par(mfrow = c(3, 7), mar = c(2.5, 3.5, 0, 0.5),
                oma = c(1.5, 0, 0.1, 0), xpd = NA)
 lapply(tdPlotSequence, BoxPlot) -> errors
 mtext('Move length', 1, line = 0, cex = 0.75, outer = TRUE)
