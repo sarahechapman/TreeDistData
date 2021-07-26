@@ -196,7 +196,9 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
 
     rf = RobinsonFoulds(trees),
     icrf = InfoRobinsonFoulds(splits),
-    path = pathDist
+    path = pathDist,
+    
+    hmi2 = hmi2
   )
 }
 
