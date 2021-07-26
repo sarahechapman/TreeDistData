@@ -45,7 +45,7 @@ tdAbbrevs <- c(
 
   mafi = 'MAF info',
   
-  hvi2 = "Hierachical Variation of Information"
+  hmi2 = "Hierarchical Mutual Information"
 )
 
 tdMdAbbrevs <- tdAbbrevs
@@ -86,7 +86,7 @@ tdBoxAbbrevs <- c(
 
   mafi = 'MAF\ninfo',
   
-  hvi2 = "Hierachical Variation of Information"
+  hmi2 = "Hierarchical Mutual Information"
 )
 
 
@@ -136,7 +136,7 @@ TDFunctions <- list(
   icrf = TreeDist::InfoRobinsonFoulds,
   path = phangorn::path.dist,
   mafi = TBRDist::MAFInfo,
-  hvi2 = function (...) TreeDist::CompareAll(..., TreeDist::HierachicalVariation)
+  hmi2 = function (...) TreeDist::CompareAll(..., TreeDist::HierachicalMutual)
 )
 
 
@@ -176,7 +176,7 @@ TDPair <- list(
   icrf = function (tr, ref) TreeDist::InfoRobinsonFoulds(tr, ref),
   path = function (tr, ref) signif(phangorn::path.dist(tr, ref), 4L),
   mafi = function (...) TBRDist::MAFInfo(...),
-  hvi2 = function (tr, ref) TreeDist:::HierachicalVariation(tr, ref)
+  hmi2 = function (tr, ref) TreeDist:::HierachicalMutual(tr, ref)
 )
 
 
