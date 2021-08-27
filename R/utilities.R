@@ -79,7 +79,8 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
     tbr_u = tbr$tbr_max,
     rf = RobinsonFoulds(tr1, tr2),
     icrf = InfoRobinsonFoulds(tr1, tr2),
-    path = PathDist(tr1, tr2)
+    path = PathDist(tr1, tr2),
+    hmi2 = HierachicalMutual(tr1, tr2)
   )
 }
 
@@ -162,7 +163,7 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
 
   MSG('MSD')
   ms <- MatchingSplitDistance(splits)
-
+  
   MSG('Complete; listing.')
   list(
     pid = pid,
@@ -197,8 +198,7 @@ CompareAllTrees <- function (trees, exact = FALSE, slow = TRUE,
     rf = RobinsonFoulds(trees),
     icrf = InfoRobinsonFoulds(splits),
     path = pathDist,
-    
-    hmi2 = hmi2
+    hmi2 = TreeDist::CompareAll(trees, TreeDist::HierachicalMutual)
   )
 }
 

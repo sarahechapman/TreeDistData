@@ -158,7 +158,8 @@ for (tipName in tipsNames) {
 
       rf = RobinsonFoulds(tr, trs),
       icrf = InfoRobinsonFoulds(tr, trs),
-      path = path.dist(tr, trs)
+      path = path.dist(tr, trs),
+      hmi2 = function (tr, trs) TreeDist:::HierachicalMutual(tr, trs)
     )
   }, matrix(0, nrow = 10L, ncol = 21L,
             dimnames = list(subsamples, tdMethods[-22]))

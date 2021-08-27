@@ -79,6 +79,7 @@ to be less than the distance from T<sub>i</sub> to V<sub>i.j</sub>
 (i.e. move two tips to the same location)
 
 ```{r, echo=FALSE, fig.width=7.2, fig.asp=4/5, message=FALSE}
+
 baddies <- vapply(seq_along(add3), function(i) {
   move1 <- AllDists(add2then1[[i]], add3[[i]])
   move2 <- AllDists(add1then2[[i]], add3[[i]])

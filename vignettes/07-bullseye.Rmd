@@ -144,7 +144,7 @@ PlotFunc <- function() {
   # NB: All NNI estimates plot very close together.
   #     MAST * MASTI are indistinguishable
     secondMethods <- c('cid', 'ms', 'path', 'mast',
-                       'tbr_u', 'tbr_l', 'spr', 'nni_l')
+                       'tbr_u', 'tbr_l', 'spr', 'nni_l', 'hmi2')
   notPlotted <- colnames(bullseyeMorphScores[[1]])[
     !colnames(bullseyeMorphScores[[1]]) %in% c(firstMethods, secondMethods)]
   #cat(notPlotted)

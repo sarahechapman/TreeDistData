@@ -7,7 +7,7 @@ tdPlotSequence <- c("cid", "pid",
                     "msid", "ms",
                     "qd",
                     "mast", "masti",
-                    "nni_u", "nni_l", "spr", "tbr_l", "tbr_u", "hvi2")
+                    "nni_u", "nni_l", "spr", "tbr_l", "tbr_u", "hmi2")
 
 tdAbbrevs <- c(
   pid = 'Phylog. Info. Dist',
@@ -45,7 +45,7 @@ tdAbbrevs <- c(
 
   mafi = 'MAF info',
   
-  hmi2 = "Hierarchical Mutual Information"
+  hmi2 = 'Hierarchical Mutual Information'
 )
 
 tdMdAbbrevs <- tdAbbrevs
@@ -136,7 +136,7 @@ TDFunctions <- list(
   icrf = TreeDist::InfoRobinsonFoulds,
   path = phangorn::path.dist,
   mafi = TBRDist::MAFInfo,
-  hmi2 = function (...) TreeDist::CompareAll(..., TreeDist::HierachicalMutual)
+  hmi2 = function(...) TreeDist::CompareAll(..., TreeDist::HierachicalMutual)
 )
 
 
@@ -212,7 +212,7 @@ colOrder <- c(pid = 7, msid = 6, cid = 11, qd = 20, nye = 10,
               ms = 5, mast = 8, masti = 9,
               nni_l = 17, nni_t = 16, nni_u = 15,
               spr = 14, tbr_l = 18, tbr_u = 19,
-              rf = 22, icrf = 21, path = 13, mafi = 12, hvi2 = 23)
+              rf = 22, icrf = 21, path = 13, mafi = 12, hmi2 = 23)
 if(any(duplicated(colOrder))) warning(ifelse(duplicated(colOrder), colOrder, 0))
 if (any(which(!1:23 %in% colOrder))) warning(which(!1:23 %in% colOrder))
 tdCol <- dr22[colOrder[tdMethods]]
