@@ -37,7 +37,7 @@ legend('right', TreeDistData::tdAbbrevs[method], bty='n', col = col)
 ## Figure
 
 ```{r plots, echo = FALSE, fig.width=7, fig.height=6}
-origPar <- par(mfrow = c(3, 7), mar = c(1, 0.1, 1, 0.1), oma = c(1, 1, 0, 0))
+origPar <- par(mfrow = c(4, 6), mar = c(1, 0.1, 1, 0.1), oma = c(1, 1, 0, 0))
 XX <- lapply(plotSequence, Plotter)
 mtext("Tree distance \u2192", 2, outer = TRUE, cex = 0.8)
 mtext("Number of SPR moves separating pair \u2192", 1, outer = TRUE, cex = 0.8)

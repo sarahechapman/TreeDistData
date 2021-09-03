@@ -110,7 +110,7 @@ compAllMethods <- c('rf', 'icrf',
                     'pid', 'msid', 'cid', 'qd', 'nye',
                     'ms', 'mast', 'masti',
                     'nni_l', 'nni_L', 'nni_U', 'nni_u', 'spr',
-                    'tbr_l', 'tbr_u', 'path')
+                    'tbr_l', 'tbr_u', 'path', 'hmi2')
 linTestReturn <- matrix(FALSE, nrow = length(compAllMethods), ncol = 5L,
                         dimnames = list(compAllMethods,
                                         c('spc', 'pam', 'h.cmp', 'h.sng', 'h.avg')))

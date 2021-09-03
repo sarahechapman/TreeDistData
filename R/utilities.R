@@ -80,7 +80,7 @@ AllDists <- function (tr1, tr2, verbose = FALSE) {
     rf = RobinsonFoulds(tr1, tr2),
     icrf = InfoRobinsonFoulds(tr1, tr2),
     path = PathDist(tr1, tr2),
-    hmi2 = HierachicalMutual(tr1, tr2)
+    hmi2 = TreeDist:::.TreeDistanceOneMany(HierachicalMutual, tr2, tr1, FUN.VALUE = double(1), tipLabels = tr2$tip.label)
   )
 }
 

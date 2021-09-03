@@ -58,7 +58,7 @@ icrf <- InfoRobinsonFoulds(pectinateTree, randomTrees)
 message('Path... ')
 path <- phangorn::path.dist(pectinateTree, randomTrees)
 message('HMI...')
-hmi2 <- function (pectinateTree, randomTrees) TreeDist::CompareAll(pectinateTree, randomTrees, TreeDist::HierachicalMutual)
+hmi2 <- TreeDist::CompareAll(randomTrees, pectinateTree, HierachicalMutual)
 
 pectinateDistances11 <- rbind(pid = pid, msid = msid, cid = cid, qd = qd,
                               nye = nye,
